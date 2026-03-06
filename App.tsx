@@ -147,9 +147,9 @@ const TriangleGraphic = () => {
   return (
     <div className="relative w-full max-w-lg mx-auto aspect-square flex items-center justify-center">
       <svg viewBox="0 0 400 400" className="w-full h-full">
-        {/* Solid Main Triangle — vertices scaled to match circle proportions (23%–77%) */}
+        {/* Solid Main Triangle — wider base (60→340) for less steep sides */}
         <motion.path
-          d="M 200 93 L 308 308 L 92 308 Z"
+          d="M 200 93 L 340 308 L 60 308 Z"
           fill={green}
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -159,18 +159,22 @@ const TriangleGraphic = () => {
 
         {/* Corner Circles */}
         <motion.circle cx="200" cy="93" r="13.5" fill="white" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.4 }} />
-        <motion.circle cx="92" cy="308" r="13.5" fill="white" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.5 }} />
-        <motion.circle cx="308" cy="308" r="13.5" fill="white" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.6 }} />
+        <motion.circle cx="60" cy="308" r="13.5" fill="white" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.5 }} />
+        <motion.circle cx="340" cy="308" r="13.5" fill="white" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.6 }} />
       </svg>
 
-      {/* Labels — repositioned to match new vertices */}
-      <div className="absolute top-[23%] left-1/2 -translate-x-1/2 -translate-y-full">
+      {/* OPERATOR — centered above top circle (circle at 50% left, 23% top) */}
+      <div className="absolute top-[13%] left-1/2 -translate-x-1/2 text-center">
         <span className="text-xs font-bold text-white uppercase tracking-widest">Operator</span>
       </div>
-      <div className="absolute top-[77%] left-0 -translate-x-full">
+
+      {/* DEVELOPER — below bottom-left circle (circle at 15% left, 77% top) */}
+      <div className="absolute top-[83%] left-[15%] -translate-x-1/2 text-center">
         <span className="text-xs font-bold text-white uppercase tracking-widest">Developer</span>
       </div>
-      <div className="absolute top-[77%] right-0 translate-x-full">
+
+      {/* INVESTOR — below bottom-right circle (circle at 85% left, 77% top) */}
+      <div className="absolute top-[83%] left-[85%] -translate-x-1/2 text-center">
         <span className="text-xs font-bold text-white uppercase tracking-widest">Investor</span>
       </div>
     </div>
