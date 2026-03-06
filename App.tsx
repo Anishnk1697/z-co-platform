@@ -587,7 +587,7 @@ const Home = ({
 
               <div className="w-48 h-48 md:w-64 md:h-64 flex-shrink-0 rounded-3xl overflow-hidden border border-slate-700 shadow-2xl">
                 <img
-                  src="https://cdn.prod.website-files.com/673390480b47a07dd6beac13/673a6420b28a4d35050d2c4f_2.jpeg"
+                  src="/asset/mike-butte.png"
                   alt="Mike Butte"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                 />
@@ -619,12 +619,12 @@ const Home = ({
                 {
                   name: 'John Stevens',
                   title: 'Director of Asset Management',
-                  img: 'https://cdn.prod.website-files.com/673390480b47a07dd6beac13/673a64ed50e3f53e92181b6a_66ace2875d6de1513e0ba5f1_jhon.jpg'
+                  img: '/asset/john-stevens.jpg'
                 },
                 {
                   name: 'Thaddaus Hays Jr.',
                   title: 'Director of Capital Markets',
-                  img: 'https://cdn.prod.website-files.com/673390480b47a07dd6beac13/673a64ed0f6cca562db5fa9f_66ace28771dc9f27738eafa5_hays.jpg'
+                  img: '/asset/thaddaus-hays.jpg'
                 },
                 {
                   name: 'Dan Prosser',
@@ -644,12 +644,12 @@ const Home = ({
                 {
                   name: 'Abel Castro',
                   title: 'Director of Maintenance',
-                  img: 'https://ui-avatars.com/api/?name=Abel+Castro&background=1e293b&color=fff&size=200&bold=true'
+                  img: '/asset/abel-castro.png'
                 },
                 {
                   name: 'Anish N. Kntharia',
                   title: 'Marketing Manager',
-                  img: 'https://ui-avatars.com/api/?name=Anish+N+Kantharia&background=1e293b&color=fff&size=200&bold=true'
+                  img: '/asset/anish-kantharia.jpg'
                 },
               ].map((member, i) => (
                 <motion.div
