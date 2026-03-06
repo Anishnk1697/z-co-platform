@@ -560,6 +560,66 @@ const Home = ({
         </div>
       </section>
 
+      {/* TEAM */}
+      <section id="team" className="py-24 bg-slate-950/30 relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-slate-500/5 blur-[120px] rounded-full -z-10" />
+
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-4">
+              Meet the Team
+            </h2>
+            <div className="h-1 w-20 bg-slate-700 mx-auto rounded-full" />
+            <p className="text-slate-400 max-w-xl mx-auto font-light mt-6">
+              A seasoned group of operators, builders, and capital partners driving execution across every project.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {[
+              { name: 'Mike Butte', title: 'Chief Executive Officer', bio: 'Over 30 years of operational experience in real estate and business development. Has spearheaded development, ownership, and sale of national brands including Holiday Inn, Arby\'s, Denny\'s, Caliber Collision, and Best Western Hotels.' },
+              { name: 'Sarah Ali', title: 'President', bio: null },
+              { name: 'John Stevens', title: 'Director of Asset Management', bio: null },
+              { name: 'Thaddaus Hays Jr.', title: 'Director of Capital Markets', bio: null },
+              { name: 'Dan Prosser', title: 'Director of Strategic Planning', bio: null },
+              { name: 'Phan Le', title: 'Office Coordinator', bio: null },
+              { name: 'Omar Terkawi', title: 'Project Architect', bio: null },
+              { name: 'Abel Castro', title: 'Director of Maintenance', bio: null },
+              { name: 'Anish N. Kntharia', title: 'Marketing Manager', bio: null },
+            ].map((member, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.07 }}
+                whileHover={{ y: -6 }}
+                className="group relative p-6 rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-slate-600 hover:bg-slate-900 transition-all duration-300"
+              >
+                {/* Avatar */}
+                <div className="h-16 w-16 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center mb-5 group-hover:bg-slate-700 transition-colors">
+                  <span className="text-xl font-black text-slate-300 group-hover:text-white transition-colors">
+                    {member.name.split(' ').map(n => n[0]).slice(0, 2).join('')}
+                  </span>
+                </div>
+
+                <h4 className="font-bold text-white text-sm leading-snug mb-1">{member.name}</h4>
+                <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-widest leading-snug mb-3">{member.title}</p>
+
+                {member.bio && (
+                  <p className="text-slate-400 text-xs leading-relaxed line-clamp-4">
+                    {member.bio}
+                  </p>
+                )}
+
+                {/* Hover accent line */}
+                <div className="absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CONTACT */}
       <section id="contact" className="py-24 relative">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
