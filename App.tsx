@@ -639,7 +639,7 @@ const Home = ({
                 {
                   name: 'Omar Terkawi',
                   title: 'Project Architect',
-                  img: 'https://ui-avatars.com/api/?name=Omar+Terkawi&background=1e293b&color=fff&size=200&bold=true'
+                  img: '/asset/omar-terkawi.png'
                 },
                 {
                   name: 'Abel Castro',
