@@ -36,8 +36,8 @@ const ReplicationGraph = () => {
         <text x="200" y="175" fill="#64748b" fontSize="8" textAnchor="middle">Project 5</text>
         <text x="360" y="175" fill="#64748b" fontSize="8" textAnchor="middle">Project 10+</text>
 
-        {/* Legend */}
-        <g transform="translate(250, 30)">
+        {/* Legend - Moved to avoid overlap */}
+        <g transform="translate(60, 35)">
           <rect width="10" height="2" fill="#84CC16" />
           <text x="15" y="4" fill="#84cc16" fontSize="8" fontWeight="bold">Z-Co Replication</text>
           <rect width="10" height="2" y="12" fill="#475569" />
@@ -49,17 +49,17 @@ const ReplicationGraph = () => {
           initial={{ pathLength: 0 }}
           whileInView={{ pathLength: 1 }}
           viewport={{ once: true }}
-          x1="40" y1="100" x2="360" y2="100"
+          x1="40" y1="110" x2="360" y2="110"
           stroke="#475569" strokeWidth="2" strokeDasharray="4 4"
         />
 
-        {/* Efficiency Curve (Going Up) */}
+        {/* Efficiency Curve (Smooth S-curve using Cubic Bezier) */}
         <motion.path
           initial={{ pathLength: 0, opacity: 0 }}
           whileInView={{ pathLength: 1, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          d="M 40 140 Q 150 130 250 60 T 360 40"
+          d="M 40 150 C 120 145, 200 110, 360 40"
           fill="none"
           stroke="#BEF264"
           strokeWidth="3"
@@ -71,11 +71,11 @@ const ReplicationGraph = () => {
           whileInView={{ opacity: 0.1 }}
           viewport={{ once: true }}
           transition={{ delay: 1, duration: 1 }}
-          d="M 40 140 Q 150 130 250 60 T 360 40 L 360 160 L 40 160 Z"
+          d="M 40 150 C 120 145, 200 110, 360 40 L 360 160 L 40 160 Z"
           fill="#BEF264"
         />
 
-        {/* Decorative points */}
+        {/* Decorative point at the end */}
         <motion.circle
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
@@ -84,15 +84,14 @@ const ReplicationGraph = () => {
           cx="360" cy="40" r="4" fill="#BEF264"
         />
 
-        {/* Callouts */}
+        {/* Callout - Repositioned to avoid overlap */}
         <motion.g
-          initial={{ opacity: 0, x: 10 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 2 }}
         >
-          <text x="250" y="50" fill="#BEF264" fontSize="10" fontWeight="bold">REPLICATION PREMIUM</text>
-          <line x1="240" y1="55" x2="350" y2="45" stroke="#BEF264" strokeWidth="0.5" opacity="0.5" />
+          <text x="360" y="30" fill="#BEF264" fontSize="10" fontWeight="black" textAnchor="end">REPLICATION PREMIUM</text>
         </motion.g>
       </svg>
     </div>
