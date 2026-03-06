@@ -145,11 +145,11 @@ const TriangleGraphic = () => {
   const green = "#84CC16"; // lime-500
 
   return (
-    <div className="relative w-full max-w-xs mx-auto aspect-square flex items-center justify-center">
+    <div className="relative w-full max-w-lg mx-auto aspect-square flex items-center justify-center">
       <svg viewBox="0 0 400 400" className="w-full h-full">
-        {/* Solid Main Triangle */}
+        {/* Solid Main Triangle — vertices scaled to match circle proportions (23%–77%) */}
         <motion.path
-          d="M 200 110 L 350 290 L 50 290 Z"
+          d="M 200 93 L 308 308 L 92 308 Z"
           fill={green}
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -158,19 +158,19 @@ const TriangleGraphic = () => {
         />
 
         {/* Corner Circles */}
-        <motion.circle cx="200" cy="110" r="13.5" fill="white" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.4 }} />
-        <motion.circle cx="50" cy="290" r="13.5" fill="white" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.5 }} />
-        <motion.circle cx="350" cy="290" r="13.5" fill="white" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.6 }} />
+        <motion.circle cx="200" cy="93" r="13.5" fill="white" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.4 }} />
+        <motion.circle cx="92" cy="308" r="13.5" fill="white" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.5 }} />
+        <motion.circle cx="308" cy="308" r="13.5" fill="white" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.6 }} />
       </svg>
 
-      {/* Labels */}
-      <div className="absolute top-[20%] left-1/2 -translate-x-1/2 -translate-y-full">
+      {/* Labels — repositioned to match new vertices */}
+      <div className="absolute top-[23%] left-1/2 -translate-x-1/2 -translate-y-full">
         <span className="text-xs font-bold text-white uppercase tracking-widest">Operator</span>
       </div>
-      <div className="absolute top-[72.5%] left-0 -translate-x-full">
+      <div className="absolute top-[77%] left-0 -translate-x-full">
         <span className="text-xs font-bold text-white uppercase tracking-widest">Developer</span>
       </div>
-      <div className="absolute top-[72.5%] right-0 translate-x-full">
+      <div className="absolute top-[77%] right-0 translate-x-full">
         <span className="text-xs font-bold text-white uppercase tracking-widest">Investor</span>
       </div>
     </div>
@@ -469,7 +469,7 @@ const Home = ({
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div className="relative py-10">
               <h3 className="text-center text-sm font-bold text-slate-500 uppercase tracking-widest mb-12">The Lifecycle Model</h3>
               <LifecycleGraphic />
