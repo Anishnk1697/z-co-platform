@@ -575,47 +575,110 @@ const Home = ({
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {[
-              { name: 'Mike Butte', title: 'Chief Executive Officer', bio: 'Over 30 years of operational experience in real estate and business development. Has spearheaded development, ownership, and sale of national brands including Holiday Inn, Arby\'s, Denny\'s, Caliber Collision, and Best Western Hotels.' },
-              { name: 'Sarah Ali', title: 'President', bio: null },
-              { name: 'John Stevens', title: 'Director of Asset Management', bio: null },
-              { name: 'Thaddaus Hays Jr.', title: 'Director of Capital Markets', bio: null },
-              { name: 'Dan Prosser', title: 'Director of Strategic Planning', bio: null },
-              { name: 'Phan Le', title: 'Office Coordinator', bio: null },
-              { name: 'Omar Terkawi', title: 'Project Architect', bio: null },
-              { name: 'Abel Castro', title: 'Director of Maintenance', bio: null },
-              { name: 'Anish N. Kntharia', title: 'Marketing Manager', bio: null },
-            ].map((member, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.07 }}
-                whileHover={{ y: -6 }}
-                className="group relative p-6 rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-slate-600 hover:bg-slate-900 transition-all duration-300"
-              >
-                {/* Avatar */}
-                <div className="h-16 w-16 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center mb-5 group-hover:bg-slate-700 transition-colors">
-                  <span className="text-xl font-black text-slate-300 group-hover:text-white transition-colors">
-                    {member.name.split(' ').map(n => n[0]).slice(0, 2).join('')}
-                  </span>
+          <div className="space-y-12">
+            {/* Featured CEO Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="relative p-8 md:p-12 rounded-[2.5rem] bg-slate-900/40 border border-slate-800 overflow-hidden flex flex-col md:flex-row gap-10 items-center md:items-start group hover:border-slate-700 transition-all duration-500"
+            >
+              <div className="absolute top-0 right-0 w-64 h-64 bg-slate-500/5 blur-3xl -z-10" />
+
+              <div className="w-48 h-48 md:w-64 md:h-64 flex-shrink-0 rounded-3xl overflow-hidden border border-slate-700 shadow-2xl">
+                <img
+                  src="https://cdn.prod.website-files.com/673390480b47a07dd6beac13/673a6420b28a4d35050d2c4f_2.jpeg"
+                  alt="Mike Butte"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                />
+              </div>
+
+              <div className="flex-1 space-y-6 text-center md:text-left">
+                <div>
+                  <h3 className="text-3xl font-bold text-white mb-2">Mike Butte</h3>
+                  <p className="text-xs font-bold text-[#84CC16] uppercase tracking-[0.2em]">Chief Executive Officer</p>
                 </div>
+                <div className="h-px w-12 bg-slate-700 mx-auto md:ml-0" />
+                <p className="text-slate-400 leading-relaxed text-sm md:text-base font-light max-w-3xl">
+                  Mike Butte is a seasoned executive with over 30 years of operational experience in real estate and business development. He has spearheaded the development, ownership, and sale of national brands such as Holiday Inn, Arby’s, Denny’s, Caliber Collision, and Best Western Hotels. Mike's experience spans various industries, including automotive, hospitality, fast food, multifamily, health care, and retail.
+                </p>
+                <div className="flex justify-center md:justify-start gap-4">
+                  <div className="p-2 rounded-lg bg-slate-800 border border-slate-700 text-slate-400 opacity-50 italic text-[10px]">30+ YEARS EXPERIENCE</div>
+                </div>
+              </div>
+            </motion.div>
 
-                <h4 className="font-bold text-white text-sm leading-snug mb-1">{member.name}</h4>
-                <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-widest leading-snug mb-3">{member.title}</p>
+            {/* Other Team Members Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  name: 'Sarah Ali',
+                  title: 'President',
+                  img: 'https://ui-avatars.com/api/?name=Sarah+Ali&background=1e293b&color=fff&size=200&bold=true'
+                },
+                {
+                  name: 'John Stevens',
+                  title: 'Director of Asset Management',
+                  img: 'https://cdn.prod.website-files.com/673390480b47a07dd6beac13/673a64ed50e3f53e92181b6a_66ace2875d6de1513e0ba5f1_jhon.jpg'
+                },
+                {
+                  name: 'Thaddaus Hays Jr.',
+                  title: 'Director of Capital Markets',
+                  img: 'https://cdn.prod.website-files.com/673390480b47a07dd6beac13/673a64ed0f6cca562db5fa9f_66ace28771dc9f27738eafa5_hays.jpg'
+                },
+                {
+                  name: 'Dan Prosser',
+                  title: 'Director of Strategic Planning',
+                  img: 'https://cdn.prod.website-files.com/673390480b47a07dd6beac13/673a64ede7e75e76b0db4b7f_66ace287b2cac310d22613fd_dan.png'
+                },
+                {
+                  name: 'Phan Le',
+                  title: 'Office Coordinator',
+                  img: 'https://ui-avatars.com/api/?name=Phan+Le&background=1e293b&color=fff&size=200&bold=true'
+                },
+                {
+                  name: 'Omar Terkawi',
+                  title: 'Project Architect',
+                  img: 'https://ui-avatars.com/api/?name=Omar+Terkawi&background=1e293b&color=fff&size=200&bold=true'
+                },
+                {
+                  name: 'Abel Castro',
+                  title: 'Director of Maintenance',
+                  img: 'https://ui-avatars.com/api/?name=Abel+Castro&background=1e293b&color=fff&size=200&bold=true'
+                },
+                {
+                  name: 'Anish N. Kntharia',
+                  title: 'Marketing Manager',
+                  img: 'https://ui-avatars.com/api/?name=Anish+N+Kantharia&background=1e293b&color=fff&size=200&bold=true'
+                },
+              ].map((member, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                  whileHover={{ y: -6 }}
+                  className="group relative p-5 rounded-[2rem] bg-slate-900/50 border border-slate-800 hover:border-slate-600 hover:bg-slate-900 transition-all duration-300 overflow-hidden"
+                >
+                  {/* Photo Container */}
+                  <div className="aspect-square rounded-2xl overflow-hidden border border-slate-800 mb-5 relative">
+                    <img
+                      src={member.img}
+                      alt={member.name}
+                      className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
 
-                {member.bio && (
-                  <p className="text-slate-400 text-xs leading-relaxed line-clamp-4">
-                    {member.bio}
-                  </p>
-                )}
+                  <h4 className="font-bold text-white text-sm leading-snug mb-1">{member.name}</h4>
+                  <p className="text-[10px] font-semibold text-slate-500 uppercase tracking-widest leading-snug">{member.title}</p>
 
-                {/* Hover accent line */}
-                <div className="absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              </motion.div>
-            ))}
+                  {/* Hover accent line */}
+                  <div className="absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
