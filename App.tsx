@@ -634,7 +634,7 @@ const Home = ({
                 {
                   name: 'Phan Le',
                   title: 'Office Coordinator',
-                  img: 'https://ui-avatars.com/api/?name=Phan+Le&background=1e293b&color=fff&size=200&bold=true'
+                  img: '/asset/phan-le.png'
                 },
                 {
                   name: 'Omar Terkawi',
