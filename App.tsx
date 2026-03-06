@@ -589,7 +589,7 @@ const Home = ({
                 <img
                   src="/asset/mike-butte.jpg"
                   alt="Mike Butte"
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                  className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
 
@@ -671,7 +671,7 @@ const Home = ({
                     <img
                       src={member.img}
                       alt={member.name}
-                      className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
+                      className="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
