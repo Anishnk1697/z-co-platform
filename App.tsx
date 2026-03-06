@@ -617,6 +617,11 @@ const Home = ({
                   img: '/asset/sarah-ali.jpg'
                 },
                 {
+                  name: 'Mo Khan',
+                  title: 'Chief Operating Officer',
+                  img: '/asset/mo-khan.png'
+                },
+                {
                   name: 'John Stevens',
                   title: 'Director of Asset Management',
                   img: '/asset/john-stevens.jpg'
