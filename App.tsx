@@ -587,7 +587,7 @@ const Home = ({
 
               <div className="w-48 h-48 md:w-64 md:h-64 flex-shrink-0 rounded-3xl overflow-hidden border border-slate-700 shadow-2xl">
                 <img
-                  src="/asset/mike-butte.png"
+                  src="/asset/mike-butte.jpg"
                   alt="Mike Butte"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                 />
@@ -624,12 +624,12 @@ const Home = ({
                 {
                   name: 'Thaddaus Hays Jr.',
                   title: 'Director of Capital Markets',
-                  img: '/asset/thaddaus-hays.jpg'
+                  img: 'https://cdn.prod.website-files.com/673390480b47a07dd6beac13/673a64ed0f6cca562db5fa9f_66ace28771dc9f27738eafa5_hays.jpg'
                 },
                 {
                   name: 'Dan Prosser',
                   title: 'Director of Strategic Planning',
-                  img: 'https://cdn.prod.website-files.com/673390480b47a07dd6beac13/673a64ede7e75e76b0db4b7f_66ace287b2cac310d22613fd_dan.png'
+                  img: '/asset/dan-prosser.png'
                 },
                 {
                   name: 'Phan Le',
