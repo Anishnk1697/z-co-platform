@@ -59,6 +59,7 @@ export const SmartImage = ({
 // Smart Video Component with Fallback Logic
 export const SmartVideo = ({ className }: { className?: string }) => {
   const videoUrls = useMemo(() => [
+    '/asset/hero-video (1).mp4',
     '/asset/hero-video.mp4',
     ...Array.from({ length: 20 }, (_, i) => `/input_file_${i}.mp4`),
     'https://assets.mixkit.co/videos/preview/mixkit-architectural-model-of-a-modern-city-32644-large.mp4'
