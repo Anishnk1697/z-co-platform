@@ -614,7 +614,7 @@ const Home = ({
                 {
                   name: 'Sarah Ali',
                   title: 'President',
-                  img: 'https://ui-avatars.com/api/?name=Sarah+Ali&background=1e293b&color=fff&size=200&bold=true'
+                  img: '/asset/sarah-ali.jpg'
                 },
                 {
                   name: 'John Stevens',
