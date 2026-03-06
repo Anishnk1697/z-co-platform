@@ -59,7 +59,7 @@ export const SmartImage = ({
 // Smart Video Component with Fallback Logic
 export const SmartVideo = ({ className }: { className?: string }) => {
   const videoUrls = useMemo(() => [
-    'https://drive.google.com/uc?export=download&id=1P9cIgK4oToCH3DE2pNcvNU2ZuZHyCGvP',
+    'https://github.com/Anishnk1697/z-co-platform/releases/download/v1.0-assets/hero-video.1.mp4',
     '/asset/hero-video (1).mp4',
     '/asset/hero-video.mp4',
     ...Array.from({ length: 20 }, (_, i) => `/input_file_${i}.mp4`),
