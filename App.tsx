@@ -652,7 +652,7 @@ const Home = ({
                   img: '/asset/abel-castro.png'
                 },
                 {
-                  name: 'Anish N. Kntharia',
+                  name: 'Anish N. Kantharia',
                   title: 'Marketing Manager',
                   img: '/asset/anish-kantharia.jpg'
                 },
