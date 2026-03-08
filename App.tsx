@@ -599,9 +599,14 @@ const Home = ({
                   <p className="text-xs font-bold text-[#84CC16] uppercase tracking-[0.2em]">Chief Executive Officer</p>
                 </div>
                 <div className="h-px w-12 bg-slate-700 mx-auto md:ml-0" />
-                <p className="text-slate-400 leading-relaxed text-sm md:text-base font-light max-w-3xl">
-                  Mike Butte is a seasoned executive with over 30 years of operational experience in real estate and business development. He has spearheaded the development, ownership, and sale of national brands such as Holiday Inn, Arby’s, Denny’s, Caliber Collision, and Best Western Hotels. Mike's experience spans various industries, including automotive, hospitality, fast food, multifamily, health care, and retail.
-                </p>
+                <div className="space-y-4 max-w-3xl">
+                  <p className="text-slate-400 leading-relaxed text-sm md:text-base font-light">
+                    Mike Butte is the Founder and CEO of Z-Co. Development Corp., where he leads the firm’s end-to-end development platform across real estate and operating-business projects. With more than 30 years of leadership experience, Mike has executed projects across multiple asset classes by combining disciplined underwriting, capital strategy, and delivery execution to create recession-resistant, essential-service assets designed for scale. His background includes development and ownership experience tied to nationally recognized brands such as Holiday Inn, Best Western, Arby’s, Denny’s, and Caliber Collision, and he remains focused on building repeatable project prototypes that compress timelines and improve predictability across markets.
+                  </p>
+                  <p className="text-slate-400 leading-relaxed text-sm md:text-base font-light">
+                    Mike is also passionate about expanding access, creating opportunities for small investors to participate in institutional-quality projects and helping budding real estate developers learn, grow, and succeed through clear systems, practical guidance, and aligned partnerships.
+                  </p>
+                </div>
                 <div className="flex justify-center md:justify-start gap-4">
                   <div className="p-2 rounded-lg bg-slate-800 border border-slate-700 text-slate-400 opacity-50 italic text-[10px]">30+ YEARS EXPERIENCE</div>
                 </div>
