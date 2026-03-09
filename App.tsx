@@ -228,9 +228,9 @@ const Home = ({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="mt-6 text-lg sm:text-xl font-bold text-slate-950 max-w-2xl leading-relaxed"
+              className="mt-6 text-lg sm:text-xl font-bold text-white max-w-2xl leading-relaxed"
               style={{
-                textShadow: '0 0 20px rgba(255,255,255,1), 0 2px 10px rgba(255,255,255,0.9), 0 0 30px rgba(255,255,255,0.8)'
+                textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 4px 15px rgba(0,0,0,0.8)'
               }}
             >
               Replication reduces variance, compresses timelines, and accelerates stabilization—supporting faster capital return where applicable.
