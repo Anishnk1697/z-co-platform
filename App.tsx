@@ -893,7 +893,7 @@ export default function App() {
             <img
               src="/asset/z-co-logo-vertical.png"
               alt="Z-Co Development"
-              className="h-12 sm:h-14 w-auto object-contain transition-transform group-hover:scale-105"
+              className="h-[3.6rem] sm:h-[4.2rem] w-auto object-contain transition-transform group-hover:scale-105"
             />
           </Link>
 
