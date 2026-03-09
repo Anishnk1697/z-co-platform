@@ -236,43 +236,7 @@ const Home = ({
               </span>
             </motion.div>
 
-            <div className="space-y-6">
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="text-xs sm:text-sm text-white max-w-xl leading-relaxed font-bold"
-                style={{
-                  textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.4)'
-                }}
-              >
-                Z-Co. is an end-to-end development platform. We design, capitalize, and deliver essential projects using a repeatable model powered by modular construction and disciplined capital strategy.
-              </motion.p>
-
-              <motion.ul
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="space-y-3 text-slate-800"
-              >
-                {[
-                  'Repeatable prototypes',
-                  'Factory-enabled delivery',
-                  'Investor-aligned structures'
-                ].map((item, i) => (
-                  <li
-                    key={i}
-                    className="flex items-center gap-3 text-[10px] sm:text-xs font-bold text-white"
-                    style={{
-                      textShadow: '1px 1px 3px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.4)'
-                    }}
-                  >
-                    <div className="h-1.5 w-1.5 rounded-full bg-white" />
-                    {item}
-                  </li>
-                ))}
-              </motion.ul>
-            </div>
+            {/* Removed detailed text block as per user request */}
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -321,6 +285,36 @@ const Home = ({
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-slate-500/5 blur-[120px] rounded-full -z-10" />
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* PLATFORM INTRO MOVED FROM HERO */}
+          <div className="max-w-3xl mx-auto text-center mb-16 px-4">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-lg sm:text-xl text-slate-300 leading-relaxed font-light mb-8"
+            >
+              Z-Co. is an end-to-end development platform. We design, capitalize, and deliver essential projects using a repeatable model powered by modular construction and disciplined capital strategy.
+            </motion.p>
+            <div className="flex flex-wrap justify-center gap-x-12 gap-y-4">
+              {[
+                'Repeatable prototypes',
+                'Factory-enabled delivery'
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="flex items-center gap-3"
+                >
+                  <div className="h-1.5 w-1.5 rounded-full bg-slate-500/50" />
+                  <span className="text-[10px] font-black text-white uppercase tracking-[0.2em]">{item}</span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
           <div className="text-center mb-20">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-6">
               One platform. Three engines.
