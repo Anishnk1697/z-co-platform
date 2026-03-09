@@ -293,7 +293,7 @@ const Home = ({
               viewport={{ once: true }}
               className="text-lg sm:text-xl text-slate-300 leading-relaxed font-light mb-8"
             >
-              Z-Co. is an end-to-end development platform. We design, capitalize, and deliver essential projects using a repeatable model powered by modular construction and disciplined capital strategy.
+              We deliver essential, recession-resistant projects designed for the masses through an end-to-end platform, from site selection and underwriting to entitlements, design, capital structuring, construction execution, and exit. Replication drives speed, reduces risk, and accelerates stabilization, supporting faster sales and faster capital return.
             </motion.p>
             <div className="flex flex-wrap justify-center gap-x-12 gap-y-4">
               {[
