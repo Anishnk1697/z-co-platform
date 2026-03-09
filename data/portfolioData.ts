@@ -67,10 +67,22 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCategoryData> = {
         description: 'Hospitality environments built for operational excellence and guest comfort.',
         projects: [
             {
-                title: 'Harbor Hotel',
-                location: 'Coastal Region',
-                fallbackSeed: 'hotel-1',
-                description: 'Efficiently delivered hospitality project focusing on modular assembly.',
+                title: 'Holiday Inn Express',
+                location: 'Hotels',
+                fallbackSeed: 'holiday-inn',
+                description: '60 Rooms – Limited Service Hotel',
+            },
+            {
+                title: 'Best Western',
+                location: 'Hotels',
+                fallbackSeed: 'best-western-1',
+                description: '125 Rooms – Full Service Hotel',
+            },
+            {
+                title: 'Best Western',
+                location: 'Hotels',
+                fallbackSeed: 'best-western-2',
+                description: '120 Rooms – Limited Service Hotel',
             }
         ]
     },
