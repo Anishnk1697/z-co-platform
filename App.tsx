@@ -215,7 +215,7 @@ const Home = ({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.1] text-white"
+              className="text-[1.68rem] sm:text-[2.02rem] lg:text-[2.7rem] font-black tracking-tight leading-[1.1] text-white"
               style={{
                 textShadow: '-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 4px 20px rgba(0,0,0,0.8)'
               }}
@@ -228,7 +228,7 @@ const Home = ({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="mt-6 text-lg sm:text-xl font-bold text-white max-w-2xl leading-relaxed"
+              className="mt-6 text-[1.01rem] sm:text-[1.125rem] font-bold text-white max-w-2xl leading-relaxed"
               style={{
                 textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 4px 15px rgba(0,0,0,0.8)'
               }}
