@@ -224,9 +224,17 @@ const Home = ({
               <span className="text-slate-800 italic font-medium">Faster returns.</span>
             </motion.h1>
 
-
-
-            {/* Removed detailed text block as per user request */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="mt-6 text-lg sm:text-xl font-medium text-slate-900 max-w-3xl"
+              style={{
+                textShadow: '0 0 10px rgba(255,255,255,0.8)'
+              }}
+            >
+              Replication reduces variance, compresses timelines, and accelerates stabilization—supporting faster capital return where applicable.
+            </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
