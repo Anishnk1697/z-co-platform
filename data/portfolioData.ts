@@ -127,10 +127,28 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCategoryData> = {
         description: 'Prime retail spaces optimized for the culinary and service industry.',
         projects: [
             {
-                title: 'The Gallery Kitchen',
-                location: 'Houston, TX',
-                fallbackSeed: 'restaurant-1',
-                description: 'High-traffic restaurant development with rapid site delivery.',
+                title: 'Arby\'s Roast Beef',
+                location: 'Restaurants',
+                fallbackSeed: 'arbys',
+                description: 'Fast Food Chain',
+            },
+            {
+                title: 'Denny\'s Restaurant',
+                location: 'Restaurants',
+                fallbackSeed: 'dennys',
+                description: 'Fast Food Chain',
+            },
+            {
+                title: 'Eatza Pitza',
+                location: 'Restaurants',
+                fallbackSeed: 'eatza-pitza',
+                description: 'Restaurant and Entertainment',
+            },
+            {
+                title: 'Kababish',
+                location: 'Restaurants',
+                fallbackSeed: 'kababish',
+                description: 'Indian Restaurant',
             }
         ]
     },
