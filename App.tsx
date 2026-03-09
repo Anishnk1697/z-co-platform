@@ -387,10 +387,10 @@ const Home = ({
                 Every project is designed around durable demand, standardized design, and predictable factory-led delivery.
               </p>
             </div>
-            <a href="#" className="inline-flex items-center gap-2 text-slate-300 font-bold uppercase tracking-widest text-xs hover:text-slate-100 transition-colors">
+            <Link to="/projects" className="inline-flex items-center gap-2 text-slate-300 font-bold uppercase tracking-widest text-xs hover:text-slate-100 transition-colors">
               View pipeline
               <ChevronRight className="w-4 h-4" />
-            </a>
+            </Link>
           </div>
 
           <div className="grid gap-6 md:grid-cols-4">
