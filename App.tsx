@@ -224,17 +224,7 @@ const Home = ({
               <span className="text-slate-800 italic font-medium">Return capital fast.</span>
             </motion.h1>
 
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3 }}
-              className="inline-flex items-center gap-3 rounded-full bg-slate-950 px-4 py-1.5 shadow-lg shadow-slate-950/20"
-            >
-              <div className="h-1.5 w-1.5 rounded-full bg-blue-400 animate-pulse" />
-              <span className="text-[10px] sm:text-xs font-bold tracking-[0.1em] text-white uppercase">
-                End-to-end development platform
-              </span>
-            </motion.div>
+
 
             {/* Removed detailed text block as per user request */}
 
@@ -287,6 +277,14 @@ const Home = ({
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* PLATFORM INTRO MOVED FROM HERO */}
           <div className="max-w-5xl mx-auto text-center mb-16 px-4">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-xs sm:text-sm font-black tracking-[0.4em] text-white uppercase mb-10 opacity-70"
+            >
+              End-to-end development platform
+            </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
