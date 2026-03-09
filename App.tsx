@@ -890,15 +890,11 @@ export default function App() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group">
-            <div className={`h-10 w-10 rounded-lg flex items-center justify-center transition-all group-hover:scale-105 ${scrolled ? 'bg-slate-950 shadow-lg' : (isHome ? 'bg-slate-950/10 backdrop-blur-sm' : 'bg-white/10 backdrop-blur-sm')}`}>
-              <span className={`font-black text-xl transition-colors ${scrolled ? 'text-white' : (isHome ? 'text-slate-950' : 'text-white')}`}>Z</span>
-            </div>
-            <div className="flex flex-col leading-tight">
-              <span className={`text-sm font-black tracking-tight transition-colors ${scrolled ? 'text-slate-950' : (isHome ? 'text-slate-950' : 'text-white')}`}>Platform</span>
-              <span className={`text-[10px] uppercase tracking-[0.2em] font-extrabold transition-colors ${scrolled ? 'text-slate-500' : (isHome ? 'text-slate-600' : 'text-slate-300')}`}>
-                Z-Co Development
-              </span>
-            </div>
+            <img
+              src="/asset/z-co-logo-vertical.png"
+              alt="Z-Co Development"
+              className="h-12 sm:h-14 w-auto object-contain transition-transform group-hover:scale-105"
+            />
           </Link>
 
           <div className="hidden lg:flex items-center gap-10">
