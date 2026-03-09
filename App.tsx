@@ -884,8 +884,8 @@ export default function App() {
       {/* Navigation */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${scrolled
-          ? 'bg-white border-slate-200/60 py-3 shadow-md'
-          : 'bg-white/5 backdrop-blur-md border-slate-200/10 py-5'
+          ? 'bg-white border-slate-200/60 py-5 shadow-md'
+          : 'bg-white/5 backdrop-blur-md border-slate-200/10 py-8'
           }`}
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between">
