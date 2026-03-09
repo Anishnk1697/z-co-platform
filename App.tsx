@@ -215,13 +215,13 @@ const Home = ({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.1] text-slate-950"
+              className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.1] text-white"
               style={{
-                textShadow: '0 0 20px rgba(255,255,255,1), 0 2px 10px rgba(255,255,255,0.8)'
+                textShadow: '-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 4px 20px rgba(0,0,0,0.8)'
               }}
             >
               Faster builds. Faster exits. <br />
-              <span className="text-slate-800 italic font-medium">Faster returns.</span>
+              <span className="text-white italic font-medium">Faster returns.</span>
             </motion.h1>
 
             <motion.p
