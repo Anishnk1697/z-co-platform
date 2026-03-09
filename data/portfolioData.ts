@@ -31,10 +31,22 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCategoryData> = {
         description: 'Strategic healthcare developments designed for essential community services.',
         projects: [
             {
-                title: 'Medical Center Alpha',
-                location: 'Houston, TX',
-                fallbackSeed: 'medical-1',
-                description: 'A state-of-the-art medical facility integrated into a high-demand urban corridor.',
+                title: 'Elite Medical Center',
+                location: 'Medical',
+                fallbackSeed: 'elite-medical',
+                description: '7000 Sq Ft Medical Center',
+            },
+            {
+                title: 'Med-Care Center',
+                location: 'Medical',
+                fallbackSeed: 'med-care',
+                description: '2500 Sq Ft Medical Center',
+            },
+            {
+                title: '5 Step Wellness Center',
+                location: 'Medical',
+                fallbackSeed: 'wellness-center',
+                description: '',
             }
         ]
     },
