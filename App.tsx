@@ -220,8 +220,8 @@ const Home = ({
                 textShadow: '0 0 20px rgba(255,255,255,1), 0 2px 10px rgba(255,255,255,0.8)'
               }}
             >
-              Build fast, sell fast, <br />
-              <span className="text-slate-800 italic font-medium">Return capital fast.</span>
+              Faster builds. Faster exits. <br />
+              <span className="text-slate-800 italic font-medium">Faster returns.</span>
             </motion.h1>
 
 
