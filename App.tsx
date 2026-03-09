@@ -23,7 +23,10 @@ import {
   X,
   LayoutGrid,
   CircleDot,
-  CheckCircle2
+  CheckCircle2,
+  FileText,
+  CalendarCheck,
+  TrendingUp
 } from 'lucide-react';
 
 const LifecycleGraphic = () => {
@@ -379,6 +382,69 @@ const Home = ({
                 </ul>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* HOW INVESTING WORKS STRIP */}
+      <section className="border-t border-slate-900 bg-black relative py-16 sm:py-20 z-10 w-full overflow-hidden">
+        {/* Subtle grid pattern background */}
+        <div className="absolute inset-0 bg-slate-950/40 pattern-grid-lg text-slate-800/20" />
+
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-sm font-bold tracking-[0.2em] text-slate-500 uppercase">
+              How investing works
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-4 lg:gap-8 max-w-5xl mx-auto relative">
+            {/* Horizontal line connecting steps on tablet+ */}
+            <div className="hidden md:block absolute top-[2.25rem] left-[15%] right-[15%] h-[2px] bg-gradient-to-r from-transparent via-slate-800 to-transparent -z-10" />
+
+            {/* Step 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex flex-col items-center text-center group"
+            >
+              <div className="w-[4.5rem] h-[4.5rem] rounded-[1.25rem] bg-slate-900 border border-slate-800 flex items-center justify-center mb-6 group-hover:border-slate-500 transition-colors shadow-2xl relative">
+                <FileText className="w-8 h-8 text-slate-400 group-hover:text-white transition-colors" strokeWidth={1.5} />
+                <div className="absolute -top-3 -right-3 w-[1.5rem] h-[1.5rem] rounded-full bg-slate-800 border-2 border-slate-900 font-black text-[10px] text-white flex items-center justify-center shadow-lg">1</div>
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">Request packet</h3>
+            </motion.div>
+
+            {/* Step 2 */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="flex flex-col items-center text-center group"
+            >
+              <div className="w-[4.5rem] h-[4.5rem] rounded-[1.25rem] bg-slate-900 border border-slate-800 flex items-center justify-center mb-6 group-hover:border-slate-500 transition-colors shadow-2xl relative">
+                <CalendarCheck className="w-8 h-8 text-slate-400 group-hover:text-white transition-colors" strokeWidth={1.5} />
+                <div className="absolute -top-3 -right-3 w-[1.5rem] h-[1.5rem] rounded-full bg-slate-800 border-2 border-slate-900 font-black text-[10px] text-white flex items-center justify-center shadow-lg">2</div>
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">Review structure + timeline</h3>
+            </motion.div>
+
+            {/* Step 3 */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="flex flex-col items-center text-center group"
+            >
+              <div className="w-[4.5rem] h-[4.5rem] rounded-[1.25rem] bg-slate-900 border border-slate-800 flex items-center justify-center mb-6 group-hover:border-blue-500 transition-colors shadow-2xl relative">
+                <TrendingUp className="w-8 h-8 text-blue-500 group-hover:text-blue-400 transition-colors" strokeWidth={1.5} />
+                <div className="absolute -top-3 -right-3 w-[1.5rem] h-[1.5rem] rounded-full bg-blue-600 border-2 border-slate-900 font-black text-[10px] text-white flex items-center justify-center shadow-[0_0_15px_rgba(37,99,235,0.4)]">3</div>
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">Invest + receive updates</h3>
+            </motion.div>
           </div>
         </div>
       </section>
