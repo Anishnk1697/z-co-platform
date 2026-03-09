@@ -267,7 +267,7 @@ const Home = ({
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
             {STATS.map((stat, i) => (
-              <div key={i} className="flex flex-col gap-1 border-l border-slate-800/50 pl-6 first:border-l-0">
+              <div key={i} className="flex flex-col items-center text-center gap-1 border-l border-slate-800/50 first:border-l-0">
                 <span className="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-bold">
                   {stat.label}
                 </span>
