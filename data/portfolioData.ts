@@ -19,9 +19,9 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCategoryData> = {
         projects: [
             {
                 title: 'Everson',
-                location: 'USA',
-                fallbackSeed: 'multifamily-everson',
-                description: 'A completed multifamily project demonstrating Z-Co\'s ability to deliver high-quality residential units at scale.',
+                location: 'Katy, TX',
+                fallbackSeed: 'everson',
+                description: 'Everson Luxury Apartments redefine urban living in suburban Katy, Texas. Our 300-unit mid-rise offers a blend of convenience and affordability, with quick access to local businesses and highways. Ideal for both professionals and families.',
                 link: 'https://www.z-co.info/completed-projects--multifamily'
             }
         ]
