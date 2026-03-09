@@ -91,10 +91,34 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCategoryData> = {
         description: 'Specialized retail and service infrastructure for the automotive industry.',
         projects: [
             {
-                title: 'Auto Works Hub',
-                location: 'USA',
-                fallbackSeed: 'automotive-1',
-                description: 'Streamlined automotive service center design.',
+                title: 'Auto Experts',
+                location: 'Automotive',
+                fallbackSeed: 'auto-experts',
+                description: 'Good Year Tires and Repair Center',
+            },
+            {
+                title: 'Caliber Collision',
+                location: 'Automotive',
+                fallbackSeed: 'caliber-collision',
+                description: 'Automotive Paint and Body Shop',
+            },
+            {
+                title: 'Japanese Auto Center',
+                location: 'Automotive',
+                fallbackSeed: 'japanese-auto',
+                description: 'Japanese Auto Repair Specialists',
+            },
+            {
+                title: 'Stirling Auto Body',
+                location: 'Automotive',
+                fallbackSeed: 'stirling-auto',
+                description: 'National Paint and Body Shop',
+            },
+            {
+                title: 'Chevron Gas Station',
+                location: 'Automotive',
+                fallbackSeed: 'chevron-gas',
+                description: 'Gas Station and Convenience Store',
             }
         ]
     },
