@@ -281,10 +281,11 @@ const Home = ({
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-xs sm:text-sm font-black tracking-[0.4em] text-white uppercase mb-10 opacity-70"
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-6"
             >
               End-to-end development platform
             </motion.h2>
+            <div className="h-1 w-20 bg-slate-500 mx-auto rounded-full mb-10" />
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
