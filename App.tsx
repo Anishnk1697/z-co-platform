@@ -235,18 +235,18 @@ const Home = ({
               className="flex flex-col sm:flex-row gap-5 pt-4"
             >
               <a
-                href="#platform"
-                className="inline-flex items-center justify-center gap-3 rounded-full bg-slate-950 px-8 py-4 text-sm font-bold text-white shadow-xl shadow-slate-950/20 hover:bg-slate-800 hover:scale-[1.02] transition-all"
+                href="#projects"
+                className="inline-flex items-center justify-center gap-3 rounded-full bg-blue-600 px-8 py-4 text-sm font-bold text-white shadow-xl shadow-blue-500/20 hover:bg-blue-500 hover:scale-[1.02] transition-all"
               >
-                Explore platform
+                Explore projects
                 <ArrowRight className="w-4 h-4" />
               </a>
-              <a
-                href="#projects"
+              <Link
+                to="/portfolio"
                 className="inline-flex items-center justify-center gap-3 rounded-full border border-slate-950/20 bg-white/40 backdrop-blur px-8 py-4 text-sm font-bold text-slate-950 hover:bg-white/60 transition-all"
               >
-                View projects
-              </a>
+                View portfolio
+              </Link>
             </motion.div>
           </motion.div>
         </div>
