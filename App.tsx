@@ -298,7 +298,8 @@ const Home = ({
             <div className="flex flex-wrap justify-center gap-x-12 gap-y-4">
               {[
                 'Repeatable prototypes',
-                'Factory-enabled delivery'
+                'Factory-enabled delivery',
+                'Investor-aligned structures'
               ].map((item, i) => (
                 <motion.div
                   key={i}
