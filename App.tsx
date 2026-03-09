@@ -889,7 +889,7 @@ export default function App() {
           }`}
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          <a href="#" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-3 group">
             <div className={`h-10 w-10 rounded-lg flex items-center justify-center transition-all group-hover:scale-105 ${scrolled ? 'bg-slate-950 shadow-lg' : (isHome ? 'bg-slate-950/10 backdrop-blur-sm' : 'bg-white/10 backdrop-blur-sm')}`}>
               <span className={`font-black text-xl transition-colors ${scrolled ? 'text-white' : (isHome ? 'text-slate-950' : 'text-white')}`}>Z</span>
             </div>
@@ -899,7 +899,7 @@ export default function App() {
                 Z-Co Development
               </span>
             </div>
-          </a>
+          </Link>
 
           <div className="hidden lg:flex items-center gap-10">
             {NAVIGATION.map((item) => (
