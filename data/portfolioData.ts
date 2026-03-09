@@ -22,7 +22,7 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCategoryData> = {
                 location: 'Katy, TX',
                 fallbackSeed: 'everson-building',
                 description: 'Everson Luxury Apartments redefine urban living in suburban Katy, Texas. Our 300-unit mid-rise offers a blend of convenience and affordability, with quick access to local businesses and highways. Ideal for both professionals and families.',
-                link: 'https://www.z-co.info/completed-projects--multifamily'
+                link: 'https://theeversonapartments.com/'
             }
         ]
     },
