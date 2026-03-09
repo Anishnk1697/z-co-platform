@@ -286,7 +286,7 @@ const Home = ({
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* PLATFORM INTRO MOVED FROM HERO */}
-          <div className="max-w-3xl mx-auto text-center mb-16 px-4">
+          <div className="max-w-5xl mx-auto text-center mb-16 px-4">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
