@@ -344,13 +344,13 @@ const Home = ({
               },
               {
                 icon: Landmark,
-                title: 'Capital',
+                title: 'Capital Solutions',
                 body: 'Structures built for absolute alignment and execution.',
                 bullets: ['Milestone-linked capital', 'Transparent reporting', 'Institution-ready data']
               },
               {
                 icon: Factory,
-                title: 'Modular',
+                title: 'Modular Construction',
                 body: 'Faster delivery. Higher control. Consistent outcomes.',
                 bullets: ['Factory-enabled build', 'Standardized assemblies', 'Predictable timelines']
               }
