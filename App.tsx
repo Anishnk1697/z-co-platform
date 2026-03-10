@@ -320,8 +320,8 @@ const Home = ({
                   transition={{ delay: i * 0.1 }}
                   className="flex items-center gap-3"
                 >
-                  <div className="h-1.5 w-1.5 rounded-full bg-slate-500/50" />
-                  <span className="text-[10px] sm:text-[11px] font-bold text-white uppercase tracking-wider">{item}</span>
+                  <div className="h-[7px] w-[7px] rounded-full bg-slate-500/50" />
+                  <span className="text-[11.5px] sm:text-[12.7px] font-bold text-white uppercase tracking-wider">{item}</span>
                 </motion.div>
               ))}
             </div>
