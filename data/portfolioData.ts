@@ -87,19 +87,19 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCategoryData> = {
             {
                 title: 'Holiday Inn Express',
                 location: 'Hotels',
-                fallbackSeed: 'holiday-inn',
+                fallbackSeed: 'hotel-holiday-inn',
                 description: '60 Rooms – Limited Service Hotel',
             },
             {
                 title: 'Best Western',
                 location: 'Hotels',
-                fallbackSeed: 'best-western-1',
+                fallbackSeed: 'hotel-best-western-1',
                 description: '125 Rooms – Full Service Hotel',
             },
             {
                 title: 'Best Western',
                 location: 'Hotels',
-                fallbackSeed: 'best-western-2',
+                fallbackSeed: 'hotel-best-western-2',
                 description: '120 Rooms – Limited Service Hotel',
             }
         ]
