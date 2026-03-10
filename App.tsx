@@ -236,7 +236,8 @@ const Home = ({
                 textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 4px 15px rgba(0,0,0,0.8)'
               }}
             >
-              Replication reduces variance, compresses timelines, and accelerates stabilization—supporting faster capital return where applicable.
+              Replication reduces variance, compresses timelines, and accelerates <br />
+              stabilization—supporting faster capital return where applicable.
             </motion.p>
 
             <motion.div
