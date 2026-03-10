@@ -207,7 +207,7 @@ const Home = ({
           {/* Natural brightness - no filters */}
         </div>
 
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-32">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-80">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -218,7 +218,7 @@ const Home = ({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-[1.68rem] sm:text-[2.02rem] lg:text-[2.7rem] font-black tracking-tight leading-[1.1] text-white"
+              className="text-[1.34rem] sm:text-[1.62rem] lg:text-[2.16rem] font-black tracking-tight leading-[1.1] text-white"
               style={{
                 textShadow: '-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 4px 20px rgba(0,0,0,0.8)'
               }}
@@ -231,7 +231,7 @@ const Home = ({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="mt-6 text-[1.01rem] sm:text-[1.125rem] font-bold text-white max-w-2xl leading-relaxed"
+              className="mt-6 text-[0.81rem] sm:text-[0.9rem] font-bold text-white max-w-2xl leading-relaxed"
               style={{
                 textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 4px 15px rgba(0,0,0,0.8)'
               }}
@@ -247,14 +247,14 @@ const Home = ({
             >
               <Link
                 to="/projects"
-                className="inline-flex items-center justify-center gap-3 rounded-full bg-blue-600 px-8 py-4 text-sm font-bold text-white shadow-xl shadow-blue-500/20 hover:bg-blue-500 hover:scale-[1.02] transition-all"
+                className="inline-flex items-center justify-center gap-3 rounded-full bg-blue-600 px-6 py-3 text-[0.8rem] font-bold text-white shadow-xl shadow-blue-500/20 hover:bg-blue-500 hover:scale-[1.02] transition-all"
               >
                 Explore projects
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 to="/portfolio"
-                className="inline-flex items-center justify-center gap-3 rounded-full border border-slate-950/20 bg-white/40 backdrop-blur px-8 py-4 text-sm font-bold text-slate-950 hover:bg-white/60 transition-all"
+                className="inline-flex items-center justify-center gap-3 rounded-full border border-slate-950/20 bg-white/40 backdrop-blur px-6 py-3 text-[0.8rem] font-bold text-slate-950 hover:bg-white/60 transition-all"
               >
                 View portfolio
               </Link>
