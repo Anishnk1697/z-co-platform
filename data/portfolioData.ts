@@ -111,31 +111,31 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCategoryData> = {
             {
                 title: 'Auto Experts',
                 location: 'Automotive',
-                fallbackSeed: 'auto-experts',
+                fallbackSeed: 'auto-experts-cropped',
                 description: 'Good Year Tires and Repair Center',
             },
             {
                 title: 'Caliber Collision',
                 location: 'Automotive',
-                fallbackSeed: 'caliber-collision',
+                fallbackSeed: 'caliber-collision-cropped',
                 description: 'Automotive Paint and Body Shop',
             },
             {
                 title: 'Japanese Auto Center',
                 location: 'Automotive',
-                fallbackSeed: 'japanese-auto',
+                fallbackSeed: 'japanese-auto-cropped',
                 description: 'Japanese Auto Repair Specialists',
             },
             {
                 title: 'Stirling Auto Body',
                 location: 'Automotive',
-                fallbackSeed: 'stirling-auto',
+                fallbackSeed: 'stirling-auto-cropped',
                 description: 'National Paint and Body Shop',
             },
             {
                 title: 'Chevron Gas Station',
                 location: 'Automotive',
-                fallbackSeed: 'chevron-gas',
+                fallbackSeed: 'chevron-gas-cropped',
                 description: 'Gas Station and Convenience Store',
             }
         ]
