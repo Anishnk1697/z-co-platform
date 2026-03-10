@@ -55,10 +55,28 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCategoryData> = {
         description: 'Modern, repeatable housing prototypes for the next generation of living.',
         projects: [
             {
-                title: 'Resi-Project One',
+                title: 'Oak Hollow',
                 location: 'USA',
-                fallbackSeed: 'residential-1',
-                description: 'Standardized residential delivery focus on speed and quality.',
+                fallbackSeed: 'oak-hollow',
+                description: 'A showcase of luxury residential development, Oak Hollow combines modern architecture with sustainable design.',
+            },
+            {
+                title: '1242 Trace Drive',
+                location: 'Deer Park, TX',
+                fallbackSeed: 'trace-drive',
+                description: 'Mediterranean-inspired luxury living in the heart of Deer Park.',
+            },
+            {
+                title: '1503 Beaconshire Road',
+                location: 'Houston, TX',
+                fallbackSeed: 'beaconshire-road',
+                description: 'A classic traditional estate in Houston, featuring premium craftsmanship and elegant design.',
+            },
+            {
+                title: '911 Wildwood Drive',
+                location: 'Houston, TX',
+                fallbackSeed: 'wildwood-drive',
+                description: 'Contemporary residential excellence with a focus on open spaces and natural light.',
             }
         ]
     },
