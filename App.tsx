@@ -201,7 +201,7 @@ const Home = ({
   return (
     <>
       {/* HERO */}
-      <header className="relative isolate min-h-screen flex flex-col justify-end pb-12 lg:pb-16 overflow-hidden">
+      <header className="relative isolate min-h-screen flex flex-col justify-end pb-0 lg:pb-4 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <SmartVideo className="w-full h-full object-cover" />
           {/* Natural brightness - no filters */}
