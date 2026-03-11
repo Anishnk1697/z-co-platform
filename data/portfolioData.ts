@@ -147,26 +147,26 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCategoryData> = {
             {
                 title: 'Arby\'s Roast Beef',
                 location: 'Restaurants',
-                fallbackSeed: 'arbys',
+                fallbackSeed: 'restaurant-arbys',
                 description: 'Fast Food Chain',
             },
             {
                 title: 'Denny\'s Restaurant',
                 location: 'Restaurants',
-                fallbackSeed: 'dennys',
+                fallbackSeed: 'restaurant-dennys',
                 description: 'Fast Food Chain',
             },
             {
-                title: 'Eatza Pitza',
+                title: 'Serious Pizza',
                 location: 'Restaurants',
-                fallbackSeed: 'eatza-pitza',
+                fallbackSeed: 'restaurant-serious-pizza',
                 description: 'Restaurant and Entertainment',
             },
             {
-                title: 'Kababish',
+                title: 'Indian Accent',
                 location: 'Restaurants',
-                fallbackSeed: 'kababish',
-                description: 'Indian Restaurant',
+                fallbackSeed: 'restaurant-indian-accent',
+                description: 'Fine Dining Indian Restaurant',
             }
         ]
     },
