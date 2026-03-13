@@ -4,14 +4,14 @@ import { SmartImage } from '@/components/SmartMedia';
 
 const Portfolio = () => {
   const categories = [
-    { name: 'Multifamily', id: 'multifamily', seed: 'multifamily' },
-    { name: 'Medical', id: 'medical', seed: 'medical' },
-    { name: 'Residential', id: 'residential', seed: 'residential' },
-    { name: 'Hotels', id: 'hotels', seed: 'hotel' },
-    { name: 'Automotive', id: 'automotive', seed: 'automotive' },
-    { name: 'Restaurants', id: 'restaurants', seed: 'restaurant' },
-    { name: 'Beauty', id: 'beauty', seed: 'beauty' },
-    { name: 'Other', id: 'other', seed: 'other' }
+    { name: 'Multifamily', id: 'multifamily', seed: 'beaconshire-road' },
+    { name: 'Medical', id: 'medical', seed: 'elite-medical' },
+    { name: 'Residential', id: 'residential', seed: 'dovetrails' },
+    { name: 'Hotels', id: 'hotels', seed: 'hotel-best-western-1' },
+    { name: 'Automotive', id: 'automotive', seed: 'stirling-auto-v2' },
+    { name: 'Restaurants', id: 'restaurants', seed: 'restaurant-serious-pizza' },
+    { name: 'Beauty', id: 'beauty', seed: 'urban-retreat' },
+    { name: 'Other', id: 'other', seed: 'shopsfryroad' }
   ];
 
   return (

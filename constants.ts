@@ -1,5 +1,6 @@
 
 export const NAVIGATION = [
+  { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
   { label: 'Projects', href: '/projects' },
   { label: 'Portfolio', href: '/portfolio' },

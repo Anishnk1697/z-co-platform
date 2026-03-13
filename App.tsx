@@ -1002,7 +1002,7 @@ export default function App() {
       {/* FOOTER */}
       <footer className="py-16 md:py-24 border-t border-slate-900 bg-black">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
             <div className="space-y-6 lg:col-span-1">
               <Link to="/">
                 <img
@@ -1055,7 +1055,21 @@ export default function App() {
                   </Link>
                 </li>
                 <li><Link to="/terms-of-service" onClick={() => window.scrollTo(0, 0)} className="text-slate-400 hover:text-white transition-colors text-sm font-medium">Terms of Service</Link></li>
-                <li><a href="#" className="text-slate-400 hover:text-white transition-colors text-sm font-medium">LinkedIn</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-6">Social</h4>
+              <ul className="space-y-4">
+                <li>
+                  <a href="https://www.linkedin.com/company/z-co-development" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors text-sm font-medium">LinkedIn</a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/z_co_tx/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors text-sm font-medium">Instagram</a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/Z.CO.TX" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors text-sm font-medium">Facebook</a>
+                </li>
               </ul>
             </div>
           </div>
