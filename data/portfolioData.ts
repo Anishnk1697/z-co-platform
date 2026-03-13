@@ -175,10 +175,16 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCategoryData> = {
         description: 'Elegantly designed retail suites for health, wellness, and beauty partners.',
         projects: [
             {
-                title: 'Wellness Suite Collective',
-                location: 'Texas',
-                fallbackSeed: 'beauty-1',
-                description: 'Boutique beauty spaces delivered with precision.',
+                title: 'Urban Retreat',
+                location: 'Day Spa',
+                fallbackSeed: 'urban-retreat',
+                description: '7000 Sq Ft Day Spa',
+            },
+            {
+                title: 'Urban Retreat Studio',
+                location: 'Day Spa',
+                fallbackSeed: 'urban-retreat-studio',
+                description: '5000 Sq Ft Day Spa',
             }
         ]
     },

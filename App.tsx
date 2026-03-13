@@ -7,6 +7,8 @@ import ProjectsPage from './pages/Projects';
 import Portfolio from './pages/Portfolio';
 import PortfolioCategory from './pages/PortfolioCategory';
 import Testimonials from './pages/Testimonials';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
 import { SmartImage, SmartVideo } from '@/components/SmartMedia';
 import {
   Building2,
@@ -695,11 +697,7 @@ const Home = ({
                   title: 'Chief Operating Officer',
                   img: '/asset/mo-khan.png'
                 },
-                {
-                  name: 'Nabeel Khan',
-                  title: 'Chief Financial Officer',
-                  img: '/asset/nabeel-khan.png'
-                },
+
                 {
                   name: 'John Stevens',
                   title: 'Director of Asset Management',
@@ -707,7 +705,7 @@ const Home = ({
                 },
                 {
                   name: 'Thaddaus Hays Jr.',
-                  title: 'Director of Capital Markets',
+                  title: 'Director of Business Development',
                   img: 'https://cdn.prod.website-files.com/673390480b47a07dd6beac13/673a64ed0f6cca562db5fa9f_66ace28771dc9f27738eafa5_hays.jpg'
                 },
                 {
@@ -996,19 +994,73 @@ export default function App() {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/portfolio/:category" element={<PortfolioCategory />} />
         <Route path="/testimonials" element={<Testimonials />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
       </Routes>
 
       {/* FOOTER */}
-      <footer className="py-12 border-t border-slate-900 bg-black">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="flex items-center gap-4">
-            <div className="h-8 w-8 rounded bg-slate-700 flex items-center justify-center text-white font-black">Z</div>
-            <span className="text-sm font-bold text-slate-500">© 2024 Z-Co Development Group</span>
+      <footer className="py-16 md:py-24 border-t border-slate-900 bg-black">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+            <div className="space-y-6 lg:col-span-1">
+              <Link to="/">
+                <img
+                  src="/asset/z-co-logo-vertical.png"
+                  alt="Z-Co Development"
+                  className="h-16 md:h-20 w-auto object-contain transition-transform hover:scale-105"
+                />
+              </Link>
+              <p className="text-sm text-slate-500 font-medium leading-relaxed">
+                Building a more predictable future for real estate development.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-6">Navigation</h4>
+              <ul className="space-y-4">
+                <li><Link to="/" onClick={() => window.scrollTo(0, 0)} className="text-slate-400 hover:text-white transition-colors text-sm font-medium">Home</Link></li>
+                <li><Link to="/about" onClick={() => window.scrollTo(0, 0)} className="text-slate-400 hover:text-white transition-colors text-sm font-medium">About Us</Link></li>
+                <li><Link to="/projects" onClick={() => window.scrollTo(0, 0)} className="text-slate-400 hover:text-white transition-colors text-sm font-medium">Projects</Link></li>
+                <li><Link to="/portfolio" onClick={() => window.scrollTo(0, 0)} className="text-slate-400 hover:text-white transition-colors text-sm font-medium">Portfolio</Link></li>
+                <li><Link to="/testimonials" onClick={() => window.scrollTo(0, 0)} className="text-slate-400 hover:text-white transition-colors text-sm font-medium">Testimonials</Link></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-6">Contact</h4>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <MapPin className="w-5 h-5 text-slate-500 shrink-0 mt-0.5" />
+                  <span className="text-slate-400 text-sm font-medium">Houston, TX</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Mail className="w-5 h-5 text-slate-500 shrink-0" />
+                  <span className="text-slate-400 text-sm font-medium">info@z-co.info</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Phone className="w-5 h-5 text-slate-500 shrink-0" />
+                  <span className="text-slate-400 text-sm font-medium">Inquire for Office Line</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-6">Legal</h4>
+              <ul className="space-y-4">
+                <li>
+                  <Link to="/privacy-policy" target="_blank" className="text-slate-400 hover:text-white transition-colors text-sm font-medium inline-flex items-center gap-2 group">
+                    Privacy Policy
+                    <ArrowRight className="w-3.5 h-3.5 opacity-50 group-hover:translate-x-1 group-hover:opacity-100 transition-all" />
+                  </Link>
+                </li>
+                <li><Link to="/terms-of-service" onClick={() => window.scrollTo(0, 0)} target="_blank" className="text-slate-400 hover:text-white transition-colors text-sm font-medium">Terms of Service</Link></li>
+                <li><a href="#" className="text-slate-400 hover:text-white transition-colors text-sm font-medium">LinkedIn</a></li>
+              </ul>
+            </div>
           </div>
-          <div className="flex gap-8">
-            <a href="#" className="text-xs font-bold uppercase tracking-widest text-slate-600 hover:text-white transition-colors">Privacy</a>
-            <a href="#" className="text-xs font-bold uppercase tracking-widest text-slate-600 hover:text-white transition-colors">Terms</a>
-            <a href="#" className="text-xs font-bold uppercase tracking-widest text-slate-600 hover:text-white transition-colors">LinkedIn</a>
+
+          <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row items-center justify-between gap-4">
+            <span className="text-xs font-bold text-slate-600 uppercase tracking-widest">© 2024 Z-Co Development Group. All Rights Reserved.</span>
           </div>
         </div>
       </footer>
