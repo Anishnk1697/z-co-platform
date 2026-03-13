@@ -1048,12 +1048,12 @@ export default function App() {
               <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-6">Legal</h4>
               <ul className="space-y-4">
                 <li>
-                  <Link to="/privacy-policy" target="_blank" className="text-slate-400 hover:text-white transition-colors text-sm font-medium inline-flex items-center gap-2 group">
+                  <Link to="/privacy-policy" onClick={() => window.scrollTo(0, 0)} className="text-slate-400 hover:text-white transition-colors text-sm font-medium inline-flex items-center gap-2 group">
                     Privacy Policy
                     <ArrowRight className="w-3.5 h-3.5 opacity-50 group-hover:translate-x-1 group-hover:opacity-100 transition-all" />
                   </Link>
                 </li>
-                <li><Link to="/terms-of-service" onClick={() => window.scrollTo(0, 0)} target="_blank" className="text-slate-400 hover:text-white transition-colors text-sm font-medium">Terms of Service</Link></li>
+                <li><Link to="/terms-of-service" onClick={() => window.scrollTo(0, 0)} className="text-slate-400 hover:text-white transition-colors text-sm font-medium">Terms of Service</Link></li>
                 <li><a href="#" className="text-slate-400 hover:text-white transition-colors text-sm font-medium">LinkedIn</a></li>
               </ul>
             </div>
