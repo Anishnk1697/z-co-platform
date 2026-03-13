@@ -9,6 +9,7 @@ import PortfolioCategory from './pages/PortfolioCategory';
 import Testimonials from './pages/Testimonials';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
+import RequestPacketModal from './components/RequestPacketModal';
 import { SmartImage, SmartVideo } from '@/components/SmartMedia';
 import {
   Building2,
@@ -841,6 +842,7 @@ const Home = ({
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isPacketModalOpen, setIsPacketModalOpen] = useState(false);
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
   const [investorStatus, setInvestorStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
 
@@ -915,15 +917,15 @@ export default function App() {
             >
               Investor access
             </Link>
-            <Link
-              to="/#contact"
+            <button
+              onClick={() => setIsPacketModalOpen(true)}
               className={`inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-[11px] font-extrabold uppercase tracking-[0.2em] transition-all transform hover:scale-105 ${scrolled
                 ? 'border-slate-950 bg-slate-950 text-white hover:bg-slate-800'
                 : 'border-slate-950 bg-slate-950 text-white hover:bg-slate-800 opacity-90'}`}
             >
               Request packet
               <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
+            </button>
           </div>
 
           <button
@@ -964,15 +966,14 @@ export default function App() {
                   >
                     Investor access
                   </Link>
-                  <Link
-                    to="/#contact"
-                    onClick={() => setIsMenuOpen(false)}
+                  <button
+                    onClick={() => { setIsMenuOpen(false); setIsPacketModalOpen(true); }}
                     className={`flex items-center justify-center gap-2 rounded-xl py-4 text-sm font-bold uppercase tracking-widest transition-all active:scale-95 ${scrolled ? 'bg-slate-950 text-white hover:bg-slate-800' : 'bg-slate-950 text-white hover:bg-slate-800'
                       }`}
                   >
                     Request packet
                     <ArrowRight className="w-4 h-4" />
-                  </Link>
+                  </button>
                 </div>
               </div>
             </motion.div>
@@ -1067,6 +1068,9 @@ export default function App() {
 
       {/* AI Assistant */}
       <AIChatAssistant />
+
+      {/* Request Packet Modal */}
+      <RequestPacketModal isOpen={isPacketModalOpen} onClose={() => setIsPacketModalOpen(false)} />
     </div>
   );
 }
