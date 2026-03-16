@@ -523,7 +523,7 @@ const Home = ({
                 <div className="h-16 w-16 rounded-full bg-black border-2 border-slate-800 flex items-center justify-center text-slate-500 group-hover:border-slate-500 group-hover:text-slate-300 group-hover:shadow-[0_0_20px_rgba(148,163,184,0.1)] transition-all duration-300">
                   <step.icon className="w-6 h-6" />
                 </div>
-                <p className="mt-4 text-[13px] font-semibold text-slate-400 group-hover:text-white transition-colors text-center whitespace-nowrap">
+                <p className="mt-4 text-[13px] font-semibold text-white transition-colors text-center whitespace-nowrap">
                   {step.label}
                 </p>
                 <span className="absolute -top-8 text-[10px] font-black text-slate-800 group-hover:text-slate-500/30">0{idx + 1}</span>
