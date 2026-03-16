@@ -188,8 +188,8 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCategoryData> = {
             }
         ]
     },
-    other: {
-        title: 'Other',
+    retail: {
+        title: 'Retail',
         description: 'Diverse projects across various sectors reflecting our platform versatility.',
         projects: [
             {

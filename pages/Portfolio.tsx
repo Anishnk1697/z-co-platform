@@ -11,7 +11,7 @@ const Portfolio = () => {
     { name: 'Automotive', id: 'automotive', seed: 'stirling-auto-v2' },
     { name: 'Restaurants', id: 'restaurants', seed: 'restaurant-serious-pizza' },
     { name: 'Beauty', id: 'beauty', seed: 'urban-retreat' },
-    { name: 'Other', id: 'other', seed: 'shopsfryroad' }
+    { name: 'Retail', id: 'retail', seed: 'shopsfryroad' }
   ];
 
   return (
