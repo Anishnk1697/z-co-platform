@@ -478,25 +478,26 @@ const Home = ({
               { title: 'Dove Trails', fallback: 'dovetrails' },
               { title: 'Shops @ Fry Road', fallback: 'shopsfryroad' }
             ].map((card, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ y: -10 }}
-                className="group relative h-[400px] rounded-3xl overflow-hidden border border-slate-800"
-              >
-                <SmartImage
-                  alt={card.title}
-                  fallbackSeed={card.fallback}
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <span className="text-slate-300 text-[10px] font-bold uppercase tracking-[0.2em] mb-2 block">Project 0{i + 1}</span>
-                  <h4 className="text-xl font-semibold text-white mb-4">{card.title}</h4>
-                  <div className="w-8 h-8 rounded-full bg-white/10 backdrop-blur flex items-center justify-center group-hover:bg-slate-700 group-hover:text-white transition-all duration-300">
-                    <ArrowRight className="w-4 h-4" />
+              <Link to="/projects" key={i}>
+                <motion.div
+                  whileHover={{ y: -10 }}
+                  className="group relative h-[400px] rounded-3xl overflow-hidden border border-slate-800"
+                >
+                  <SmartImage
+                    alt={card.title}
+                    fallbackSeed={card.fallback}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-8">
+                    <span className="text-slate-300 text-[10px] font-bold uppercase tracking-[0.2em] mb-2 block">Project 0{i + 1}</span>
+                    <h4 className="text-xl font-semibold text-white mb-4">{card.title}</h4>
+                    <div className="w-8 h-8 rounded-full bg-white/10 backdrop-blur flex items-center justify-center group-hover:bg-slate-700 group-hover:text-white transition-all duration-300">
+                      <ArrowRight className="w-4 h-4" />
+                    </div>
                   </div>
-                </div>
-              </motion.div>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>

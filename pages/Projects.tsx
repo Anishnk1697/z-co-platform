@@ -66,7 +66,7 @@ const Projects = () => {
               className="rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-slate-500 transition-all overflow-hidden group"
             >
               <div className="h-64 overflow-hidden relative">
-                <SmartImage 
+                <SmartImage
                   alt={project.title}
                   fallbackSeed={project.fallbackSeed}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -79,15 +79,17 @@ const Projects = () => {
                 <p className="text-slate-400 text-sm leading-relaxed mb-6">
                   {project.description}
                 </p>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-white font-bold text-xs uppercase tracking-widest hover:gap-3 transition-all"
-                >
-                  Download Brochure
-                  <ArrowRight className="w-4 h-4" />
-                </a>
+                {project.link !== '#' && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-white font-bold text-xs uppercase tracking-widest hover:gap-3 transition-all"
+                  >
+                    Download Brochure
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}
