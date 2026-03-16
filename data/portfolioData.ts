@@ -193,10 +193,22 @@ export const PORTFOLIO_DATA: Record<string, PortfolioCategoryData> = {
         description: 'Diverse projects across various sectors reflecting our platform versatility.',
         projects: [
             {
-                title: 'Mixed-Use Prototype',
-                location: 'USA',
-                fallbackSeed: 'other-1',
-                description: 'Specialized project utilizing modular components for non-standard sites.',
+                title: 'Unicorp Wholesale Supply Company',
+                location: 'Retail Distribution',
+                fallbackSeed: 'unicorp-wholesale',
+                description: 'A comprehensive wholesale distribution center designed for high-volume supply and logistics.',
+            },
+            {
+                title: 'Rocky Mountain Chocolate Factory',
+                location: 'Retail',
+                fallbackSeed: 'rocky-mountain-chocolate',
+                description: 'A modern retail and production facility for premium confectionery products.',
+            },
+            {
+                title: 'Joshua’s Lounge & Bar',
+                location: 'Hospitality',
+                fallbackSeed: 'joshuas-lounge',
+                description: 'A sophisticated urban hospitality venue featuring contemporary design and warm brick aesthetics.',
             }
         ]
     }
