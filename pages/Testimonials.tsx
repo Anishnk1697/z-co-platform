@@ -39,6 +39,17 @@ const Testimonials = () => {
       quote: "Mike Butte, president of Z-Co Development, has been a long-time client of mine. I have enjoyed working with Mike on a number of his projects as he is a professional and has integrity in his business dealings. These qualities are key to developing successful business relationships. Z-Co Development exhibits these qualities which reflects the owner.",
       author: "Mark D. Owen",
       role: "Executive Vice President, Stellar Bank"
+    },
+    {
+      quote: "Mike sees opportunities where others see obstacles. His unwavering determination and never-give-up attitude ensure that every project is brought to completion. I admire his commitment to making every development a successful investment to all stakeholders.",
+      author: "Ghandi Saad, PE",
+      role: "Partner & CEO at RSG Engineering, Inc."
+    },
+    {
+      quote: "I have known Mike for 40+ years. Have watched him go through almost all stages of business. Start-up, doing well, struggling, picking himself up, running an established, respected, successful business.\n\nI am impressed with his vision and a partnership approach with stakeholders. Above all, truly impressed with his knack for finding opportunities and delivering. All this with integrity, sound business practices and great teamwork.\n\nWe love working with Mike and his team.",
+      author: "Amin Ansari",
+      role: "Chief Strategy Officer at Murkez Technologies",
+      featured: true
     }
   ];
 
