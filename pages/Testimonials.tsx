@@ -27,6 +27,7 @@ const Testimonials = () => {
       quote: "I have had the pleasure of working with Mike Butte and Z-Co. Development for more than fifteen years in my role as a commercial banker. During that time, we have financed several of their projects and I have consistently been impressed by Mike’s professionalism, integrity, and disciplined approach to business.\n\nMike has always demonstrated a clear understanding of both the operational and financial aspects of real estate development. He approaches projects thoughtfully, communicates transparently, and follows through on his commitments. From a lender’s perspective, those qualities are invaluable.\n\nBased on my experience, I would confidently recommend Mike Butte and Z-Co. Development to any financial institution, business partner, or investor. Beyond the professional relationship, I am also proud to consider Mike a trusted colleague and personal friend.",
       author: "Jim Lindsey",
       role: "Senior Vice President, Allegiance Bank",
+      image: "/asset/jim-lindsey.jpg",
       featured: true
     },
     {
@@ -44,12 +45,14 @@ const Testimonials = () => {
       quote: "I have known Mike for 40+ years. Have watched him go through almost all stages of business. Start-up, doing well, struggling, picking himself up, running an established, respected, successful business.\n\nI am impressed with his vision and a partnership approach with stakeholders. Above all, truly impressed with his knack for finding opportunities and delivering. All this with integrity, sound business practices and great teamwork.\n\nWe love working with Mike and his team.",
       author: "Amin Ansari",
       role: "Chief Strategy Officer at Murkez Technologies",
+      image: "/asset/amin-ansari.jpg",
       featured: true
     },
     {
       quote: "Mike sees opportunities where others see obstacles. His unwavering determination and never-give-up attitude ensure that every project is brought to completion. I admire his commitment to making every development a successful investment to all stakeholders.",
       author: "Ghandi Saad, PE",
-      role: "Partner & CEO at RSG Engineering, Inc."
+      role: "Partner & CEO at RSG Engineering, Inc.",
+      image: "/asset/ghandi-saad.jpg"
     }
   ];
 
