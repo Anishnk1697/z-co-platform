@@ -812,8 +812,8 @@ const Home = ({
                   <div className="flex gap-5">
                     <MapPin className="w-6 h-6 text-slate-300" />
                     <div>
-                      <p className="font-semibold text-white">Houston, TX</p>
-                      <p className="text-sm text-slate-500">Corporate Strategy & Ops</p>
+                      <p className="font-semibold text-white">5120 Woodway Dr.</p>
+                      <p className="text-sm text-slate-500">Suite 7018, Houston TX 77056</p>
                     </div>
                   </div>
                   <div className="flex gap-5">
@@ -1033,7 +1033,7 @@ export default function App() {
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-slate-500 shrink-0 mt-0.5" />
-                  <span className="text-slate-400 text-sm font-medium">Houston, TX</span>
+                  <span className="text-slate-400 text-xs font-bold uppercase tracking-widest leading-relaxed">5120 Woodway Dr. Suite 7018<br />Houston TX 77056</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-slate-500 shrink-0" />
