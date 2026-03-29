@@ -4,9 +4,12 @@ import { GoogleGenAI } from "@google/genai";
 const API_KEY = import.meta.env.VITE_PUBLIC_GEMINI_ID || '';
 
 export async function getChatResponse(message: string, history: { role: 'user' | 'model', parts: { text: string }[] }[]) {
+  // Debug log to check env variables
+  console.log("Vite Env Check:", import.meta.env);
+
   if (!API_KEY) {
     console.error("Gemini API Key is missing. Please set VITE_PUBLIC_GEMINI_ID in your .env file.");
-    return "The AI Assistant is currently in 'offline' mode because the API key is not configured. Please contact the administrator or check the developer console for setup instructions.";
+    return `The AI Assistant is currently in 'offline' mode because the API key is not configured. (Debug: ${Object.keys(import.meta.env).filter(k => k.startsWith('VITE_')).join(', ')})`;
   }
 
   const ai = new GoogleGenAI({ apiKey: API_KEY });
