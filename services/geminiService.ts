@@ -1,11 +1,11 @@
 
 import { GoogleGenAI } from "@google/genai";
 
-const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || '';
+const API_KEY = import.meta.env.VITE_PUBLIC_GEMINI_ID || '';
 
 export async function getChatResponse(message: string, history: { role: 'user' | 'model', parts: { text: string }[] }[]) {
   if (!API_KEY) {
-    console.error("Gemini API Key is missing. Please set VITE_GEMINI_API_KEY in your .env file.");
+    console.error("Gemini API Key is missing. Please set VITE_PUBLIC_GEMINI_ID in your .env file.");
     return "The AI Assistant is currently in 'offline' mode because the API key is not configured. Please contact the administrator or check the developer console for setup instructions.";
   }
 
