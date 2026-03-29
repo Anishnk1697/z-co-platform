@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import AboutUs from './pages/AboutUs';
-import ProjectsPage from './pages/Projects';
 import Portfolio from './pages/Portfolio';
 import PortfolioCategory from './pages/PortfolioCategory';
 import Testimonials from './pages/Testimonials';
@@ -250,17 +249,11 @@ const Home = ({
               className="flex flex-col sm:flex-row gap-5 pt-4"
             >
               <Link
-                to="/projects"
+                to="/portfolio"
                 className="inline-flex items-center justify-center gap-3 rounded-full bg-blue-600 px-6 py-3 text-[0.8rem] font-bold text-white shadow-xl shadow-blue-500/20 hover:bg-blue-500 hover:scale-[1.02] transition-all"
               >
-                Explore projects
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                to="/portfolio"
-                className="inline-flex items-center justify-center gap-3 rounded-full border border-slate-950/20 bg-white/40 backdrop-blur px-6 py-3 text-[0.8rem] font-bold text-slate-950 hover:bg-white/60 transition-all"
-              >
                 View portfolio
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </motion.div>
           </motion.div>
@@ -465,7 +458,7 @@ const Home = ({
                 Every project is designed around durable demand, standardized design, and predictable factory-led delivery.
               </p>
             </div>
-            <Link to="/projects" className="inline-flex items-center gap-2 text-slate-300 font-bold uppercase tracking-widest text-xs hover:text-slate-100 transition-colors">
+            <Link to="/portfolio" className="inline-flex items-center gap-2 text-slate-300 font-bold uppercase tracking-widest text-xs hover:text-slate-100 transition-colors">
               View pipeline
               <ChevronRight className="w-4 h-4" />
             </Link>
@@ -478,7 +471,7 @@ const Home = ({
               { title: 'Dove Trails', fallback: 'dovetrails' },
               { title: 'Shops @ Fry Road', fallback: 'shopsfryroad' }
             ].map((card, i) => (
-              <Link to="/projects" key={i}>
+              <Link to="/portfolio" key={i}>
                 <motion.div
                   whileHover={{ y: -10 }}
                   className="group relative h-[400px] rounded-3xl overflow-hidden border border-slate-800"
@@ -992,7 +985,6 @@ export default function App() {
           />
         } />
         <Route path="/about" element={<AboutUs />} />
-        <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/portfolio/:category" element={<PortfolioCategory />} />
         <Route path="/testimonials" element={<Testimonials />} />
@@ -1022,7 +1014,6 @@ export default function App() {
               <ul className="space-y-4">
                 <li><Link to="/" onClick={() => window.scrollTo(0, 0)} className="text-slate-400 hover:text-white transition-colors text-sm font-medium">Home</Link></li>
                 <li><Link to="/about" onClick={() => window.scrollTo(0, 0)} className="text-slate-400 hover:text-white transition-colors text-sm font-medium">About Us</Link></li>
-                <li><Link to="/projects" onClick={() => window.scrollTo(0, 0)} className="text-slate-400 hover:text-white transition-colors text-sm font-medium">Projects</Link></li>
                 <li><Link to="/portfolio" onClick={() => window.scrollTo(0, 0)} className="text-slate-400 hover:text-white transition-colors text-sm font-medium">Portfolio</Link></li>
                 <li><Link to="/testimonials" onClick={() => window.scrollTo(0, 0)} className="text-slate-400 hover:text-white transition-colors text-sm font-medium">Testimonials</Link></li>
               </ul>

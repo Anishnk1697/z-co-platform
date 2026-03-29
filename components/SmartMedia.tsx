@@ -4,11 +4,13 @@ import React, { useState, useMemo, useEffect } from 'react';
 export const SmartImage = ({
   alt,
   className,
-  fallbackSeed
+  fallbackSeed,
+  style
 }: {
   alt: string;
   className?: string;
   fallbackSeed: string;
+  style?: React.CSSProperties;
 }) => {
   // Drastically reduced filename patterns to minimize flickering/network thrashing
   const urls = useMemo(() => {
@@ -49,6 +51,7 @@ export const SmartImage = ({
         onError={handleError}
         onLoad={() => setIsLoaded(true)}
         referrerPolicy="no-referrer"
+        style={style}
         className={`${className} transition-opacity duration-700 ease-in-out ${isLoaded ? 'opacity-100' : 'opacity-0'
           }`}
       />

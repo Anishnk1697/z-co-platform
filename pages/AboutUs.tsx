@@ -313,6 +313,101 @@ const AboutUs = () => {
         </div>
       </section>
 
+      {/* TEAM */}
+      <section className="py-24 bg-slate-950/30 relative overflow-hidden border-t border-slate-900 px-4 sm:px-6 lg:px-8">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-slate-500/5 blur-[120px] rounded-full -z-10" />
+
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-4">
+              Meet the Team
+            </h2>
+            <div className="h-1 w-20 bg-slate-700 mx-auto rounded-full" />
+            <p className="text-slate-400 max-w-xl mx-auto font-light mt-6">
+              A seasoned group of operators, builders, and capital partners driving execution across every project.
+            </p>
+          </div>
+
+          <div className="space-y-12">
+            {/* Featured CEO Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="relative p-8 md:p-12 rounded-[2.5rem] bg-slate-900/40 border border-slate-800 overflow-hidden flex flex-col md:flex-row gap-10 items-center md:items-start group hover:border-slate-700 transition-all duration-500"
+            >
+              <div className="absolute top-0 right-0 w-64 h-64 bg-slate-500/5 blur-3xl -z-10" />
+
+              <div className="w-48 h-48 md:w-64 md:h-64 flex-shrink-0 rounded-3xl overflow-hidden border border-slate-700 shadow-2xl">
+                <img
+                  src="/asset/mike-butte.jpg"
+                  alt="Mike Butte"
+                  className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+
+              <div className="flex-1 space-y-6 text-center md:text-left">
+                <div>
+                  <h3 className="text-3xl font-bold text-white mb-2">Mike Butte</h3>
+                  <p className="text-xs font-bold text-[#84CC16] uppercase tracking-[0.2em]">Chief Executive Officer</p>
+                </div>
+                <div className="h-px w-12 bg-slate-700 mx-auto md:ml-0" />
+                <div className="space-y-4 max-w-3xl">
+                  <p className="text-slate-400 leading-relaxed text-sm md:text-base font-light">
+                    Mike Butte is the Founder and CEO of Z-Co. Development Corp., where he leads the firm's end-to-end development platform across real estate and operating-business projects. With more than 30 years of leadership experience, Mike has executed projects across multiple asset classes by combining disciplined underwriting, capital strategy, and delivery execution to create recession-resistant, essential-service assets designed for scale. His background includes development and ownership experience tied to nationally recognized brands such as Holiday Inn, Best Western, Arby's, Denny's, and Caliber Collision, and he remains focused on building repeatable project prototypes that compress timelines and improve predictability across markets.
+                  </p>
+                  <p className="text-slate-400 leading-relaxed text-sm md:text-base font-light">
+                    Mike is also passionate about expanding access, creating opportunities for small investors to participate in institutional-quality projects and helping budding real estate developers learn, grow, and succeed through clear systems, practical guidance, and aligned partnerships.
+                  </p>
+                </div>
+                <div className="flex justify-center md:justify-start gap-4">
+                  <div className="p-2 rounded-lg bg-slate-800 border border-slate-700 text-slate-400 opacity-50 italic text-[10px]">30+ YEARS EXPERIENCE</div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Other Team Members Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {[
+                { name: 'Sarah Ali', title: 'President', img: '/asset/sarah-ali.jpg' },
+                { name: 'Mo Khan', title: 'Chief Operating Officer', img: '/asset/mo-khan.png' },
+                { name: 'John Stevens', title: 'Director of Asset Management', img: '/asset/john-stevens.jpg' },
+                { name: 'Thaddaus Hays Jr.', title: 'Director of Business Development', img: 'https://cdn.prod.website-files.com/673390480b47a07dd6beac13/673a64ed0f6cca562db5fa9f_66ace28771dc9f27738eafa5_hays.jpg' },
+                { name: 'Dan Prosser', title: 'Director of Strategic Planning', img: '/asset/dan-prosser.png' },
+                { name: 'Phan Le', title: 'Office Coordinator', img: '/asset/phan-le.png' },
+                { name: 'Omar Terkawi', title: 'Project Architect', img: '/asset/omar-terkawi.png' },
+                { name: 'Abel Castro', title: 'Director of Maintenance', img: '/asset/abel-castro.png' },
+                { name: 'Anish N. Kantharia', title: 'Marketing Manager', img: '/asset/anish-kantharia.jpg' },
+              ].map((member, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                  whileHover={{ y: -6 }}
+                  className="group relative p-5 rounded-[2rem] bg-slate-900/50 border border-slate-800 hover:border-slate-600 hover:bg-slate-900 transition-all duration-300 overflow-hidden"
+                >
+                  <div className="aspect-square rounded-2xl overflow-hidden border border-slate-800 mb-5 relative">
+                    <img
+                      src={member.img}
+                      alt={member.name}
+                      className="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+
+                  <h4 className="font-bold text-white text-sm leading-snug mb-1">{member.name}</h4>
+                  <p className="text-[10px] font-semibold text-slate-500 uppercase tracking-widest leading-snug">{member.title}</p>
+
+                  <div className="absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA / Final Section */}
       <section className="py-24 border-t border-slate-900">
         <div className="max-w-5xl mx-auto px-4 text-center space-y-8">
