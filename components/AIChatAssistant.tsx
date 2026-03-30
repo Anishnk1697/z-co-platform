@@ -100,7 +100,7 @@ export default function AIChatAssistant() {
         }
         break;
       case 'SCHEDULE':
-        window.open('https://calendly.com/your-username', '_blank'); // Placeholder
+        window.open('https://outlook.office.com/book/AnishZCoCalendar@z-co.info/', '_blank');
         break;
       case 'EMAIL_EXPERT':
         window.location.href = 'mailto:akantharia@z-co.info?subject=Z-Co%20Expert%20Inquiry';
