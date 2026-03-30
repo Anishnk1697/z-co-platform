@@ -32,52 +32,52 @@ const systemInstruction = `
 `;
 
 export async function checkConnectivity(): Promise<boolean> {
-  if (!genAI) return false;
-  try {
-    const model = genAI.getGenerativeModel({ model: "gemini-flash-latest" });
-    // Minimal probe to check if API key and model access are functional
-    await model.generateContent("ping");
-    return true;
-  } catch (error) {
-    console.error("Connectivity Check Failed:", error);
-    return false;
+  return !!genAI; // Simply check if API_KEY is present
+}
+
+export async function* getChatResponseStream(message: string, history: { role: 'user' | 'model', parts: { text: string }[] }[]) {
+  if (!genAI) {
+    throw new Error("Gemini API Key is missing.");
+  }
+
+  const model = genAI.getGenerativeModel({
+    model: "gemini-flash-latest",
+    systemInstruction,
+  });
+
+  const apiHistory = history
+    .filter((h, i) => !(i === 0 && h.role === 'model'))
+    .map(h => ({
+      role: h.role,
+      parts: h.parts,
+    }));
+
+  const chat = model.startChat({
+    history: apiHistory,
+    generationConfig: {
+      temperature: 0.7,
+      maxOutputTokens: 500,
+    },
+  });
+
+  const result = await chat.sendMessageStream(message);
+  for await (const chunk of result.stream) {
+    const chunkText = chunk.text();
+    yield chunkText;
   }
 }
 
+// Keep the non-streaming version as a fallback or for simple calls
 export async function getChatResponse(message: string, history: { role: 'user' | 'model', parts: { text: string }[] }[]) {
-  if (!genAI) {
-    console.error("Gemini API Key is missing.");
-    return "The AI Assistant is temporarily unavailable. Please use the contact form or email us at info@z-co.info for assistance.";
-  }
-
+  if (!genAI) return "API Key missing.";
   try {
-    const model = genAI.getGenerativeModel({
-      model: "gemini-flash-latest",
-      systemInstruction,
-    });
-
-    // The API requires history to start with 'user'. 
-    // Our initial message is 'model', so we skip it for the API call.
-    const apiHistory = history
-      .filter((h, i) => !(i === 0 && h.role === 'model'))
-      .map(h => ({
-        role: h.role,
-        parts: h.parts,
-      }));
-
-    const chat = model.startChat({
-      history: apiHistory,
-      generationConfig: {
-        temperature: 0.7,
-        maxOutputTokens: 500,
-      },
-    });
-
+    const model = genAI.getGenerativeModel({ model: "gemini-flash-latest", systemInstruction });
+    const apiHistory = history.filter((h, i) => !(i === 0 && h.role === 'model')).map(h => ({ role: h.role, parts: h.parts }));
+    const chat = model.startChat({ history: apiHistory });
     const result = await chat.sendMessage(message);
     const response = await result.response;
     return response.text();
   } catch (error) {
-    console.error("Gemini API Error:", error);
-    return "I'm sorry, I'm having trouble connecting right now. Please try again or use our contact form.";
+    return "Error connecting.";
   }
 }

@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageSquare, X, Send, Bot, User, Sparkles } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { getChatResponse, checkConnectivity } from '../services/geminiService';
+import { getChatResponseStream, checkConnectivity } from '../services/geminiService';
 
 interface ChatMessage {
   role: 'user' | 'model';
@@ -14,22 +14,21 @@ interface ChatMessage {
 export default function AIChatAssistant() {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
-  const [isOnline, setIsOnline] = useState<boolean | null>(null); // null = checking
+  const [isOnline, setIsOnline] = useState<boolean | null>(null);
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState<ChatMessage[]>([
     { role: 'model', parts: [{ text: "Welcome to Z-Co Development. I specialize in our replication-led development platform and current pipeline. How can I help you today?" }] }
   ]);
   const [isLoading, setIsLoading] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Check connectivity on mount
-    const verifyStatus = async () => {
-      const status = await checkConnectivity();
-      setIsOnline(status);
+    const checkKey = async () => {
+      const hasKey = await checkConnectivity();
+      setIsOnline(hasKey);
     };
-    verifyStatus();
+    checkKey();
   }, []);
-  const scrollRef = useRef<HTMLDivElement>(null);
 
   const quickActions = [
     { label: 'View Pipeline', prompt: 'Tell me about your current projects.' },
@@ -48,8 +47,6 @@ export default function AIChatAssistant() {
 
   const parseActions = (text: string) => {
     const actions: { type: 'NAVIGATE' | 'SCHEDULE' | 'EMAIL_EXPERT'; value?: string }[] = [];
-
-    // Parse navigation tokens: [NAVIGATE:/path]
     const navMatch = text.match(/\[NAVIGATE:(.*?)\]/g);
     if (navMatch) {
       navMatch.forEach(m => {
@@ -57,14 +54,9 @@ export default function AIChatAssistant() {
         if (path) actions.push({ type: 'NAVIGATE', value: path });
       });
     }
-
-    // Parse specific actions
     if (text.includes('[ACTION:SCHEDULE]')) actions.push({ type: 'SCHEDULE' });
     if (text.includes('[ACTION:EMAIL_EXPERT]')) actions.push({ type: 'EMAIL_EXPERT' });
-
-    // Clean text by removing tokens
     const cleanText = text.replace(/\[NAVIGATE:.*?\]|\[ACTION:.*?\]/g, '').trim();
-
     return { cleanText, actions };
   };
 
@@ -77,15 +69,36 @@ export default function AIChatAssistant() {
     setInput('');
     setIsLoading(true);
 
-    const responseText = await getChatResponse(textToSend, messages);
-    const { cleanText, actions } = parseActions(responseText || "I'm sorry, I'm unable to process that right now.");
+    const botMsgId = Date.now();
+    setMessages(prev => [...prev, { role: 'model', parts: [{ text: "" }], _id: botMsgId } as any]);
 
-    setMessages(prev => [...prev, {
-      role: 'model',
-      parts: [{ text: cleanText }],
-      actions: actions.length > 0 ? actions : undefined
-    }]);
-    setIsLoading(false);
+    let fullText = "";
+    try {
+      const stream = getChatResponseStream(textToSend, [...messages, userMsg]);
+      for await (const chunk of stream) {
+        fullText += chunk;
+        setMessages(prev => prev.map(m => 
+          (m as any)._id === botMsgId ? { ...m, parts: [{ text: fullText }] } : m
+        ));
+      }
+
+      const { cleanText, actions } = parseActions(fullText);
+      setMessages(prev => prev.map(m => 
+        (m as any)._id === botMsgId ? { 
+          ...m, 
+          parts: [{ text: cleanText }], 
+          actions: actions.length > 0 ? actions : undefined 
+        } : m
+      ));
+
+    } catch (error) {
+      console.error("Stream Error:", error);
+      setMessages(prev => prev.map(m => 
+        (m as any)._id === botMsgId ? { ...m, parts: [{ text: "I'm sorry, I'm having trouble connecting. Please try again later." }] } : m
+      ));
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const executeAction = (action: { type: string; value?: string }) => {
