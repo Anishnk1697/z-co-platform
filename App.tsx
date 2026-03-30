@@ -346,7 +346,7 @@ const Home = ({
               },
               {
                 icon: Factory,
-                title: 'Modular Construction',
+                title: 'Prefabricated Construction',
                 body: 'Faster delivery. Higher control. Consistent outcomes.',
                 bullets: ['Factory-enabled build', 'Standardized assemblies', 'Predictable timelines']
               }
@@ -510,7 +510,7 @@ const Home = ({
               { label: 'Essential demand', icon: Globe },
               { label: 'Site + structure', icon: MapPin },
               { label: 'Design to repeat', icon: LayoutGrid },
-              { label: 'Modular delivery', icon: Factory },
+              { label: 'Prefabricated delivery', icon: Factory },
               { label: 'Operate + optimize', icon: CircleDot }
             ].map((step, idx) => (
               <div key={step.label} className="flex flex-col items-center group relative">
@@ -775,7 +775,7 @@ const Home = ({
                 <form className="space-y-8" onSubmit={handleContactSubmit}>
                   <div className="space-y-2">
                     <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white">Let&apos;s build together.</h3>
-                    <p className="text-slate-500">Inquire about partnerships, site submissions, or modular solutions.</p>
+                    <p className="text-slate-500">Inquire about partnerships, site submissions, or prefabricated solutions.</p>
                   </div>
                   <div className="grid sm:grid-cols-2 gap-6">
                     <input required type="text" placeholder="Name" className="bg-black border border-slate-800 rounded-xl px-4 py-4 text-sm focus:ring-2 focus:ring-slate-500/50 outline-none" />
