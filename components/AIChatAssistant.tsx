@@ -8,7 +8,7 @@ import { getChatResponseStream, checkConnectivity } from '../services/geminiServ
 interface ChatMessage {
   role: 'user' | 'model';
   parts: { text: string }[];
-  actions?: { type: 'NAVIGATE' | 'SCHEDULE' | 'EMAIL_EXPERT'; value?: string }[];
+  actions?: { type: 'NAVIGATE' | 'SCHEDULE' | 'EMAIL_EXPERT' | 'CONTACT_FORM'; value?: string }[];
 }
 
 export default function AIChatAssistant() {
@@ -46,7 +46,7 @@ export default function AIChatAssistant() {
   }, [messages, isLoading]);
 
   const parseActions = (text: string) => {
-    const actions: { type: 'NAVIGATE' | 'SCHEDULE' | 'EMAIL_EXPERT'; value?: string }[] = [];
+    const actions: { type: 'NAVIGATE' | 'SCHEDULE' | 'EMAIL_EXPERT' | 'CONTACT_FORM'; value?: string }[] = [];
     const navMatch = text.match(/\[NAVIGATE:(.*?)\]/g);
     if (navMatch) {
       navMatch.forEach(m => {
@@ -56,6 +56,7 @@ export default function AIChatAssistant() {
     }
     if (text.includes('[ACTION:SCHEDULE]')) actions.push({ type: 'SCHEDULE' });
     if (text.includes('[ACTION:EMAIL_EXPERT]')) actions.push({ type: 'EMAIL_EXPERT' });
+    if (text.includes('[ACTION:CONTACT_FORM]')) actions.push({ type: 'CONTACT_FORM' });
     const cleanText = text.replace(/\[NAVIGATE:.*?\]|\[ACTION:.*?\]/g, '').trim();
     return { cleanText, actions };
   };
@@ -94,7 +95,11 @@ export default function AIChatAssistant() {
     } catch (error) {
       console.error("Stream Error:", error);
       setMessages(prev => prev.map(m => 
-        (m as any)._id === botMsgId ? { ...m, parts: [{ text: "I'm sorry, I'm having trouble connecting. Please try again later." }] } : m
+        (m as any)._id === botMsgId ? { 
+          ...m, 
+          parts: [{ text: "I'm sorry, I'm having trouble connecting right now. If the issue persists, please use our contact form or schedule a call directly." }],
+          actions: [{ type: 'CONTACT_FORM' }, { type: 'SCHEDULE' }]
+        } : m
       ));
     } finally {
       setIsLoading(false);
@@ -117,6 +122,9 @@ export default function AIChatAssistant() {
         break;
       case 'EMAIL_EXPERT':
         window.location.href = 'mailto:akantharia@z-co.info?subject=Z-Co%20Expert%20Inquiry';
+        break;
+      case 'CONTACT_FORM':
+        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
         break;
     }
   };
@@ -196,7 +204,8 @@ export default function AIChatAssistant() {
                               className="px-4 py-2 bg-slate-800 border border-slate-700 rounded-xl text-[11px] font-bold text-white hover:bg-slate-700 hover:border-slate-500 transition-all uppercase tracking-wider shadow-lg"
                             >
                               {action.type === 'NAVIGATE' ? `View ${action.value?.replace('/', '') || 'Page'}` :
-                                action.type === 'SCHEDULE' ? 'Schedule a Call' : 'Email Expert'}
+                                action.type === 'SCHEDULE' ? 'Schedule a Call' :
+                                  action.type === 'CONTACT_FORM' ? 'Send Query' : 'Email Expert'}
                             </button>
                           ))}
                         </div>
