@@ -75,9 +75,10 @@ export default function AIChatAssistant() {
 
     let fullText = "";
     try {
-      // Sanitize history: remove temp _id fields, filter out empty bot messages
-      // (these are cut-off streaming placeholders that corrupt the Gemini API call)
-      const sanitizedHistory = [...messages, userMsg]
+      // History = only PREVIOUS messages (not current userMsg).
+      // The current message is sent exclusively via sendMessageStream inside getChatResponseStream.
+      // Including userMsg in history too would create a duplicate user turn → API rejection.
+      const sanitizedHistory = messages
         .filter(m => m.parts[0]?.text?.trim() !== "")
         .map(({ role, parts }) => ({ role, parts }));
 
