@@ -31,8 +31,8 @@ export default function AIChatAssistant() {
   }, []);
 
   const quickActions = [
-    { label: 'View Pipeline', prompt: 'Tell me about your current projects.' },
-    { label: 'How we build', prompt: 'Explain the Replication Advantage.' },
+    { label: 'How to Invest', prompt: 'How can I invest with Z-Co?' },
+    { label: 'View Projects', prompt: 'Tell me about your current projects.' },
     { label: 'Schedule Meeting', prompt: 'I would like to schedule a meeting.' }
   ];
 
@@ -75,7 +75,13 @@ export default function AIChatAssistant() {
 
     let fullText = "";
     try {
-      const stream = getChatResponseStream(textToSend, [...messages, userMsg]);
+      // Sanitize history: remove temp _id fields, filter out empty bot messages
+      // (these are cut-off streaming placeholders that corrupt the Gemini API call)
+      const sanitizedHistory = [...messages, userMsg]
+        .filter(m => m.parts[0]?.text?.trim() !== "")
+        .map(({ role, parts }) => ({ role, parts }));
+
+      const stream = getChatResponseStream(textToSend, sanitizedHistory);
       for await (const chunk of stream) {
         fullText += chunk;
         setMessages(prev => prev.map(m => 
