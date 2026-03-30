@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageSquare, X, Send, Bot, User, Sparkles } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { getChatResponse } from '../services/geminiService';
+import { getChatResponse, checkConnectivity } from '../services/geminiService';
 
 interface ChatMessage {
   role: 'user' | 'model';
@@ -14,11 +14,21 @@ interface ChatMessage {
 export default function AIChatAssistant() {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
+  const [isOnline, setIsOnline] = useState<boolean | null>(null); // null = checking
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState<ChatMessage[]>([
     { role: 'model', parts: [{ text: "Welcome to Z-Co Development. I specialize in our replication-led development platform and current pipeline. How can I help you today?" }] }
   ]);
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    // Check connectivity on mount
+    const verifyStatus = async () => {
+      const status = await checkConnectivity();
+      setIsOnline(status);
+    };
+    verifyStatus();
+  }, []);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const quickActions = [
@@ -134,8 +144,13 @@ export default function AIChatAssistant() {
                     <Sparkles className="w-3 h-3 text-lime-500" />
                   </h3>
                   <div className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-lime-500 animate-pulse" />
-                    <span className="text-[10px] text-slate-500 uppercase tracking-widest font-semibold">Ready to assist</span>
+                    <div className={`w-1.5 h-1.5 rounded-full ${isOnline === true ? 'bg-lime-500 animate-pulse' :
+                        isOnline === false ? 'bg-red-500' : 'bg-slate-600'
+                      }`} />
+                    <span className="text-[10px] text-slate-500 uppercase tracking-widest font-semibold">
+                      {isOnline === true ? 'Ready to assist' :
+                        isOnline === false ? 'Service Offline' : 'Checking status...'}
+                    </span>
                   </div>
                 </div>
               </div>
