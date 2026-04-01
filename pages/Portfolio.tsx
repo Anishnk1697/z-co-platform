@@ -15,7 +15,7 @@ const Portfolio = () => {
     },
     {
       title: 'MedPlex',
-      location: 'USA',
+      location: 'Katy, Texas',
       fallbackSeed: 'medplex',
       description: 'MedPlex is a patient-centered healthcare platform that combines a licensed community hospital, outpatient medical services, and a physician network in one integrated system. It is designed to deliver convenient, high-quality care while giving physicians greater freedom and flexibility.',
       link: 'https://drive.google.com/file/d/1-A_PB-EHraeV0hcsIT-ZpKZjcobx0D2F/view?usp=drive_link',
@@ -30,14 +30,14 @@ const Portfolio = () => {
     },
     {
       title: 'Daycare Center',
-      location: 'USA',
+      location: 'Katy, Texas',
       fallbackSeed: 'daycare-center',
       description: 'A state-of-the-art educational childcare facility designed to provide a safe, engaging, and enriching environment for early childhood development.',
       link: '#'
     },
     {
       title: 'Dove Trails',
-      location: 'Premier Community',
+      location: 'San Antonio, TX',
       fallbackSeed: 'dovetrails',
       description: 'A premier 4-plex development where modern living meets serene surroundings.',
       link: 'https://drive.google.com/file/d/1RnyDdI7DBe-pqP6mr4Tp_3-hXf3wXQUv/view?usp=sharing'

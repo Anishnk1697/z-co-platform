@@ -19,7 +19,7 @@ const systemInstruction = `
   - Strategy: Replication Advantage — repeatable project prototypes, 50% faster execution, lower risk.
   - Markets: Texas (Houston, Katy, San Antonio).
 
-  CURRENT PIPELINE: TowneCenter (Katy TX mixed-use), Strobes Tower (~$280M Houston high-rise), MedPlex (healthcare suites), Dove Trails (4-plex), Shops @ Fry Road (retail).
+  CURRENT PIPELINE: TowneCenter (Katy TX), Strobes Tower (Houston), MedPlex (Katy TX), Daycare Center (Katy TX), Dove Trails (San Antonio), Shops @ Fry Road (Katy TX).
 
   LEADERSHIP: Mike Butte (CEO, 30+ yrs), Sarah Ali (President), Mo Khan (COO), John Stevens (Asset Management).
 
