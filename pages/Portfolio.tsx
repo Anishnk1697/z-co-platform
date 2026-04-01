@@ -37,7 +37,7 @@ const Portfolio = () => {
     },
     {
       title: 'Dove Trails',
-      location: 'San Antonio, TX',
+      location: 'San Antonio, Texas',
       fallbackSeed: 'dovetrails',
       description: 'A premier 4-plex development where modern living meets serene surroundings.',
       link: 'https://drive.google.com/file/d/1RnyDdI7DBe-pqP6mr4Tp_3-hXf3wXQUv/view?usp=sharing'
