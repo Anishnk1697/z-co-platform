@@ -17,7 +17,7 @@ const Portfolio = () => {
       title: 'MedPlex',
       location: 'USA',
       fallbackSeed: 'medplex',
-      description: 'An office solution tailored to the evolving needs of the US healthcare industry, offering retail medical spaces and suites.',
+      description: 'MedPlex is a patient-centered healthcare platform that combines a licensed community hospital, outpatient medical services, and a physician network in one integrated system. It is designed to deliver convenient, high-quality care while giving physicians greater freedom and flexibility.',
       link: 'https://drive.google.com/file/d/1-A_PB-EHraeV0hcsIT-ZpKZjcobx0D2F/view?usp=drive_link',
       imagePosition: 'center 25%'
     },
@@ -26,6 +26,13 @@ const Portfolio = () => {
       location: 'Houston Medical Center',
       fallbackSeed: 'strobes',
       description: 'A nearly $280 million high-rise building offering a fusion of commercial, residential, and hotel spaces.',
+      link: '#'
+    },
+    {
+      title: 'Daycare Center',
+      location: 'USA',
+      fallbackSeed: 'daycare-center',
+      description: 'A state-of-the-art educational childcare facility designed to provide a safe, engaging, and enriching environment for early childhood development.',
       link: '#'
     },
     {
