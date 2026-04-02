@@ -92,7 +92,7 @@ const Testimonials = () => {
               <div className="flex items-center gap-5 translate-y-2">
                 {t.image && (
                   <div className="h-16 w-16 rounded-2xl overflow-hidden border border-slate-700 bg-slate-800 flex-shrink-0">
-                    <img src={t.image} alt={t.author} className="w-full h-full object-cover" />
+                    <img src={t.image} alt={`${t.author} - ${t.role} - Z-Co Development Partner`} className="w-full h-full object-cover" />
                   </div>
                 )}
                 {!t.image && !t.featured && (

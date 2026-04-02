@@ -94,7 +94,7 @@ const Portfolio = () => {
             >
               <div className="h-64 overflow-hidden relative">
                 <SmartImage
-                  alt={project.title}
+                  alt={`${project.title} - ${project.location} - Real Estate Development Project`}
                   fallbackSeed={project.fallbackSeed}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   style={project.imagePosition ? { objectPosition: project.imagePosition } : undefined}
@@ -148,7 +148,7 @@ const Portfolio = () => {
               className="group relative h-64 rounded-3xl overflow-hidden border border-slate-800 transition-all hover:border-slate-500"
             >
               <SmartImage
-                alt={cat.name}
+                alt={`${cat.name} Portfolio - Z-Co Real Estate Development`}
                 fallbackSeed={cat.seed}
                 className={`absolute inset-0 w-full h-full ${cat.imageFit} group-hover:scale-110 transition-transform duration-700`}
               />

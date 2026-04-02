@@ -660,7 +660,7 @@ const Home = ({
               <div className="w-48 h-48 md:w-64 md:h-64 flex-shrink-0 rounded-3xl overflow-hidden border border-slate-700 shadow-2xl">
                 <img
                   src="/asset/mike-butte.jpg"
-                  alt="Mike Butte"
+                  alt="Mike Butte - CEO of Z-Co Development - Real Estate Development Team"
                   className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
@@ -748,7 +748,7 @@ const Home = ({
                   <div className="aspect-square rounded-2xl overflow-hidden border border-slate-800 mb-5 relative">
                     <img
                       src={member.img}
-                      alt={member.name}
+                      alt={`${member.name} - ${member.title} - Z-Co Real Estate Development Team`}
                       className="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -893,7 +893,7 @@ export default function App() {
           <Link to="/" className="flex items-center gap-3 group">
             <img
               src="/asset/z-co-logo-vertical.png"
-              alt="Z-Co Development"
+              alt="Z-Co Development - Real Estate Development Company USA"
               className="h-[3.6rem] sm:h-[4.2rem] w-auto object-contain transition-transform group-hover:scale-105"
             />
           </Link>

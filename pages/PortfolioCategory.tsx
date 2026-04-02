@@ -57,7 +57,7 @@ const PortfolioCategory = () => {
                         >
                             <div className="h-64 overflow-hidden relative">
                                 <SmartImage
-                                    alt={project.title}
+                                    alt={`${project.title} - ${project.location} - ${data.title} Project`}
                                     fallbackSeed={project.fallbackSeed}
                                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                 />
