@@ -1,7 +1,12 @@
-import React from 'react';
 import { motion } from 'framer-motion';
+import { useSEO } from '../hooks/useSEO';
 
 const PrivacyPolicy = () => {
+    useSEO({
+        title: 'Privacy Policy | Z-Co Development',
+        description: "Read Z-Co Development's privacy policy regarding data collection, usage, and security for our integrated real estate development platform."
+    });
+
     return (
         <div className="pt-32 pb-20 lg:pt-48 lg:pb-36 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
             <motion.div

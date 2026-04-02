@@ -188,6 +188,7 @@ const TriangleGraphic = () => {
 
 import { NAVIGATION, STATS } from './constants';
 import AIChatAssistant from './components/AIChatAssistant';
+import { useSEO } from './hooks/useSEO';
 
 const Home = ({
   investorStatus,
@@ -200,6 +201,11 @@ const Home = ({
   formStatus: string;
   handleContactSubmit: (e: React.FormEvent) => void;
 }) => {
+  useSEO({
+    title: 'Real Estate Development Company USA | Z-Co Development',
+    description: 'Z-Co Development is a real estate development and investment platform specializing in build-to-rent, healthcare, mixed-use and EB-5 projects.'
+  });
+
   return (
     <>
       {/* HERO */}

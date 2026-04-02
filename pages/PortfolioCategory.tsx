@@ -1,6 +1,6 @@
-import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useSEO } from '../hooks/useSEO';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { SmartImage } from '@/components/SmartMedia';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
@@ -8,6 +8,11 @@ import { PORTFOLIO_DATA } from '../data/portfolioData';
 const PortfolioCategory = () => {
     const { category } = useParams<{ category: string }>();
     const data = category ? PORTFOLIO_DATA[category.toLowerCase()] : null;
+
+    useSEO({
+        title: data ? `${data.title} Projects | Z-Co Development` : 'Real Estate Development Projects | Z-Co Development',
+        description: data ? `Explore Z-Co’s ${data.title.toLowerCase()} development projects including scalable and replicable real estate models.` : 'Explore Z-Co’s real estate development projects including build-to-rent communities, healthcare developments and mixed-use projects.'
+    });
 
     if (!data) {
         return (

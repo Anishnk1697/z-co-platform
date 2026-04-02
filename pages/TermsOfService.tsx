@@ -1,7 +1,12 @@
-import React from 'react';
 import { motion } from 'framer-motion';
+import { useSEO } from '../hooks/useSEO';
 
 const TermsOfService = () => {
+    useSEO({
+        title: 'Terms of Service | Z-Co Development',
+        description: "Understand the terms and conditions for using Z-Co Development's website and real estate investment platform services."
+    });
+
     return (
         <div className="pt-32 pb-20 lg:pt-48 lg:pb-36 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
             <motion.div

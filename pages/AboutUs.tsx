@@ -1,5 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
+import { useSEO } from '../hooks/useSEO';
 import {
   Target,
   Shield,
@@ -163,6 +163,11 @@ const ExecutionTimeline = () => {
 };
 
 const AboutUs = () => {
+  useSEO({
+    title: 'About Z-Co | Real Estate Development Platform USA',
+    description: 'Learn about Z-Co, an integrated real estate development platform focused on scalable, replicable real estate project models.'
+  });
+
   return (
     <div className="min-h-screen bg-black">
       {/* Hero Section */}

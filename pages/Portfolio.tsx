@@ -2,8 +2,14 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { SmartImage } from '@/components/SmartMedia';
+import { useSEO } from '../hooks/useSEO';
 
 const Portfolio = () => {
+  useSEO({
+    title: 'Real Estate Portfolio | Z-Co Development USA',
+    description: 'View the portfolio of Z-Co Development including residential, healthcare and mixed-use real estate developments.'
+  });
+
   const currentProjects = [
     {
       title: 'TowneCenter',
