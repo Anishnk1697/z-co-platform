@@ -19,6 +19,7 @@ import DevelopmentCompany from './pages/seo/DevelopmentCompany';
 import InsightsList from './pages/InsightsList';
 import InsightsPost from './pages/InsightsPost';
 import RequestPacketModal from './components/RequestPacketModal';
+import FAQSection from './components/FAQSection';
 import { SmartImage, SmartVideo } from '@/components/SmartMedia';
 import {
   Building2,
@@ -846,6 +847,28 @@ const Home = ({
           </div>
         </div>
       </section>
+      
+      <FAQSection
+        heading="Common Questions"
+        faqs={[
+          {
+            question: 'What is a real estate development platform?',
+            answer: 'A real estate development platform like Z-Co goes beyond developing single, isolated projects. We utilize a replicable model—standardized designs, bulk procurement, and repeatable capital structures—to deploy similar project types across multiple high-growth markets efficiently. This scale reduces risk, accelerates timelines, and generates more predictable returns for our investment partners.'
+          },
+          {
+            question: 'How do I invest in US real estate projects with Z-Co?',
+            answer: 'Z-Co offers multiple entry points for accredited investors, including direct project equity, preferred equity, and joint venture partnerships. We also accommodate international investors seeking U.S. permanent residency through USCIS-approved EB-5 investments into our qualifying development projects. Reach out via the Request Packet form to review our current offerings.'
+          },
+          {
+            question: 'What is the minimum investment for your projects?',
+            answer: 'Minimum investment sizes vary depending on the capital structure and the specific project. Co-investments and LP equity positions typically have standard minimums comparable to institutional private equity real estate funds. EB-5 investments must meet USCIS statutory minimums (currently $800,000 in Targeted Employment Areas). Please contact our investor relations team for details.'
+          },
+          {
+            question: 'Why does Z-Co focus on Texas and the Sun Belt?',
+            answer: 'We strategically deploy capital in markets demonstrating sustained population growth, corporate relocations, and strong job creation. Texas, specifically the Greater Houston, San Antonio, and Austin corridors, offers an optimal mix of massive demographic influx, landlord-friendly policies, and economic diversification that drives demand for residential, healthcare, and mixed-use real estate.'
+          }
+        ]}
+      />
     </>
   );
 };

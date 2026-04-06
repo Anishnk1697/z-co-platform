@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useSEO } from '../hooks/useSEO';
+import FAQSection from '../components/FAQSection';
 import {
   Target,
   Shield,
@@ -439,6 +440,31 @@ const AboutUs = () => {
           </motion.div>
         </div>
       </section>
+      <FAQSection
+        heading="Frequently Asked Questions About Z-Co Development"
+        faqs={[
+          {
+            question: 'What does a real estate developer do?',
+            answer: 'A real estate developer acquires land or existing properties, secures financing, manages the design and construction process, and ultimately delivers a finished real estate asset — whether residential, commercial, healthcare, or mixed-use. Z-Co Development is a fully integrated developer, meaning we manage every phase of this process in-house, from site selection and entitlements through construction and lease-up.'
+          },
+          {
+            question: 'What is Z-Co Development\'s specialization?',
+            answer: 'Z-Co specializes in scalable, replicable real estate development across three core asset classes: build-to-rent residential communities, healthcare real estate, and mixed-use developments. Our Replication Advantage — standardized project archetypes, bulk procurement, and prefabricated construction — consistently delivers faster timelines and better investor returns than one-off development approaches.'
+          },
+          {
+            question: 'Where does Z-Co Development operate?',
+            answer: 'Z-Co is headquartered in Houston, Texas, with a primary development focus on high-growth Texas markets including Katy, The Woodlands, San Antonio, and the Greater Houston area. We also pursue select opportunities in other Sun Belt growth markets including Florida and Arizona.'
+          },
+          {
+            question: 'How can I partner with Z-Co Development?',
+            answer: 'Z-Co works with partners across the capital stack — from co-investors and preferred equity partners to joint venture equity partners and EB-5 investors. Contact our team via the form on our website or request an investor packet to discuss your specific objectives and available opportunities.'
+          },
+          {
+            question: 'Does Z-Co accept foreign investors?',
+            answer: 'Yes. Z-Co structures its projects to accommodate international investors, including through the EB-5 Immigrant Investor Program, which provides a pathway to U.S. permanent residency for qualifying foreign nationals who invest in U.S. development projects that create American jobs. Contact our team to learn about current EB-5 eligible projects.'
+          },
+        ]}
+      />
     </div>
   );
 };

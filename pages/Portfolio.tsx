@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { SmartImage } from '@/components/SmartMedia';
 import { useSEO } from '../hooks/useSEO';
+import FAQSection from '../components/FAQSection';
 
 const Portfolio = () => {
   useSEO({
@@ -69,7 +70,8 @@ const Portfolio = () => {
   ];
 
   return (
-    <div className="pt-32 pb-20 lg:pt-48 lg:pb-36 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-32">
+    <>
+      <div className="pt-32 pb-20 lg:pt-48 lg:pb-36 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-32">
       {/* Current Projects Section */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -166,6 +168,32 @@ const Portfolio = () => {
         </div>
       </motion.div>
     </div>
+    <FAQSection
+      heading="Real Estate Investment FAQ"
+      faqs={[
+        {
+          question: 'What types of real estate projects does Z-Co develop?',
+          answer: 'Z-Co develops across three core asset classes: build-to-rent residential communities (purpose-built single-family and townhome rental neighborhoods), healthcare real estate (medical office buildings, integrated hospital campuses, and physician facilities), and mixed-use developments (combining residential, retail, healthcare, and hospitality uses in a single master-planned community). All projects are concentrated in high-growth Texas Sun Belt markets.'
+        },
+        {
+          question: 'What is build-to-rent development?',
+          answer: 'Build-to-rent (BTR) development involves designing and constructing residential communities specifically for long-term rental rather than individual sale. BTR communities typically feature single-family homes or townhomes with private yards, garages, and community amenities — all operated under professional management by the ownership entity. This model serves the growing demographic of renters who want single-family living without the commitment of homeownership.'
+        },
+        {
+          question: 'What is EB-5 investment and how does Z-Co use it?',
+          answer: 'The EB-5 Immigrant Investor Program allows qualifying foreign nationals to invest in U.S. commercial enterprises that create American jobs, in exchange for U.S. permanent residency (green card) eligibility. Z-Co structures its larger development projects to qualify for EB-5 investment through USCIS-approved Regional Centers. Our projects create significant direct and indirect employment — well in excess of the minimum 10 jobs per investor required.'
+        },
+        {
+          question: 'How can I invest in Z-Co development projects?',
+          answer: 'Z-Co accepts investment from accredited investors through several structures: direct project co-investment (common equity), preferred equity, mezzanine debt participation, and EB-5 investment (for international investors seeking green card eligibility). Minimums and returns vary by structure and project. Request our investor packet via the Contact section to discuss current availability.'
+        },
+        {
+          question: 'How do joint venture real estate partnerships work?',
+          answer: 'A real estate joint venture (JV) is a partnership between two or more parties who contribute capital, expertise, or land to a development project in exchange for a share of the profits. Z-Co pursues JV partnerships with landowners, family offices, institutional capital partners, and operators who bring complementary assets to our development pipeline. JV terms vary by project — contact us to explore partnership structures.'
+        },
+      ]}
+    />
+    </>
   );
 };
 
