@@ -8,6 +8,14 @@ import PortfolioCategory from './pages/PortfolioCategory';
 import Testimonials from './pages/Testimonials';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
+import BuildToRent from './pages/seo/BuildToRent';
+import HealthcareRealEstate from './pages/seo/HealthcareRealEstate';
+import MixedUseRealEstate from './pages/seo/MixedUseRealEstate';
+import EB5Projects from './pages/seo/EB5Projects';
+import JointVenture from './pages/seo/JointVenture';
+import InvestmentPlatform from './pages/seo/InvestmentPlatform';
+import PrefabConstruction from './pages/seo/PrefabConstruction';
+import DevelopmentCompany from './pages/seo/DevelopmentCompany';
 import RequestPacketModal from './components/RequestPacketModal';
 import { SmartImage, SmartVideo } from '@/components/SmartMedia';
 import {
@@ -997,6 +1005,14 @@ export default function App() {
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/build-to-rent-developer-usa" element={<BuildToRent />} />
+        <Route path="/healthcare-real-estate-developer" element={<HealthcareRealEstate />} />
+        <Route path="/mixed-use-real-estate-developer" element={<MixedUseRealEstate />} />
+        <Route path="/eb5-real-estate-projects-usa" element={<EB5Projects />} />
+        <Route path="/real-estate-joint-venture-partnerships" element={<JointVenture />} />
+        <Route path="/real-estate-investment-platform" element={<InvestmentPlatform />} />
+        <Route path="/prefabricated-construction-real-estate" element={<PrefabConstruction />} />
+        <Route path="/real-estate-development-company-usa" element={<DevelopmentCompany />} />
       </Routes>
 
       {/* FOOTER */}
