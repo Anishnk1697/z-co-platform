@@ -16,6 +16,8 @@ import JointVenture from './pages/seo/JointVenture';
 import InvestmentPlatform from './pages/seo/InvestmentPlatform';
 import PrefabConstruction from './pages/seo/PrefabConstruction';
 import DevelopmentCompany from './pages/seo/DevelopmentCompany';
+import InsightsList from './pages/InsightsList';
+import InsightsPost from './pages/InsightsPost';
 import RequestPacketModal from './components/RequestPacketModal';
 import { SmartImage, SmartVideo } from '@/components/SmartMedia';
 import {
@@ -1013,6 +1015,8 @@ export default function App() {
         <Route path="/real-estate-investment-platform" element={<InvestmentPlatform />} />
         <Route path="/prefabricated-construction-real-estate" element={<PrefabConstruction />} />
         <Route path="/real-estate-development-company-usa" element={<DevelopmentCompany />} />
+        <Route path="/insights" element={<InsightsList />} />
+        <Route path="/insights/:slug" element={<InsightsPost />} />
       </Routes>
 
       {/* FOOTER */}
@@ -1039,6 +1043,7 @@ export default function App() {
                 <li><Link to="/about" onClick={() => window.scrollTo(0, 0)} className="text-slate-400 hover:text-white transition-colors text-sm font-medium">About Us</Link></li>
                 <li><Link to="/portfolio" onClick={() => window.scrollTo(0, 0)} className="text-slate-400 hover:text-white transition-colors text-sm font-medium">Portfolio</Link></li>
                 <li><Link to="/testimonials" onClick={() => window.scrollTo(0, 0)} className="text-slate-400 hover:text-white transition-colors text-sm font-medium">Testimonials</Link></li>
+                <li><Link to="/insights" onClick={() => window.scrollTo(0, 0)} className="text-slate-400 hover:text-white transition-colors text-sm font-medium">Insights</Link></li>
               </ul>
             </div>
 
