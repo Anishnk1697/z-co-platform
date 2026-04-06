@@ -188,6 +188,7 @@ const TriangleGraphic = () => {
 
 import { NAVIGATION, STATS } from './constants';
 import AIChatAssistant from './components/AIChatAssistant';
+import SchemaMarkup from './components/SchemaMarkup';
 import { useSEO } from './hooks/useSEO';
 
 const Home = ({
@@ -1080,6 +1081,9 @@ export default function App() {
 
       {/* AI Assistant */}
       <AIChatAssistant />
+
+      {/* Structured Data / Schema Markup */}
+      <SchemaMarkup />
 
       {/* Request Packet Modal */}
       <RequestPacketModal isOpen={isPacketModalOpen} onClose={() => setIsPacketModalOpen(false)} />
