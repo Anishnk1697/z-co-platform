@@ -78,7 +78,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        content: 'The best BTR developers, like Z-Co Development, generate above-market returns by applying systematic efficiencies to the development process. Standardized project archetypes, bulk procurement relationships, and prefabricated construction methods reduce per-unit costs significantly versus one-off developments. These cost advantages translate directly to investor returns.',
+        content: 'The best BTR developers, like [Z-Co Development](/real-estate-development-company-usa), generate above-market returns by applying systematic efficiencies to the development process. Standardized project archetypes, bulk procurement relationships, and [prefabricated construction](/prefabricated-construction-real-estate) methods reduce per-unit costs significantly versus one-off developments. These cost advantages translate directly to investor returns.',
       },
       {
         type: 'h2',
@@ -102,7 +102,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        content: 'Z-Co Development offers accredited investors direct co-investment access to our BTR pipeline in Texas. Our Replication Advantage — standardized archetypes, pre-qualified contractors, integrated procurement — delivers measurably better outcomes than one-off BTR developments. To learn more about current opportunities, request our investor packet.',
+        content: '[Z-Co Development](/real-estate-development-company-usa) offers accredited investors direct co-investment access to our BTR pipeline in Texas. Our Replication Advantage — standardized archetypes, pre-qualified contractors, integrated procurement — delivers measurably better outcomes than one-off BTR developments. To learn more about current opportunities, [request our investor packet](/real-estate-investment-platform).',
       },
       {
         type: 'h2',
@@ -182,7 +182,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        content: 'Z-Co Development has built a specialized platform for healthcare real estate development in high-growth Texas markets. Our flagship project, MedPlex in Katy, Texas, is a patient-centered healthcare platform integrating a licensed community hospital, outpatient services, and a physician network in a single, purpose-built facility.',
+        content: '[Z-Co Development](/real-estate-development-company-usa) has built a specialized platform for [healthcare real estate development](/healthcare-real-estate-developer) in high-growth Texas markets. Our flagship project, [MedPlex](/portfolio) in Katy, Texas, is a patient-centered healthcare platform integrating a licensed community hospital, outpatient services, and a physician network in a single, purpose-built facility.',
       },
       {
         type: 'p',
@@ -206,7 +206,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        content: 'Z-Co offers accredited investors direct access to our healthcare development pipeline in Texas. Request our investor packet to learn about current opportunities.',
+        content: 'Z-Co offers accredited investors direct access to our healthcare development pipeline in Texas. [Request our investor packet](/real-estate-investment-platform) to learn about current opportunities or [contact us](/#contact) directly.',
       },
     ],
   },
@@ -239,7 +239,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        content: 'Real estate development projects are by far the most common EB-5 investment vehicle, and for good reason. Large-scale construction is capital-intensive, creates substantial direct and indirect employment, and produces a tangible, understandable asset that investors and their advisors can evaluate with confidence.',
+        content: '[Real estate development](/real-estate-development-company-usa) projects are by far the most common EB-5 investment vehicle, and for good reason. Large-scale construction is capital-intensive, creates substantial direct and indirect employment, and produces a tangible, understandable asset that investors and their advisors can evaluate with confidence.',
       },
       {
         type: 'ul',
@@ -294,7 +294,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        content: 'Z-Co Development structures its projects to accommodate EB-5 investment through designated USCIS-approved Regional Centers. Our Texas developments — including TowneCenter, MedPlex, and Strobes Tower — create substantial direct and indirect employment that significantly exceeds minimum EB-5 job creation requirements.',
+        content: '[Z-Co Development](/real-estate-development-company-usa) structures its projects to accommodate EB-5 investment through designated USCIS-approved Regional Centers. Our Texas developments — including [TowneCenter](/portfolio), MedPlex, and Strobes Tower — create substantial direct and indirect employment that significantly exceeds minimum [EB-5](/eb5-real-estate-projects-usa) job creation requirements.',
       },
       {
         type: 'p',
@@ -375,7 +375,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        content: 'Z-Co\'s flagship mixed-use project, TowneCenter in Katy, Texas, combines Class-A apartments, senior living, climate-controlled storage, and modern medical offices in a single, master-planned development on one of suburban Houston\'s highest-traffic corridors.',
+        content: 'Z-Co\'s flagship [mixed-use project](/mixed-use-real-estate-developer), [TowneCenter](/portfolio) in Katy, Texas, combines Class-A apartments, senior living, climate-controlled storage, and modern medical offices in a single, master-planned development on one of suburban Houston\'s highest-traffic corridors.',
       },
       {
         type: 'p',
@@ -480,7 +480,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        content: 'Construction is where the project becomes real. Z-Co leverages prefabricated construction methods to compress timelines — manufacturing components off-site in controlled factory environments for on-site assembly. This approach reduces weather risk, improves quality consistency, and shortens project-to-completion timelines by up to 50% versus traditional methods.',
+        content: 'Construction is where the project becomes real. Z-Co leverages [prefabricated construction](/prefabricated-construction-real-estate) methods to compress timelines — manufacturing components off-site in controlled factory environments for on-site assembly. This approach reduces weather risk, improves quality consistency, and shortens project-to-completion timelines by up to 50% versus traditional methods.',
       },
       {
         type: 'h2',
@@ -556,7 +556,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        content: 'Z-Co Development has concentrated significant investment in Katy, including TowneCenter (a mixed-use development), MedPlex (a healthcare campus), and several BTR communities in the pipeline. The combination of explosive residential growth, an undersupplied healthcare market, and a chronically constrained retail corridor makes Katy one of the most compelling real estate investment submarkets in Texas.',
+        content: '[Z-Co Development](/real-estate-development-company-usa) has concentrated significant investment in Katy, including [TowneCenter](/portfolio) (a mixed-use development), MedPlex (a healthcare campus), and several [BTR communities](/build-to-rent-developer-usa) in the pipeline. The combination of explosive residential growth, an undersupplied healthcare market, and a chronically constrained retail corridor makes Katy one of the most compelling real estate investment submarkets in Texas.',
       },
       {
         type: 'h2',
@@ -576,7 +576,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'p',
-        content: 'The most direct way to invest in Texas real estate is to co-invest with an experienced local developer who has spent years building market knowledge, contractor relationships, and entitlement expertise in specific Texas submarkets. Z-Co Development offers qualified investors direct access to our Texas real estate pipeline across BTR, healthcare, and mixed-use asset classes.',
+        content: 'The most direct way to invest in Texas real estate is to co-invest with an experienced local developer who has spent years building market knowledge, contractor relationships, and [joint venture partnerships](/real-estate-joint-venture-partnerships) in specific Texas submarkets. [Z-Co Development](/real-estate-development-company-usa) offers qualified investors direct access to our Texas real estate pipeline across BTR, healthcare, and mixed-use asset classes.',
       },
       {
         type: 'p',

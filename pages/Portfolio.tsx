@@ -173,7 +173,7 @@ const Portfolio = () => {
       faqs={[
         {
           question: 'What types of real estate projects does Z-Co develop?',
-          answer: 'Z-Co develops across three core asset classes: build-to-rent residential communities (purpose-built single-family and townhome rental neighborhoods), healthcare real estate (medical office buildings, integrated hospital campuses, and physician facilities), and mixed-use developments (combining residential, retail, healthcare, and hospitality uses in a single master-planned community). All projects are concentrated in high-growth Texas Sun Belt markets.'
+          answer: <>Z-Co develops across three core asset classes: <Link to="/build-to-rent-developer-usa" className="underline hover:text-white transition-colors">build-to-rent</Link> residential communities (purpose-built single-family and townhome rental neighborhoods), <Link to="/healthcare-real-estate-developer" className="underline hover:text-white transition-colors">healthcare real estate</Link> (medical office buildings, integrated hospital campuses, and physician facilities), and <Link to="/mixed-use-real-estate-developer" className="underline hover:text-white transition-colors">mixed-use</Link> developments (combining residential, retail, healthcare, and hospitality uses in a single master-planned community). All projects are concentrated in high-growth Texas Sun Belt markets.</>
         },
         {
           question: 'What is build-to-rent development?',
@@ -181,15 +181,15 @@ const Portfolio = () => {
         },
         {
           question: 'What is EB-5 investment and how does Z-Co use it?',
-          answer: 'The EB-5 Immigrant Investor Program allows qualifying foreign nationals to invest in U.S. commercial enterprises that create American jobs, in exchange for U.S. permanent residency (green card) eligibility. Z-Co structures its larger development projects to qualify for EB-5 investment through USCIS-approved Regional Centers. Our projects create significant direct and indirect employment — well in excess of the minimum 10 jobs per investor required.'
+          answer: <>The <Link to="/eb5-real-estate-projects-usa" className="underline hover:text-white transition-colors">EB-5 Immigrant Investor Program</Link> allows qualifying foreign nationals to invest in U.S. commercial enterprises that create American jobs, in exchange for U.S. permanent residency (green card) eligibility. Z-Co structures its larger development projects to qualify for EB-5 investment through USCIS-approved Regional Centers. Our projects create significant direct and indirect employment — well in excess of the minimum 10 jobs per investor required.</>
         },
         {
           question: 'How can I invest in Z-Co development projects?',
-          answer: 'Z-Co accepts investment from accredited investors through several structures: direct project co-investment (common equity), preferred equity, mezzanine debt participation, and EB-5 investment (for international investors seeking green card eligibility). Minimums and returns vary by structure and project. Request our investor packet via the Contact section to discuss current availability.'
+          answer: <>Z-Co accepts investment from <Link to="/real-estate-investment-platform" className="underline hover:text-white transition-colors">accredited investors</Link> through several structures: direct project co-investment (common equity), preferred equity, mezzanine debt participation, and EB-5 investment (for international investors seeking green card eligibility). Minimums and returns vary by structure and project. Request our investor packet via the Contact section to discuss current availability.</>
         },
         {
           question: 'How do joint venture real estate partnerships work?',
-          answer: 'A real estate joint venture (JV) is a partnership between two or more parties who contribute capital, expertise, or land to a development project in exchange for a share of the profits. Z-Co pursues JV partnerships with landowners, family offices, institutional capital partners, and operators who bring complementary assets to our development pipeline. JV terms vary by project — contact us to explore partnership structures.'
+          answer: <>A real estate <Link to="/real-estate-joint-venture-partnerships" className="underline hover:text-white transition-colors">joint venture (JV)</Link> is a partnership between two or more parties who contribute capital, expertise, or land to a development project in exchange for a share of the profits. Z-Co pursues JV partnerships with landowners, family offices, institutional capital partners, and operators who bring complementary assets to our development pipeline. JV terms vary by project — contact us to explore partnership structures.</>
         },
       ]}
     />

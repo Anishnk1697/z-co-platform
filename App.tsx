@@ -318,7 +318,7 @@ const Home = ({
               viewport={{ once: true }}
               className="text-lg sm:text-xl text-slate-300 leading-relaxed font-light mb-8"
             >
-              We deliver essential, recession-resistant projects designed for the masses through an end-to-end platform, from site selection and underwriting to entitlements, design, capital structuring, construction execution, and exit. Replication drives speed, reduces risk, and accelerates stabilization, supporting faster sales and faster capital return.
+              We deliver essential, recession-resistant <Link to="/portfolio" className="underline hover:text-white transition-colors">projects</Link> designed for the masses through an end-to-end platform, from site selection and underwriting to entitlements, design, capital structuring, construction execution, and exit. Replication drives speed, reduces risk, and accelerates stabilization, supporting faster sales and faster capital return.
             </motion.p>
             <div className="flex flex-wrap justify-center gap-x-12 gap-y-4">
               {[
@@ -685,10 +685,10 @@ const Home = ({
                 <div className="h-px w-12 bg-slate-700 mx-auto md:ml-0" />
                 <div className="space-y-4 max-w-3xl">
                   <p className="text-slate-400 leading-relaxed text-sm md:text-base font-light">
-                    Mike Butte is the Founder and CEO of Z-Co. Development Corp., where he leads the firm’s end-to-end development platform across real estate and operating-business projects. With more than 30 years of leadership experience, Mike has executed projects across multiple asset classes by combining disciplined underwriting, capital strategy, and delivery execution to create recession-resistant, essential-service assets designed for scale. His background includes development and ownership experience tied to nationally recognized brands such as Holiday Inn, Best Western, Arby’s, Denny’s, and Caliber Collision, and he remains focused on building repeatable project prototypes that compress timelines and improve predictability across markets.
+                    Mike Butte is the Founder and CEO of Z-Co. Development Corp., where he leads the firm’s end-to-end development platform across real estate and operating-business projects. With more than 30 years of leadership experience, Mike has executed projects across <Link to="/portfolio" className="underline hover:text-white transition-colors">multiple asset classes</Link> by combining disciplined underwriting, capital strategy, and delivery execution to create recession-resistant, essential-service assets designed for scale. His background includes development and ownership experience tied to nationally recognized brands such as Holiday Inn, Best Western, Arby’s, Denny’s, and Caliber Collision, and he remains focused on building repeatable project prototypes that compress timelines and improve predictability across markets.
                   </p>
                   <p className="text-slate-400 leading-relaxed text-sm md:text-base font-light">
-                    Mike is also passionate about expanding access, creating opportunities for small investors to participate in institutional-quality projects and helping budding real estate developers learn, grow, and succeed through clear systems, practical guidance, and aligned partnerships.
+                    Mike is also passionate about expanding access, creating opportunities for small investors to participate in institutional-quality projects and helping budding real estate developers learn, grow, and succeed through clear systems, practical guidance, and aligned <Link to="/real-estate-joint-venture-partnerships" className="underline hover:text-white transition-colors">joint venture partnerships</Link>.
                   </p>
                 </div>
                 <div className="flex justify-center md:justify-start gap-4">
@@ -857,7 +857,7 @@ const Home = ({
           },
           {
             question: 'How do I invest in US real estate projects with Z-Co?',
-            answer: 'Z-Co offers multiple entry points for accredited investors, including direct project equity, preferred equity, and joint venture partnerships. We also accommodate international investors seeking U.S. permanent residency through USCIS-approved EB-5 investments into our qualifying development projects. Reach out via the Request Packet form to review our current offerings.'
+            answer: <>Z-Co offers multiple entry points for accredited investors, including direct project equity, preferred equity, and <Link to="/real-estate-joint-venture-partnerships" className="underline hover:text-white transition-colors">joint venture partnerships</Link>. We also accommodate <Link to="/eb5-real-estate-projects-usa" className="underline hover:text-white transition-colors">international investors</Link> seeking U.S. permanent residency through USCIS-approved EB-5 investments into our qualifying development projects. Reach out via the Request Packet form to review our current offerings.</>
           },
           {
             question: 'What is the minimum investment for your projects?',
@@ -865,7 +865,7 @@ const Home = ({
           },
           {
             question: 'Why does Z-Co focus on Texas and the Sun Belt?',
-            answer: 'We strategically deploy capital in markets demonstrating sustained population growth, corporate relocations, and strong job creation. Texas, specifically the Greater Houston, San Antonio, and Austin corridors, offers an optimal mix of massive demographic influx, landlord-friendly policies, and economic diversification that drives demand for residential, healthcare, and mixed-use real estate.'
+            answer: <>We strategically deploy capital in markets demonstrating sustained population growth, corporate relocations, and strong job creation. Texas, specifically the Greater Houston, San Antonio, and Austin corridors, offers an optimal mix of massive demographic influx, landlord-friendly policies, and economic diversification that drives demand for <Link to="/build-to-rent-developer-usa" className="underline hover:text-white transition-colors">residential</Link>, <Link to="/healthcare-real-estate-developer" className="underline hover:text-white transition-colors">healthcare</Link>, and <Link to="/mixed-use-real-estate-developer" className="underline hover:text-white transition-colors">mixed-use</Link> real estate.</>
           }
         ]}
       />

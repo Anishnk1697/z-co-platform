@@ -48,7 +48,7 @@ const HealthcareRealEstate = () => {
             <span className="text-slate-400">Developer & Investor</span>
           </h1>
           <p className="text-xl text-slate-400 font-light leading-relaxed max-w-3xl">
-            Z-Co Development designs, builds, and operates integrated healthcare real estate assets in high-growth U.S. markets. From licensed community hospitals to outpatient campuses, we deliver physician-centered healthcare infrastructure that serves communities and generates durable returns for investors.
+            <Link to="/" className="underline hover:text-white transition-colors">Z-Co Development</Link> designs, builds, and operates integrated healthcare real estate assets in high-growth U.S. markets. From licensed community hospitals to outpatient campuses, we deliver physician-centered healthcare infrastructure that serves communities and generates durable <Link to="/real-estate-investment-platform" className="underline hover:text-white transition-colors">returns for investors</Link>.
           </p>
         </motion.div>
       </section>
@@ -61,12 +61,12 @@ const HealthcareRealEstate = () => {
             <div className="space-y-5 text-slate-400 leading-relaxed">
               <p>Healthcare real estate is one of the most compelling property sectors in the United States today. Unlike traditional commercial or residential real estate, healthcare facilities serve a fundamental human need — access to medical care — that grows consistently alongside population and demographic aging. This creates a uniquely recession-resistant demand base that shields investors from economic volatility.</p>
               <p>The United States faces a growing shortage of primary and specialty care physicians, hospital beds, and outpatient facilities, particularly in fast-growing suburban and exurban markets. This structural undersupply creates significant opportunity for developers who can deliver high-quality healthcare real estate in undersupported communities.</p>
-              <p>Z-Co Development has built a specialized platform to address this opportunity. Our healthcare projects are designed around the physician experience — creating environments where doctors can practice efficiently, deliver excellent patient outcomes, and build long-term practices — while simultaneously meeting the operational needs of health systems, insurers, and communities.</p>
+              <p>Z-Co Development has built a specialized platform to address this opportunity. Our <Link to="/portfolio" className="underline hover:text-white transition-colors">healthcare projects</Link> are designed around the physician experience — creating environments where doctors can practice efficiently, deliver excellent patient outcomes, and build long-term practices — while simultaneously meeting the operational needs of health systems, insurers, and communities.</p>
             </div>
             <div className="space-y-5 text-slate-400 leading-relaxed">
               <p>Our flagship healthcare development, MedPlex, represents this vision in practice. Located in Katy, Texas — one of the fastest-growing communities in the United States — MedPlex integrates a licensed community hospital, outpatient medical services, and a physician network in a single platform. It is designed to deliver convenient, high-quality care while giving physicians greater freedom and flexibility in how they practice.</p>
               <p>Beyond MedPlex, Z-Co's healthcare pipeline includes medical office buildings, surgical centers, imaging facilities, and healthcare-anchored mixed-use developments. Each project is underwritten with a rigorous focus on market demand, payor mix, physician supply, and community health needs.</p>
-              <p>Investors in Z-Co's healthcare projects benefit from long-lease-term revenues, creditworthy tenants, and the reputational anchor that healthcare brings to mixed-use and community-oriented development projects.</p>
+              <p><Link to="/real-estate-investment-platform" className="underline hover:text-white transition-colors">Investors in Z-Co's healthcare</Link> projects benefit from long-lease-term revenues, creditworthy tenants, and the reputational anchor that healthcare brings to <Link to="/mixed-use-real-estate-developer" className="underline hover:text-white transition-colors">mixed-use</Link> and community-oriented development projects.</p>
             </div>
           </div>
         </div>

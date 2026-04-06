@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export interface FAQItem {
   question: string;
-  answer: string;
+  answer: React.ReactNode;
 }
 
 interface FAQSectionProps {
@@ -23,14 +23,18 @@ const FAQSection = ({ faqs, heading = 'Frequently Asked Questions' }: FAQSection
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqs.map(({ question, answer }) => ({
+    mainEntity: faqs.map(({ question, answer }) => {
+      // If answer is simple string we use it, if it's ReactNode we try to extract text or default to a safe string.
+      // This is a simple workaround since schema needs raw string text.
+      const answerText = typeof answer === 'string' ? answer : typeof answer?.toString === 'function' ? answer.toString() : '';
+      return {
       '@type': 'Question',
       name: question,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: answer,
+        text: answerText,
       },
-    })),
+    }}),
   };
 
   return (

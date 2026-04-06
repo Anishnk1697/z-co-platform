@@ -43,7 +43,7 @@ const MixedUseRealEstate = () => {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] mb-8">
             Mixed-Use Real Estate<br /><span className="text-slate-400">Developer & Investment Partner</span>
           </h1>
-          <p className="text-xl text-slate-400 font-light leading-relaxed max-w-3xl">Z-Co Development designs and delivers large-scale mixed-use real estate projects that integrate residential, retail, healthcare, and commercial components into cohesive, high-performing communities across high-growth U.S. markets.</p>
+          <p className="text-xl text-slate-400 font-light leading-relaxed max-w-3xl"><Link to="/" className="underline hover:text-white transition-colors">Z-Co Development</Link> designs and delivers large-scale mixed-use real estate projects that integrate residential, retail, healthcare, and commercial components into cohesive, high-performing communities across high-growth U.S. markets.</p>
         </motion.div>
       </section>
 
@@ -58,8 +58,8 @@ const MixedUseRealEstate = () => {
             </div>
             <div className="space-y-5 text-slate-400 leading-relaxed">
               <p>Our mixed-use projects are concentrated in the Texas Sun Belt markets — Katy, Houston, and San Antonio — where explosive population growth, rising household formation, and underserved community needs create the ideal conditions for large-scale mixed-use development. These markets offer strong demographic fundamentals, favorable regulatory environments, and enduring demand for integrated living and working environments.</p>
-              <p>TowneCenter, our flagship mixed-use project in Katy, Texas, exemplifies this strategy. A comprehensive development on one of suburban Houston's highest-traffic corridors, TowneCenter brings together Class-A apartments, senior living, climate-controlled storage, and modern medical offices into a single, interconnected community destination.</p>
-              <p>For investors, Z-Co's mixed-use projects offer exposure to multiple income streams, multiple exit options, and the institutional appeal of well-located, well-designed community centers that attract creditworthy tenants and resilient demographics.</p>
+              <p><Link to="/portfolio" className="underline hover:text-white transition-colors">TowneCenter</Link>, our flagship mixed-use project in Katy, Texas, exemplifies this strategy. A comprehensive development on one of suburban Houston's highest-traffic corridors, TowneCenter brings together Class-A apartments, senior living, climate-controlled storage, and modern medical offices into a single, interconnected community destination.</p>
+              <p>For <Link to="/real-estate-investment-platform" className="underline hover:text-white transition-colors">investors, Z-Co's</Link> mixed-use projects offer exposure to multiple income streams, multiple exit options, and the institutional appeal of well-located, well-designed community centers that attract creditworthy tenants and resilient demographics.</p>
             </div>
           </div>
         </div>
@@ -128,7 +128,7 @@ const MixedUseRealEstate = () => {
       <section className="py-24 border-t border-slate-900 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center space-y-6">
           <h2 className="text-3xl sm:text-4xl font-bold text-white">Partner on Mixed-Use Development</h2>
-          <p className="text-slate-400 text-lg leading-relaxed">Z-Co is seeking investors, landowners, anchor tenants, and capital partners to expand our mixed-use pipeline across the Sun Belt. Let's build something that lasts.</p>
+          <p className="text-slate-400 text-lg leading-relaxed">Z-Co is seeking investors, landowners, anchor tenants, and <Link to="/real-estate-joint-venture-partnerships" className="underline hover:text-white transition-colors">capital partners</Link> to expand our mixed-use pipeline across the Sun Belt. Let's build something that lasts.</p>
           <div className="flex flex-wrap justify-center gap-4 pt-4">
             <Link to="/#invest" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black rounded-full font-bold uppercase tracking-widest text-xs hover:bg-slate-200 transition-all">Investor Access <ArrowRight className="w-4 h-4" /></Link>
             <Link to="/#contact" className="inline-flex items-center gap-2 px-8 py-4 border border-slate-700 text-white rounded-full font-bold uppercase tracking-widest text-xs hover:border-white transition-all">Contact Us <ArrowRight className="w-4 h-4" /></Link>

@@ -43,7 +43,7 @@ const EB5Projects = () => {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] mb-8">
             EB-5 Real Estate<br /><span className="text-slate-400">Projects in the USA</span>
           </h1>
-          <p className="text-xl text-slate-400 font-light leading-relaxed max-w-3xl">Z-Co Development offers qualified EB-5 investment opportunities in high-quality U.S. real estate projects that create substantial American jobs and provide a structured path toward U.S. permanent residency for qualifying foreign nationals.</p>
+          <p className="text-xl text-slate-400 font-light leading-relaxed max-w-3xl"><Link to="/" className="underline hover:text-white transition-colors">Z-Co Development</Link> offers qualified EB-5 investment opportunities in high-quality U.S. real estate projects that create substantial American jobs and provide a structured path toward U.S. permanent residency for qualifying foreign nationals.</p>
         </motion.div>
       </section>
 
@@ -57,8 +57,8 @@ const EB5Projects = () => {
               <p>The EB-5 program underwent significant reform with the EB-5 Reform and Integrity Act of 2022, which introduced new safeguards for investors, new TEA designations, and enhanced Regional Center oversight. Z-Co's compliance team monitors program developments closely to ensure our projects remain fully compliant and investor-ready.</p>
             </div>
             <div className="space-y-5 text-slate-400 leading-relaxed">
-              <p>Z-Co Development's projects in high-growth Texas markets are particularly well-suited to EB-5 investment. Our developments — including TowneCenter, MedPlex, and Strobes Tower — create substantial direct construction employment and substantial indirect economic activity across the supply chain and local service economy.</p>
-              <p>For investors, EB-5 projects offer a dual benefit: the potential for capital return through project operations and the primary objective of obtaining U.S. green cards for the investor and their family. EB-5 is widely recognized as one of the fastest and most reliable pathways to U.S. permanent residency for high-net-worth individuals from qualifying countries.</p>
+              <p>Z-Co Development's projects in high-growth Texas markets are particularly well-suited to EB-5 investment. Our developments — including <Link to="/portfolio" className="underline hover:text-white transition-colors">TowneCenter, MedPlex, and Strobes Tower</Link> — create substantial direct construction employment and substantial indirect economic activity across the supply chain and local service economy.</p>
+              <p>For investors, EB-5 projects offer a dual benefit: the potential for capital return through project operations and the primary objective of obtaining U.S. green cards for the investor and their family. EB-5 is widely recognized as one of the fastest and most reliable pathways to U.S. permanent residency for <Link to="/real-estate-investment-platform" className="underline hover:text-white transition-colors">high-net-worth individuals</Link> from qualifying countries.</p>
               <p>Z-Co partners with experienced EB-5 legal counsel, USCIS-approved Regional Centers, and independent economic analysts to structure our EB-5 offerings with maximum investor protection, full regulatory compliance, and credible job creation methodologies. We are committed to transparency and investor communication throughout the process.</p>
             </div>
           </div>

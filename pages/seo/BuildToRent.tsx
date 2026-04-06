@@ -48,7 +48,7 @@ const BuildToRent = () => {
             <span className="text-slate-400">United States of America</span>
           </h1>
           <p className="text-xl text-slate-400 font-light leading-relaxed max-w-3xl">
-            Z-Co Development is an integrated real estate development platform specializing in purpose-built rental communities across high-growth U.S. markets. Our build-to-rent projects deliver institutional-quality housing with scalable, replicable delivery systems that drive superior risk-adjusted returns for our investors.
+            <Link to="/" className="underline hover:text-white transition-colors">Z-Co Development</Link> is an integrated real estate development platform specializing in purpose-built rental communities across high-growth U.S. markets. Our build-to-rent projects deliver institutional-quality housing with scalable, replicable delivery systems that drive superior risk-adjusted returns for our investors.
           </p>
         </motion.div>
       </section>
@@ -66,18 +66,18 @@ const BuildToRent = () => {
                 The BTR sector has emerged as one of the most compelling real estate asset classes in the United States over the past decade. Structural housing undersupply, shifting renter demographics, and the rising cost of homeownership have created a durable, long-term demand base for high-quality rental communities in growth markets.
               </p>
               <p>
-                Z-Co Development is positioned at the forefront of this shift. As an experienced build-to-rent developer in the USA, we combine disciplined underwriting, standardized project archetypes, and integrated procurement to deliver communities that outperform on both timeline and cost metrics.
+                Z-Co Development is positioned at the forefront of this shift. As an experienced build-to-rent developer in the USA, we combine disciplined underwriting, standardized project archetypes, and integrated procurement to deliver communities that <Link to="/portfolio" className="underline hover:text-white transition-colors">outperform on both timeline and cost metrics</Link>.
               </p>
             </div>
             <div className="space-y-5 text-slate-400 leading-relaxed">
               <p>
-                Our build-to-rent approach is rooted in replication. Each project we develop builds on the lessons, relationships, and infrastructure of the last. This compound improvement model translates directly into better investor outcomes — lower development risk, faster delivery, and more predictable returns.
+                Our build-to-rent approach is rooted in replication. Each project we develop builds on the lessons, relationships, and infrastructure of the last. This compound improvement model translates directly into better <Link to="/real-estate-investment-platform" className="underline hover:text-white transition-colors">investor outcomes</Link> — lower development risk, faster delivery, and more predictable returns.
               </p>
               <p>
                 We focus on Sun Belt markets — Texas, Florida, and Arizona — where population growth, job creation, and undersupplied housing create the most favorable conditions for build-to-rent investment. Our current pipeline includes communities in Katy, Texas and San Antonio, Texas, with additional market expansions underway.
               </p>
               <p>
-                Whether you are an investor seeking stable income, a landowner with a development opportunity, or an operator looking for a strategic capital partner, Z-Co's BTR platform offers a compelling entry point into one of the most resilient real estate sectors in the country.
+                Whether you are an investor seeking stable income, a landowner with a development opportunity, or an operator looking for a <Link to="/real-estate-joint-venture-partnerships" className="underline hover:text-white transition-colors">strategic capital partner</Link>, Z-Co's BTR platform offers a compelling entry point into one of the most resilient real estate sectors in the country.
               </p>
             </div>
           </div>
