@@ -266,7 +266,7 @@ const AboutUs = () => {
             <div className="absolute -inset-4 bg-lime-500/5 blur-3xl rounded-full" />
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-slate-800">
               <img
-                src="/asset/dovetrails.jpg"
+                src="/asset/philosophy-building.webp"
                 alt="Z-Co Development — disciplined project execution"
                 className="w-full h-full object-cover"
               />
