@@ -226,50 +226,112 @@ const AboutUs = () => {
       </section>
 
       {/* Philosophy Section */}
-      <section className="py-24 border-t border-slate-900 bg-slate-950/20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto space-y-20">
-          <div className="max-w-3xl">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Built for Durability.</h2>
-            <p className="text-lg text-slate-400 leading-relaxed">
-              Our projects are designed for the masses, focused on essential, recession-resistant services that remain in demand across economic cycles. We design capital structures that match real-world delivery and build projects engineered for performance, durability, and scalability.
-            </p>
+      <section className="py-24 border-t border-slate-900 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+          <div className="space-y-10">
+            <div>
+              <p className="text-[10px] font-bold text-lime-500 uppercase tracking-widest mb-4">Our Philosophy</p>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                A Disciplined Approach<br />to Every Project
+              </h2>
+              <div className="h-px w-16 bg-slate-700 mb-6" />
+              <p className="text-lg text-slate-400 leading-relaxed">
+                Z-Co evaluates every project through detailed market research, data-driven supply-demand analysis, and disciplined development planning — designed to align long-term community demand with practical, on-the-ground execution. Rather than building isolated structures, Z-Co creates communities around livability, wellness, and enduring value.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-px bg-slate-800 rounded-2xl overflow-hidden">
+              {[
+                { n: '01', t: 'Disciplined Underwriting', d: 'Every project stress-tested across multiple market cycle scenarios before capital commitment.' },
+                { n: '02', t: 'Strategic Land Positioning', d: 'Site selection driven by infrastructure proximity, employment corridors, and structural demand.' },
+                { n: '03', t: 'Thoughtful Design', d: 'Architecture and community planning that serves residents and strengthens surrounding neighborhoods.' },
+                { n: '04', t: 'Execution-Driven Management', d: 'Hands-on ownership from groundbreak through close of escrow — with zero project abandonments.' },
+              ].map((pillar, i) => (
+                <div key={i} className="bg-slate-950 p-6 space-y-2">
+                  <span className="text-xs font-bold text-lime-500 font-mono">{pillar.n}</span>
+                  <h4 className="text-sm font-bold text-white">{pillar.t}</h4>
+                  <p className="text-xs text-slate-400 leading-relaxed">{pillar.d}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                title: 'Dual Value Creation',
-                desc: 'Operational performance plus long-term real estate appreciation.',
-                icon: BarChart3
-              },
-              {
-                title: 'Calculated Risk',
-                desc: 'Downside control with meaningful upside potential.',
-                icon: Shield
-              },
-              {
-                title: 'Integrated Development',
-                desc: 'Alignment across design, construction, operations, and capital.',
-                icon: Layers
-              },
-              {
-                title: 'Strategic Execution',
-                desc: 'Planned entry with a clear path to stabilization and exit options.',
-                icon: Target
-              }
-            ].map((principle, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ y: -5 }}
-                className="p-8 rounded-[2rem] bg-slate-900/50 border border-slate-800 hover:border-slate-700 transition-all"
-              >
-                <div className="h-12 w-12 rounded-xl bg-slate-800 flex items-center justify-center text-slate-300 mb-6 font-bold">
-                  <principle.icon className="w-6 h-6" />
-                </div>
-                <h4 className="text-lg font-bold text-white mb-3">{principle.title}</h4>
-                <p className="text-slate-400 text-sm leading-relaxed">{principle.desc}</p>
-              </motion.div>
-            ))}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.97 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative"
+          >
+            <div className="absolute -inset-4 bg-lime-500/5 blur-3xl rounded-full" />
+            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-slate-800">
+              <img
+                src="/asset/dovetrails.jpg"
+                alt="Z-Co Development — disciplined project execution"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Strategic Vision Section */}
+      <section className="py-24 border-t border-slate-900 bg-slate-950/30 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.97 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative order-2 lg:order-1"
+          >
+            <div className="absolute -inset-4 bg-lime-500/5 blur-3xl rounded-full" />
+            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-slate-800">
+              <img
+                src="/asset/medplex.jpg"
+                alt="Z-Co strategic vision — long-term community building"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            </div>
+          </motion.div>
+
+          <div className="space-y-10 order-1 lg:order-2">
+            <div>
+              <p className="text-[10px] font-bold text-lime-500 uppercase tracking-widest mb-4">Strategic Vision</p>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                A Long-Term Approach<br />to Community Building
+              </h2>
+              <div className="h-px w-16 bg-slate-700 mb-6" />
+              <p className="text-lg text-slate-400 leading-relaxed">
+                Z-Co's strategy is built around one core belief: that well-located, well-designed communities generate durable value — for residents, investors, and neighborhoods alike. Every project decision flows from this principle.
+              </p>
+            </div>
+
+            <div className="border border-slate-800 rounded-2xl overflow-hidden">
+              {[
+                { n: '01', t: 'Market-Driven Site Selection', d: 'Deep supply-demand analysis before any capital is committed. Z-Co only enters markets where structural undersupply and employment growth support long-term absorption.' },
+                { n: '02', t: 'Capital-Efficient Structuring', d: 'Land acquired ahead of investor capital. Sponsor equity contributed at closing. LP capital deployed only when entitlements and design are de-risked.' },
+                { n: '03', t: 'Community-Centered Design', d: 'Projects designed around livability, walkability, and wellness — not just unit count. Resident experience informs every design decision from massing to amenity programming.' },
+                { n: '04', t: 'Defined Exit Discipline', d: 'Build-to-sell as primary thesis. Pre-sales velocity tracked from month one. Capital return events tied to closings, not refinancing assumptions.' },
+              ].map((step, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="flex gap-6 p-6 border-b border-slate-800 last:border-b-0 hover:bg-slate-900/50 transition-colors"
+                >
+                  <span className="text-xs font-bold text-lime-500 font-mono mt-1 flex-shrink-0">{step.n}</span>
+                  <div>
+                    <h4 className="text-sm font-bold text-white mb-2">{step.t}</h4>
+                    <p className="text-xs text-slate-400 leading-relaxed">{step.d}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
