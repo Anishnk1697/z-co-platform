@@ -202,6 +202,257 @@ import AIChatAssistant from './components/AIChatAssistant';
 import SchemaMarkup from './components/SchemaMarkup';
 import { useSEO } from './hooks/useSEO';
 
+const PORTFOLIO_FILTERS = ['All', 'Residential', 'Healthcare', 'Hospitality', 'Retail', 'Automotive'] as const;
+type PortfolioFilter = typeof PORTFOLIO_FILTERS[number];
+
+const PORTFOLIO_PROJECTS = [
+  {
+    title: 'Dove Trails',
+    type: 'Residential Community · Build-to-Sell',
+    location: 'San Antonio, TX — Near Medical District',
+    badge: 'Active · Under Development',
+    badgeActive: true,
+    category: 'Residential' as PortfolioFilter,
+    img: 'dovetrails',
+    featured: true,
+    desc: '152-home gated build-to-sell ownership community near San Antonio Medical District. UniQube light-gauge steel modular construction. 31% gross margin, 18-month build timeline.',
+    stats: [
+      { value: '152', label: 'Homes' },
+      { value: '$25.1M', label: 'Dev. Cost' },
+      { value: '$32.9M', label: 'Proj. Revenue' },
+      { value: '31%', label: 'Gross Margin' },
+    ],
+  },
+  {
+    title: 'MedPlex',
+    type: 'Healthcare · Medical Office',
+    location: 'San Antonio Medical District, TX',
+    badge: 'Pre-Development',
+    badgeActive: false,
+    category: 'Healthcare' as PortfolioFilter,
+    img: 'medplex',
+    featured: false,
+    desc: 'Next-generation healthcare campus in pre-development. Designed for ambulatory care, specialist clinics, and medical office tenants.',
+  },
+  {
+    title: 'The Everson',
+    type: 'Multifamily · Market Rate',
+    location: 'Katy, TX',
+    badge: 'Completed',
+    badgeActive: false,
+    category: 'Residential' as PortfolioFilter,
+    img: 'everson-building',
+    featured: false,
+    desc: 'Completed market-rate multifamily community. Benchmarked against top-tier comparable assets in the submarket.',
+  },
+  {
+    title: 'TowneCenter',
+    type: 'Retail · Mixed-Use Town Center',
+    location: 'San Antonio, Texas',
+    badge: 'Active · Under Development',
+    badgeActive: true,
+    category: 'Retail' as PortfolioFilter,
+    img: 'townecenter',
+    featured: false,
+    desc: 'Mixed-use retail town center anchored by essential-service tenants in a high-growth San Antonio corridor.',
+  },
+  {
+    title: 'Best Western Premier',
+    type: 'Hospitality · Full Service Hotel',
+    location: 'Texas',
+    badge: 'Completed',
+    badgeActive: false,
+    category: 'Hospitality' as PortfolioFilter,
+    img: 'hotel-best-western-1',
+    featured: false,
+    desc: 'Full-service hotel development completed and delivered. Positioned in a high-demand corridor with institutional-grade operations.',
+  },
+  {
+    title: 'Elite Medical Center',
+    type: 'Healthcare Facility',
+    location: 'Texas Medical Corridor',
+    badge: 'Completed',
+    badgeActive: false,
+    category: 'Healthcare' as PortfolioFilter,
+    img: 'elite-medical',
+    featured: false,
+    desc: 'Completed 7,000 sq ft medical office facility serving the Texas medical corridor. Delivered on time and on budget.',
+  },
+  {
+    title: 'Caliber Collision',
+    type: 'Automotive · Paint & Body',
+    location: 'Texas',
+    badge: 'Completed',
+    badgeActive: false,
+    category: 'Automotive' as PortfolioFilter,
+    img: 'caliber-collision-v2',
+    featured: false,
+    desc: 'National-brand automotive paint and body shop development. Delivered on schedule for a Tier 1 franchise operator.',
+  },
+  {
+    title: 'Oak Hollow',
+    type: 'Residential · Luxury Custom Home',
+    location: 'Houston, Texas',
+    badge: 'Completed',
+    badgeActive: false,
+    category: 'Residential' as PortfolioFilter,
+    img: 'oak-hollow',
+    featured: false,
+    desc: 'Luxury custom home showcasing premium architecture, sustainable design, and high-end finishes.',
+  },
+];
+
+const PortfolioSection = () => {
+  const [activeFilter, setActiveFilter] = useState<PortfolioFilter>('All');
+
+  const filtered = PORTFOLIO_PROJECTS.filter(
+    p => activeFilter === 'All' || p.category === activeFilter
+  );
+
+  const featured = filtered.find(p => p.featured) ?? filtered[0];
+  const rest = filtered.filter(p => p !== featured);
+
+  return (
+    <section id="projects" className="py-24 bg-slate-900/20 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12">
+          <div>
+            <p className="text-[10px] font-bold text-lime-500 uppercase tracking-widest mb-3">Selected Portfolio</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+              37+ Projects Across<br /><span className="text-slate-500">Six Asset Classes</span>
+            </h2>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {PORTFOLIO_FILTERS.map(f => (
+              <button
+                key={f}
+                onClick={() => setActiveFilter(f)}
+                className={`px-4 py-2 rounded-full text-[11px] font-bold uppercase tracking-widest transition-all duration-200 border ${
+                  activeFilter === f
+                    ? 'bg-lime-500 text-black border-lime-500'
+                    : 'bg-transparent text-slate-400 border-slate-700 hover:border-slate-500 hover:text-white'
+                }`}
+              >
+                {f}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Grid */}
+        <div className="space-y-4">
+          {/* Featured Card */}
+          {featured && (
+            <Link to="/portfolio">
+              <motion.div
+                layout
+                key={featured.title}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="group relative w-full h-[420px] sm:h-[500px] rounded-3xl overflow-hidden border border-slate-800 cursor-pointer"
+              >
+                <SmartImage
+                  alt={featured.title}
+                  fallbackSeed={featured.img}
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+
+                {/* Badge */}
+                <span className={`absolute top-5 left-5 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest border ${featured.badgeActive ? 'bg-lime-500/20 border-lime-500/50 text-lime-400' : 'bg-white/10 border-white/20 text-white/70'}`}>
+                  {featured.badge}
+                </span>
+
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-12">
+                  <div className="text-center space-y-4 max-w-lg">
+                    <p className="text-[10px] font-bold text-lime-500 uppercase tracking-widest">{featured.type}</p>
+                    <h3 className="text-3xl font-bold text-white">{featured.title}</h3>
+                    <p className="text-slate-300 text-sm leading-relaxed">{featured.desc}</p>
+                    <span className="inline-flex items-center gap-2 text-white font-bold text-xs uppercase tracking-widest">
+                      View Project <ArrowRight className="w-3 h-3" />
+                    </span>
+                  </div>
+                </div>
+
+                {/* Bottom info */}
+                <div className="absolute bottom-0 left-0 right-0 p-8">
+                  <p className="text-[10px] font-bold text-lime-500 uppercase tracking-widest mb-1">{featured.type}</p>
+                  <h3 className="text-2xl font-bold text-white mb-1">{featured.title}</h3>
+                  <p className="text-slate-400 text-xs mb-4">{featured.location}</p>
+                  {featured.stats && (
+                    <div className="flex flex-wrap gap-3">
+                      {featured.stats.map(s => (
+                        <div key={s.label} className="px-3 py-1.5 rounded-xl bg-white/10 backdrop-blur border border-white/20">
+                          <span className="text-white font-bold text-sm">{s.value}</span>
+                          <span className="text-white/60 text-[10px] ml-1">{s.label}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+            </Link>
+          )}
+
+          {/* Rest of cards */}
+          {rest.length > 0 && (
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {rest.map(project => (
+                <Link to="/portfolio" key={project.title}>
+                  <motion.div
+                    layout
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="group relative h-[260px] rounded-2xl overflow-hidden border border-slate-800 cursor-pointer"
+                  >
+                    <SmartImage
+                      alt={project.title}
+                      fallbackSeed={project.img}
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+
+                    <span className={`absolute top-3 left-3 px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-widest border ${project.badgeActive ? 'bg-lime-500/20 border-lime-500/50 text-lime-400' : 'bg-white/10 border-white/20 text-white/60'}`}>
+                      {project.badge}
+                    </span>
+
+                    {/* Hover overlay */}
+                    <div className="absolute inset-0 bg-black/70 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+                      <div className="text-center space-y-2">
+                        <p className="text-[9px] font-bold text-lime-500 uppercase tracking-widest">{project.type}</p>
+                        <p className="text-white text-sm leading-relaxed">{project.desc}</p>
+                        <span className="inline-flex items-center gap-1 text-white font-bold text-[10px] uppercase tracking-widest">
+                          View Project <ArrowRight className="w-3 h-3" />
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="absolute bottom-0 left-0 right-0 p-4">
+                      <p className="text-[9px] font-bold text-lime-500 uppercase tracking-widest mb-0.5">{project.type}</p>
+                      <h4 className="text-sm font-bold text-white leading-snug">{project.title}</h4>
+                      <p className="text-slate-400 text-[10px]">{project.location}</p>
+                    </div>
+                  </motion.div>
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* View all link */}
+        <div className="mt-10 text-center">
+          <Link to="/portfolio" className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-slate-700 text-slate-300 font-bold uppercase tracking-widest text-xs hover:border-slate-500 hover:text-white transition-all">
+            View Full Portfolio
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const Home = ({
   investorStatus,
   handleInvestorSubmit,
@@ -464,55 +715,8 @@ const Home = ({
         </div>
       </section>
 
-      {/* BUILT TO REPLICATE */}
-      <section id="projects" className="py-24 bg-slate-900/20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
-            <div className="max-w-2xl">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-6">
-                Built to replicate.
-              </h2>
-              <p className="text-lg text-slate-400 font-light">
-                Every project is designed around durable demand, standardized design, and predictable factory-led delivery.
-              </p>
-            </div>
-            <Link to="/portfolio" className="inline-flex items-center gap-2 text-slate-300 font-bold uppercase tracking-widest text-xs hover:text-slate-100 transition-colors">
-              View pipeline
-              <ChevronRight className="w-4 h-4" />
-            </Link>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-4">
-            {[
-              { title: 'TowneCenter', fallback: 'townecenter' },
-              { title: 'MedPlex', fallback: 'medplex' },
-              { title: 'Dove Trails', fallback: 'dovetrails' },
-              { title: 'Shops @ Fry Road', fallback: 'shopsfryroad' }
-            ].map((card, i) => (
-              <Link to="/portfolio" key={i}>
-                <motion.div
-                  whileHover={{ y: -10 }}
-                  className="group relative h-[400px] rounded-3xl overflow-hidden border border-slate-800"
-                >
-                  <SmartImage
-                    alt={card.title}
-                    fallbackSeed={card.fallback}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-8">
-                    <span className="text-slate-300 text-[10px] font-bold uppercase tracking-[0.2em] mb-2 block">Project 0{i + 1}</span>
-                    <h4 className="text-xl font-semibold text-white mb-4">{card.title}</h4>
-                    <div className="w-8 h-8 rounded-full bg-white/10 backdrop-blur flex items-center justify-center group-hover:bg-slate-700 group-hover:text-white transition-all duration-300">
-                      <ArrowRight className="w-4 h-4" />
-                    </div>
-                  </div>
-                </motion.div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* SELECTED PORTFOLIO */}
+      <PortfolioSection />
 
       {/* EXECUTION MODEL */}
       <section id="execution" className="py-24 relative overflow-hidden">
