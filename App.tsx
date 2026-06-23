@@ -473,7 +473,7 @@ const Home = ({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="font-serif font-light text-[clamp(46px,5.5vw,78px)] leading-[1.06] text-white"
+              className="font-serif font-light text-[clamp(32px,3.8vw,58px)] leading-[1.1] text-white"
             >
               Faster builds. Faster exits.<br />
               <em className="font-light text-white/90">Faster returns.</em>
