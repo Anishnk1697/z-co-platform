@@ -466,7 +466,7 @@ const Home = ({
             transition={{ duration: 0.8 }}
             className="max-w-2xl space-y-5 mr-auto"
           >
-            <p className="text-[10px] tracking-[0.28em] uppercase text-white/55">
+            <p className="text-[10px] tracking-[0.28em] uppercase text-white/80">
               Real Estate Development Platform
             </p>
             <motion.h1
@@ -476,14 +476,14 @@ const Home = ({
               className="font-serif font-light text-[clamp(46px,5.5vw,78px)] leading-[1.06] text-white"
             >
               Faster builds. Faster exits.<br />
-              <em className="font-light text-white/70">Faster returns.</em>
+              <em className="font-light text-white/90">Faster returns.</em>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-sm leading-[1.8] text-white/55 max-w-md font-light"
+              className="text-sm leading-[1.8] text-white/80 max-w-md font-light"
             >
               Replication reduces variance, compresses timelines, and accelerates
               stabilization—supporting faster capital return where applicable.
@@ -606,7 +606,7 @@ const Home = ({
                   <div className="h-12 w-12 flex items-center justify-center text-gold/70 group-hover:text-gold transition-colors">
                     <block.icon className="w-6 h-6" />
                   </div>
-                  <span className="font-serif text-4xl font-light text-[rgba(0,0,0,0.07)] group-hover:text-[rgba(0,0,0,0.12)] transition-colors">0{idx + 1}</span>
+                  <span className="font-serif text-4xl font-light text-light group-hover:text-gold/50 transition-colors">0{idx + 1}</span>
                 </div>
                 <h3 className="font-serif font-light text-2xl text-ink mb-3">{block.title}</h3>
                 <p className="text-mid text-sm mb-6 leading-[1.8] font-light">{block.body}</p>
@@ -1184,7 +1184,7 @@ export default function App() {
                 <img
                   src="/asset/z-co-logo-vertical.png"
                   alt="Z-Co Development"
-                  className="h-16 md:h-20 w-auto object-contain brightness-0 invert opacity-90 transition-opacity hover:opacity-100"
+                  className="h-16 md:h-20 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
                 />
               </Link>
               <p className="text-sm text-white/40 font-light leading-relaxed">
