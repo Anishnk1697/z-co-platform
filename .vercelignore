@@ -1,0 +1,7 @@
+node_modules
+.git
+dist
+public/asset/*.mp4
+public/asset/*.m4v
+public/asset/*.mov
+public/asset/*.avi

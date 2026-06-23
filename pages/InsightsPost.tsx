@@ -16,18 +16,18 @@ const categoryColors: Record<string, string> = {
 const renderSection = (section: BlogSection, i: number) => {
   switch (section.type) {
     case 'h2':
-      return <h2 key={i} className="text-2xl sm:text-3xl font-bold text-white mt-12 mb-4 leading-tight">{section.content}</h2>;
+      return <h2 key={i} className="text-2xl sm:text-3xl font-bold text-ink mt-12 mb-4 leading-tight">{section.content}</h2>;
     case 'h3':
-      return <h3 key={i} className="text-xl font-bold text-white mt-8 mb-3">{section.content}</h3>;
+      return <h3 key={i} className="text-xl font-bold text-ink mt-8 mb-3">{section.content}</h3>;
     case 'p':
-      return <p key={i} className="text-slate-400 leading-relaxed mb-5">{section.content}</p>;
+      return <p key={i} className="text-mid leading-relaxed mb-5">{section.content}</p>;
     case 'ul':
       return (
         <div key={i} className="my-6">
-          {section.content && <p className="text-slate-400 leading-relaxed mb-3">{section.content}</p>}
+          {section.content && <p className="text-mid leading-relaxed mb-3">{section.content}</p>}
           <ul className="space-y-3">
             {section.items?.map((item, j) => (
-              <li key={j} className="flex items-start gap-3 text-slate-400 text-sm leading-relaxed">
+              <li key={j} className="flex items-start gap-3 text-mid text-sm leading-relaxed">
                 <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-slate-500 shrink-0" />
                 {item}
               </li>
@@ -86,7 +86,7 @@ const InsightsPost = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-gold text-white">
       {/* Article Schema Markup */}
       <script
         type="application/ld+json"
@@ -95,7 +95,7 @@ const InsightsPost = () => {
 
       {/* Back nav */}
       <div className="pt-32 lg:pt-44 pb-0 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
-        <Link to="/insights" className="inline-flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-white uppercase tracking-widest transition-colors mb-10">
+        <Link to="/insights" className="inline-flex items-center gap-2 text-xs font-bold text-mid hover:text-ink uppercase tracking-widest transition-colors mb-10">
           <ArrowLeft className="w-3.5 h-3.5" /> All Insights
         </Link>
       </div>
@@ -109,26 +109,26 @@ const InsightsPost = () => {
           className="mb-12"
         >
           <div className="flex flex-wrap items-center gap-3 mb-6">
-            <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full border text-[10px] font-bold uppercase tracking-widest ${categoryColors[post.category] || 'text-slate-400 bg-slate-900 border-slate-800'}`}>
+            <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full border text-[10px] font-bold uppercase tracking-widest ${categoryColors[post.category] || 'text-mid bg-off border-[rgba(0,0,0,0.08)]'}`}>
               <Tag className="w-2.5 h-2.5" />{post.category}
             </span>
-            <span className="flex items-center gap-1.5 text-xs text-slate-500">
+            <span className="flex items-center gap-1.5 text-xs text-mid">
               <Clock className="w-3 h-3" />{post.readTime}
             </span>
-            <span className="flex items-center gap-1.5 text-xs text-slate-500">
+            <span className="flex items-center gap-1.5 text-xs text-mid">
               <Calendar className="w-3 h-3" />{post.publishDate}
             </span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.15] text-white mb-6">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.15] text-ink mb-6">
             {post.title}
           </h1>
-          <p className="text-xl text-slate-400 font-light leading-relaxed">
+          <p className="text-xl text-mid font-light leading-relaxed">
             {post.excerpt}
           </p>
 
           {/* Hero image placeholder with alt text */}
-          <div className="mt-10 rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 aspect-[16/7] flex items-center justify-center">
+          <div className="mt-10  overflow-hidden bg-off border border-[rgba(0,0,0,0.08)] aspect-[16/7] flex items-center justify-center">
             <img
               src="/images/og-placeholder.jpg"
               alt={post.heroAlt}
@@ -151,22 +151,22 @@ const InsightsPost = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="prose-dark pb-16 border-b border-slate-900"
+          className="prose-dark pb-16 border-b border-[rgba(0,0,0,0.07)]"
         >
           {post.sections.map((section, i) => renderSection(section, i))}
         </motion.div>
 
         {/* Author / CTA */}
-        <div className="py-12 border-b border-slate-900">
-          <div className="flex items-start gap-4 p-6 rounded-2xl bg-slate-950/60 border border-slate-800">
-            <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center shrink-0 text-xs font-bold text-white">ZC</div>
+        <div className="py-12 border-b border-[rgba(0,0,0,0.07)]">
+          <div className="flex items-start gap-4 p-6  bg-off/60 border border-[rgba(0,0,0,0.08)]">
+            <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center shrink-0 text-xs font-bold text-ink">ZC</div>
             <div>
-              <p className="text-sm font-bold text-white mb-1">Z-Co Development</p>
-              <p className="text-xs text-slate-500 leading-relaxed">Z-Co Development Corp. is a fully integrated real estate development platform headquartered in Houston, Texas, specializing in build-to-rent, healthcare, and mixed-use real estate.</p>
+              <p className="text-sm font-bold text-ink mb-1">Z-Co Development</p>
+              <p className="text-xs text-mid leading-relaxed">Z-Co Development Corp. is a fully integrated real estate development platform headquartered in Houston, Texas, specializing in build-to-rent, healthcare, and mixed-use real estate.</p>
               <div className="flex flex-wrap gap-3 mt-4">
-                <Link to="/about" className="text-[10px] font-bold text-white uppercase tracking-widest hover:text-slate-300 transition-colors">About Z-Co →</Link>
-                <Link to="/#invest" className="text-[10px] font-bold text-white uppercase tracking-widest hover:text-slate-300 transition-colors">Investor Access →</Link>
-                <Link to="/portfolio" className="text-[10px] font-bold text-white uppercase tracking-widest hover:text-slate-300 transition-colors">Our Projects →</Link>
+                <Link to="/about" className="text-[10px] font-bold text-ink uppercase tracking-widest hover:text-ink transition-colors">About Z-Co →</Link>
+                <Link to="/#invest" className="text-[10px] font-bold text-ink uppercase tracking-widest hover:text-ink transition-colors">Investor Access →</Link>
+                <Link to="/portfolio" className="text-[10px] font-bold text-ink uppercase tracking-widest hover:text-ink transition-colors">Our Projects →</Link>
               </div>
             </div>
           </div>
@@ -175,15 +175,15 @@ const InsightsPost = () => {
         {/* Related Posts */}
         {related.length > 0 && (
           <div className="py-12 pb-24">
-            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-6">Related Articles</p>
+            <p className="text-[10px] font-bold text-mid uppercase tracking-widest mb-6">Related Articles</p>
             <div className="grid sm:grid-cols-3 gap-5">
               {related.map(rel => (
-                <Link key={rel.slug} to={`/insights/${rel.slug}`} className="group block p-5 rounded-xl border border-slate-800 hover:border-slate-600 bg-slate-950/40 transition-all">
-                  <span className={`inline-block px-2 py-0.5 rounded-full border text-[8px] font-bold uppercase tracking-widest mb-3 ${categoryColors[rel.category] || 'text-slate-400 bg-slate-900 border-slate-800'}`}>
+                <Link key={rel.slug} to={`/insights/${rel.slug}`} className="group block p-5  border border-[rgba(0,0,0,0.08)] hover:border-slate-600 bg-off/40 transition-all">
+                  <span className={`inline-block px-2 py-0.5 rounded-full border text-[8px] font-bold uppercase tracking-widest mb-3 ${categoryColors[rel.category] || 'text-mid bg-off border-[rgba(0,0,0,0.08)]'}`}>
                     {rel.category}
                   </span>
-                  <h4 className="text-sm font-bold text-white leading-snug group-hover:text-slate-200 transition-colors mb-2">{rel.title}</h4>
-                  <span className="text-[10px] text-slate-500 group-hover:text-white transition-colors inline-flex items-center gap-1">Read <ArrowRight className="w-2.5 h-2.5" /></span>
+                  <h4 className="text-sm font-bold text-ink leading-snug group-hover:text-ink transition-colors mb-2">{rel.title}</h4>
+                  <span className="text-[10px] text-mid group-hover:text-ink transition-colors inline-flex items-center gap-1">Read <ArrowRight className="w-2.5 h-2.5" /></span>
                 </Link>
               ))}
             </div>

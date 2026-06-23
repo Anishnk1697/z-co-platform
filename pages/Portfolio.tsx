@@ -24,7 +24,7 @@ const Portfolio = () => {
       title: 'MedPlex',
       location: 'Katy, Texas',
       fallbackSeed: 'medplex',
-      description: 'MedPlex is a patient-centered healthcare platform that combines a licensed community hospital, outpatient medical services, and a physician network in one integrated system. It is designed to deliver convenient, high-quality care while giving physicians greater freedom and flexibility.',
+      description: 'MedPlex is a patient-centered healthcare platform that combines a licensed community hospital, outpatient medical services, and a physician network in one integrated system.',
       link: 'https://drive.google.com/file/d/1-A_PB-EHraeV0hcsIT-ZpKZjcobx0D2F/view?usp=drive_link',
       imagePosition: 'center 25%'
     },
@@ -71,128 +71,129 @@ const Portfolio = () => {
 
   return (
     <>
-      <div className="pt-32 pb-20 lg:pt-48 lg:pb-36 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-32">
-      {/* Current Projects Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="space-y-12"
-      >
-        <div className="max-w-3xl">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-8">
-            Current Projects
-          </h1>
-          <p className="text-xl text-slate-400 font-light leading-relaxed">
-            Explore our current pipeline and the innovative developments we are currently bringing to life.
-          </p>
-        </div>
+      <div className="pt-32 pb-20 lg:pt-48 lg:pb-36 px-6 lg:px-14 max-w-7xl mx-auto space-y-32">
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {currentProjects.map((project, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ y: -5 }}
-              className="rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-slate-500 transition-all overflow-hidden group"
-            >
-              <div className="h-64 overflow-hidden relative">
+        {/* Current Projects Section */}
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="space-y-12">
+          <div className="max-w-3xl">
+            <p className="text-[10px] font-normal text-gold uppercase tracking-[0.28em] mb-4">Pipeline</p>
+            <h1 className="font-serif font-light text-4xl sm:text-5xl lg:text-6xl text-ink mb-5 leading-[1.06]">
+              Current Projects
+            </h1>
+            <div className="w-9 h-px bg-gold mb-6" />
+            <p className="text-base text-mid font-light leading-[1.85]">
+              Explore our current pipeline and the innovative developments we are currently bringing to life.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-[rgba(0,0,0,0.07)]">
+            {currentProjects.map((project, i) => (
+              <motion.div
+                key={i}
+                className="bg-white overflow-hidden group"
+              >
+                <div className="h-64 overflow-hidden relative">
+                  <SmartImage
+                    alt={`${project.title} - ${project.location} - Real Estate Development Project`}
+                    fallbackSeed={project.fallbackSeed}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    style={project.imagePosition ? { objectPosition: project.imagePosition } : undefined}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink2/70 to-transparent" />
+                </div>
+                <div className="p-8 border-t border-[rgba(0,0,0,0.07)]">
+                  <h3 className="font-serif font-light text-2xl text-ink mb-1">{project.title}</h3>
+                  <p className="text-[10px] text-gold uppercase tracking-[0.17em] mb-4 font-normal">{project.location}</p>
+                  <p className="text-mid text-sm leading-[1.85] mb-6 font-light">
+                    {project.description}
+                  </p>
+                  {project.link !== '#' && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-ink font-normal text-[11px] uppercase tracking-[0.16em] border-b border-ink pb-0.5 hover:text-gold hover:border-gold transition-all"
+                    >
+                      Download Brochure
+                      <ArrowRight className="w-3 h-3" />
+                    </a>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Completed Projects Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="space-y-12"
+        >
+          <div className="max-w-3xl">
+            <p className="text-[10px] font-normal text-gold uppercase tracking-[0.28em] mb-4">Track Record</p>
+            <h2 className="font-serif font-light text-3xl sm:text-4xl lg:text-5xl text-ink mb-5 leading-[1.06]">
+              Completed Projects
+            </h2>
+            <div className="w-9 h-px bg-gold mb-6" />
+            <p className="text-base text-mid font-light leading-[1.85]">
+              A track record of excellence across diverse real estate sectors.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-[rgba(0,0,0,0.07)]">
+            {categories.map((cat, i) => (
+              <Link
+                key={i}
+                to={`/portfolio/${cat.id}`}
+                className="group relative h-64 overflow-hidden bg-ink2"
+              >
                 <SmartImage
-                  alt={`${project.title} - ${project.location} - Real Estate Development Project`}
-                  fallbackSeed={project.fallbackSeed}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  style={project.imagePosition ? { objectPosition: project.imagePosition } : undefined}
+                  alt={`${cat.name} Portfolio - Z-Co Real Estate Development`}
+                  fallbackSeed={cat.seed}
+                  className={`absolute inset-0 w-full h-full ${cat.imageFit} group-hover:scale-105 transition-transform duration-700`}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent" />
-              </div>
-              <div className="p-8">
-                <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
-                <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">{project.location}</p>
-                <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                  {project.description}
-                </p>
-                {project.link !== '#' && (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-white font-bold text-xs uppercase tracking-widest hover:gap-3 transition-all"
-                  >
-                    Download Brochure
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
-                )}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
+                <div className="absolute inset-0 bg-gradient-to-t from-ink2 via-ink2/40 to-transparent" />
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
+                  <span className="font-serif font-light text-xl text-white group-hover:text-white/80 transition-colors">
+                    {cat.name}
+                  </span>
+                  <span className="text-[10px] text-gold uppercase tracking-[0.2em] mt-2 font-normal">
+                    View Projects
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </motion.div>
+      </div>
 
-      {/* Completed Projects Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="space-y-12"
-      >
-        <div className="max-w-3xl">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-8">
-            Completed Projects
-          </h2>
-          <p className="text-xl text-slate-400 font-light leading-relaxed">
-            A track record of excellence across diverse real estate sectors. Explore our completed projects.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {categories.map((cat, i) => (
-            <Link
-              key={i}
-              to={`/portfolio/${cat.id}`}
-              className="group relative h-64 rounded-3xl overflow-hidden border border-slate-800 transition-all hover:border-slate-500"
-            >
-              <SmartImage
-                alt={`${cat.name} Portfolio - Z-Co Real Estate Development`}
-                fallbackSeed={cat.seed}
-                className={`absolute inset-0 w-full h-full ${cat.imageFit} group-hover:scale-110 transition-transform duration-700`}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
-                <span className="text-lg font-bold text-white group-hover:text-slate-200 transition-colors">
-                  {cat.name}
-                </span>
-                <span className="text-[10px] text-slate-400 uppercase tracking-[0.2em] mt-2 font-bold">
-                  View Projects
-                </span>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </motion.div>
-    </div>
-    <FAQSection
-      heading="Real Estate Investment FAQ"
-      faqs={[
-        {
-          question: 'What types of real estate projects does Z-Co develop?',
-          answer: <>Z-Co develops across three core asset classes: <Link to="/build-to-rent-developer-usa" className="underline hover:text-white transition-colors">build-to-rent</Link> residential communities (purpose-built single-family and townhome rental neighborhoods), <Link to="/healthcare-real-estate-developer" className="underline hover:text-white transition-colors">healthcare real estate</Link> (medical office buildings, integrated hospital campuses, and physician facilities), and <Link to="/mixed-use-real-estate-developer" className="underline hover:text-white transition-colors">mixed-use</Link> developments (combining residential, retail, healthcare, and hospitality uses in a single master-planned community). All projects are concentrated in high-growth Texas Sun Belt markets.</>
-        },
-        {
-          question: 'What is build-to-rent development?',
-          answer: 'Build-to-rent (BTR) development involves designing and constructing residential communities specifically for long-term rental rather than individual sale. BTR communities typically feature single-family homes or townhomes with private yards, garages, and community amenities — all operated under professional management by the ownership entity. This model serves the growing demographic of renters who want single-family living without the commitment of homeownership.'
-        },
-        {
-          question: 'What is EB-5 investment and how does Z-Co use it?',
-          answer: <>The <Link to="/eb5-real-estate-projects-usa" className="underline hover:text-white transition-colors">EB-5 Immigrant Investor Program</Link> allows qualifying foreign nationals to invest in U.S. commercial enterprises that create American jobs, in exchange for U.S. permanent residency (green card) eligibility. Z-Co structures its larger development projects to qualify for EB-5 investment through USCIS-approved Regional Centers. Our projects create significant direct and indirect employment — well in excess of the minimum 10 jobs per investor required.</>
-        },
-        {
-          question: 'How can I invest in Z-Co development projects?',
-          answer: <>Z-Co accepts investment from <Link to="/real-estate-investment-platform" className="underline hover:text-white transition-colors">accredited investors</Link> through several structures: direct project co-investment (common equity), preferred equity, mezzanine debt participation, and EB-5 investment (for international investors seeking green card eligibility). Minimums and returns vary by structure and project. Request our investor packet via the Contact section to discuss current availability.</>
-        },
-        {
-          question: 'How do joint venture real estate partnerships work?',
-          answer: <>A real estate <Link to="/real-estate-joint-venture-partnerships" className="underline hover:text-white transition-colors">joint venture (JV)</Link> is a partnership between two or more parties who contribute capital, expertise, or land to a development project in exchange for a share of the profits. Z-Co pursues JV partnerships with landowners, family offices, institutional capital partners, and operators who bring complementary assets to our development pipeline. JV terms vary by project — contact us to explore partnership structures.</>
-        },
-      ]}
-    />
+      <FAQSection
+        heading="Real Estate Investment FAQ"
+        faqs={[
+          {
+            question: 'What types of real estate projects does Z-Co develop?',
+            answer: <>Z-Co develops across three core asset classes: <Link to="/build-to-rent-developer-usa" className="underline hover:text-ink transition-colors">build-to-rent</Link> residential communities, <Link to="/healthcare-real-estate-developer" className="underline hover:text-ink transition-colors">healthcare real estate</Link>, and <Link to="/mixed-use-real-estate-developer" className="underline hover:text-ink transition-colors">mixed-use</Link> developments. All projects are concentrated in high-growth Texas Sun Belt markets.</>
+          },
+          {
+            question: 'What is build-to-rent development?',
+            answer: 'Build-to-rent (BTR) development involves designing and constructing residential communities specifically for long-term rental rather than individual sale. BTR communities typically feature single-family homes or townhomes with private yards, garages, and community amenities — all operated under professional management by the ownership entity.'
+          },
+          {
+            question: 'What is EB-5 investment and how does Z-Co use it?',
+            answer: <>The <Link to="/eb5-real-estate-projects-usa" className="underline hover:text-ink transition-colors">EB-5 Immigrant Investor Program</Link> allows qualifying foreign nationals to invest in U.S. commercial enterprises that create American jobs, in exchange for U.S. permanent residency eligibility. Z-Co structures its larger development projects to qualify for EB-5 investment through USCIS-approved Regional Centers.</>
+          },
+          {
+            question: 'How can I invest in Z-Co development projects?',
+            answer: <>Z-Co accepts investment from <Link to="/real-estate-investment-platform" className="underline hover:text-ink transition-colors">accredited investors</Link> through several structures: direct project co-investment, preferred equity, mezzanine debt participation, and EB-5 investment. Request our investor packet via the Contact section to discuss current availability.</>
+          },
+          {
+            question: 'How do joint venture real estate partnerships work?',
+            answer: <>A real estate <Link to="/real-estate-joint-venture-partnerships" className="underline hover:text-ink transition-colors">joint venture (JV)</Link> is a partnership between two or more parties who contribute capital, expertise, or land to a development project in exchange for a share of the profits. Z-Co pursues JV partnerships with landowners, family offices, institutional capital partners, and operators.</>
+          },
+        ]}
+      />
     </>
   );
 };

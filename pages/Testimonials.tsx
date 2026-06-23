@@ -64,10 +64,10 @@ const Testimonials = () => {
         className="space-y-12"
       >
         <div className="max-w-3xl">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-8">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-ink mb-8">
             Testimonials
           </h1>
-          <p className="text-xl text-slate-400 font-light leading-relaxed">
+          <p className="text-xl text-mid font-light leading-relaxed">
             Hear from our partners, investors, and clients about their experience working with Z-Co Development.
           </p>
         </div>
@@ -80,29 +80,29 @@ const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className={`p-10 rounded-[2.5rem] bg-slate-900/50 border border-slate-800 relative flex flex-col justify-between ${t.featured ? 'md:col-span-2' : ''}`}
+              className={`p-10 rounded-[2.5rem] bg-off/50 border border-[rgba(0,0,0,0.08)] relative flex flex-col justify-between ${t.featured ? 'md:col-span-2' : ''}`}
             >
               <div>
                 <Quote className="w-10 h-10 text-slate-700 absolute top-8 right-8 opacity-50" />
-                <p className={`text-slate-300 italic mb-10 relative z-10 whitespace-pre-line ${t.featured ? 'text-xl leading-relaxed' : 'text-lg'}`}>
+                <p className={`text-ink italic mb-10 relative z-10 whitespace-pre-line ${t.featured ? 'text-xl leading-relaxed' : 'text-lg'}`}>
                   "{t.quote}"
                 </p>
               </div>
 
               <div className="flex items-center gap-5 translate-y-2">
                 {t.image && (
-                  <div className="h-16 w-16 rounded-2xl overflow-hidden border border-slate-700 bg-slate-800 flex-shrink-0">
+                  <div className="h-16 w-16  overflow-hidden border border-[rgba(0,0,0,0.1)] bg-slate-800 flex-shrink-0">
                     <img src={t.image} alt={`${t.author} - ${t.role} - Z-Co Development Partner`} className="w-full h-full object-cover" />
                   </div>
                 )}
                 {!t.image && !t.featured && (
-                  <div className="h-12 w-12 rounded-xl bg-slate-800 flex items-center justify-center text-slate-500 border border-slate-700/50">
+                  <div className="h-12 w-12  bg-slate-800 flex items-center justify-center text-mid border border-[rgba(0,0,0,0.1)]/50">
                     <Quote className="w-5 h-5 opacity-30" />
                   </div>
                 )}
                 <div className="flex flex-col">
-                  <p className="font-bold text-white text-lg leading-tight mb-1">{t.author}</p>
-                  <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-widest">{t.role}</p>
+                  <p className="font-bold text-ink text-lg leading-tight mb-1">{t.author}</p>
+                  <p className="text-[11px] font-semibold text-mid uppercase tracking-widest">{t.role}</p>
                 </div>
               </div>
             </motion.div>

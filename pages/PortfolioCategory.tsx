@@ -17,8 +17,8 @@ const PortfolioCategory = () => {
     if (!data) {
         return (
             <div className="pt-32 pb-20 px-4 text-center">
-                <h1 className="text-2xl text-white">Category not found</h1>
-                <Link to="/portfolio" className="text-slate-400 hover:text-white mt-4 inline-block">Back to Portfolio</Link>
+                <h1 className="text-2xl text-ink">Category not found</h1>
+                <Link to="/portfolio" className="text-mid hover:text-ink mt-4 inline-block">Back to Portfolio</Link>
             </div>
         );
     }
@@ -34,15 +34,15 @@ const PortfolioCategory = () => {
                     <div className="max-w-3xl">
                         <Link
                             to="/portfolio"
-                            className="inline-flex items-center gap-2 text-slate-500 hover:text-white transition-colors mb-6 text-xs font-bold uppercase tracking-widest"
+                            className="inline-flex items-center gap-2 text-mid hover:text-ink transition-colors mb-6 text-xs font-bold uppercase tracking-widest"
                         >
                             <ArrowLeft className="w-4 h-4" />
                             Back to Portfolio
                         </Link>
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-8">
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-ink mb-8">
                             {data.title}
                         </h1>
-                        <p className="text-xl text-slate-400 font-light leading-relaxed">
+                        <p className="text-xl text-mid font-light leading-relaxed">
                             {data.description}
                         </p>
                     </div>
@@ -53,7 +53,7 @@ const PortfolioCategory = () => {
                         <motion.div
                             key={i}
                             whileHover={{ y: -5 }}
-                            className="rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-slate-500 transition-all overflow-hidden group"
+                            className=" bg-off/50 border border-[rgba(0,0,0,0.08)] hover:border-slate-500 transition-all overflow-hidden group"
                         >
                             <div className="h-64 overflow-hidden relative">
                                 <SmartImage
@@ -64,9 +64,9 @@ const PortfolioCategory = () => {
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent" />
                             </div>
                             <div className="p-8">
-                                <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
-                                <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">{project.location}</p>
-                                <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                                <h3 className="text-2xl font-bold text-ink mb-2">{project.title}</h3>
+                                <p className="text-xs text-mid uppercase tracking-widest mb-4">{project.location}</p>
+                                <p className="text-mid text-sm leading-relaxed mb-6">
                                     {project.description}
                                 </p>
                                 {project.link && (
@@ -74,7 +74,7 @@ const PortfolioCategory = () => {
                                         href={project.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-2 text-white font-bold text-xs uppercase tracking-widest hover:gap-3 transition-all"
+                                        className="inline-flex items-center gap-2 text-ink font-bold text-xs uppercase tracking-widest hover:gap-3 transition-all"
                                     >
                                         View Details
                                         <ArrowRight className="w-4 h-4" />
