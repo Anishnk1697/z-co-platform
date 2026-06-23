@@ -161,19 +161,19 @@ const TriangleGraphic = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         />
-        <motion.circle cx="200" cy="93" r="13.5" fill="white" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.4 }} />
-        <motion.circle cx="60" cy="308" r="13.5" fill="white" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.5 }} />
-        <motion.circle cx="340" cy="308" r="13.5" fill="white" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.6 }} />
+        <motion.circle cx="200" cy="93" r="13.5" fill="#F8F7F4" stroke="#8B6F3E" strokeWidth="2" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.4 }} />
+        <motion.circle cx="60" cy="308" r="13.5" fill="#F8F7F4" stroke="#8B6F3E" strokeWidth="2" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.5 }} />
+        <motion.circle cx="340" cy="308" r="13.5" fill="#F8F7F4" stroke="#8B6F3E" strokeWidth="2" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.6 }} />
       </svg>
 
       <div className="absolute top-[13%] left-1/2 -translate-x-1/2 text-center">
-        <span className="text-xs font-bold text-white uppercase tracking-widest">Operator</span>
+        <span className="text-[10px] font-normal text-ink uppercase tracking-[0.17em]">Operator</span>
       </div>
       <div className="absolute top-[83%] left-[15%] -translate-x-1/2 text-center">
-        <span className="text-xs font-bold text-white uppercase tracking-widest">Developer</span>
+        <span className="text-[10px] font-normal text-ink uppercase tracking-[0.17em]">Developer</span>
       </div>
       <div className="absolute top-[83%] left-[85%] -translate-x-1/2 text-center">
-        <span className="text-xs font-bold text-white uppercase tracking-widest">Investor</span>
+        <span className="text-[10px] font-normal text-ink uppercase tracking-[0.17em]">Investor</span>
       </div>
     </div>
   );
@@ -342,7 +342,7 @@ const PortfolioSection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
 
-                <span className={`absolute top-5 left-5 px-3 py-1 text-[10px] font-normal uppercase tracking-[0.17em] border ${featured.badgeActive ? 'border-gold/60 text-gold bg-black/40' : 'border-white/20 text-white/70 bg-black/30'}`}>
+                <span className={`absolute top-5 left-5 px-3 py-1 text-[10px] font-normal uppercase tracking-[0.17em] border ${featured.badgeActive ? 'border-gold/70 text-gold bg-black/60' : 'border-white/50 text-white bg-black/60'}`}>
                   {featured.badge}
                 </span>
 
@@ -396,7 +396,7 @@ const PortfolioSection = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
 
-                    <span className={`absolute top-3 left-3 px-2 py-0.5 text-[9px] font-normal uppercase tracking-[0.17em] border ${project.badgeActive ? 'border-gold/60 text-gold bg-black/40' : 'border-white/20 text-white/60 bg-black/30'}`}>
+                    <span className={`absolute top-3 left-3 px-2 py-0.5 text-[9px] font-normal uppercase tracking-[0.17em] border ${project.badgeActive ? 'border-gold/70 text-gold bg-black/60' : 'border-white/50 text-white bg-black/60'}`}>
                       {project.badge}
                     </span>
 
@@ -514,7 +514,7 @@ const Home = ({
             {STATS.map((stat, i) => (
               <div key={i} className="flex flex-col items-center text-center py-8 px-6 border-r border-white/[0.06] last:border-r-0">
                 <span className="font-serif font-light text-4xl text-white leading-none">{stat.value}</span>
-                <span className="text-[10px] uppercase tracking-[0.17em] text-white/35 mt-1.5 font-normal">{stat.label}</span>
+                <span className="text-[10px] uppercase tracking-[0.17em] text-white/55 mt-1.5 font-normal">{stat.label}</span>
               </div>
             ))}
           </div>
