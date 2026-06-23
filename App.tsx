@@ -137,7 +137,7 @@ const LifecycleGraphic = () => {
             className="absolute -translate-x-1/2 -translate-y-1/2 text-center w-32 pointer-events-none"
             style={{ left: `${pos.x}%`, top: `${pos.y}%` }}
           >
-            <p className="text-xs font-bold text-white uppercase tracking-widest leading-tight drop-shadow-[0_2px_10px_rgba(0,0,0,1)] px-1">
+            <p className="text-[9px] font-normal text-ink uppercase tracking-[0.14em] leading-tight bg-white/70 backdrop-blur-sm px-2 py-1 border border-[rgba(0,0,0,0.08)]">
               {step.label}
             </p>
           </motion.div>
@@ -715,7 +715,7 @@ const Home = ({
                 <p className="mt-4 text-[13px] font-light text-ink transition-colors text-center whitespace-nowrap">
                   {step.label}
                 </p>
-                <span className="absolute -top-8 font-serif text-[13px] text-[rgba(0,0,0,0.12)] group-hover:text-gold/40 transition-colors">0{idx + 1}</span>
+                <span className="absolute -top-8 font-serif text-[13px] text-light group-hover:text-gold/50 transition-colors">0{idx + 1}</span>
               </div>
             ))}
           </div>
