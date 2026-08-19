@@ -302,7 +302,7 @@ const PortfolioSection = () => {
           <div>
             <p className="text-[10px] font-normal text-gold uppercase tracking-[0.28em] mb-3">Selected Portfolio</p>
             <h2 className="font-serif font-light text-3xl sm:text-4xl lg:text-5xl text-ink leading-tight">
-              37+ Projects Across<br /><em className="font-light">Six Asset Classes</em>
+              50+ Projects Across<br /><em className="font-light">Six Asset Classes</em>
             </h2>
             <div className="w-9 h-px bg-gold mt-5" />
           </div>
@@ -660,7 +660,7 @@ const Home = ({
       <div className="flex justify-between items-center border-b border-[rgba(0,0,0,0.1)] bg-white px-[72px] py-8">
         {[
           { value: '2003', label: 'Founded, Texas' },
-          { value: '37+', label: 'Projects Delivered' },
+          { value: "50+", label: "Projects Delivered" },
           { value: '0', label: 'Abandonments' },
           { value: '$200M+', label: 'Combined Project Value' },
           { value: '6', label: 'Asset Classes' },
@@ -818,7 +818,7 @@ const Home = ({
               'Disciplined, data-driven site selection — Z-Co only enters markets with structural undersupply and real employment growth.',
               'Institutional-grade reporting for capital partners, from LP waterfall structures to K-1 documentation.',
               'Capital solutions that meet developers and investors where they are — direct equity, JV partnerships, or EB-5 structures.',
-              '23 years, 37+ completed projects, zero abandonments. Proven, not promised.',
+              '23 years, 50+ completed projects, zero abandonments. Proven, not promised.',
             ].map((text, i) => (
               <div key={i} style={{ display: 'flex', gap: 16, alignItems: 'flex-start', padding: '26px 28px', background: '#1C1C1A' }}>
                 <span style={{ flexShrink: 0, width: 26, height: 26, border: '1px solid #A8895A', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#A8895A', fontSize: 14 }}>✓</span>
@@ -827,10 +827,10 @@ const Home = ({
             ))}
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', height: '100%', borderLeft: '2px solid #A8895A', paddingLeft: 22 }}>
-            <p className="font-serif" style={{ fontStyle: 'italic', fontWeight: 300, color: 'rgba(255,255,255,0.7)', fontSize: 17, lineHeight: 1.55 }}>"In 37 completed projects, we have never abandoned a development. That is not fortune — that is underwriting."</p>
+            <p className="font-serif" style={{ fontStyle: 'italic', fontWeight: 300, color: 'rgba(255,255,255,0.7)', fontSize: 17, lineHeight: 1.55 }}>"In 50+ completed projects, we have never abandoned a development. That is not fortune — that is underwriting."</p>
             <p style={{ fontSize: 11, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#A8895A', marginTop: 10 }}>Mike Butte · Founder &amp; CEO</p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20, marginTop: 'auto', paddingTop: 32 }}>
-              {[{ v: '37+', l: 'Projects Delivered' }, { v: '23', l: 'Years Operating' }, { v: '0', l: 'Abandonments' }].map((s) => (
+              {[{ v: "50+", l: "Projects Delivered" }, { v: '23', l: 'Years Operating' }, { v: '0', l: 'Abandonments' }].map((s) => (
                 <div key={s.l} style={{ borderTop: '1px solid rgba(255,255,255,0.14)', paddingTop: 14 }}>
                   <strong className="font-serif" style={{ display: 'block', fontWeight: 300, color: '#A8895A', fontSize: 24 }}>{s.v}</strong>
                   <span style={{ fontSize: 10.5, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.55)', lineHeight: 1.4 }}>{s.l}</span>
