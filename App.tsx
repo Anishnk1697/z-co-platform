@@ -1144,7 +1144,7 @@ const Home = ({
             { name: 'Anish N. Kantharia', title: 'Director of Marketing', img: '/asset/anish-kantharia.jpg', bio: "Leads brand strategy, digital marketing, and project marketing execution across Z-Co's active developments and investor communications." },
             { name: 'Abel Castro', title: 'Construction Manager', img: '/asset/abel-castro.png', bio: "Manages on-site construction operations, contractor relationships, and field-level schedule compliance across Z-Co's active development projects." },
             { name: 'Phan Le', title: 'Financial Analyst', img: '/asset/phan-le.png', bio: "Supports underwriting, financial modeling, and investment reporting across Z-Co's project portfolio." },
-            { name: 'Thaddaus Hays Jr.', title: 'Project Manager', img: null, bio: "Coordinates project timelines, contractor schedules, and stakeholder communications for Z-Co's active development pipeline." },
+            { name: 'Thaddaus Hays Jr.', title: 'Project Manager', img: '/asset/thaddaus-hays.jpg', bio: "Coordinates project timelines, contractor schedules, and stakeholder communications for Z-Co's active development pipeline." },
           ].map((member) => (
             <div key={member.name} className="bg-white">
               {member.img ? (
