@@ -533,710 +533,764 @@ const Home = ({
     description: 'Z-Co Development is a real estate development and investment platform specializing in build-to-rent, healthcare, mixed-use and EB-5 projects.'
   });
 
+  // --- Hero slideshow ---
+  const heroSlides = [
+    { img: '/asset/dovetrails.jpg', caption: 'Dove Trails · San Antonio, TX' },
+    { img: '/asset/everson-building.jpg', caption: 'The Everson · San Antonio, TX' },
+    { img: '/asset/medplex.jpg', caption: 'MedPlex · Katy, TX' },
+    { img: '/asset/hotel-best-western-1.png', caption: 'Best Western Premier' },
+  ];
+  const [heroIdx, setHeroIdx] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setHeroIdx(i => (i + 1) % heroSlides.length), 5500);
+    return () => clearInterval(t);
+  }, []);
+
+  // --- Asset class tabs ---
+  const assetTabs = [
+    {
+      label: 'Residential',
+      img: '/asset/dovetrails.jpg',
+      desc: "Gated, build-to-sell communities and luxury custom homes targeting workforce ownership near major employment centers. Dove Trails is the current proof case — 152 homes engineered on Z-Co's LGS platform, priced for buyers who work in the neighborhood they're buying into, not commuting in from further out.",
+      featured: 'Featured: Dove Trails, San Antonio',
+    },
+    {
+      label: 'Multifamily',
+      img: '/asset/everson-building.jpg',
+      desc: 'Market-rate and workforce rental communities anchored by strong amenity programs and disciplined location strategy — sited against real employment and population data, not just land price. The Everson delivered at 92% leased against top-tier submarket comparables.',
+      featured: 'Featured: The Everson, San Antonio',
+    },
+    {
+      label: 'Healthcare',
+      img: '/asset/medplex.jpg',
+      desc: 'Hospital, HOPD, and ambulatory care developments positioned proximate to major employment corridors and underserved primary service areas. MedPlex anchors this vertical — a hub hospital and physician network built for a market with zero existing acute-care competition.',
+      featured: 'Featured: MedPlex, Katy, TX',
+    },
+    {
+      label: 'Hospitality',
+      img: '/asset/hotel-best-western-1.png',
+      desc: 'Select and full-service hotel developments placed at strategic demand nodes — highway interchanges, employment corridors, medical districts — and transitioned to institutional-grade brand operations after delivery.',
+      featured: 'Featured: Best Western Premier',
+    },
+    {
+      label: 'Retail & F&B',
+      img: '/asset/shopsfryroad.jpg',
+      desc: 'Restaurant, wellness, and retail developments embedded within community-oriented, mixed-use neighborhood programs — designed to activate foot traffic around Z-Co\'s residential and healthcare anchors, not compete with them.',
+      featured: 'Featured: Urban Retreat',
+    },
+    {
+      label: 'Commercial',
+      img: '/asset/auto-experts.png',
+      desc: 'Office, automotive, and specialty commercial developments serving business tenants in high-growth Texas submarkets — delivered to brand and operational specification for national and regional operators.',
+      featured: 'Featured: Auto Experts',
+    },
+  ];
+  const [activeTab, setActiveTab] = useState(0);
+
   return (
     <>
-      {/* HERO */}
-      <header className="relative isolate min-h-screen flex flex-col justify-end pb-0 lg:pb-4 overflow-hidden bg-ink">
-        <div className="absolute inset-0 z-0">
-          <SmartVideo className="w-full h-full object-cover" />
-        </div>
-        <div className="absolute inset-0 z-0 bg-gradient-to-r from-black/60 via-black/20 to-black/05" />
-
-        <div className="mx-auto max-w-7xl px-6 lg:px-14 relative z-10 w-full pb-16 lg:pb-20 pt-[380px]">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-2xl space-y-5 mr-auto"
+      {/* 1. HERO — Full-screen image slideshow */}
+      <header className="relative overflow-hidden" style={{ height: '100vh', minHeight: '620px' }}>
+        {heroSlides.map((slide, i) => (
+          <div
+            key={i}
+            className="absolute inset-0"
+            style={{
+              opacity: i === heroIdx ? 1 : 0,
+              transition: 'opacity 1.4s ease',
+            }}
           >
-            <p className="text-[10px] tracking-[0.28em] uppercase text-white/80">
-              Real Estate Development Platform
-            </p>
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="font-serif font-light text-[clamp(32px,3.8vw,58px)] leading-[1.1] text-white"
-            >
-              Faster builds. Faster exits.<br />
-              <em className="font-light text-white/90">Faster returns.</em>
-            </motion.h1>
+            <img src={slide.img} alt={slide.caption} className="w-full h-full object-cover" />
+          </div>
+        ))}
+        {/* Dark overlay */}
+        <div className="absolute inset-0" style={{ background: 'rgba(14,14,12,0.45)' }} />
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="text-sm leading-[1.8] text-white/80 max-w-md font-light"
+        {/* Bottom-left text block */}
+        <div className="absolute bottom-12 left-[72px] max-w-2xl z-10">
+          <p className="text-white/55 uppercase text-[11px] tracking-[0.16em] mb-4">
+            Real Estate Development Platform · Z-Co Development Corp · Est. 2003
+          </p>
+          <h1 className="font-serif font-light text-white leading-[1.15] mb-4" style={{ fontSize: 'clamp(42px,5vw,72px)' }}>
+            Faster builds. Faster exits.<br /><em>Faster returns.</em>
+          </h1>
+          <p className="text-white/65 text-sm mb-7 max-w-xl leading-relaxed">
+            Replication reduces variance, compresses timelines, and accelerates stabilization—supporting faster capital return where applicable.
+          </p>
+          <div className="flex gap-4 flex-wrap">
+            <Link
+              to="/portfolio"
+              className="border border-white/50 text-white px-5 py-3 text-[11px] uppercase tracking-[0.14em] hover:bg-white hover:text-ink transition-all"
             >
-              Replication reduces variance, compresses timelines, and accelerates
-              stabilization—supporting faster capital return where applicable.
-            </motion.p>
+              View Our Work →
+            </Link>
+            <button
+              onClick={() => document.getElementById('investors')?.scrollIntoView({ behavior: 'smooth' })}
+              className="border border-white/50 text-white px-5 py-3 text-[11px] uppercase tracking-[0.14em] hover:bg-white hover:text-ink transition-all"
+            >
+              Our Approach →
+            </button>
+          </div>
+        </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="pt-2"
-            >
-              <Link
-                to="/portfolio"
-                className="inline-flex items-center gap-3 text-[11px] tracking-[0.2em] uppercase text-white border-b border-white/40 pb-0.5 hover:border-white transition-all"
-              >
-                View portfolio
-                <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </motion.div>
-          </motion.div>
+        {/* Bottom-right: caption + indicators + counter */}
+        <div className="absolute bottom-12 right-[72px] z-10 flex flex-col items-end gap-3">
+          <p className="text-white/55 text-[11px] uppercase tracking-[0.14em]">{heroSlides[heroIdx].caption}</p>
+          <div className="flex gap-2 items-center">
+            {heroSlides.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setHeroIdx(i)}
+                className="rounded-full transition-all"
+                style={{
+                  width: i === heroIdx ? '20px' : '6px',
+                  height: '6px',
+                  background: i === heroIdx ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.35)',
+                }}
+              />
+            ))}
+          </div>
+          <p className="text-white/55 text-[11px] uppercase tracking-[0.14em]">
+            {String(heroIdx + 1).padStart(2, '0')} / {String(heroSlides.length).padStart(2, '0')}
+          </p>
         </div>
       </header>
 
-      {/* STATS STRIP */}
-      <section className="bg-ink2">
-        <div className="mx-auto max-w-7xl px-6 lg:px-14">
-          <div className="grid grid-cols-2 md:grid-cols-4">
-            {STATS.map((stat, i) => (
-              <div key={i} className="flex flex-col items-center text-center py-8 px-6 border-r border-white/[0.06] last:border-r-0">
-                <span className="font-serif font-light text-4xl text-white leading-none">{stat.value}</span>
-                <span className="text-[10px] uppercase tracking-[0.17em] text-white/55 mt-1.5 font-normal">{stat.label}</span>
-              </div>
-            ))}
+      {/* 2. STATS BAR */}
+      <div className="flex justify-between items-center border-b border-[rgba(0,0,0,0.1)] bg-white px-[72px] py-8">
+        {[
+          { value: '2003', label: 'Founded, Texas' },
+          { value: '37+', label: 'Projects Delivered' },
+          { value: '0', label: 'Abandonments' },
+          { value: '$200M+', label: 'Combined Project Value' },
+          { value: '6', label: 'Asset Classes' },
+        ].map((s) => (
+          <div key={s.label} className="text-center">
+            <div className="font-serif font-light text-ink" style={{ fontSize: 'clamp(22px,2.5vw,32px)' }}>{s.value}</div>
+            <div className="text-[10px] uppercase tracking-[0.14em] text-mid mt-1">{s.label}</div>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
 
-      {/* ABOUT SECTION */}
-      <section id="about" className="py-24 lg:py-32 bg-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-14">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            <div>
-              <p className="text-[11px] font-normal text-gold uppercase tracking-[0.28em] mb-4">Execution-First Real Estate</p>
-              <h2 className="font-serif font-light text-3xl sm:text-4xl lg:text-5xl text-ink leading-[1.15] mb-6">
-                We develop resilient communities<br />
-                <em>through an integrated platform.</em>
-              </h2>
-              <div className="w-7 h-px bg-gold mb-6" />
-              <p className="text-base text-mid leading-[1.85] font-light mb-4">
-                Z-Co Development Corp is a privately held, vertically integrated real estate company that turns undervalued land and underserved markets into concepts that work — for residents, physicians, tenants, and investors alike. Founded by Mike Butte in 2003, the firm has completed more than 37 projects across six asset classes through multiple economic cycles, with zero abandonments.
-              </p>
-              <p className="text-base text-mid leading-[1.85] font-light mb-8">
-                Rather than building isolated structures, Z-Co designs end-to-end concepts — for next-generation healthcare, community-centered living, and vibrant commercial centers — and stays accountable for each one from land acquisition through delivery.
-              </p>
-              <blockquote className="font-serif font-light text-xl italic leading-[1.55] text-ink2 border-l-2 border-gold pl-5 mb-4">
-                &ldquo;Conservative about what we start. Relentless about what we finish.&rdquo;
-              </blockquote>
-              <p className="text-[11px] font-normal text-gold uppercase tracking-[0.14em]">Mike Butte &nbsp;·&nbsp; Founder &amp; CEO &nbsp;·&nbsp; Est. 2003</p>
-            </div>
-            <div className="relative">
-              <div className="aspect-[3/4] overflow-hidden bg-ink2">
-                <SmartImage alt="Z-Co Development - About" fallbackSeed="medplex" className="w-full h-full object-cover" />
-              </div>
-              <div className="absolute -bottom-8 -left-8 w-1/2 aspect-[4/3] overflow-hidden border-4 border-white shadow-xl hidden lg:block">
-                <SmartImage alt="Z-Co Development project" fallbackSeed="dovetrails" className="w-full h-full object-cover" />
-              </div>
-            </div>
+      {/* 3. ABOUT SECTION */}
+      <section className="bg-white py-24 px-[72px]">
+        <div className="grid grid-cols-2 gap-24 items-center">
+          {/* Left: stacked images */}
+          <div className="relative">
+            <img src="/asset/philosophy-building.webp" alt="Z-Co Philosophy" className="w-full object-cover" style={{ aspectRatio: '5/4' }} />
+            <img src="/asset/mike-butte.jpg" alt="Mike Butte" className="w-full object-cover ml-12 -mt-12 relative" style={{ aspectRatio: '4/3' }} />
           </div>
-        </div>
-      </section>
-
-      {/* WHAT WE DO */}
-      <section id="what-we-do" className="py-20 bg-off">
-        <div className="mx-auto max-w-7xl px-6 lg:px-14">
-          <p className="text-[11px] font-normal text-gold uppercase tracking-[0.28em] mb-4">What We Do</p>
-          <h2 className="font-serif font-light text-3xl sm:text-4xl lg:text-5xl text-ink leading-[1.1] mb-5">
-            Four ways we <em>create value.</em>
-          </h2>
-          <div className="w-7 h-px bg-gold mb-12" />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[rgba(0,0,0,0.08)]">
-            {[
-              {
-                title: 'Real Estate Development',
-                desc: 'Z-Co\'s own residential, healthcare, hospitality, and mixed-use projects — from land acquisition through delivery.',
-                cta: 'View Current Projects',
-                href: '/portfolio'
-              },
-              {
-                title: 'Investment Opportunities',
-                desc: 'Institutional-style capital structures opened to accredited investors, including EB-5 eligible projects.',
-                cta: 'See Investor Access',
-                href: '/#invest'
-              },
-              {
-                title: 'Development Services',
-                desc: 'Turnkey project delivery for developers and asset owners who want Z-Co\'s execution, without giving up ownership.',
-                cta: 'Build With Us',
-                href: '/#contact'
-              },
-              {
-                title: 'US Modular Systems',
-                desc: 'Z-Co\'s LGS manufacturing capability — built to serve Z-Co\'s own projects first, creating a factory-enabled delivery advantage.',
-                cta: 'Learn More',
-                href: '/prefabricated-construction-real-estate'
-              }
-            ].map((card, i) => (
-              <div key={i} className="bg-white p-8 hover:bg-off transition-colors duration-200" style={{ background: 'linear-gradient(165deg, #fff 45%, rgba(139,111,62,0.06))' }}>
-                <h3 className="font-serif font-normal text-2xl text-ink mb-3 leading-snug">{card.title}</h3>
-                <p className="text-sm text-mid leading-[1.7] mb-5 font-light">{card.desc}</p>
-                <Link to={card.href} className="text-[11px] font-normal uppercase tracking-[0.14em] text-gold hover:text-ink transition-colors">
-                  {card.cta} →
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ASSETS SECTION */}
-      <AssetClassesSection />
-
-      {/* ONE PLATFORM. THREE ENGINES. */}
-      <section id="platform" className="py-24 lg:py-32 bg-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-14">
-          {/* Intro */}
-          <div className="max-w-3xl mx-auto text-center mb-16 px-4">
-            <p className="text-[10px] tracking-[0.28em] uppercase text-gold mb-4">Our Platform</p>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="font-serif font-light text-3xl sm:text-4xl lg:text-5xl text-ink mb-5 leading-[1.1]"
-            >
-              End-to-end <em>development platform</em>
-            </motion.h2>
-            <div className="w-9 h-px bg-gold mx-auto mb-8" />
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-base text-mid leading-[1.85] font-light mb-8"
-            >
-              We deliver essential, recession-resistant <Link to="/portfolio" className="underline hover:text-ink transition-colors">projects</Link> designed for the masses through an end-to-end platform, from site selection and underwriting to entitlements, design, capital structuring, construction execution, and exit. Replication drives speed, reduces risk, and accelerates stabilization, supporting faster sales and faster capital return.
-            </motion.p>
-            <div className="flex flex-wrap justify-center gap-x-12 gap-y-4">
-              {[
-                'Repeatable prototypes',
-                'Factory-enabled delivery',
-                'Investor-aligned structures'
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="flex items-center gap-3"
-                >
-                  <div className="h-1.5 w-1.5 rounded-full bg-gold/50" />
-                  <span className="text-[11px] font-normal text-ink uppercase tracking-wider">{item}</span>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          <div className="text-center mb-16">
-            <p className="text-[10px] tracking-[0.28em] uppercase text-gold mb-4">Capabilities</p>
-            <h2 className="font-serif font-light text-3xl sm:text-4xl lg:text-5xl text-ink leading-[1.1]">
-              One platform. <em>Three engines.</em>
+          {/* Right: text */}
+          <div>
+            <p className="text-[11px] text-gold uppercase tracking-[0.18em] mb-4">About Z-Co Development</p>
+            <h2 className="font-serif font-light text-[28px] text-ink leading-[1.35] mb-5">
+              We develop resilient healthcare, residential, hospitality, commercial, and mixed-use communities through an integrated real estate development platform that creates long-term value for investors, partners, and the communities we serve.
             </h2>
-            <div className="w-9 h-px bg-gold mx-auto mt-5" />
-          </div>
-
-          <div className="grid gap-1 md:grid-cols-3">
-            {[
-              {
-                icon: Building2,
-                title: 'Development',
-                body: 'Essential projects engineered to repeat at scale.',
-                bullets: ['Prototype-driven planning', 'Disciplined approvals', 'Market-led siting']
-              },
-              {
-                icon: Landmark,
-                title: 'Capital Solutions',
-                body: 'Structures built for absolute alignment and execution.',
-                bullets: ['Milestone-linked capital', 'Transparent reporting', 'Institution-ready data']
-              },
-              {
-                icon: Factory,
-                title: 'Prefabricated Construction',
-                body: 'Faster delivery. Higher control. Consistent outcomes.',
-                bullets: ['Factory-enabled build', 'Standardized assemblies', 'Predictable timelines']
-              }
-            ].map((block, idx) => (
-              <motion.div
-                key={block.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="group p-8 bg-off border border-[rgba(0,0,0,0.07)] hover:border-gold/30 hover:bg-white transition-all duration-500"
-              >
-                <div className="mb-8 flex items-center justify-between">
-                  <div className="h-12 w-12 flex items-center justify-center text-gold/70 group-hover:text-gold transition-colors">
-                    <block.icon className="w-6 h-6" />
-                  </div>
-                  <span className="font-serif text-4xl font-light text-light group-hover:text-gold/50 transition-colors">0{idx + 1}</span>
-                </div>
-                <h3 className="font-serif font-light text-2xl text-ink mb-3">{block.title}</h3>
-                <p className="text-mid text-sm mb-6 leading-[1.8] font-light">{block.body}</p>
-                <div className="w-9 h-px bg-gold mb-6" />
-                <ul className="space-y-3">
-                  {block.bullets.map((line) => (
-                    <li key={line} className="flex items-center gap-3 text-sm text-mid font-light">
-                      <div className="w-1 h-1 rounded-full bg-gold flex-shrink-0" />
-                      {line}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* HOW INVESTING WORKS STRIP */}
-      <section className="bg-off border-t border-[rgba(0,0,0,0.07)] py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-14">
-          <div className="text-center mb-16">
-            <p className="text-[10px] tracking-[0.28em] uppercase text-gold mb-4">Process</p>
-            <h2 className="font-serif font-light text-3xl sm:text-4xl lg:text-4xl text-ink leading-[1.1]">
-              How investing works
-            </h2>
-            <div className="w-9 h-px bg-gold mx-auto mt-5" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-4 lg:gap-8 max-w-5xl mx-auto relative">
-            <div className="hidden md:block absolute top-[2.25rem] left-[15%] right-[15%] h-px bg-[rgba(0,0,0,0.1)] -z-10" />
-
-            {/* Step 1 */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="flex flex-col items-center text-center group"
-            >
-              <div className="w-[4.5rem] h-[4.5rem] bg-white border border-[rgba(0,0,0,0.1)] flex items-center justify-center mb-6 group-hover:border-gold/40 transition-colors shadow-sm relative">
-                <FileText className="w-8 h-8 text-mid group-hover:text-gold transition-colors" strokeWidth={1.5} />
-                <div className="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-gold font-light text-[10px] text-white flex items-center justify-center shadow-sm">1</div>
-              </div>
-              <h3 className="font-serif font-light text-xl text-ink mb-2">Request packet</h3>
-            </motion.div>
-
-            {/* Step 2 */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="flex flex-col items-center text-center group"
-            >
-              <div className="w-[4.5rem] h-[4.5rem] bg-white border border-[rgba(0,0,0,0.1)] flex items-center justify-center mb-6 group-hover:border-gold/40 transition-colors shadow-sm relative">
-                <CalendarCheck className="w-8 h-8 text-mid group-hover:text-gold transition-colors" strokeWidth={1.5} />
-                <div className="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-gold font-light text-[10px] text-white flex items-center justify-center shadow-sm">2</div>
-              </div>
-              <h3 className="font-serif font-light text-xl text-ink mb-2">Review structure + timeline</h3>
-            </motion.div>
-
-            {/* Step 3 */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="flex flex-col items-center text-center group"
-            >
-              <div className="w-[4.5rem] h-[4.5rem] bg-white border border-[rgba(0,0,0,0.1)] flex items-center justify-center mb-6 group-hover:border-gold/40 transition-colors shadow-sm relative">
-                <TrendingUp className="w-8 h-8 text-mid group-hover:text-gold transition-colors" strokeWidth={1.5} />
-                <div className="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-gold font-light text-[10px] text-white flex items-center justify-center shadow-sm">3</div>
-              </div>
-              <h3 className="font-serif font-light text-xl text-ink mb-2">Invest + receive updates</h3>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* SELECTED PORTFOLIO */}
-      <PortfolioSection />
-
-      {/* BUILD WITH US */}
-      <section id="build-with-us" className="py-24 bg-ink">
-        <div className="mx-auto max-w-7xl px-6 lg:px-14">
-          <p className="text-[11px] font-normal text-gold2 uppercase tracking-[0.28em] mb-4">Our Integration Approach</p>
-          <h2 className="font-serif font-light text-3xl sm:text-4xl lg:text-5xl text-white leading-[1.1] mb-5">
-            From land <em className="text-white/70">to sale.</em>
-          </h2>
-          <div className="w-7 h-px bg-gold mb-8" />
-          <p className="text-base text-white/65 leading-[1.85] font-light max-w-3xl mb-16">
-            A disciplined approach to every project. Z-Co evaluates every project through detailed market research, data-driven supply-demand analysis, and disciplined development planning — designed to align long-term community demand with practical, on-the-ground execution.
-          </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06]">
-            {[
-              { n: '01', title: 'Land Acquisition', desc: 'Proprietary site sourcing with rigorous due diligence on entitlement risk, market demand, and capital efficiency.' },
-              { n: '02', title: 'Entitlements & Planning', desc: 'Zoning, permitting and regulatory navigation with established municipal relationships.' },
-              { n: '03', title: 'Design & Engineering', desc: 'Architect and consultant coordination built around constructability — including LGS panel design — not just design intent.' },
-              { n: '04', title: 'Capital Structuring', desc: 'Debt and equity coordination across institutional lenders, family offices, and crowdfunding platforms.' },
-              { n: '05', title: 'Construction Oversight', desc: 'Owner-representative oversight with active contractor management, budget control, and schedule enforcement.' },
-              { n: '06', title: 'Sales, Marketing & Delivery', desc: 'Buyer experience programs driving pre-sales velocity, community identity, and on-time close of escrow.' },
-            ].map((step, i) => (
-              <div key={i} className="bg-ink p-8 border border-white/[0.06] hover:border-white/10 transition-colors">
-                <div className="font-serif text-2xl text-gold2 mb-4 font-light">{step.n}</div>
-                <h4 className="text-sm font-medium text-white mb-3 uppercase tracking-[0.08em]">{step.title}</h4>
-                <p className="text-sm text-white/55 leading-[1.7] font-light">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-12 text-center">
-            <p className="text-base text-white/60 font-light mb-5">Have a site or a project that needs execution?</p>
-            <Link to="/#contact" className="inline-flex items-center gap-2 text-[11px] font-normal uppercase tracking-[0.16em] text-white border-b border-white/40 pb-0.5 hover:border-white transition-all">
-              Start a Conversation <ArrowRight className="w-3 h-3" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* INSIGHTS TEASER */}
-      <section id="insights-teaser" className="py-24 bg-off">
-        <div className="mx-auto max-w-7xl px-6 lg:px-14">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
-            <div>
-              <p className="text-[11px] font-normal text-gold uppercase tracking-[0.28em] mb-4">Insights</p>
-              <h2 className="font-serif font-light text-3xl sm:text-4xl text-ink leading-[1.1]">
-                Research, not <em>marketing copy.</em>
-              </h2>
-            </div>
-            <Link to="/insights" className="inline-flex items-center gap-2 text-[11px] font-normal uppercase tracking-[0.16em] text-ink border-b border-ink pb-0.5 hover:text-gold hover:border-gold transition-all whitespace-nowrap">
-              View All Insights <ArrowRight className="w-3 h-3" />
-            </Link>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[rgba(0,0,0,0.08)]">
-            {[
-              { cat: 'Investment Analysis', read: '18 min read', title: 'The Dove Trails Investment Thesis', summary: 'The full underwriting thesis behind Dove Trails: the national affordability crisis, San Antonio\'s workforce-housing gap, and the LGS execution model.', slug: 'dove-trails-investment-thesis' },
-              { cat: 'LGS Technology', read: '9 min read', title: 'Light Gauge Steel vs. Wood Frame: The Real Numbers', summary: 'A quantitative look at why Z-Co builds on a factory-based LGS platform — cost lock-in, schedule compression, and long-term durability.', slug: 'lgs-vs-wood-frame' },
-              { cat: 'Market Research', read: '8 min read', title: 'The Katy Healthcare Access Gap: Why MedPlex', summary: '120,000-plus Katy residents have no local acute-care hospital. A look at the demand data behind MedPlex, and why the I-10 corridor is the right site.', slug: 'katy-healthcare-access-gap' },
-            ].map((post, i) => (
-              <Link to={`/insights/${post.slug}`} key={i} className="group bg-white p-8 hover:bg-off transition-colors duration-200">
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-gold">{post.cat}</span>
-                  <span className="text-[11px] text-mid">· {post.read}</span>
-                </div>
-                <h3 className="font-serif font-normal text-xl text-ink leading-[1.28] mb-3 group-hover:text-gold transition-colors">{post.title}</h3>
-                <p className="text-sm text-mid leading-[1.68] font-light">{post.summary}</p>
-                <p className="mt-4 text-[11px] font-medium uppercase tracking-[0.14em] text-mid group-hover:text-gold transition-colors">Read More →</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* EXECUTION MODEL */}
-      <section id="execution" className="py-24 bg-white">
-        <div className="mx-auto max-w-5xl px-6 lg:px-14">
-          <div className="text-center mb-16">
-            <p className="text-[10px] tracking-[0.28em] uppercase text-gold mb-4">Our Process</p>
-            <h2 className="font-serif font-light text-3xl sm:text-4xl lg:text-4xl text-ink leading-[1.1] mb-3">The Execution Model</h2>
-            <p className="text-mid text-sm font-light">Replication is a system. Not a slogan.</p>
-            <div className="w-9 h-px bg-gold mx-auto mt-5" />
-          </div>
-
-          <div className="relative flex flex-col md:flex-row items-center justify-between gap-12 md:gap-4">
-            <div className="absolute top-1/2 left-0 right-0 h-px bg-[rgba(0,0,0,0.08)] hidden md:block -z-10" />
-            {[
-              { label: 'Essential demand', icon: Globe },
-              { label: 'Site + structure', icon: MapPin },
-              { label: 'Design to repeat', icon: LayoutGrid },
-              { label: 'Prefabricated delivery', icon: Factory },
-              { label: 'Operate + optimize', icon: CircleDot }
-            ].map((step, idx) => (
-              <div key={step.label} className="flex flex-col items-center group relative">
-                <div className="h-16 w-16 rounded-full bg-white border border-[rgba(0,0,0,0.1)] flex items-center justify-center text-mid group-hover:border-gold group-hover:text-gold transition-all duration-300">
-                  <step.icon className="w-6 h-6" />
-                </div>
-                <p className="mt-4 text-[13px] font-light text-ink transition-colors text-center whitespace-nowrap">
-                  {step.label}
-                </p>
-                <span className="absolute -top-8 font-serif text-[13px] text-light group-hover:text-gold/50 transition-colors">0{idx + 1}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* LIFECYCLE MODEL */}
-      <section className="py-24 bg-off">
-        <div className="mx-auto max-w-7xl px-6 lg:px-14">
-          <div className="text-center mb-20">
-            <p className="text-[10px] tracking-[0.28em] uppercase text-gold mb-4">Framework</p>
-            <h2 className="font-serif font-light text-3xl sm:text-4xl lg:text-4xl text-ink mb-4 leading-[1.1]">
-              Integrated Systems
-            </h2>
-            <div className="w-9 h-px bg-gold mx-auto mb-6" />
-            <p className="text-mid font-light max-w-2xl mx-auto text-sm leading-[1.85]">
-              Our model combines a continuous lifecycle of value creation with a unified stakeholder alignment.
+            <div className="w-7 h-px bg-gold mb-5" />
+            <p className="text-[14.5px] leading-[1.75] text-mid">
+              Z-Co Development Corp is a privately held, vertically integrated real estate company that turns undervalued land and underserved markets into concepts that work — for residents, physicians, tenants, and investors alike. Founded by Mike Butte in 2003, the firm has completed more than 37 projects across six asset classes through multiple economic cycles, with zero abandonments.
             </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
-            <div className="relative py-10">
-              <h3 className="text-center text-[10px] font-normal text-gold uppercase tracking-[0.17em] mb-12">The Lifecycle Model</h3>
-              <LifecycleGraphic />
-            </div>
-            <div className="relative py-10">
-              <h3 className="text-center text-[10px] font-normal text-gold uppercase tracking-[0.17em] mb-12">Stakeholder Alignment</h3>
-              <TriangleGraphic />
-            </div>
+            <p className="text-[14.5px] leading-[1.75] text-mid mt-3">
+              Rather than building isolated structures, Z-Co designs end-to-end concepts — for next-generation healthcare, community-centered living, and vibrant commercial centers — and stays accountable for each one from land acquisition through delivery.
+            </p>
+            <blockquote className="border-l-2 border-gold pl-5 font-serif italic text-[19px] text-ink2 font-light leading-[1.55] mt-8">
+              "Conservative about what we start. Relentless about what we finish."
+            </blockquote>
+            <p className="text-[11px] uppercase tracking-[0.15em] text-gold mt-3">Mike Butte · Founder & CEO · Est. 2003</p>
           </div>
         </div>
       </section>
 
-      {/* INVESTOR ACCESS */}
-      <section id="invest" className="py-24 bg-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-14">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <p className="text-[10px] tracking-[0.28em] uppercase text-gold">Investor Relations</p>
-              <h2 className="font-serif font-light text-3xl sm:text-4xl lg:text-5xl text-ink leading-[1.1]">
-                Disciplined capital<br />
-                <em className="text-mid">for superior returns.</em>
-              </h2>
-              <div className="w-9 h-px bg-gold" />
-              <p className="text-base text-mid leading-[1.85] font-light">
-                We provide institutional-grade investment opportunities backed by transparent data
-                and milestone-linked execution.
-              </p>
-
-              <div className="grid sm:grid-cols-2 gap-6">
-                <div className="flex gap-4">
-                  <div className="h-10 w-10 flex items-center justify-center text-gold flex-shrink-0 border border-[rgba(0,0,0,0.1)]">
-                    <ShieldCheck className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h5 className="font-serif font-light text-lg text-ink mb-1">De-risked</h5>
-                    <p className="text-xs text-mid font-light">Milestone deployment of capital.</p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="h-10 w-10 flex items-center justify-center text-gold flex-shrink-0 border border-[rgba(0,0,0,0.1)]">
-                    <Landmark className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h5 className="font-serif font-light text-lg text-ink mb-1">Institutional</h5>
-                    <p className="text-xs text-mid font-light">Ready for major PE allocation.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-off p-10 border border-[rgba(0,0,0,0.08)] relative overflow-hidden">
-              {investorStatus === 'success' ? (
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="py-12 text-center">
-                  <div className="h-20 w-20 border border-gold/40 flex items-center justify-center mx-auto mb-6 text-gold">
-                    <CheckCircle2 className="w-10 h-10" />
-                  </div>
-                  <h3 className="font-serif font-light text-2xl text-ink mb-2">Request Received</h3>
-                  <p className="text-mid font-light">Our IR team will contact you shortly.</p>
-                </motion.div>
+      {/* 4. WHAT WE DO SECTION */}
+      <section className="bg-off py-24 px-[72px]">
+        <p className="text-[11px] text-gold uppercase tracking-[0.18em] mb-4">What We Do</p>
+        <h2 className="font-serif font-light text-[28px] text-ink leading-[1.35] mb-2">
+          Four ways we<br /><em>create value.</em>
+        </h2>
+        <div className="w-7 h-px bg-gold mb-10" />
+        <div className="grid grid-cols-4 gap-px bg-[rgba(0,0,0,0.1)] mt-10">
+          {[
+            {
+              title: 'Real Estate Development',
+              desc: "Z-Co's own residential, healthcare, hospitality, and mixed-use projects — from land acquisition through delivery.",
+              cta: 'View Current Projects →',
+              href: '/portfolio',
+              scroll: null,
+            },
+            {
+              title: 'Investment Opportunities',
+              desc: 'Institutional-style capital structures opened to accredited investors, including EB-5 eligible projects.',
+              cta: 'See Investor Access →',
+              href: null,
+              scroll: 'investors',
+            },
+            {
+              title: 'Development Services',
+              desc: "Turnkey project delivery for developers and asset owners who want Z-Co's execution, without giving up ownership.",
+              cta: 'Build With Us →',
+              href: null,
+              scroll: 'build-with-us',
+            },
+            {
+              title: 'US Modular Systems\nLight Gauge Steel Manufacturing',
+              desc: "Z-Co's LGS manufacturing capability — built to serve Z-Co's own projects first.",
+              cta: 'View the Facility →',
+              href: '/portfolio',
+              scroll: null,
+            },
+          ].map((card) => (
+            <div key={card.title} className="bg-white p-8">
+              <h3 className="text-[15px] font-medium text-ink mb-3 whitespace-pre-line">{card.title}</h3>
+              <p className="text-[13.5px] leading-[1.7] text-mid mb-5">{card.desc}</p>
+              {card.href ? (
+                <Link to={card.href} className="text-[11px] uppercase tracking-[0.14em] text-ink hover:text-gold">{card.cta}</Link>
               ) : (
-                <form className="space-y-6" onSubmit={handleInvestorSubmit}>
-                  <div className="space-y-2">
-                    <h3 className="font-serif font-light text-2xl text-ink">Access Portal</h3>
-                    <p className="text-sm text-mid font-light">Receive investor materials and pipeline metrics.</p>
-                  </div>
-                  <div className="grid gap-4">
-                    <input type="text" required placeholder="Full Name" className="bg-white border border-[rgba(0,0,0,0.12)] px-4 py-4 text-sm text-ink placeholder-mid font-light focus:border-gold focus:outline-none transition-all" />
-                    <input type="email" required placeholder="Professional Email" className="bg-white border border-[rgba(0,0,0,0.12)] px-4 py-4 text-sm text-ink placeholder-mid font-light focus:border-gold focus:outline-none transition-all" />
-                  </div>
-                  <button
-                    disabled={investorStatus === 'submitting'}
-                    className="w-full bg-gold text-white py-4 font-normal uppercase tracking-[0.13em] text-[10.5px] hover:bg-gold2 disabled:opacity-50 transition-all flex items-center justify-center gap-2"
-                  >
-                    {investorStatus === 'submitting' ? 'Processing...' : 'Request Access'}
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                  <p className="text-[10px] text-center text-mid uppercase tracking-widest font-normal">
-                    Accredited Investors Only
-                  </p>
-                </form>
+                <button
+                  onClick={() => document.getElementById(card.scroll!)?.scrollIntoView({ behavior: 'smooth' })}
+                  className="text-[11px] uppercase tracking-[0.14em] text-ink hover:text-gold"
+                >
+                  {card.cta}
+                </button>
               )}
             </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 5. WHAT WE BUILD — tabbed asset classes */}
+      <section className="bg-white py-24 px-[72px]">
+        <p className="text-[11px] text-gold uppercase tracking-[0.18em] mb-4">What We Build</p>
+        <h2 className="font-serif font-light text-[28px] text-ink leading-[1.35]">
+          Six asset classes.<br /><em>One platform.</em>
+        </h2>
+        <div className="w-7 h-px bg-gold mt-4" />
+        {/* Tab strip */}
+        <div className="flex flex-wrap border-b border-[rgba(0,0,0,0.1)] mt-10">
+          {assetTabs.map((tab, i) => (
+            <button
+              key={tab.label}
+              onClick={() => setActiveTab(i)}
+              className={`font-serif text-[17px] font-light py-4 pr-8 mr-8 border-b-2 cursor-pointer transition-colors ${
+                i === activeTab ? 'text-ink border-gold' : 'text-mid border-transparent'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+        {/* Panel */}
+        <div className="grid grid-cols-2 gap-16 items-center py-12">
+          <img
+            src={assetTabs[activeTab].img}
+            alt={assetTabs[activeTab].label}
+            className="w-full object-cover"
+            style={{ aspectRatio: '16/10' }}
+          />
+          <div>
+            <h3 className="font-serif text-[28px] text-ink mb-4">{assetTabs[activeTab].label}</h3>
+            <p className="text-[14.5px] leading-[1.75] text-mid">{assetTabs[activeTab].desc}</p>
+            <p className="text-[11px] uppercase tracking-[0.1em] text-gold mt-4">{assetTabs[activeTab].featured}</p>
           </div>
         </div>
       </section>
 
-      {/* TEAM */}
-      <section id="team" className="py-24 bg-off">
-        <div className="mx-auto max-w-7xl px-6 lg:px-14">
-          <div className="text-center mb-20">
-            <p className="text-[10px] tracking-[0.28em] uppercase text-gold mb-4">Leadership</p>
-            <h2 className="font-serif font-light text-3xl sm:text-4xl lg:text-4xl text-ink mb-4 leading-[1.1]">
-              Meet the Team
+      {/* 6. FEATURED DEVELOPMENTS */}
+      <section className="bg-off py-24 px-[72px]">
+        <p className="text-[11px] text-gold uppercase tracking-[0.18em] mb-4">Featured Developments</p>
+        <h2 className="font-serif font-light text-[28px] text-ink leading-[1.35]">Proof, not projections.</h2>
+        <div className="w-7 h-px bg-gold mt-4 mb-10" />
+        <div className="grid grid-cols-3 gap-px bg-[rgba(0,0,0,0.1)]">
+          {[
+            {
+              badge: 'Under Construction',
+              name: 'Dove Trails',
+              location: 'San Antonio, TX',
+              problem: "San Antonio's workforce ownership housing supply fell 80% in a single year, pricing Medical District employees out of homeownership near their jobs.",
+              solution: "152 gated, build-to-sell homes 2.2 miles from the Medical Center, built on Z-Co's LGS platform to hit an otherwise-impossible $185K–$216K price point.",
+              statValue: '31%',
+              statLabel: 'Gross Margin',
+            },
+            {
+              badge: 'Concept · Pre-Development',
+              name: 'MedPlex',
+              location: 'Katy, TX',
+              problem: '120,000-plus Katy residents have no local acute-care hospital and drive 20–40 minutes for emergency care.',
+              solution: 'A hub hospital, HOPD network, and physician alliance anchoring TowneCenter on the I-10 Energy Corridor — zero existing competition in the primary service area.',
+              statValue: '120K+',
+              statLabel: 'Residents Served',
+            },
+            {
+              badge: 'Concept · Pre-Development',
+              name: 'TowneCenter',
+              location: 'Katy, TX',
+              problem: "A hospital campus alone doesn't build a neighborhood — it needs retail, daycare, and everyday amenities around it.",
+              solution: 'A mixed-use retail town center on North Fry Road developed alongside MedPlex as one connected campus.',
+              statValue: '1',
+              statLabel: 'Connected Campus with MedPlex',
+            },
+          ].map((card) => (
+            <div key={card.name} className="bg-white p-8">
+              <p className="text-[9.5px] uppercase tracking-[0.14em] text-gold mb-3">{card.badge}</p>
+              <h3 className="font-serif text-[22px] text-ink mb-1">
+                {card.name}
+                <span className="text-mid text-[14px] font-sans font-light ml-2">{card.location}</span>
+              </h3>
+              <div className="mt-4">
+                <span className="text-[11px] uppercase tracking-[0.1em] text-gold">Problem</span>
+                <p className="text-[13.5px] leading-[1.7] text-mid mt-1">{card.problem}</p>
+              </div>
+              <div className="mt-4">
+                <span className="text-[11px] uppercase tracking-[0.1em] text-gold">Solution</span>
+                <p className="text-[13.5px] leading-[1.7] text-mid mt-1">{card.solution}</p>
+              </div>
+              <div className="mt-6">
+                <strong className="font-serif text-[28px] text-gold font-light">{card.statValue}</strong>
+                <span className="text-[10.5px] uppercase tracking-[0.1em] text-mid ml-2">{card.statLabel}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 7. BUILD WITH US — dark */}
+      <section id="build-with-us" className="bg-ink py-24 px-[72px]">
+        <p className="text-[11px] text-gold2 uppercase tracking-[0.18em] mb-4">Our Integration Approach</p>
+        <h2 className="font-serif font-light text-white leading-[1.35] mb-2" style={{ fontSize: 'clamp(28px,3vw,44px)' }}>
+          From land<br /><em>to sale.</em>
+        </h2>
+        <div className="w-7 h-px bg-gold mb-5" />
+        <p className="text-[rgba(255,255,255,0.65)] text-[15px] leading-[1.75] max-w-2xl mb-12">
+          A disciplined approach to every project. Z-Co evaluates every project through detailed market research, data-driven supply-demand analysis, and disciplined development planning — designed to align long-term community demand with practical, on-the-ground execution.
+        </p>
+        <div className="grid grid-cols-3 gap-px bg-[rgba(255,255,255,0.07)] mt-2">
+          {[
+            { num: '01', title: 'Land Acquisition', desc: "Proprietary site sourcing with rigorous due diligence on entitlement risk, market demand, and capital efficiency." },
+            { num: '02', title: 'Entitlements & Planning', desc: "Zoning, permitting and regulatory navigation with established municipal relationships." },
+            { num: '03', title: 'Design & Engineering', desc: "Architect and consultant coordination built around constructability — including LGS panel design — not just design intent." },
+            { num: '04', title: 'Capital Structuring', desc: "Debt and equity coordination across institutional lenders, family offices, and crowdfunding platforms." },
+            { num: '05', title: 'Construction Oversight', desc: "Owner-representative oversight with active contractor management, budget control, and schedule enforcement." },
+            { num: '06', title: 'Sales, Marketing & Delivery', desc: "Buyer experience programs driving pre-sales velocity, community identity, and on-time close of escrow." },
+          ].map((card) => (
+            <div key={card.num} className="bg-ink p-8">
+              <div className="font-serif text-[32px] text-gold italic font-light mb-3">{card.num}</div>
+              <div className="text-[15px] font-medium text-white mb-2">{card.title}</div>
+              <div className="text-[13.5px] leading-[1.7] text-[rgba(255,255,255,0.6)]">{card.desc}</div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-16 text-center">
+          <p className="text-[rgba(255,255,255,0.55)] mb-5">Have a site or a project that needs execution?</p>
+          <Link
+            to="/testimonials"
+            className="border border-white/40 text-white px-6 py-3 text-[12px] uppercase tracking-[0.14em] hover:bg-white hover:text-ink transition-all inline-block"
+          >
+            Start a Conversation →
+          </Link>
+        </div>
+      </section>
+
+      {/* 8. INSIGHTS TEASER */}
+      <section className="bg-off py-24 px-[72px]">
+        <div className="flex justify-between items-end mb-10">
+          <div>
+            <p className="text-[11px] text-gold uppercase tracking-[0.18em] mb-4">Insights</p>
+            <h2 className="font-serif font-light text-[28px] text-ink leading-[1.35]">
+              Research, not<br /><em>marketing copy.</em>
             </h2>
-            <div className="w-9 h-px bg-gold mx-auto mb-6" />
-            <p className="text-mid max-w-xl mx-auto font-light text-sm leading-[1.85]">
-              A seasoned group of operators, builders, and capital partners driving execution across every project.
+          </div>
+          <Link
+            to="/insights"
+            className="border border-ink text-ink px-5 py-3 text-[11px] uppercase tracking-[0.14em] hover:bg-ink hover:text-white transition-all"
+          >
+            View All Insights →
+          </Link>
+        </div>
+        <div className="grid grid-cols-3 gap-px bg-[rgba(0,0,0,0.1)]">
+          {[
+            {
+              cat: 'Investment Analysis',
+              mins: '18',
+              title: 'The Dove Trails Investment Thesis',
+              summary: "The full underwriting thesis behind Dove Trails: the national affordability crisis, San Antonio's 80% workforce-housing supply drop, and why LGS construction changes the return profile.",
+              href: '/insights/dove-trails-thesis',
+            },
+            {
+              cat: 'LGS Technology',
+              mins: '9',
+              title: 'Light Gauge Steel vs. Wood Frame: The Real Numbers',
+              summary: "A quantitative look at why Z-Co builds on a factory-based LGS platform — cost lock-in, schedule compression, and the McKinsey productivity data.",
+              href: '/insights/lgs-economics',
+            },
+            {
+              cat: 'Market Research',
+              mins: '8',
+              title: 'The Katy Healthcare Access Gap: Why MedPlex',
+              summary: '120,000-plus Katy residents have no local acute-care hospital. A look at the demand data behind MedPlex, and why the I-10 Energy Corridor is the only viable location.',
+              href: '/insights/medplex-access-gap',
+            },
+          ].map((card) => (
+            <Link key={card.title} to={card.href} className="bg-white p-8 cursor-pointer group block">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-[9.5px] uppercase tracking-[0.14em] text-gold border border-gold px-2 py-0.5">{card.cat}</span>
+                <span className="text-[11px] text-mid">· {card.mins} min read</span>
+              </div>
+              <h3 className="font-serif text-[20px] text-ink leading-[1.28] mb-3 group-hover:text-gold transition-colors">{card.title}</h3>
+              <p className="text-[13.5px] leading-[1.7] text-mid">{card.summary}</p>
+              <p className="text-[11.5px] uppercase tracking-[0.14em] text-ink mt-4">Read More →</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* 9. INVESTORS SECTION */}
+      <section id="investors" className="bg-white py-24 px-[72px]">
+        <div className="grid grid-cols-2 gap-24">
+          {/* Left */}
+          <div>
+            <p className="text-[11px] text-gold uppercase tracking-[0.18em] mb-4">For Investors</p>
+            <h2 className="font-serif font-light text-[28px] text-ink leading-[1.35] mb-4">
+              Capital access, structured around an identified pipeline.
+            </h2>
+            <div className="w-7 h-px bg-gold mb-5" />
+            <p className="text-[14.5px] leading-[1.75] text-mid">
+              Each raise is tied to a specific project with its own underwriting, timeline, and milestone-linked capital draws — the same structure institutional LPs receive, documented and reported project by project.
             </p>
+            <div className="grid grid-cols-2 gap-px bg-[rgba(0,0,0,0.1)] mt-6">
+              {[
+                { title: 'De-risked', desc: 'Milestone deployment of capital.' },
+                { title: 'Institutional', desc: 'Ready for major PE allocation.' },
+              ].map((f) => (
+                <div key={f.title} className="bg-off p-5">
+                  <div className="text-[14px] font-medium text-ink mb-1">{f.title}</div>
+                  <div className="text-[13px] text-mid">{f.desc}</div>
+                </div>
+              ))}
+            </div>
+            <div className="bg-off p-6 mt-6">
+              <div className="text-[13px] uppercase tracking-[0.14em] text-ink mb-5">How investing works</div>
+              <div className="flex gap-8">
+                {[
+                  { num: '01', label: 'Request packet' },
+                  { num: '02', label: 'Review structure + timeline' },
+                  { num: '03', label: 'Invest + receive updates' },
+                ].map((step) => (
+                  <div key={step.num}>
+                    <div className="font-serif text-[22px] text-gold">{step.num}</div>
+                    <div className="text-[13px] text-ink mt-1">{step.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <p className="text-[13px] text-mid mt-5">
+              Z-Co also accommodates international investors seeking U.S. permanent residency through EB-5 visa real estate investment into qualifying development projects.
+            </p>
+            <div className="flex items-center gap-4 mt-5 border-t border-[rgba(0,0,0,0.1)] pt-5">
+              <div className="w-9 h-9 rounded-full bg-ink flex items-center justify-center text-white text-[13px] font-medium">C</div>
+              <div>
+                <div className="text-[14px] font-medium text-ink">Covercy</div>
+                <div className="text-[12px] text-mid">Capital Calls · Distributions · Statements</div>
+              </div>
+            </div>
           </div>
 
-          <div className="space-y-2">
-            {/* Featured CEO Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="relative p-8 md:p-12 bg-white border border-[rgba(0,0,0,0.07)] overflow-hidden flex flex-col md:flex-row gap-10 items-center md:items-start group hover:border-gold/30 transition-all duration-500"
-            >
-              <div className="w-48 h-48 md:w-64 md:h-64 flex-shrink-0 overflow-hidden border border-[rgba(0,0,0,0.1)]">
-                <img
-                  src="/asset/mike-butte.jpg"
-                  alt="Mike Butte - CEO of Z-Co Development - Real Estate Development Team"
-                  className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700"
+          {/* Right: Access Portal form */}
+          <div className="bg-off p-10">
+            <h3 className="font-serif text-[26px] text-ink mb-2">Access Portal</h3>
+            <p className="text-[13px] text-mid mb-6">Receive investor materials and pipeline metrics.</p>
+            <form onSubmit={handleInvestorSubmit}>
+              <div className="grid grid-cols-2 gap-3">
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  className="w-full border border-[rgba(0,0,0,0.15)] bg-white p-3 text-[14px] font-light text-ink outline-none focus:border-gold"
+                />
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  className="w-full border border-[rgba(0,0,0,0.15)] bg-white p-3 text-[14px] font-light text-ink outline-none focus:border-gold"
                 />
               </div>
-
-              <div className="flex-1 space-y-6 text-center md:text-left">
-                <div>
-                  <h3 className="font-serif font-light text-3xl text-ink mb-2">Mike Butte</h3>
-                  <p className="text-[10px] font-normal text-gold uppercase tracking-[0.18em]">Chief Executive Officer</p>
-                </div>
-                <div className="w-9 h-px bg-gold mx-auto md:ml-0" />
-                <div className="space-y-4 max-w-3xl">
-                  <p className="text-mid leading-[1.85] text-sm font-light">
-                    Mike Butte is the Founder and CEO of Z-Co. Development Corp., where he leads the firm's end-to-end development platform across real estate and operating-business projects. With more than 30 years of leadership experience, Mike has executed projects across <Link to="/portfolio" className="underline hover:text-ink transition-colors">multiple asset classes</Link> by combining disciplined underwriting, capital strategy, and delivery execution to create recession-resistant, essential-service assets designed for scale. His background includes development and ownership experience tied to nationally recognized brands such as Holiday Inn, Best Western, Arby's, Denny's, and Caliber Collision, and he remains focused on building repeatable project prototypes that compress timelines and improve predictability across markets.
-                  </p>
-                  <p className="text-mid leading-[1.85] text-sm font-light">
-                    Mike is also passionate about expanding access, creating opportunities for small investors to participate in institutional-quality projects and helping budding real estate developers learn, grow, and succeed through clear systems, practical guidance, and aligned <Link to="/real-estate-joint-venture-partnerships" className="underline hover:text-ink transition-colors">joint venture partnerships</Link>.
-                  </p>
-                </div>
-                <div className="flex justify-center md:justify-start gap-4">
-                  <div className="px-3 py-1.5 border border-[rgba(0,0,0,0.1)] text-mid text-[10px] font-normal uppercase tracking-widest">30+ Years Experience</div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Other Team Members Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-[rgba(0,0,0,0.07)]">
-              {[
-                { name: 'Sarah Ali', title: 'President', img: '/asset/sarah-ali.jpg' },
-                { name: 'Mo Khan', title: 'Chief Operating Officer', img: '/asset/mo-khan.png' },
-                { name: 'John Stevens', title: 'Director of Asset Management', img: '/asset/john-stevens.jpg' },
-                { name: 'Thaddaus Hays Jr.', title: 'Director of Business Development', img: 'https://cdn.prod.website-files.com/673390480b47a07dd6beac13/673a64ed0f6cca562db5fa9f_66ace28771dc9f27738eafa5_hays.jpg' },
-                { name: 'Dan Prosser', title: 'Director of Strategic Planning', img: '/asset/dan-prosser.png' },
-                { name: 'Phan Le', title: 'Office Coordinator', img: '/asset/phan-le.png' },
-                { name: 'Omar Terkawi', title: 'Project Architect', img: '/asset/omar-terkawi.png' },
-                { name: 'Abel Castro', title: 'Director of Maintenance', img: '/asset/abel-castro.png' },
-                { name: 'Anish N. Kantharia', title: 'Marketing Manager', img: '/asset/anish-kantharia.jpg' },
-              ].map((member, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
-                  className="group bg-white overflow-hidden"
+              <input
+                type="email"
+                placeholder="Email"
+                className="w-full border border-[rgba(0,0,0,0.15)] bg-white p-3 text-[14px] font-light text-ink outline-none focus:border-gold mt-3"
+              />
+              <input
+                type="text"
+                placeholder="Organization"
+                className="w-full border border-[rgba(0,0,0,0.15)] bg-white p-3 text-[14px] font-light text-ink outline-none focus:border-gold mt-3"
+              />
+              <select className="w-full border border-[rgba(0,0,0,0.15)] bg-white p-3 text-[14px] font-light text-ink outline-none focus:border-gold mt-3">
+                <option value="">Investor Type</option>
+                <option>Family Office</option>
+                <option>High Net Worth Individual</option>
+                <option>Institutional Fund</option>
+                <option>EB-5 Visa Investor</option>
+                <option>Sovereign / Government Entity</option>
+              </select>
+              <select className="w-full border border-[rgba(0,0,0,0.15)] bg-white p-3 text-[14px] font-light text-ink outline-none focus:border-gold mt-3">
+                <option value="">Investment Capacity</option>
+                <option>$50K–$250K</option>
+                <option>$250K–$1M</option>
+                <option>$1M–$5M</option>
+                <option>$5M+</option>
+              </select>
+              {investorStatus === 'success' ? (
+                <p className="font-serif text-[15px] text-ink mt-6 text-center">Thank you. We will be in touch within 48 hours.</p>
+              ) : (
+                <button
+                  type="submit"
+                  disabled={investorStatus === 'submitting'}
+                  className="w-full bg-ink text-white text-[12px] uppercase tracking-[0.14em] py-4 mt-4 hover:bg-gold transition-colors"
                 >
-                  {/* Photo Container */}
-                  <div className="aspect-[3/4] overflow-hidden relative">
-                    <img
-                      src={member.img}
-                      alt={`${member.name} - ${member.title} - Z-Co Real Estate Development Team`}
-                      className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-ink2/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </div>
-                  <div className="p-5 border-t border-[rgba(0,0,0,0.07)]">
-                    <h4 className="font-serif font-normal text-lg text-ink mb-1">{member.name}</h4>
-                    <p className="text-[10px] font-normal text-gold uppercase tracking-[0.18em] leading-snug">{member.title}</p>
-                  </div>
-                </motion.div>
+                  {investorStatus === 'submitting' ? 'Sending…' : 'Request Package →'}
+                </button>
+              )}
+              <p className="text-[11px] text-mid mt-3">Accredited Investors Only. Not an offer of securities.</p>
+            </form>
+          </div>
+        </div>
+
+        {/* Operating Platform sub-section */}
+        <div className="border-t border-[rgba(0,0,0,0.1)] mt-16 pt-12">
+          <p className="text-[11px] text-gold uppercase tracking-[0.18em] mb-4">The Operating Platform</p>
+          <h3 className="font-serif font-light text-ink" style={{ fontSize: 'clamp(22px,2.4vw,30px)' }}>
+            One platform, <em>three engines.</em>
+          </h3>
+          <div className="w-7 h-px bg-gold mt-4" />
+          <p className="text-mid text-[14.5px] max-w-2xl mt-4">
+            Development, capital, and construction working as one system — not three separate vendors stitched together project by project. This is the platform behind every raise.
+          </p>
+          <div className="grid grid-cols-3 gap-px bg-[rgba(0,0,0,0.1)] mt-8">
+            {[
+              {
+                title: 'Development',
+                desc: "Essential projects engineered to repeat at scale — the foundation of Z-Co as a build-to-rent developer USA sponsors trust for recession-resistant real estate.",
+                bullets: ['Prototype-driven planning', 'Disciplined approvals', 'Market-led siting'],
+              },
+              {
+                title: 'Capital Solutions',
+                desc: 'Structures built for absolute alignment and execution.',
+                bullets: ['Milestone-linked capital', 'Transparent reporting', 'Institution-ready data'],
+              },
+              {
+                title: 'Prefabricated Construction',
+                desc: 'Faster delivery. Higher control. Consistent outcomes — prefabricated construction real estate built for repeatability.',
+                bullets: ['Factory-enabled build', 'Standardized assemblies', 'Predictable timelines'],
+              },
+            ].map((card) => (
+              <div key={card.title} className="bg-off p-7">
+                <div className="text-[15px] font-medium text-ink mb-3">{card.title}</div>
+                <p className="text-[13.5px] leading-[1.7] text-mid mb-4">{card.desc}</p>
+                <ul className="text-[13px] text-ink space-y-1 list-none pl-0">
+                  {card.bullets.map((b) => (
+                    <li key={b}>— {b}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 10. TEAM SECTION */}
+      <section id="team" className="bg-off py-24 px-[72px]">
+        <p className="text-[11px] text-gold uppercase tracking-[0.18em] mb-4">Leadership</p>
+        <h2 className="font-serif font-light text-[28px] text-ink leading-[1.35]">
+          Meet the Team
+          <span className="ml-3 text-[10px] uppercase tracking-[0.14em] text-gold border border-gold px-2 py-1 font-sans">30+ Years Experience</span>
+        </h2>
+        <div className="w-7 h-px bg-gold mt-4 mb-5" />
+        <p className="text-mid text-[14px] max-w-xl mb-10">
+          A seasoned group of operators, builders, and capital partners driving execution across every project.
+        </p>
+
+        {/* Mike Butte lead bio */}
+        <div className="grid grid-cols-2 gap-16 items-start mb-12 pb-12 border-b border-[rgba(0,0,0,0.1)]">
+          <img
+            src="/asset/mike-butte.jpg"
+            alt="Mike Butte"
+            className="w-full object-cover object-top"
+            style={{ aspectRatio: '3/4' }}
+          />
+          <div>
+            <h3 className="font-serif text-[28px] text-ink mb-1">Mike Butte</h3>
+            <p className="text-[11px] uppercase tracking-[0.15em] text-gold mb-5">Founder & CEO</p>
+            <p className="text-[14px] leading-[1.75] text-mid">
+              Mike Butte is the Founder and CEO of Z-Co Development Corp., a real estate development company USA investors and partners rely on for an end-to-end development platform spanning real estate and operating-business projects. With more than 30 years of leadership experience, Mike has executed projects across multiple asset classes by combining disciplined underwriting, capital strategy, and delivery execution to create recession-resistant, essential-service assets designed for scale. His background includes development and ownership experience tied to nationally recognized brands such as Holiday Inn, Best Western, Arby's, Denny's, and Caliber Collision, and he remains focused on building repeatable project prototypes that compress timelines and improve predictability across markets.
+            </p>
+            <p className="text-[14px] leading-[1.75] text-mid mt-3">
+              Mike is also passionate about expanding access, creating opportunities for small investors to participate in institutional-quality projects and helping budding real estate developers learn, grow, and succeed through clear systems, practical guidance, and aligned real estate joint venture partnerships.
+            </p>
+          </div>
+        </div>
+
+        {/* Team grid */}
+        <div className="grid grid-cols-5 gap-px bg-[rgba(0,0,0,0.1)]">
+          {[
+            { name: 'Mo Khan', title: 'Chief Operating Officer', img: '/asset/mo-khan.png', bio: "Leads financial strategy, capital structuring and LP/GP waterfall structures across Z-Co's development platform. Ensures every project is capitalized for execution certainty." },
+            { name: 'Sarah Ali', title: 'President', img: '/asset/sarah-ali.jpg', bio: "Leads day-to-day operations and project delivery. Works directly with contractors, capital partners, and the development team across Z-Co's active portfolio." },
+            { name: 'Omar Terkawi', title: 'Director of Development', img: '/asset/omar-terkawi.png', bio: "Oversees project planning, entitlements, design coordination and construction management. Maintains schedule, budget and design intent from groundbreak to handover." },
+            { name: 'Dan Prosser', title: 'Senior Advisor', img: '/asset/dan-prosser.png', bio: "Brings decades of senior advisory experience to Z-Co's strategic initiatives. Provides counsel on market positioning, capital markets, and long-term development strategy." },
+            { name: 'John Stevens', title: 'Legal Counsel', img: '/asset/john-stevens.jpg', bio: "Oversees legal structuring across Z-Co's development partnerships, entitlements, and capital transactions. Ensures compliance and investor protection across all project structures." },
+            { name: 'Anish N. Kantharia', title: 'Director of Marketing', img: '/asset/anish-kantharia.jpg', bio: "Leads brand strategy, digital marketing, and project marketing execution across Z-Co's active developments and investor communications." },
+            { name: 'Abel Castro', title: 'Construction Manager', img: '/asset/abel-castro.png', bio: "Manages on-site construction operations, contractor relationships, and field-level schedule compliance across Z-Co's active development projects." },
+            { name: 'Phan Le', title: 'Financial Analyst', img: '/asset/phan-le.png', bio: "Supports underwriting, financial modeling, and investment reporting across Z-Co's project portfolio." },
+            { name: 'Thaddaus Hays Jr.', title: 'Project Manager', img: null, bio: "Coordinates project timelines, contractor schedules, and stakeholder communications for Z-Co's active development pipeline." },
+          ].map((member) => (
+            <div key={member.name} className="bg-white">
+              {member.img ? (
+                <div className="aspect-[3/4] overflow-hidden">
+                  <img
+                    src={member.img}
+                    alt={member.name}
+                    className="w-full h-full object-cover object-top hover:scale-[1.04] transition-transform duration-500"
+                  />
+                </div>
+              ) : (
+                <div className="aspect-[3/4] bg-off flex items-center justify-center">
+                  <span className="text-[11px] text-mid uppercase tracking-[0.14em]">No Photo</span>
+                </div>
+              )}
+              <div className="p-5">
+                <div className="font-serif text-[19px] text-ink mb-1">{member.name}</div>
+                <div className="text-[10px] uppercase tracking-[0.15em] text-gold mb-2">{member.title}</div>
+                <p className="text-[12.5px] leading-[1.65] text-mid">{member.bio}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 11. TESTIMONIALS */}
+      <section id="testimonials" className="bg-off py-24 px-[72px]">
+        <p className="text-[11px] text-gold uppercase tracking-[0.18em] mb-4">Testimonials</p>
+        <h2 className="font-serif font-light text-[28px] text-ink leading-[1.35]">
+          What our partners<br />&amp; clients <em>say.</em>
+        </h2>
+        {/* Top row: 3 */}
+        <div className="grid grid-cols-3 gap-px bg-[rgba(0,0,0,0.1)] mt-12">
+          {[
+            { quote: "It has been a wonderful experience. Your firm has set the customer focus standard. You have demonstrated a high quality of professionalism and your associates exceed the needs of your customers daily.", name: "David Taylor", org: "Frost Bank" },
+            { quote: "Mike Butte is a longtime trusted friend and someone I hold in high regard. In business, Mike is thoughtful, careful, and highly resourceful. I've always appreciated his practical insights and disciplined approach.", name: "Stewart Morris Jr.", org: "President · Stewart Security Capital Inc." },
+            { quote: "From my experience with you, I can easily endorse you. You have a well-rounded level of experience in general business and you couple that with integrity — a good combination.", name: "Randy Hancock", org: "Hancock Realty Corporation, Houston" },
+          ].map((t) => (
+            <div key={t.name} className="bg-white p-9">
+              <div className="font-serif text-[52px] leading-[0.8] text-gold font-light mb-4">"</div>
+              <p className="font-serif italic text-[16.5px] font-light leading-[1.72] text-ink2 mb-6">{t.quote}</p>
+              <div className="w-7 h-px bg-gold mb-4" />
+              <div className="text-[13px] font-medium text-ink mb-1">{t.name}</div>
+              <div className="text-[12px] text-mid">{t.org}</div>
+            </div>
+          ))}
+        </div>
+        {/* Bottom row: 2 */}
+        <div className="grid grid-cols-2 gap-px bg-[rgba(0,0,0,0.1)] mt-px">
+          {[
+            { quote: "As Mike Butte's real estate broker since 2008, I have always been impressed with Mike's honesty, integrity, and professionalism. I strongly recommend Mike as a loyal and trustworthy business associate.", name: "Danny Pleason", org: "Real Estate Broker · Martha Turner Properties" },
+            { quote: "Working with Z-Co has been consistently professional and results-oriented. The team demonstrates a rare combination of market discipline and genuine care for long-term community outcomes.", name: "Capital Partner", org: "Texas-Based Family Office" },
+          ].map((t) => (
+            <div key={t.name} className="bg-white p-9">
+              <div className="font-serif text-[52px] leading-[0.8] text-gold font-light mb-4">"</div>
+              <p className="font-serif italic text-[16.5px] font-light leading-[1.72] text-ink2 mb-6">{t.quote}</p>
+              <div className="w-7 h-px bg-gold mb-4" />
+              <div className="text-[13px] font-medium text-ink mb-1">{t.name}</div>
+              <div className="text-[12px] text-mid">{t.org}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 12. CONTACT SECTION — dark */}
+      <section id="contact" className="bg-ink py-24 px-[72px]">
+        <div className="grid grid-cols-2 gap-24">
+          {/* Left */}
+          <div>
+            <p className="text-[11px] text-gold2 uppercase tracking-[0.18em] mb-4">Get in Touch</p>
+            <h2 className="font-serif font-light text-white" style={{ fontSize: 'clamp(32px,3.5vw,52px)' }}>
+              Let's build together.
+            </h2>
+            <p className="text-[rgba(255,255,255,0.45)] text-[15px] mt-5">
+              Inquire about partnerships, site submissions, or prefabricated solutions.
+            </p>
+            <div className="mt-8 space-y-4">
+              {[
+                { label: 'Address', value: '5120 Woodway Dr. Suite 7018, Houston TX 77056' },
+                { label: 'Email', value: 'info@z-co.info' },
+                { label: 'Investor Enquiries', value: 'investors@zco-dev.com' },
+                { label: 'Development', value: 'development@zco-dev.com' },
+              ].map((row) => (
+                <div key={row.label} className="flex gap-6 border-t border-[rgba(255,255,255,0.08)] pt-4">
+                  <span className="text-[10.5px] uppercase tracking-[0.14em] text-[rgba(255,255,255,0.45)] w-36 shrink-0">{row.label}</span>
+                  <span className="text-[14px] text-[rgba(255,255,255,0.85)]">{row.value}</span>
+                </div>
               ))}
             </div>
+            <blockquote className="font-serif italic text-[16px] text-[rgba(255,255,255,0.5)] leading-[1.6] border-l-2 border-[rgba(139,111,62,0.4)] pl-6 mt-10">
+              "Z-Co is not just building projects; we are building a more predictable future for real estate development."
+            </blockquote>
           </div>
-        </div>
-      </section>
 
-      {/* CONTACT */}
-      <section id="contact" className="py-24 bg-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-14">
-          <div className="grid lg:grid-cols-12 gap-0 border border-[rgba(0,0,0,0.08)] overflow-hidden">
-            <div className="lg:col-span-7 p-10 md:p-16">
+          {/* Right: Contact form */}
+          <div>
+            <form onSubmit={handleContactSubmit}>
+              <input
+                type="text"
+                placeholder="Full Name"
+                className="w-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.12)] text-white placeholder-[rgba(255,255,255,0.35)] p-4 text-[14px] font-light outline-none focus:border-gold/50 mt-3"
+              />
+              <input
+                type="email"
+                placeholder="Email Address"
+                className="w-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.12)] text-white placeholder-[rgba(255,255,255,0.35)] p-4 text-[14px] font-light outline-none focus:border-gold/50 mt-3"
+              />
+              <select className="w-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.12)] text-white p-4 text-[14px] font-light outline-none focus:border-gold/50 mt-3">
+                <option value="">Nature of Enquiry</option>
+                <option>Investment Partnership</option>
+                <option>Development Services</option>
+                <option>Land/Site Opportunity</option>
+                <option>Joint Venture</option>
+                <option>General Enquiry</option>
+              </select>
+              <textarea
+                placeholder="Message"
+                rows={4}
+                className="w-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.12)] text-white placeholder-[rgba(255,255,255,0.35)] p-4 text-[14px] font-light outline-none focus:border-gold/50 mt-3"
+              />
               {formStatus === 'success' ? (
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="h-full flex flex-col justify-center text-center">
-                  <CheckCircle2 className="w-16 h-16 text-gold mx-auto mb-6" />
-                  <h3 className="font-serif font-light text-3xl text-ink mb-4">Message Sent</h3>
-                  <p className="text-mid font-light">Thank you for your interest. We'll be in touch.</p>
-                </motion.div>
+                <p className="font-serif text-white text-[15px] mt-6 text-center">Thank you. We will be in touch within 48 hours.</p>
               ) : (
-                <form className="space-y-8" onSubmit={handleContactSubmit}>
-                  <div className="space-y-2">
-                    <p className="text-[10px] tracking-[0.28em] uppercase text-gold mb-3">Get in Touch</p>
-                    <h3 className="font-serif font-light text-3xl sm:text-4xl text-ink">Let&apos;s build together.</h3>
-                    <p className="text-mid font-light text-sm">Inquire about partnerships, site submissions, or prefabricated solutions.</p>
-                  </div>
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <input required type="text" placeholder="Name" className="bg-white border border-[rgba(0,0,0,0.12)] px-4 py-4 text-sm text-ink placeholder-mid font-light focus:border-gold focus:outline-none" />
-                    <input required type="email" placeholder="Email" className="bg-white border border-[rgba(0,0,0,0.12)] px-4 py-4 text-sm text-ink placeholder-mid font-light focus:border-gold focus:outline-none" />
-                  </div>
-                  <select required className="w-full bg-white border border-[rgba(0,0,0,0.12)] px-4 py-4 text-sm text-ink font-light focus:border-gold focus:outline-none appearance-none">
-                    <option value="">Select Topic</option>
-                    <option value="partnership">Partnership Inquiry</option>
-                    <option value="submission">Site Submission</option>
-                    <option value="capital">Capital Allocation</option>
-                  </select>
-                  <textarea required rows={4} placeholder="Your message" className="w-full bg-white border border-[rgba(0,0,0,0.12)] px-4 py-4 text-sm text-ink placeholder-mid font-light focus:border-gold focus:outline-none resize-none"></textarea>
-                  <button
-                    disabled={formStatus === 'submitting'}
-                    className="bg-gold text-white px-10 py-4 font-normal uppercase tracking-[0.13em] text-[10.5px] hover:bg-gold2 disabled:opacity-50 transition-all inline-flex items-center gap-2"
-                  >
-                    {formStatus === 'submitting' ? 'Sending...' : 'Send Inquiry'}
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-                </form>
+                <button
+                  type="submit"
+                  disabled={formStatus === 'submitting'}
+                  className="w-full bg-gold text-ink text-[12px] uppercase tracking-[0.14em] py-4 mt-4 hover:bg-gold2 transition-colors font-medium"
+                >
+                  {formStatus === 'submitting' ? 'Sending…' : 'Send Enquiry →'}
+                </button>
               )}
-            </div>
-
-            <div className="lg:col-span-5 bg-off p-10 md:p-16 border-l border-[rgba(0,0,0,0.07)] space-y-12">
-              <div>
-                <h4 className="text-[10px] font-normal text-gold uppercase tracking-[0.17em] mb-6">Headquarters</h4>
-                <div className="space-y-8">
-                  <div className="flex gap-5">
-                    <MapPin className="w-5 h-5 text-mid flex-shrink-0 mt-0.5" />
-                    <div>
-                      <p className="font-light text-ink">5120 Woodway Dr.</p>
-                      <p className="text-sm text-mid font-light">Suite 7018, Houston TX 77056</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-5">
-                    <Mail className="w-5 h-5 text-mid" />
-                    <p className="font-light text-ink">info@z-co.info</p>
-                  </div>
-                  <div className="flex gap-5">
-                    <Phone className="w-5 h-5 text-mid" />
-                    <p className="font-light text-mid">Inquire for Office Line</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-12 border-t border-[rgba(0,0,0,0.07)]">
-                <blockquote className="font-serif font-light text-xl italic leading-[1.55] text-ink2 border-l-2 border-gold pl-5">
-                  &ldquo;Z-Co is not just building projects; we are building a more predictable future for real estate development.&rdquo;
-                </blockquote>
-              </div>
-            </div>
+            </form>
           </div>
         </div>
       </section>
 
+      {/* 13. FAQ */}
       <FAQSection
-        heading="Common Questions"
         faqs={[
           {
-            question: 'What is a real estate development platform?',
-            answer: 'A real estate development platform like Z-Co goes beyond developing single, isolated projects. We utilize a replicable model—standardized designs, bulk procurement, and repeatable capital structures—to deploy similar project types across multiple high-growth markets efficiently. This scale reduces risk, accelerates timelines, and generates more predictable returns for our investment partners.'
+            question: 'What types of investors does Z-Co work with?',
+            answer: <>Z-Co works with accredited investors across a range of capital profiles — from <Link to="/real-estate-investment-platform" className="underline hover:text-ink transition-colors">family offices and high-net-worth individuals</Link> to institutional funds and EB-5 visa investors. Each raise is tied to a specific project with documented underwriting, milestone-linked capital draws, and transparent reporting.</>
           },
           {
-            question: 'How do I invest in US real estate projects with Z-Co?',
-            answer: <>Z-Co offers multiple entry points for accredited investors, including direct project equity, preferred equity, and <Link to="/real-estate-joint-venture-partnerships" className="underline hover:text-ink transition-colors">joint venture partnerships</Link>. We also accommodate <Link to="/eb5-real-estate-projects-usa" className="underline hover:text-ink transition-colors">international investors</Link> seeking U.S. permanent residency through USCIS-approved EB-5 investments into our qualifying development projects. Reach out via the Request Packet form to review our current offerings.</>
+            question: 'How does Z-Co structure its investment offerings?',
+            answer: <>Each project raise uses an institutional-style structure: equity and debt coordinated project-by-project, with LP/GP waterfalls, milestone-linked capital deployment, and regular reporting through our Covercy investor portal. This is not a pooled fund — every dollar is tied to a specific <Link to="/real-estate-joint-venture-partnerships" className="underline hover:text-ink transition-colors">identified development</Link>.</>
           },
           {
-            question: 'What is the minimum investment for your projects?',
-            answer: 'Minimum investment sizes vary depending on the capital structure and the specific project. Co-investments and LP equity positions typically have standard minimums comparable to institutional private equity real estate funds. EB-5 investments must meet USCIS statutory minimums (currently $800,000 in Targeted Employment Areas). Please contact our investor relations team for details.'
+            question: 'What is Light Gauge Steel (LGS) construction and why does Z-Co use it?',
+            answer: <>LGS is a factory-manufactured structural framing system that replaces traditional wood framing. Z-Co uses it across residential and modular projects because it compresses construction timelines, locks in material costs, and improves quality control — key advantages in a volatile materials market. Our US Modular Systems manufacturing platform is built to support <Link to="/prefabricated-construction-real-estate" className="underline hover:text-ink transition-colors">Z-Co's own pipeline first</Link>.</>
+          },
+          {
+            question: 'What is the EB-5 visa program and how does Z-Co qualify?',
+            answer: <>The <Link to="/eb5-real-estate-projects-usa" className="underline hover:text-ink transition-colors">EB-5 Immigrant Investor Program</Link> allows foreign nationals to obtain U.S. permanent residency by investing in qualifying commercial enterprises that create U.S. jobs. Z-Co structures select projects to accommodate EB-5 capital, providing international investors with a pathway to residency alongside market-rate real estate returns.</>
           },
           {
             question: 'Why does Z-Co focus on Texas and the Sun Belt?',
