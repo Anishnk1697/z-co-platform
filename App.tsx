@@ -675,10 +675,17 @@ const Home = ({
       {/* 3. ABOUT SECTION */}
       <section className="bg-white py-24 px-[72px]">
         <div className="grid grid-cols-2 gap-24 items-center">
-          {/* Left: stacked images */}
-          <div className="relative">
-            <img src="/asset/philosophy-building.webp" alt="Z-Co Philosophy" className="w-full object-cover" style={{ aspectRatio: '5/4' }} />
-            <img src="/asset/mike-butte.jpg" alt="Mike Butte" className="w-full object-cover ml-12 -mt-12 relative" style={{ aspectRatio: '4/3' }} />
+          {/* Left: main image + absolute inset */}
+          <div className="relative pb-9 pr-9">
+            <div className="w-full overflow-hidden" style={{ aspectRatio: '3/4' }}>
+              <img src="/asset/dovetrails.jpg" alt="Dove Trails — Z-Co Development" className="w-full h-full object-cover" />
+            </div>
+            <div className="absolute overflow-hidden" style={{
+              bottom: '-36px', right: '-36px', width: '50%', aspectRatio: '4/3',
+              border: '5px solid #fff', boxShadow: '0 8px 40px rgba(0,0,0,0.18)'
+            }}>
+              <img src="/asset/medplex.jpg" alt="MedPlex — Z-Co Development" className="w-full h-full object-cover" />
+            </div>
           </div>
           {/* Right: text */}
           <div>
