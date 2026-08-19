@@ -39,7 +39,7 @@ const MixedUseRealEstate = () => {
     <div className="min-h-screen bg-white text-ink">
       <section className="pt-36 pb-20 lg:pt-52 lg:pb-32 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <span className="inline-flex items-center gap-2 px-3 py-1  bg-off border border-[rgba(0,0,0,0.08)] text-[10px] font-bold text-mid uppercase tracking-widest mb-6">Mixed-Use Development</span>
+          <span className="inline-flex items-center gap-2 px-3 py-1  bg-off border border-[rgba(0,0,0,0.08)] text-[10px] font-normal text-mid uppercase tracking-[0.18em] mb-6">Mixed-Use Development</span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-light leading-[1.06] mb-5">
             Mixed-Use Real Estate<br /><span className="text-mid">Developer & Investment Partner</span>
           </h1>
@@ -131,7 +131,7 @@ const MixedUseRealEstate = () => {
           <p className="text-mid text-lg leading-relaxed">Z-Co is seeking investors, landowners, anchor tenants, and <Link to="/real-estate-joint-venture-partnerships" className="underline hover:text-ink transition-colors">capital partners</Link> to expand our mixed-use pipeline across the Sun Belt. Let's build something that lasts.</p>
           <div className="flex flex-wrap justify-center gap-4 pt-4">
             <Link to="/#invest" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-normal uppercase tracking-[0.13em] text-[10.5px] hover:bg-gold2 transition-all">Investor Access <ArrowRight className="w-4 h-4" /></Link>
-            <Link to="/#contact" className="inline-flex items-center gap-2 px-8 py-4 border border-[rgba(0,0,0,0.1)] text-ink  font-bold uppercase tracking-widest text-xs hover:border-white transition-all">Contact Us <ArrowRight className="w-4 h-4" /></Link>
+            <Link to="/#contact" className="inline-flex items-center gap-2 px-8 py-4 border border-[rgba(0,0,0,0.1)] text-ink  font-normal uppercase text-[11px] tracking-[0.14em] hover:border-white transition-all">Contact Us <ArrowRight className="w-4 h-4" /></Link>
           </div>
         </div>
       </section>

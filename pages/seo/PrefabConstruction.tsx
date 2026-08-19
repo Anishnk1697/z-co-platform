@@ -39,7 +39,7 @@ const PrefabConstruction = () => {
     <div className="min-h-screen bg-white text-ink">
       <section className="pt-36 pb-20 lg:pt-52 lg:pb-32 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <span className="inline-flex items-center gap-2 px-3 py-1  bg-off border border-[rgba(0,0,0,0.08)] text-[10px] font-bold text-mid uppercase tracking-widest mb-6">Prefabricated Construction</span>
+          <span className="inline-flex items-center gap-2 px-3 py-1  bg-off border border-[rgba(0,0,0,0.08)] text-[10px] font-normal text-mid uppercase tracking-[0.18em] mb-6">Prefabricated Construction</span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-light leading-[1.06] mb-5">
             Prefabricated Construction<br /><span className="text-mid">Real Estate Development</span>
           </h1>
@@ -95,7 +95,7 @@ const PrefabConstruction = () => {
           <p>We apply prefabricated thinking holistically — to structural systems, mechanical and electrical rough-in, facade panels, bathroom pods, and kitchen assemblies — selecting the prefabricated solution where it delivers the greatest combination of quality, schedule, and cost advantage. This integrated approach to prefabrication is a cornerstone of the Replication Advantage that sets Z-Co apart from traditional real estate developers.</p>
           <div className="flex flex-wrap gap-4 pt-4">
             <Link to="/about" className="inline-flex items-center gap-2 px-5 py-2.5 bg-gold text-white font-normal uppercase text-[10.5px] tracking-[0.13em] hover:bg-gold2 transition-all">About Z-Co <ArrowRight className="w-3.5 h-3.5" /></Link>
-            <Link to="/portfolio" className="inline-flex items-center gap-2 px-5 py-2.5 border border-[rgba(0,0,0,0.1)] text-ink  font-bold uppercase text-xs tracking-widest hover:border-white transition-all">Our Projects <ArrowRight className="w-3.5 h-3.5" /></Link>
+            <Link to="/portfolio" className="inline-flex items-center gap-2 px-5 py-2.5 border border-[rgba(0,0,0,0.1)] text-ink  font-normal uppercase text-[11px] tracking-[0.14em] hover:border-white transition-all">Our Projects <ArrowRight className="w-3.5 h-3.5" /></Link>
           </div>
         </div>
       </section>
@@ -123,7 +123,7 @@ const PrefabConstruction = () => {
           <p className="text-mid text-lg leading-relaxed">Partner with Z-Co Development and experience the financial advantage of prefabricated construction — faster delivery, better quality, lower cost, and stronger investor returns.</p>
           <div className="flex flex-wrap justify-center gap-4 pt-4">
             <Link to="/#invest" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-normal uppercase tracking-[0.13em] text-[10.5px] hover:bg-gold2 transition-all">Investor Access <ArrowRight className="w-4 h-4" /></Link>
-            <Link to="/#contact" className="inline-flex items-center gap-2 px-8 py-4 border border-[rgba(0,0,0,0.1)] text-ink  font-bold uppercase tracking-widest text-xs hover:border-white transition-all">Contact Us <ArrowRight className="w-4 h-4" /></Link>
+            <Link to="/#contact" className="inline-flex items-center gap-2 px-8 py-4 border border-[rgba(0,0,0,0.1)] text-ink  font-normal uppercase text-[11px] tracking-[0.14em] hover:border-white transition-all">Contact Us <ArrowRight className="w-4 h-4" /></Link>
           </div>
         </div>
       </section>

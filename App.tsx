@@ -434,6 +434,89 @@ const PortfolioSection = () => {
   );
 };
 
+const ASSET_CLASSES = [
+  {
+    label: 'Residential',
+    title: 'Residential',
+    body: 'Gated, build-to-sell communities and luxury custom homes targeting workforce ownership near major employment centers. Dove Trails is the current proof case — 152 homes engineered on Z-Co\'s LGS platform, priced for buyers who work in the neighborhood they\'re buying into.',
+    featured: 'Featured: Dove Trails, San Antonio'
+  },
+  {
+    label: 'Multifamily',
+    title: 'Multifamily',
+    body: 'Market-rate and workforce rental communities anchored by strong amenity programs and disciplined location strategy — sited against real employment and population data, not just land price. The Everson delivered at 92% leased against top-tier submarket comparables.',
+    featured: 'Featured: The Everson, San Antonio'
+  },
+  {
+    label: 'Healthcare',
+    title: 'Healthcare',
+    body: 'Hospital, HOPD, and ambulatory care developments positioned proximate to major employment corridors and underserved primary service areas. MedPlex anchors this vertical — a hub hospital and physician network built for a market with zero existing acute-care competition.',
+    featured: 'Featured: MedPlex, Katy, TX'
+  },
+  {
+    label: 'Hospitality',
+    title: 'Hospitality',
+    body: 'Select and full-service hotel developments placed at strategic demand nodes — highway interchanges, employment corridors, medical districts — and transitioned to institutional-grade brand operations after delivery.',
+    featured: 'Featured: Best Western Premier'
+  },
+  {
+    label: 'Retail & F&B',
+    title: 'Retail & F&B',
+    body: 'Restaurant, wellness, and retail developments embedded within community-oriented, mixed-use neighborhood programs — designed to activate foot traffic around Z-Co\'s residential and healthcare anchors.',
+    featured: 'Featured: TowneCenter'
+  },
+  {
+    label: 'Commercial',
+    title: 'Commercial',
+    body: 'Office, automotive, and specialty commercial developments serving business tenants in high-growth Texas submarkets — delivered to brand and operational specification for national and regional operators.',
+    featured: 'Featured: Caliber Collision'
+  },
+];
+
+const AssetClassesSection = () => {
+  const [activeTab, setActiveTab] = useState(0);
+  const ac = ASSET_CLASSES[activeTab];
+  return (
+    <section id="assets" className="py-20 bg-white">
+      <div className="mx-auto max-w-7xl px-6 lg:px-14">
+        <p className="text-[11px] font-normal text-gold uppercase tracking-[0.28em] mb-4">What We Build</p>
+        <h2 className="font-serif font-light text-3xl sm:text-4xl lg:text-5xl text-ink leading-[1.1] mb-5">
+          Six asset classes. <em>One platform.</em>
+        </h2>
+        <div className="w-7 h-px bg-gold mb-0" />
+        <div className="flex flex-wrap gap-0 border-b border-[rgba(0,0,0,0.1)] mt-10">
+          {ASSET_CLASSES.map((a, i) => (
+            <button
+              key={i}
+              onClick={() => setActiveTab(i)}
+              className={`font-serif text-[17px] font-normal px-0 mr-8 pb-4 border-b-2 -mb-px transition-all duration-200 ${
+                activeTab === i
+                  ? 'text-ink border-gold'
+                  : 'text-mid border-transparent hover:text-ink'
+              }`}
+            >
+              {a.label}
+            </button>
+          ))}
+        </div>
+        <div className="grid lg:grid-cols-2 gap-12 items-center py-12">
+          <div className="aspect-[16/10] overflow-hidden bg-ink2">
+            <SmartImage alt={ac.title} fallbackSeed={ac.label.toLowerCase().replace(/[^a-z]/g, '')} className="w-full h-full object-cover" />
+          </div>
+          <div>
+            <h3 className="font-serif font-normal text-3xl text-ink mb-5">{ac.title}</h3>
+            <p className="text-base text-mid leading-[1.85] font-light mb-4">{ac.body}</p>
+            <p className="text-[11px] font-normal text-gold uppercase tracking-[0.1em] mt-5">{ac.featured}</p>
+            <Link to="/portfolio" className="inline-flex items-center gap-2 mt-8 text-[11px] font-normal uppercase tracking-[0.16em] text-ink border-b border-ink pb-0.5 hover:text-gold hover:border-gold transition-all">
+              View Portfolio <ArrowRight className="w-3 h-3" />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const Home = ({
   investorStatus,
   handleInvestorSubmit,
@@ -520,6 +603,90 @@ const Home = ({
           </div>
         </div>
       </section>
+
+      {/* ABOUT SECTION */}
+      <section id="about" className="py-24 lg:py-32 bg-white">
+        <div className="mx-auto max-w-7xl px-6 lg:px-14">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <div>
+              <p className="text-[11px] font-normal text-gold uppercase tracking-[0.28em] mb-4">Execution-First Real Estate</p>
+              <h2 className="font-serif font-light text-3xl sm:text-4xl lg:text-5xl text-ink leading-[1.15] mb-6">
+                We develop resilient communities<br />
+                <em>through an integrated platform.</em>
+              </h2>
+              <div className="w-7 h-px bg-gold mb-6" />
+              <p className="text-base text-mid leading-[1.85] font-light mb-4">
+                Z-Co Development Corp is a privately held, vertically integrated real estate company that turns undervalued land and underserved markets into concepts that work — for residents, physicians, tenants, and investors alike. Founded by Mike Butte in 2003, the firm has completed more than 37 projects across six asset classes through multiple economic cycles, with zero abandonments.
+              </p>
+              <p className="text-base text-mid leading-[1.85] font-light mb-8">
+                Rather than building isolated structures, Z-Co designs end-to-end concepts — for next-generation healthcare, community-centered living, and vibrant commercial centers — and stays accountable for each one from land acquisition through delivery.
+              </p>
+              <blockquote className="font-serif font-light text-xl italic leading-[1.55] text-ink2 border-l-2 border-gold pl-5 mb-4">
+                &ldquo;Conservative about what we start. Relentless about what we finish.&rdquo;
+              </blockquote>
+              <p className="text-[11px] font-normal text-gold uppercase tracking-[0.14em]">Mike Butte &nbsp;·&nbsp; Founder &amp; CEO &nbsp;·&nbsp; Est. 2003</p>
+            </div>
+            <div className="relative">
+              <div className="aspect-[3/4] overflow-hidden bg-ink2">
+                <SmartImage alt="Z-Co Development - About" fallbackSeed="medplex" className="w-full h-full object-cover" />
+              </div>
+              <div className="absolute -bottom-8 -left-8 w-1/2 aspect-[4/3] overflow-hidden border-4 border-white shadow-xl hidden lg:block">
+                <SmartImage alt="Z-Co Development project" fallbackSeed="dovetrails" className="w-full h-full object-cover" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT WE DO */}
+      <section id="what-we-do" className="py-20 bg-off">
+        <div className="mx-auto max-w-7xl px-6 lg:px-14">
+          <p className="text-[11px] font-normal text-gold uppercase tracking-[0.28em] mb-4">What We Do</p>
+          <h2 className="font-serif font-light text-3xl sm:text-4xl lg:text-5xl text-ink leading-[1.1] mb-5">
+            Four ways we <em>create value.</em>
+          </h2>
+          <div className="w-7 h-px bg-gold mb-12" />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[rgba(0,0,0,0.08)]">
+            {[
+              {
+                title: 'Real Estate Development',
+                desc: 'Z-Co\'s own residential, healthcare, hospitality, and mixed-use projects — from land acquisition through delivery.',
+                cta: 'View Current Projects',
+                href: '/portfolio'
+              },
+              {
+                title: 'Investment Opportunities',
+                desc: 'Institutional-style capital structures opened to accredited investors, including EB-5 eligible projects.',
+                cta: 'See Investor Access',
+                href: '/#invest'
+              },
+              {
+                title: 'Development Services',
+                desc: 'Turnkey project delivery for developers and asset owners who want Z-Co\'s execution, without giving up ownership.',
+                cta: 'Build With Us',
+                href: '/#contact'
+              },
+              {
+                title: 'US Modular Systems',
+                desc: 'Z-Co\'s LGS manufacturing capability — built to serve Z-Co\'s own projects first, creating a factory-enabled delivery advantage.',
+                cta: 'Learn More',
+                href: '/prefabricated-construction-real-estate'
+              }
+            ].map((card, i) => (
+              <div key={i} className="bg-white p-8 hover:bg-off transition-colors duration-200" style={{ background: 'linear-gradient(165deg, #fff 45%, rgba(139,111,62,0.06))' }}>
+                <h3 className="font-serif font-normal text-2xl text-ink mb-3 leading-snug">{card.title}</h3>
+                <p className="text-sm text-mid leading-[1.7] mb-5 font-light">{card.desc}</p>
+                <Link to={card.href} className="text-[11px] font-normal uppercase tracking-[0.14em] text-gold hover:text-ink transition-colors">
+                  {card.cta} →
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ASSETS SECTION */}
+      <AssetClassesSection />
 
       {/* ONE PLATFORM. THREE ENGINES. */}
       <section id="platform" className="py-24 lg:py-32 bg-white">
@@ -688,6 +855,76 @@ const Home = ({
 
       {/* SELECTED PORTFOLIO */}
       <PortfolioSection />
+
+      {/* BUILD WITH US */}
+      <section id="build-with-us" className="py-24 bg-ink">
+        <div className="mx-auto max-w-7xl px-6 lg:px-14">
+          <p className="text-[11px] font-normal text-gold2 uppercase tracking-[0.28em] mb-4">Our Integration Approach</p>
+          <h2 className="font-serif font-light text-3xl sm:text-4xl lg:text-5xl text-white leading-[1.1] mb-5">
+            From land <em className="text-white/70">to sale.</em>
+          </h2>
+          <div className="w-7 h-px bg-gold mb-8" />
+          <p className="text-base text-white/65 leading-[1.85] font-light max-w-3xl mb-16">
+            A disciplined approach to every project. Z-Co evaluates every project through detailed market research, data-driven supply-demand analysis, and disciplined development planning — designed to align long-term community demand with practical, on-the-ground execution.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06]">
+            {[
+              { n: '01', title: 'Land Acquisition', desc: 'Proprietary site sourcing with rigorous due diligence on entitlement risk, market demand, and capital efficiency.' },
+              { n: '02', title: 'Entitlements & Planning', desc: 'Zoning, permitting and regulatory navigation with established municipal relationships.' },
+              { n: '03', title: 'Design & Engineering', desc: 'Architect and consultant coordination built around constructability — including LGS panel design — not just design intent.' },
+              { n: '04', title: 'Capital Structuring', desc: 'Debt and equity coordination across institutional lenders, family offices, and crowdfunding platforms.' },
+              { n: '05', title: 'Construction Oversight', desc: 'Owner-representative oversight with active contractor management, budget control, and schedule enforcement.' },
+              { n: '06', title: 'Sales, Marketing & Delivery', desc: 'Buyer experience programs driving pre-sales velocity, community identity, and on-time close of escrow.' },
+            ].map((step, i) => (
+              <div key={i} className="bg-ink p-8 border border-white/[0.06] hover:border-white/10 transition-colors">
+                <div className="font-serif text-2xl text-gold2 mb-4 font-light">{step.n}</div>
+                <h4 className="text-sm font-medium text-white mb-3 uppercase tracking-[0.08em]">{step.title}</h4>
+                <p className="text-sm text-white/55 leading-[1.7] font-light">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-12 text-center">
+            <p className="text-base text-white/60 font-light mb-5">Have a site or a project that needs execution?</p>
+            <Link to="/#contact" className="inline-flex items-center gap-2 text-[11px] font-normal uppercase tracking-[0.16em] text-white border-b border-white/40 pb-0.5 hover:border-white transition-all">
+              Start a Conversation <ArrowRight className="w-3 h-3" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* INSIGHTS TEASER */}
+      <section id="insights-teaser" className="py-24 bg-off">
+        <div className="mx-auto max-w-7xl px-6 lg:px-14">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
+            <div>
+              <p className="text-[11px] font-normal text-gold uppercase tracking-[0.28em] mb-4">Insights</p>
+              <h2 className="font-serif font-light text-3xl sm:text-4xl text-ink leading-[1.1]">
+                Research, not <em>marketing copy.</em>
+              </h2>
+            </div>
+            <Link to="/insights" className="inline-flex items-center gap-2 text-[11px] font-normal uppercase tracking-[0.16em] text-ink border-b border-ink pb-0.5 hover:text-gold hover:border-gold transition-all whitespace-nowrap">
+              View All Insights <ArrowRight className="w-3 h-3" />
+            </Link>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[rgba(0,0,0,0.08)]">
+            {[
+              { cat: 'Investment Analysis', read: '18 min read', title: 'The Dove Trails Investment Thesis', summary: 'The full underwriting thesis behind Dove Trails: the national affordability crisis, San Antonio\'s workforce-housing gap, and the LGS execution model.', slug: 'dove-trails-investment-thesis' },
+              { cat: 'LGS Technology', read: '9 min read', title: 'Light Gauge Steel vs. Wood Frame: The Real Numbers', summary: 'A quantitative look at why Z-Co builds on a factory-based LGS platform — cost lock-in, schedule compression, and long-term durability.', slug: 'lgs-vs-wood-frame' },
+              { cat: 'Market Research', read: '8 min read', title: 'The Katy Healthcare Access Gap: Why MedPlex', summary: '120,000-plus Katy residents have no local acute-care hospital. A look at the demand data behind MedPlex, and why the I-10 corridor is the right site.', slug: 'katy-healthcare-access-gap' },
+            ].map((post, i) => (
+              <Link to={`/insights/${post.slug}`} key={i} className="group bg-white p-8 hover:bg-off transition-colors duration-200">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-gold">{post.cat}</span>
+                  <span className="text-[11px] text-mid">· {post.read}</span>
+                </div>
+                <h3 className="font-serif font-normal text-xl text-ink leading-[1.28] mb-3 group-hover:text-gold transition-colors">{post.title}</h3>
+                <p className="text-sm text-mid leading-[1.68] font-light">{post.summary}</p>
+                <p className="mt-4 text-[11px] font-medium uppercase tracking-[0.14em] text-mid group-hover:text-gold transition-colors">Read More →</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* EXECUTION MODEL */}
       <section id="execution" className="py-24 bg-white">

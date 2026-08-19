@@ -39,7 +39,7 @@ const DevelopmentCompany = () => {
     <div className="min-h-screen bg-white text-ink">
       <section className="pt-36 pb-20 lg:pt-52 lg:pb-32 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <span className="inline-flex items-center gap-2 px-3 py-1  bg-off border border-[rgba(0,0,0,0.08)] text-[10px] font-bold text-mid uppercase tracking-widest mb-6">Real Estate Development Company</span>
+          <span className="inline-flex items-center gap-2 px-3 py-1  bg-off border border-[rgba(0,0,0,0.08)] text-[10px] font-normal text-mid uppercase tracking-[0.18em] mb-6">Real Estate Development Company</span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-light leading-[1.06] mb-5">
             Real Estate Development<br /><span className="text-mid">Company — USA</span>
           </h1>
@@ -130,8 +130,8 @@ const DevelopmentCompany = () => {
           <p className="text-mid text-lg leading-relaxed">Whether you're an investor seeking institutional-quality real estate returns, a landowner with a site in a high-growth market, or a capital partner looking for an experienced development operator — Z-Co is ready to have the conversation.</p>
           <div className="flex flex-wrap justify-center gap-4 pt-4">
             <Link to="/#invest" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-normal uppercase tracking-[0.13em] text-[10.5px] hover:bg-gold2 transition-all">Investor Access <ArrowRight className="w-4 h-4" /></Link>
-            <Link to="/#contact" className="inline-flex items-center gap-2 px-8 py-4 border border-[rgba(0,0,0,0.1)] text-ink  font-bold uppercase tracking-widest text-xs hover:border-white transition-all">Contact Us <ArrowRight className="w-4 h-4" /></Link>
-            <Link to="/about" className="inline-flex items-center gap-2 px-8 py-4 border border-[rgba(0,0,0,0.1)] text-ink  font-bold uppercase tracking-widest text-xs hover:border-white transition-all">About Z-Co <ArrowRight className="w-4 h-4" /></Link>
+            <Link to="/#contact" className="inline-flex items-center gap-2 px-8 py-4 border border-[rgba(0,0,0,0.1)] text-ink  font-normal uppercase text-[11px] tracking-[0.14em] hover:border-white transition-all">Contact Us <ArrowRight className="w-4 h-4" /></Link>
+            <Link to="/about" className="inline-flex items-center gap-2 px-8 py-4 border border-[rgba(0,0,0,0.1)] text-ink  font-normal uppercase text-[11px] tracking-[0.14em] hover:border-white transition-all">About Z-Co <ArrowRight className="w-4 h-4" /></Link>
           </div>
         </div>
       </section>
