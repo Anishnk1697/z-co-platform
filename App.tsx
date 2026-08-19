@@ -611,7 +611,7 @@ const Home = ({
           <p className="text-white/55 uppercase text-[11px] tracking-[0.16em] mb-4">
             Real Estate Development Platform · Z-Co Development Corp · Est. 2003
           </p>
-          <h1 className="font-serif font-light text-white leading-[1.15] mb-4" style={{ fontSize: 'clamp(42px,5vw,72px)' }}>
+          <h1 className="font-serif font-light text-white leading-[1.15] mb-4" style={{ fontSize: 'clamp(32px,3.8vw,58px)' }}>
             Faster builds. Faster exits.<br /><em>Faster returns.</em>
           </h1>
           <p className="text-white/65 text-sm mb-7 max-w-xl leading-relaxed">
