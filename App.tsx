@@ -535,10 +535,10 @@ const Home = ({
 
   // --- Hero slideshow ---
   const heroSlides = [
-    { img: '/asset/dovetrails.jpg', caption: 'Dove Trails · San Antonio, TX' },
-    { img: '/asset/everson-building.jpg', caption: 'The Everson · San Antonio, TX' },
-    { img: '/asset/medplex.jpg', caption: 'MedPlex · Katy, TX' },
-    { img: '/asset/hotel-best-western-1.png', caption: 'Best Western Premier' },
+    { img: '/asset/hero-1.jpg', caption: 'Dove Trails · San Antonio, TX' },
+    { img: '/asset/hero-2.jpg', caption: 'Dove Trails · San Antonio, TX' },
+    { img: '/asset/hero-3.jpg', caption: 'Dove Trails · San Antonio, TX' },
+    { img: '/asset/hero-4.jpg', caption: 'Dove Trails · San Antonio, TX' },
   ];
   const [heroIdx, setHeroIdx] = useState(0);
   useEffect(() => {
