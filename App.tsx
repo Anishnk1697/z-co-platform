@@ -673,17 +673,17 @@ const Home = ({
       </div>
 
       {/* 3. WHY Z-CO */}
-      <section id="why-zco" className="py-[110px] px-[72px]" style={{ background: 'var(--ink)', backgroundImage: 'linear-gradient(to right,rgba(14,14,12,1) 0%,rgba(14,14,12,.97) 20%,rgba(14,14,12,.8) 40%,rgba(14,14,12,.45) 62%,rgba(14,14,12,.1) 85%,rgba(14,14,12,0) 100%), url(/asset/philosophy-building.webp)', backgroundRepeat: 'no-repeat, no-repeat', backgroundPosition: 'right top, right top', backgroundSize: '58% 100%, 58% auto' }}>
-        <div className="ey text-gold2 text-[11px] uppercase tracking-[0.14em] mb-4">Why Z-Co</div>
-        <h2 className="font-serif font-light text-white mb-3" style={{ fontSize: 'clamp(32px,4vw,56px)', lineHeight: 1.1 }}>Vertical integration.<br /><em>Real execution.</em></h2>
-        <div className="w-10 border-t border-gold mb-8" />
-        <p className="text-white/75 text-[15.5px] leading-[1.7] mb-4" style={{ maxWidth: 820 }}>We deliver essential, recession-resistant projects designed for the masses through an end-to-end development platform, from site selection and underwriting to entitlements, design, capital structuring, construction execution, and exit. Replication drives speed, reduces risk, and accelerates stabilization, supporting faster sales and faster capital return — the foundation of Z-Co's Replication Advantage as a real estate development company USA investors trust for build-to-rent and build-to-sell communities alike.</p>
-        <p className="text-white/75 text-[15.5px] leading-[1.7] mb-12" style={{ maxWidth: 820 }}>Z-Co positions complementary assets near one another by design — a hospital next to a town center, homes near a major employment corridor — and builds on its own factory-based construction platform rather than renting one project at a time. Dove Trails proved the model in San Antonio; MedPlex and TowneCenter are scaling it into Katy; Austin and the wider Sun Belt corridor are next.</p>
+      <section id="why-zco" className="py-[110px] px-[72px]" style={{ backgroundColor: '#0E0E0C', backgroundImage: 'linear-gradient(to right,rgba(14,14,12,1) 0%,rgba(14,14,12,.97) 20%,rgba(14,14,12,.8) 40%,rgba(14,14,12,.45) 62%,rgba(14,14,12,.1) 85%,rgba(14,14,12,0) 100%), url(/asset/philosophy-building.webp)', backgroundRepeat: 'no-repeat, no-repeat', backgroundPosition: 'right top, right top', backgroundSize: '58% 100%, 58% auto' }}>
+        <div style={{ color: '#A8895A', fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: 16 }}>Why Z-Co</div>
+        <h2 className="font-serif font-light" style={{ color: '#fff', fontSize: 'clamp(32px,4vw,56px)', lineHeight: 1.1, marginBottom: 12 }}>Vertical integration.<br /><em>Real execution.</em></h2>
+        <div style={{ width: 40, borderTop: '1px solid #8B6F3E', marginBottom: 32 }} />
+        <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: 15.5, lineHeight: 1.7, maxWidth: 820, marginBottom: 14 }}>We deliver essential, recession-resistant projects designed for the masses through an end-to-end development platform, from site selection and underwriting to entitlements, design, capital structuring, construction execution, and exit. Replication drives speed, reduces risk, and accelerates stabilization, supporting faster sales and faster capital return — the foundation of Z-Co's Replication Advantage as a real estate development company USA investors trust for build-to-rent and build-to-sell communities alike.</p>
+        <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: 15.5, lineHeight: 1.7, maxWidth: 820, marginBottom: 48 }}>Z-Co positions complementary assets near one another by design — a hospital next to a town center, homes near a major employment corridor — and builds on its own factory-based construction platform rather than renting one project at a time. Dove Trails proved the model in San Antonio; MedPlex and TowneCenter are scaling it into Katy; Austin and the wider Sun Belt corridor are next.</p>
 
         {/* Grid: bullet points + pull quote */}
-        <div className="grid gap-10" style={{ gridTemplateColumns: '1.3fr 1fr', alignItems: 'start' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1.3fr 1fr', gap: 40, alignItems: 'start' }}>
           {/* Left: 2-col bullet grid */}
-          <div className="grid grid-cols-2 gap-px" style={{ background: 'rgba(255,255,255,0.08)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1, background: 'rgba(255,255,255,0.08)' }}>
             {[
               'One partner from land acquisition to final delivery — no handoffs between separate architects, contractors, and property managers.',
               'Factory-enabled construction that locks material costs and compresses schedule before a shovel hits the ground.',
@@ -692,22 +692,22 @@ const Home = ({
               'Capital solutions that meet developers and investors where they are — direct equity, JV partnerships, or EB-5 structures.',
               '23 years, 37+ completed projects, zero abandonments. Proven, not promised.',
             ].map((text, i) => (
-              <div key={i} className="flex gap-4 items-start p-[26px_28px]" style={{ background: 'var(--ink2)' }}>
-                <span className="flex-shrink-0 w-[26px] h-[26px] border border-gold2 flex items-center justify-center text-gold2 text-[16px]" style={{ borderRadius: '50%' }}>✓</span>
-                <p className="text-white/75 text-[15.5px] leading-[1.7] m-0">{text}</p>
+              <div key={i} style={{ display: 'flex', gap: 16, alignItems: 'flex-start', padding: '26px 28px', background: '#1C1C1A' }}>
+                <span style={{ flexShrink: 0, width: 26, height: 26, border: '1px solid #A8895A', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#A8895A', fontSize: 14 }}>✓</span>
+                <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: 15.5, lineHeight: 1.7, margin: 0 }}>{text}</p>
               </div>
             ))}
           </div>
 
           {/* Right: pull quote + stats */}
-          <div className="flex flex-col h-full" style={{ borderLeft: '2px solid var(--gold2)', paddingLeft: '22px' }}>
-            <p className="font-serif italic font-light text-white/70 text-[17px] leading-[1.55]">"In 37 completed projects, we have never abandoned a development. That is not fortune — that is underwriting."</p>
-            <p className="text-[11px] uppercase tracking-[0.15em] text-gold2 mt-2.5">Mike Butte · Founder &amp; CEO</p>
-            <div className="grid grid-cols-3 gap-5 mt-auto pt-8">
+          <div style={{ display: 'flex', flexDirection: 'column', height: '100%', borderLeft: '2px solid #A8895A', paddingLeft: 22 }}>
+            <p className="font-serif" style={{ fontStyle: 'italic', fontWeight: 300, color: 'rgba(255,255,255,0.7)', fontSize: 17, lineHeight: 1.55 }}>"In 37 completed projects, we have never abandoned a development. That is not fortune — that is underwriting."</p>
+            <p style={{ fontSize: 11, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#A8895A', marginTop: 10 }}>Mike Butte · Founder &amp; CEO</p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20, marginTop: 'auto', paddingTop: 32 }}>
               {[{ v: '37+', l: 'Projects Delivered' }, { v: '23', l: 'Years Operating' }, { v: '0', l: 'Abandonments' }].map((s) => (
-                <div key={s.l} style={{ borderTop: '1px solid rgba(255,255,255,0.14)', paddingTop: '14px' }}>
-                  <strong className="block font-serif font-light text-gold2 text-[24px]">{s.v}</strong>
-                  <span className="text-[10.5px] uppercase tracking-[0.1em] text-white/55 leading-[1.4]">{s.l}</span>
+                <div key={s.l} style={{ borderTop: '1px solid rgba(255,255,255,0.14)', paddingTop: 14 }}>
+                  <strong className="font-serif" style={{ display: 'block', fontWeight: 300, color: '#A8895A', fontSize: 24 }}>{s.v}</strong>
+                  <span style={{ fontSize: 10.5, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.55)', lineHeight: 1.4 }}>{s.l}</span>
                 </div>
               ))}
             </div>
@@ -715,27 +715,19 @@ const Home = ({
         </div>
 
         {/* How the Platform Aligns */}
-        <div className="mt-20">
-          <p className="text-[12px] uppercase tracking-[0.14em] text-white/70 mb-4">How the Platform Aligns</p>
-          <p className="font-serif italic text-[19px] leading-[1.65] text-white/60 mb-12" style={{ maxWidth: 660 }}>Every project runs the same seven-stage lifecycle, and every stakeholder sits in the same triangle of accountability — repeatable structure, not a one-off pitch.</p>
+        <div style={{ marginTop: 80 }}>
+          <p style={{ fontSize: 12, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.7)', marginBottom: 16 }}>How the Platform Aligns</p>
+          <p className="font-serif" style={{ fontStyle: 'italic', fontSize: 19, lineHeight: 1.65, color: 'rgba(255,255,255,0.6)', maxWidth: 660, marginBottom: 48 }}>Every project runs the same seven-stage lifecycle, and every stakeholder sits in the same triangle of accountability — repeatable structure, not a one-off pitch.</p>
 
-          <div className="grid grid-cols-2 gap-1" style={{ background: 'rgba(255,255,255,0.08)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1, background: 'rgba(255,255,255,0.08)' }}>
             {/* Lifecycle Model */}
-            <div className="p-10" style={{ background: 'var(--ink2)' }}>
-              <p className="text-[12px] uppercase tracking-[0.14em] text-white/70 mb-8">The Lifecycle Model</p>
-              <div className="relative mx-auto" style={{ width: '100%', maxWidth: 380 }}>
-                <svg viewBox="0 0 400 400" className="w-full">
+            <div style={{ padding: 40, background: '#1C1C1A' }}>
+              <p style={{ fontSize: 12, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.7)', marginBottom: 32 }}>The Lifecycle Model</p>
+              <div style={{ position: 'relative', width: '100%', maxWidth: 380, margin: '0 auto' }}>
+                <svg viewBox="0 0 400 400" style={{ width: '100%' }}>
                   <circle cx="200" cy="200" r="122" fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="1"/>
-                  {[
-                    [200.0, 78.0, 295.4, 123.9],
-                    [295.4, 123.9, 318.9, 227.1],
-                    [318.9, 227.1, 252.9, 309.9],
-                    [252.9, 309.9, 147.1, 309.9],
-                    [147.1, 309.9, 81.1, 227.1],
-                    [81.1, 227.1, 104.6, 123.9],
-                    [104.6, 123.9, 200.0, 78.0],
-                  ].map(([x1,y1,x2,y2],i) => <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="rgba(255,255,255,0.18)" strokeWidth="1"/>)}
-                  {[[200.0,78.0],[295.4,123.9],[318.9,227.1],[252.9,309.9],[147.1,309.9],[81.1,227.1],[104.6,123.9]].map(([cx,cy],i) => <circle key={i} cx={cx} cy={cy} r="4.5" fill="#C9A227"/>)}
+                  {([[200,78,295.4,123.9],[295.4,123.9,318.9,227.1],[318.9,227.1,252.9,309.9],[252.9,309.9,147.1,309.9],[147.1,309.9,81.1,227.1],[81.1,227.1,104.6,123.9],[104.6,123.9,200,78]] as number[][]).map(([x1,y1,x2,y2],i) => <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="rgba(255,255,255,0.18)" strokeWidth="1"/>)}
+                  {([[200,78],[295.4,123.9],[318.9,227.1],[252.9,309.9],[147.1,309.9],[81.1,227.1],[104.6,123.9]] as number[][]).map(([cx,cy],i) => <circle key={i} cx={cx} cy={cy} r="4.5" fill="#C9A227"/>)}
                 </svg>
                 {[
                   { label: 'Development Plan', n: '01', left: '50%', top: '8%' },
@@ -746,34 +738,34 @@ const Home = ({
                   { label: 'Execute Exit Strategy', n: '06', left: '9.1%', top: '59.3%' },
                   { label: 'Distribute Profits', n: '07', left: '17.2%', top: '23.8%' },
                 ].map(({ label, n, left, top }) => (
-                  <div key={n} className="absolute text-center pointer-events-none" style={{ left, top, transform: 'translate(-50%,-50%)', width: 90 }}>
-                    <span className="block font-serif italic text-gold2 text-[11px] mb-0.5">{n}</span>
-                    <span className="text-white/70 text-[10px] leading-tight">{label}</span>
+                  <div key={n} style={{ position: 'absolute', left, top, transform: 'translate(-50%,-50%)', width: 90, textAlign: 'center', pointerEvents: 'none' }}>
+                    <span className="font-serif" style={{ display: 'block', fontStyle: 'italic', color: '#C9A227', fontSize: 11, marginBottom: 2 }}>{n}</span>
+                    <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: 10, lineHeight: 1.3 }}>{label}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Stakeholder Alignment */}
-            <div className="p-10" style={{ background: 'var(--ink2)' }}>
-              <p className="text-[12px] uppercase tracking-[0.14em] text-white/70 mb-8">Stakeholder Alignment</p>
-              <div className="mx-auto mb-8" style={{ maxWidth: 280 }}>
-                <svg viewBox="0 0 300 260" className="w-full">
+            <div style={{ padding: 40, background: '#1C1C1A' }}>
+              <p style={{ fontSize: 12, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.7)', marginBottom: 32 }}>Stakeholder Alignment</p>
+              <div style={{ maxWidth: 280, margin: '0 auto 32px' }}>
+                <svg viewBox="0 0 300 260" style={{ width: '100%' }}>
                   <polygon points="150,20 280,230 20,230" fill="rgba(201,162,39,0.06)" stroke="#C9A227" strokeWidth="1.5"/>
                   <circle cx="150" cy="20" r="5" fill="#C9A227"/>
                   <circle cx="280" cy="230" r="5" fill="#C9A227"/>
                   <circle cx="20" cy="230" r="5" fill="#C9A227"/>
                 </svg>
               </div>
-              <div className="grid grid-cols-3 gap-4">
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 16 }}>
                 {[
                   { title: 'Operator', desc: 'Runs day-to-day execution — construction, leasing, and asset performance once a project is delivered.' },
                   { title: 'Developer', desc: 'Sources the site, underwrites the deal, and carries execution risk from entitlement through delivery.' },
                   { title: 'Investor', desc: 'Provides milestone-linked capital and receives reporting, distributions, and a defined return.' },
                 ].map(({ title, desc }) => (
                   <div key={title}>
-                    <span className="block font-serif italic text-gold2 text-[15px] mb-2">{title}</span>
-                    <p className="text-white/65 text-[12px] leading-[1.6]">{desc}</p>
+                    <span className="font-serif" style={{ display: 'block', fontStyle: 'italic', color: '#A8895A', fontSize: 15, marginBottom: 8 }}>{title}</span>
+                    <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: 12, lineHeight: 1.6, margin: 0 }}>{desc}</p>
                   </div>
                 ))}
               </div>
