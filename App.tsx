@@ -1113,13 +1113,14 @@ const Home = ({
         </p>
 
         {/* Mike Butte lead bio */}
-        <div className="grid grid-cols-2 gap-16 items-start mb-12 pb-12 border-b border-[rgba(0,0,0,0.1)]">
-          <img
-            src="/asset/mike-butte.jpg"
-            alt="Mike Butte"
-            className="w-full object-cover object-top"
-            style={{ aspectRatio: '3/4' }}
-          />
+        <div className="grid gap-11 items-start mb-14 pb-12 border-b border-[rgba(0,0,0,0.1)]" style={{ gridTemplateColumns: '260px 1fr' }}>
+          <div className="overflow-hidden" style={{ aspectRatio: '3/4' }}>
+            <img
+              src="/asset/mike-butte.jpg"
+              alt="Mike Butte"
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
           <div>
             <h3 className="font-serif text-[28px] text-ink mb-1">Mike Butte</h3>
             <p className="text-[11px] uppercase tracking-[0.15em] text-gold mb-5">Founder & CEO</p>
