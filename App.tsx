@@ -600,7 +600,7 @@ const Home = ({
               transition: 'opacity 1.4s ease',
             }}
           >
-            <img src={slide.img} alt={slide.caption} className="w-full h-full object-cover" />
+            <img src={slide.img} alt={slide.caption} className="w-full h-full object-cover object-top" />
           </div>
         ))}
         {/* Dark overlay */}
