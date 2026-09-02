@@ -600,15 +600,15 @@ const Home = ({
               transition: 'opacity 1.4s ease',
             }}
           >
-            <img src={slide.img} alt={slide.caption} className="w-full h-full object-cover object-top" />
+            <img src={slide.img} alt={slide.caption} className="w-full h-full object-cover" style={{ objectPosition: 'center 25%' }} />
           </div>
         ))}
         {/* Bottom strip — gradient only at base, building tops fully visible */}
         <div
           className="absolute bottom-0 left-0 right-0 z-10"
           style={{
-            background: 'linear-gradient(to top, rgba(14,14,12,1) 0%, rgba(14,14,12,0.96) 45%, rgba(14,14,12,0.55) 72%, rgba(14,14,12,0) 100%)',
-            paddingTop: '130px',
+            background: 'linear-gradient(to top, rgba(14,14,12,1) 0%, rgba(14,14,12,0.95) 38%, rgba(14,14,12,0.4) 62%, rgba(14,14,12,0) 100%)',
+            paddingTop: '90px',
             paddingBottom: '44px',
             paddingLeft: '72px',
             paddingRight: '72px',
@@ -621,7 +621,7 @@ const Home = ({
               <p className="text-white/50 uppercase text-[10px] tracking-[0.2em] mb-3">
                 Real Estate Development · Z-Co Development Corp · Est. 2003
               </p>
-              <h1 className="font-serif font-light text-white leading-[1.12] mb-3" style={{ fontSize: 'clamp(30px,3.8vw,58px)' }}>
+              <h1 className="font-serif font-light text-white leading-[1.12] mb-3" style={{ fontSize: 'clamp(24px,2.9vw,44px)' }}>
                 Faster builds. Faster exits.<br /><em>Faster returns.</em>
               </h1>
               <p className="text-white/55 text-sm mb-6 max-w-lg leading-relaxed">
