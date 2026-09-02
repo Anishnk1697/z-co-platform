@@ -213,7 +213,7 @@ const AboutUs = () => {
           >
             <div className="aspect-[4/5] overflow-hidden border border-[rgba(0,0,0,0.08)]">
               <img
-                src="/asset/philosophy-building.jpg"
+                src="/asset/philosophy-building.webp"
                 alt="Z-Co Development — disciplined project execution"
                 className="w-full h-full object-cover"
               />

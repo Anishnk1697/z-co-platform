@@ -802,7 +802,7 @@ const Home = ({
       </section>
 
       {/* 6. WHY Z-CO */}
-      <section id="why-zco" className="py-[110px] px-[72px]" style={{ backgroundColor: '#0E0E0C', backgroundImage: 'linear-gradient(to right,rgba(14,14,12,1) 0%,rgba(14,14,12,.97) 20%,rgba(14,14,12,.8) 40%,rgba(14,14,12,.45) 62%,rgba(14,14,12,.1) 85%,rgba(14,14,12,0) 100%), url(/asset/philosophy-building.jpg)', backgroundRepeat: 'no-repeat, no-repeat', backgroundPosition: 'right top, right top', backgroundSize: '58% 100%, 58% auto' }}>
+      <section id="why-zco" className="py-[110px] px-[72px]" style={{ backgroundColor: '#0E0E0C', backgroundImage: 'linear-gradient(to right,rgba(14,14,12,1) 0%,rgba(14,14,12,.97) 20%,rgba(14,14,12,.8) 40%,rgba(14,14,12,.45) 62%,rgba(14,14,12,.1) 85%,rgba(14,14,12,0) 100%), url(/asset/philosophy-building.webp)', backgroundRepeat: 'no-repeat, no-repeat', backgroundPosition: 'right top, right top', backgroundSize: '58% 100%, 58% auto' }}>
         <div style={{ color: '#A8895A', fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: 16 }}>Why Z-Co</div>
         <h2 className="font-serif font-light" style={{ color: '#fff', fontSize: 'clamp(32px,4vw,56px)', lineHeight: 1.1, marginBottom: 12 }}>Vertical integration.<br /><em>Real execution.</em></h2>
         <div style={{ width: 40, borderTop: '1px solid #8B6F3E', marginBottom: 32 }} />
