@@ -535,10 +535,10 @@ const Home = ({
 
   // --- Hero slideshow ---
   const heroSlides = [
-    { img: '/asset/hero-1.jpg', caption: 'Dove Trails · San Antonio, TX' },
-    { img: '/asset/everson-building.jpg', caption: 'The Everson · San Antonio, TX' },
-    { img: '/asset/medplex.jpg', caption: 'MedPlex · Katy, TX' },
-    { img: '/asset/townecenter.jpg', caption: 'TowneCenter · Katy, TX' },
+    { img: '/asset/dovetrails-main.jpg', caption: 'Dove Trails · San Antonio, TX', pos: 'center 40%' },
+    { img: '/asset/everson-building.jpg', caption: 'The Everson · San Antonio, TX', pos: 'center 30%' },
+    { img: '/asset/medplex.jpg', caption: 'MedPlex · Katy, TX', pos: 'center 25%' },
+    { img: '/asset/townecenter.jpg', caption: 'TowneCenter · Katy, TX', pos: 'center 25%' },
   ];
   const [heroIdx, setHeroIdx] = useState(0);
   useEffect(() => {
@@ -600,14 +600,14 @@ const Home = ({
               transition: 'opacity 1.4s ease',
             }}
           >
-            <img src={slide.img} alt={slide.caption} className="w-full h-full object-cover" style={{ objectPosition: 'center 25%' }} />
+            <img src={slide.img} alt={slide.caption} className="w-full h-full object-cover" style={{ objectPosition: slide.pos }} />
           </div>
         ))}
         {/* Bottom strip — gradient only at base, building tops fully visible */}
         <div
           className="absolute bottom-0 left-0 right-0 z-10"
           style={{
-            background: 'linear-gradient(to top, rgba(14,14,12,1) 0%, rgba(14,14,12,0.95) 38%, rgba(14,14,12,0.4) 62%, rgba(14,14,12,0) 100%)',
+            background: 'linear-gradient(to top, rgba(14,14,12,1) 0%, rgba(14,14,12,0.95) 32%, rgba(14,14,12,0.0) 58%), linear-gradient(to top right, rgba(14,14,12,0.55) 0%, rgba(14,14,12,0.3) 30%, rgba(14,14,12,0) 55%)',
             paddingTop: '90px',
             paddingBottom: '44px',
             paddingLeft: '72px',
