@@ -535,7 +535,7 @@ const Home = ({
 
   // --- Hero slideshow ---
   const heroSlides = [
-    { img: '/asset/dovetrails-main.jpg', caption: 'Dove Trails · San Antonio, TX', pos: 'center 40%' },
+    { img: '/asset/dovetrails-main.jpg', caption: 'Dove Trails · San Antonio, TX', pos: 'center 58%' },
     { img: '/asset/everson-building.jpg', caption: 'The Everson · San Antonio, TX', pos: 'center 30%' },
     { img: '/asset/medplex.jpg', caption: 'MedPlex · Katy, TX', pos: 'center 25%' },
     { img: '/asset/townecenter.jpg', caption: 'TowneCenter · Katy, TX', pos: 'center 25%' },
@@ -603,11 +603,19 @@ const Home = ({
             <img src={slide.img} alt={slide.caption} className="w-full h-full object-cover" style={{ objectPosition: slide.pos }} />
           </div>
         ))}
-        {/* Bottom strip — gradient only at base, building tops fully visible */}
+        {/* Layer 1: base bottom strip — dark from bottom, fades mid-image */}
+        <div className="absolute inset-0 z-[5] pointer-events-none" style={{
+          background: 'linear-gradient(to top, rgba(14,14,12,1) 0%, rgba(14,14,12,0.97) 18%, rgba(14,14,12,0.5) 32%, rgba(14,14,12,0) 46%)',
+        }} />
+        {/* Layer 2: left-side diagonal — extra dark on left, fades out to the right, creating diagonal top edge */}
+        <div className="absolute inset-0 z-[6] pointer-events-none" style={{
+          background: 'linear-gradient(to right, rgba(14,14,12,0.55) 0%, rgba(14,14,12,0.35) 20%, rgba(14,14,12,0.1) 45%, rgba(14,14,12,0) 65%)',
+        }} />
+
+        {/* Text strip — no background, floats above the two gradient layers */}
         <div
           className="absolute bottom-0 left-0 right-0 z-10"
           style={{
-            background: 'linear-gradient(to top, rgba(14,14,12,1) 0%, rgba(14,14,12,0.95) 32%, rgba(14,14,12,0.0) 58%), linear-gradient(to top right, rgba(14,14,12,0.55) 0%, rgba(14,14,12,0.3) 30%, rgba(14,14,12,0) 55%)',
             paddingTop: '90px',
             paddingBottom: '44px',
             paddingLeft: '72px',
