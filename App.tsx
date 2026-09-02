@@ -603,56 +603,68 @@ const Home = ({
             <img src={slide.img} alt={slide.caption} className="w-full h-full object-cover object-top" />
           </div>
         ))}
-        {/* Dark overlay */}
-        <div className="absolute inset-0" style={{ background: 'rgba(14,14,12,0.45)' }} />
+        {/* Bottom strip — gradient only at base, building tops fully visible */}
+        <div
+          className="absolute bottom-0 left-0 right-0 z-10"
+          style={{
+            background: 'linear-gradient(to top, rgba(14,14,12,1) 0%, rgba(14,14,12,0.96) 45%, rgba(14,14,12,0.55) 72%, rgba(14,14,12,0) 100%)',
+            paddingTop: '130px',
+            paddingBottom: '44px',
+            paddingLeft: '72px',
+            paddingRight: '72px',
+          }}
+        >
+          <div className="flex items-end justify-between gap-8">
+            {/* Left: headline + cta */}
+            <div className="max-w-2xl">
+              <div style={{ width: '36px', height: '1px', background: '#8B6F3E', marginBottom: '18px' }} />
+              <p className="text-white/50 uppercase text-[10px] tracking-[0.2em] mb-3">
+                Real Estate Development · Z-Co Development Corp · Est. 2003
+              </p>
+              <h1 className="font-serif font-light text-white leading-[1.12] mb-3" style={{ fontSize: 'clamp(30px,3.8vw,58px)' }}>
+                Faster builds. Faster exits.<br /><em>Faster returns.</em>
+              </h1>
+              <p className="text-white/55 text-sm mb-6 max-w-lg leading-relaxed">
+                Replication reduces variance, compresses timelines, and accelerates stabilization—supporting faster capital return where applicable.
+              </p>
+              <div className="flex gap-4 flex-wrap">
+                <Link
+                  to="/portfolio"
+                  className="border border-white/40 text-white px-5 py-3 text-[11px] uppercase tracking-[0.14em] hover:bg-white hover:text-ink transition-all"
+                >
+                  View Our Work →
+                </Link>
+                <button
+                  onClick={() => document.getElementById('investors')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="border border-white/40 text-white px-5 py-3 text-[11px] uppercase tracking-[0.14em] hover:bg-white hover:text-ink transition-all"
+                >
+                  Our Approach →
+                </button>
+              </div>
+            </div>
 
-        {/* Bottom-left text block */}
-        <div className="absolute bottom-12 left-[72px] max-w-2xl z-10">
-          <p className="text-white/55 uppercase text-[11px] tracking-[0.16em] mb-4">
-            Real Estate Development Platform · Z-Co Development Corp · Est. 2003
-          </p>
-          <h1 className="font-serif font-light text-white leading-[1.15] mb-4" style={{ fontSize: 'clamp(32px,3.8vw,58px)' }}>
-            Faster builds. Faster exits.<br /><em>Faster returns.</em>
-          </h1>
-          <p className="text-white/65 text-sm mb-7 max-w-xl leading-relaxed">
-            Replication reduces variance, compresses timelines, and accelerates stabilization—supporting faster capital return where applicable.
-          </p>
-          <div className="flex gap-4 flex-wrap">
-            <Link
-              to="/portfolio"
-              className="border border-white/50 text-white px-5 py-3 text-[11px] uppercase tracking-[0.14em] hover:bg-white hover:text-ink transition-all"
-            >
-              View Our Work →
-            </Link>
-            <button
-              onClick={() => document.getElementById('investors')?.scrollIntoView({ behavior: 'smooth' })}
-              className="border border-white/50 text-white px-5 py-3 text-[11px] uppercase tracking-[0.14em] hover:bg-white hover:text-ink transition-all"
-            >
-              Our Approach →
-            </button>
+            {/* Right: caption + slide indicators */}
+            <div className="flex flex-col items-end gap-3 shrink-0 pb-1">
+              <p className="text-white/45 text-[11px] uppercase tracking-[0.14em]">{heroSlides[heroIdx].caption}</p>
+              <div className="flex gap-2 items-center">
+                {heroSlides.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setHeroIdx(i)}
+                    className="rounded-full transition-all"
+                    style={{
+                      width: i === heroIdx ? '20px' : '6px',
+                      height: '6px',
+                      background: i === heroIdx ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.35)',
+                    }}
+                  />
+                ))}
+              </div>
+              <p className="text-white/45 text-[11px] uppercase tracking-[0.14em]">
+                {String(heroIdx + 1).padStart(2, '0')} / {String(heroSlides.length).padStart(2, '0')}
+              </p>
+            </div>
           </div>
-        </div>
-
-        {/* Bottom-right: caption + indicators + counter */}
-        <div className="absolute bottom-12 right-[72px] z-10 flex flex-col items-end gap-3">
-          <p className="text-white/55 text-[11px] uppercase tracking-[0.14em]">{heroSlides[heroIdx].caption}</p>
-          <div className="flex gap-2 items-center">
-            {heroSlides.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setHeroIdx(i)}
-                className="rounded-full transition-all"
-                style={{
-                  width: i === heroIdx ? '20px' : '6px',
-                  height: '6px',
-                  background: i === heroIdx ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.35)',
-                }}
-              />
-            ))}
-          </div>
-          <p className="text-white/55 text-[11px] uppercase tracking-[0.14em]">
-            {String(heroIdx + 1).padStart(2, '0')} / {String(heroSlides.length).padStart(2, '0')}
-          </p>
         </div>
       </header>
 
