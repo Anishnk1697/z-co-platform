@@ -346,7 +346,7 @@ const AboutUs = () => {
               viewport={{ once: true }}
               className="relative p-8 md:p-12 bg-off border border-[rgba(0,0,0,0.07)] overflow-hidden flex flex-col md:flex-row gap-10 items-center md:items-start group hover:border-gold/30 transition-all duration-500"
             >
-              <div className="w-36 md:w-44 flex-shrink-0 overflow-hidden border border-[rgba(0,0,0,0.1)]" style={{ aspectRatio: '3/4' }}>
+              <div className="w-full md:w-1/4 flex-shrink-0 overflow-hidden" style={{ aspectRatio: '3/4' }}>
                 <img
                   src="/asset/mike-butte.jpg"
                   alt="Mike Butte - CEO of Z-Co Development - Real Estate Development Team"
