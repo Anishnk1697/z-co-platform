@@ -634,6 +634,9 @@ const Home = ({
                   Our Approach →
                 </button>
               </div>
+              <p className="text-white/40 text-[9px] uppercase tracking-[0.18em] mt-4">
+                Real Estate Development · Z-Co Development Corp · Est. 2003
+              </p>
             </div>
             {/* Caption + indicators — hidden on mobile */}
             <div className="hidden sm:flex flex-col items-end gap-3 shrink-0">
@@ -1467,9 +1470,6 @@ export default function App() {
               alt="Z-Co Development - Real Estate Development Company USA"
               className="h-[3.4rem] sm:h-[4rem] w-auto object-contain transition-transform group-hover:scale-105"
             />
-            <span className="hidden lg:block text-[9px] uppercase tracking-[0.18em] text-mid leading-[1.5]">
-              Real Estate Development<br />Z-Co Development Corp · Est. 2003
-            </span>
           </Link>
 
           <div className="hidden lg:flex items-center gap-9">
