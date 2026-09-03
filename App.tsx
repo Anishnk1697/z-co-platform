@@ -1241,12 +1241,12 @@ const Home = ({
             { name: 'Mo Khan', title: 'Chief Operating Officer', img: '/asset/mo-khan.png', bio: "Leads financial strategy, capital structuring and LP/GP waterfall structures across Z-Co's development platform. Ensures every project is capitalized for execution certainty." },
             { name: 'Sarah Ali', title: 'President', img: '/asset/sarah-ali.jpg', bio: "Leads day-to-day operations and project delivery. Works directly with contractors, capital partners, and the development team across Z-Co's active portfolio." },
             { name: 'Omar Terkawi', title: 'Director of Development', img: '/asset/omar-terkawi.png', bio: "Oversees project planning, entitlements, design coordination and construction management. Maintains schedule, budget and design intent from groundbreak to handover." },
+            { name: 'Thaddaus Hays Jr.', title: 'Director of Business Development', img: '/asset/thaddaus-hays.jpg', bio: "Coordinates project timelines, contractor schedules, and stakeholder communications for Z-Co's active development pipeline." },
             { name: 'Dan Prosser', title: 'Senior Advisor', img: '/asset/dan-prosser.png', bio: "Brings decades of senior advisory experience to Z-Co's strategic initiatives. Provides counsel on market positioning, capital markets, and long-term development strategy." },
             { name: 'John Stevens', title: 'Legal Counsel', img: '/asset/john-stevens.jpg', bio: "Oversees legal structuring across Z-Co's development partnerships, entitlements, and capital transactions. Ensures compliance and investor protection across all project structures." },
             { name: 'Anish N. Kantharia', title: 'Director of Marketing', img: '/asset/anish-kantharia.jpg', bio: "Leads brand strategy, digital marketing, and project marketing execution across Z-Co's active developments and investor communications." },
             { name: 'Abel Castro', title: 'Construction Manager', img: '/asset/abel-castro.png', bio: "Manages on-site construction operations, contractor relationships, and field-level schedule compliance across Z-Co's active development projects." },
             { name: 'Phan Le', title: 'Financial Analyst', img: '/asset/phan-le.png', bio: "Supports underwriting, financial modeling, and investment reporting across Z-Co's project portfolio." },
-            { name: 'Thaddaus Hays Jr.', title: 'Director of Business Development', img: '/asset/thaddaus-hays.jpg', bio: "Coordinates project timelines, contractor schedules, and stakeholder communications for Z-Co's active development pipeline." },
           ].map((member) => (
             <div key={member.name} className="bg-white">
               {member.img ? (
