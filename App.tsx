@@ -550,7 +550,7 @@ const Home = ({
   const assetTabs = [
     {
       label: 'Residential',
-      img: '/asset/dovetrails.jpg',
+      img: '/asset/dovetrails-main.jpg',
       desc: "Gated, build-to-sell communities and luxury custom homes targeting workforce ownership near major employment centers. Dove Trails is the current proof case — 152 homes engineered on Z-Co's LGS platform, priced for buyers who work in the neighborhood they're buying into, not commuting in from further out.",
       featured: 'Featured: Dove Trails, San Antonio',
     },
