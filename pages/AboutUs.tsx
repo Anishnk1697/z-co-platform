@@ -375,15 +375,15 @@ const AboutUs = () => {
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-[rgba(0,0,0,0.07)]">
               {[
-                { name: 'Sarah Ali', title: 'President', img: '/asset/sarah-ali.jpg' },
                 { name: 'Mo Khan', title: 'Chief Operating Officer', img: '/asset/mo-khan.png' },
-                { name: 'John Stevens', title: 'Director of Asset Management', img: '/asset/john-stevens.jpg' },
-                { name: 'Thaddaus Hays Jr.', title: 'Director of Business Development', img: 'https://cdn.prod.website-files.com/673390480b47a07dd6beac13/673a64ed0f6cca562db5fa9f_66ace28771dc9f27738eafa5_hays.jpg' },
-                { name: 'Dan Prosser', title: 'Director of Strategic Planning', img: '/asset/dan-prosser.png' },
-                { name: 'Phan Le', title: 'Office Coordinator', img: '/asset/phan-le.png' },
-                { name: 'Omar Terkawi', title: 'Project Architect', img: '/asset/omar-terkawi.png' },
-                { name: 'Abel Castro', title: 'Director of Maintenance', img: '/asset/abel-castro.png' },
-                { name: 'Anish N. Kantharia', title: 'Marketing Manager', img: '/asset/anish-kantharia.jpg' },
+                { name: 'Sarah Ali', title: 'President', img: '/asset/sarah-ali.jpg' },
+                { name: 'Omar Terkawi', title: 'Director of Development', img: '/asset/omar-terkawi.png' },
+                { name: 'Thaddaus Hays Jr.', title: 'Director of Business Development', img: '/asset/thaddaus-hays.jpg' },
+                { name: 'Dan Prosser', title: 'Senior Advisor', img: '/asset/dan-prosser.png' },
+                { name: 'John Stevens', title: 'Legal Counsel', img: '/asset/john-stevens.jpg' },
+                { name: 'Anish N. Kantharia', title: 'Director of Marketing', img: '/asset/anish-kantharia.jpg' },
+                { name: 'Abel Castro', title: 'Construction Manager', img: '/asset/abel-castro.png' },
+                { name: 'Phan Le', title: 'Financial Analyst', img: '/asset/phan-le.png' },
               ].map((member, i) => (
                 <motion.div
                   key={i}
