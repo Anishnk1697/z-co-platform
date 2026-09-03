@@ -603,13 +603,9 @@ const Home = ({
             <img src={slide.img} alt={slide.caption} className="w-full h-full object-cover" style={{ objectPosition: slide.pos }} />
           </div>
         ))}
-        {/* Layer 1: base bottom strip */}
+        {/* Bottom strip gradient */}
         <div className="absolute inset-0 z-[5] pointer-events-none" style={{
           background: 'linear-gradient(to top, rgba(14,14,12,1) 0%, rgba(14,14,12,0.97) 18%, rgba(14,14,12,0.5) 32%, rgba(14,14,12,0) 46%)',
-        }} />
-        {/* Layer 2: left-side diagonal */}
-        <div className="absolute inset-0 z-[6] pointer-events-none" style={{
-          background: 'linear-gradient(to right, rgba(14,14,12,0.55) 0%, rgba(14,14,12,0.35) 20%, rgba(14,14,12,0.1) 45%, rgba(14,14,12,0) 65%)',
         }} />
 
         {/* Bottom text strip */}
