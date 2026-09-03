@@ -614,9 +614,6 @@ const Home = ({
           <div className="flex items-end justify-between gap-4">
             <div className="max-w-2xl">
               <div className="hidden md:block" style={{ width: '36px', height: '1px', background: '#8B6F3E', marginBottom: '18px' }} />
-              <p className="text-white/50 uppercase text-[10px] tracking-[0.2em] mb-2 hidden sm:block">
-                Real Estate Development · Z-Co Development Corp · Est. 2003
-              </p>
               <h1 className="font-serif font-light text-white leading-[1.12] mb-3" style={{ fontSize: 'clamp(24px,2.9vw,44px)' }}>
                 Faster builds. Faster exits.<br /><em>Faster returns.</em>
               </h1>
@@ -1470,6 +1467,9 @@ export default function App() {
               alt="Z-Co Development - Real Estate Development Company USA"
               className="h-[3.4rem] sm:h-[4rem] w-auto object-contain transition-transform group-hover:scale-105"
             />
+            <span className="hidden lg:block text-[9px] uppercase tracking-[0.18em] text-mid leading-[1.5]">
+              Real Estate Development<br />Z-Co Development Corp · Est. 2003
+            </span>
           </Link>
 
           <div className="hidden lg:flex items-center gap-9">
