@@ -606,58 +606,59 @@ const Home = ({
         {/* Dark overlay */}
         <div className="absolute inset-0" style={{ background: 'rgba(14,14,12,0.45)' }} />
 
-        {/* Bottom-left text block */}
-        <div className="absolute bottom-12 left-[72px] max-w-2xl z-10">
-          <p className="text-white/55 uppercase text-[11px] tracking-[0.16em] mb-4">
-            Real Estate Development Platform · Z-Co Development Corp · Est. 2003
-          </p>
-          <h1 className="font-serif font-light text-white leading-[1.15] mb-4" style={{ fontSize: 'clamp(32px,3.8vw,58px)' }}>
-            Faster builds. Faster exits.<br /><em>Faster returns.</em>
-          </h1>
-          <p className="text-white/65 text-sm mb-7 max-w-xl leading-relaxed">
-            Replication reduces variance, compresses timelines, and accelerates stabilization—supporting faster capital return where applicable.
-          </p>
-          <div className="flex gap-4 flex-wrap">
-            <Link
-              to="/portfolio"
-              className="border border-white/50 text-white px-5 py-3 text-[11px] uppercase tracking-[0.14em] hover:bg-white hover:text-ink transition-all"
-            >
-              View Our Work →
-            </Link>
-            <button
-              onClick={() => document.getElementById('investors')?.scrollIntoView({ behavior: 'smooth' })}
-              className="border border-white/50 text-white px-5 py-3 text-[11px] uppercase tracking-[0.14em] hover:bg-white hover:text-ink transition-all"
-            >
-              Our Approach →
-            </button>
-          </div>
-        </div>
-
-        {/* Bottom-right: caption + indicators + counter */}
-        <div className="absolute bottom-12 right-[72px] z-10 flex flex-col items-end gap-3">
-          <p className="text-white/55 text-[11px] uppercase tracking-[0.14em]">{heroSlides[heroIdx].caption}</p>
-          <div className="flex gap-2 items-center">
-            {heroSlides.map((_, i) => (
+        {/* Bottom text block */}
+        <div className="absolute bottom-8 left-5 right-5 md:bottom-12 md:left-[72px] md:right-[72px] z-10 flex items-end justify-between gap-4">
+          <div className="max-w-2xl">
+            <p className="text-white/55 uppercase text-[10px] md:text-[11px] tracking-[0.16em] mb-3 hidden sm:block">
+              Real Estate Development Platform · Z-Co Development Corp · Est. 2003
+            </p>
+            <h1 className="font-serif font-light text-white leading-[1.15] mb-3" style={{ fontSize: 'clamp(26px,3.8vw,58px)' }}>
+              Faster builds. Faster exits.<br /><em>Faster returns.</em>
+            </h1>
+            <p className="text-white/65 text-sm mb-5 max-w-xl leading-relaxed hidden md:block">
+              Replication reduces variance, compresses timelines, and accelerates stabilization—supporting faster capital return where applicable.
+            </p>
+            <div className="flex gap-3 flex-wrap">
+              <Link
+                to="/portfolio"
+                className="border border-white/50 text-white px-4 py-2.5 md:px-5 md:py-3 text-[10px] md:text-[11px] uppercase tracking-[0.14em] hover:bg-white hover:text-ink transition-all"
+              >
+                View Our Work →
+              </Link>
               <button
-                key={i}
-                onClick={() => setHeroIdx(i)}
-                className="rounded-full transition-all"
-                style={{
-                  width: i === heroIdx ? '20px' : '6px',
-                  height: '6px',
-                  background: i === heroIdx ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.35)',
-                }}
-              />
-            ))}
+                onClick={() => document.getElementById('investors')?.scrollIntoView({ behavior: 'smooth' })}
+                className="border border-white/50 text-white px-4 py-2.5 md:px-5 md:py-3 text-[10px] md:text-[11px] uppercase tracking-[0.14em] hover:bg-white hover:text-ink transition-all"
+              >
+                Our Approach →
+              </button>
+            </div>
           </div>
-          <p className="text-white/55 text-[11px] uppercase tracking-[0.14em]">
-            {String(heroIdx + 1).padStart(2, '0')} / {String(heroSlides.length).padStart(2, '0')}
-          </p>
+          {/* Caption + indicators — hide on small mobile */}
+          <div className="hidden sm:flex flex-col items-end gap-3 shrink-0">
+            <p className="text-white/55 text-[11px] uppercase tracking-[0.14em]">{heroSlides[heroIdx].caption}</p>
+            <div className="flex gap-2 items-center">
+              {heroSlides.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setHeroIdx(i)}
+                  className="rounded-full transition-all"
+                  style={{
+                    width: i === heroIdx ? '20px' : '6px',
+                    height: '6px',
+                    background: i === heroIdx ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.35)',
+                  }}
+                />
+              ))}
+            </div>
+            <p className="text-white/55 text-[11px] uppercase tracking-[0.14em]">
+              {String(heroIdx + 1).padStart(2, '0')} / {String(heroSlides.length).padStart(2, '0')}
+            </p>
+          </div>
         </div>
       </header>
 
       {/* 2. STATS BAR */}
-      <div className="flex justify-between items-center border-b border-[rgba(0,0,0,0.1)] bg-white px-[72px] py-8">
+      <div className="flex flex-wrap justify-between items-center border-b border-[rgba(0,0,0,0.1)] bg-white px-5 py-6 md:px-[72px] md:py-8 gap-y-4">
         {[
           { value: '2003', label: 'Founded, Texas' },
           { value: "50+", label: "Projects Delivered" },
@@ -673,8 +674,8 @@ const Home = ({
       </div>
 
       {/* 3. ABOUT SECTION */}
-      <section className="bg-white py-24 px-[72px]">
-        <div className="grid grid-cols-2 gap-24 items-center">
+      <section className="bg-white py-14 md:py-24 px-5 md:px-[72px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
           {/* Left: main image + absolute inset */}
           <div className="relative pb-9 pr-9">
             <div className="w-full overflow-hidden" style={{ aspectRatio: '3/4' }}>
@@ -709,13 +710,13 @@ const Home = ({
       </section>
 
       {/* 4. WHAT WE DO SECTION */}
-      <section className="bg-off py-24 px-[72px]">
+      <section className="bg-off py-14 md:py-24 px-5 md:px-[72px]">
         <p className="text-[11px] text-gold uppercase tracking-[0.18em] mb-4">What We Do</p>
         <h2 className="font-serif font-light text-[28px] text-ink leading-[1.35] mb-2">
           Four ways we<br /><em>create value.</em>
         </h2>
         <div className="w-7 h-px bg-gold mb-10" />
-        <div className="grid grid-cols-4 gap-px bg-[rgba(0,0,0,0.1)] mt-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[rgba(0,0,0,0.1)] mt-10">
           {[
             {
               title: 'Real Estate Development',
@@ -765,7 +766,7 @@ const Home = ({
       </section>
 
       {/* 5. WHAT WE BUILD — tabbed asset classes */}
-      <section className="bg-white py-24 px-[72px]">
+      <section className="bg-white py-14 md:py-24 px-5 md:px-[72px]">
         <p className="text-[11px] text-gold uppercase tracking-[0.18em] mb-4">What We Build</p>
         <h2 className="font-serif font-light text-[28px] text-ink leading-[1.35]">
           Six asset classes.<br /><em>One platform.</em>
@@ -786,7 +787,7 @@ const Home = ({
           ))}
         </div>
         {/* Panel */}
-        <div className="grid grid-cols-2 gap-16 items-center py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center py-8 md:py-12">
           <img
             src={assetTabs[activeTab].img}
             alt={assetTabs[activeTab].label}
@@ -802,7 +803,7 @@ const Home = ({
       </section>
 
       {/* 6. WHY Z-CO */}
-      <section id="why-zco" className="py-[110px] px-[72px]" style={{ backgroundColor: '#0E0E0C', backgroundImage: 'linear-gradient(to right,rgba(14,14,12,1) 0%,rgba(14,14,12,.97) 20%,rgba(14,14,12,.8) 40%,rgba(14,14,12,.45) 62%,rgba(14,14,12,.1) 85%,rgba(14,14,12,0) 100%), url(/asset/philosophy-building.webp)', backgroundRepeat: 'no-repeat, no-repeat', backgroundPosition: 'right top, right top', backgroundSize: '58% 100%, 58% auto' }}>
+      <section id="why-zco" className="py-14 md:py-[110px] px-5 md:px-[72px]" style={{ backgroundColor: '#0E0E0C', backgroundImage: 'linear-gradient(to right,rgba(14,14,12,1) 0%,rgba(14,14,12,.97) 20%,rgba(14,14,12,.8) 40%,rgba(14,14,12,.45) 62%,rgba(14,14,12,.1) 85%,rgba(14,14,12,0) 100%), url(/asset/philosophy-building.webp)', backgroundRepeat: 'no-repeat, no-repeat', backgroundPosition: 'right top, right top', backgroundSize: '58% 100%, 58% auto' }}>
         <div style={{ color: '#A8895A', fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: 16 }}>Why Z-Co</div>
         <h2 className="font-serif font-light" style={{ color: '#fff', fontSize: 'clamp(32px,4vw,56px)', lineHeight: 1.1, marginBottom: 12 }}>Vertical integration.<br /><em>Real execution.</em></h2>
         <div style={{ width: 40, borderTop: '1px solid #8B6F3E', marginBottom: 32 }} />
@@ -810,8 +811,8 @@ const Home = ({
         <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: 15.5, lineHeight: 1.7, maxWidth: 820, marginBottom: 48 }}>Z-Co positions complementary assets near one another by design — a hospital next to a town center, homes near a major employment corridor — and builds on its own factory-based construction platform rather than renting one project at a time. Dove Trails proved the model in San Antonio; MedPlex and TowneCenter are scaling it into Katy; Austin and the wider Sun Belt corridor are next.</p>
 
         {/* Grid: bullet points + pull quote */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1.3fr 1fr', gap: 40, alignItems: 'start' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1, background: 'rgba(255,255,255,0.08)' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,380px),1fr))', gap: 40, alignItems: 'start' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,240px),1fr))', gap: 1, background: 'rgba(255,255,255,0.08)' }}>
             {[
               'One partner from land acquisition to final delivery — no handoffs between separate architects, contractors, and property managers.',
               'Factory-enabled construction that locks material costs and compresses schedule before a shovel hits the ground.',
@@ -844,7 +845,7 @@ const Home = ({
         <div style={{ marginTop: 80 }}>
           <p style={{ fontSize: 12, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.7)', marginBottom: 16 }}>How the Platform Aligns</p>
           <p className="font-serif" style={{ fontStyle: 'italic', fontSize: 19, lineHeight: 1.65, color: 'rgba(255,255,255,0.6)', maxWidth: 660, marginBottom: 48 }}>Every project runs the same seven-stage lifecycle, and every stakeholder sits in the same triangle of accountability — repeatable structure, not a one-off pitch.</p>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1, background: 'rgba(255,255,255,0.08)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,260px),1fr))', gap: 1, background: 'rgba(255,255,255,0.08)' }}>
             <div style={{ padding: 40, background: '#1C1C1A' }}>
               <p style={{ fontSize: 12, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.7)', marginBottom: 32 }}>The Lifecycle Model</p>
               <div style={{ position: 'relative', width: '100%', maxWidth: 380, margin: '0 auto' }}>
@@ -897,11 +898,11 @@ const Home = ({
       </section>
 
       {/* 7. FEATURED DEVELOPMENTS */}
-      <section className="bg-off py-24 px-[72px]">
+      <section className="bg-off py-14 md:py-24 px-5 md:px-[72px]">
         <p className="text-[11px] text-gold uppercase tracking-[0.18em] mb-4">Featured Developments</p>
         <h2 className="font-serif font-light text-[28px] text-ink leading-[1.35]">Proof, not projections.</h2>
         <div className="w-7 h-px bg-gold mt-4 mb-10" />
-        <div className="grid grid-cols-3 gap-px bg-[rgba(0,0,0,0.1)]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[rgba(0,0,0,0.1)]">
           {[
             {
               badge: 'Under Construction',
@@ -955,7 +956,7 @@ const Home = ({
       </section>
 
       {/* 7. BUILD WITH US — dark */}
-      <section id="build-with-us" className="bg-ink py-24 px-[72px]">
+      <section id="build-with-us" className="bg-ink py-14 md:py-24 px-5 md:px-[72px]">
         <p className="text-[11px] text-gold2 uppercase tracking-[0.18em] mb-4">Our Integration Approach</p>
         <h2 className="font-serif font-light text-white leading-[1.35] mb-2" style={{ fontSize: 'clamp(28px,3vw,44px)' }}>
           From land<br /><em>to sale.</em>
@@ -964,7 +965,7 @@ const Home = ({
         <p className="text-[rgba(255,255,255,0.65)] text-[15px] leading-[1.75] max-w-2xl mb-12">
           A disciplined approach to every project. Z-Co evaluates every project through detailed market research, data-driven supply-demand analysis, and disciplined development planning — designed to align long-term community demand with practical, on-the-ground execution.
         </p>
-        <div className="grid grid-cols-3 gap-px bg-[rgba(255,255,255,0.07)] mt-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[rgba(255,255,255,0.07)] mt-2">
           {[
             { num: '01', title: 'Land Acquisition', desc: "Proprietary site sourcing with rigorous due diligence on entitlement risk, market demand, and capital efficiency." },
             { num: '02', title: 'Entitlements & Planning', desc: "Zoning, permitting and regulatory navigation with established municipal relationships." },
@@ -992,8 +993,8 @@ const Home = ({
       </section>
 
       {/* 8. INSIGHTS TEASER */}
-      <section className="bg-off py-24 px-[72px]">
-        <div className="flex justify-between items-end mb-10">
+      <section className="bg-off py-14 md:py-24 px-5 md:px-[72px]">
+        <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-4 mb-10">
           <div>
             <p className="text-[11px] text-gold uppercase tracking-[0.18em] mb-4">Insights</p>
             <h2 className="font-serif font-light text-[28px] text-ink leading-[1.35]">
@@ -1007,7 +1008,7 @@ const Home = ({
             View All Insights →
           </Link>
         </div>
-        <div className="grid grid-cols-3 gap-px bg-[rgba(0,0,0,0.1)]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[rgba(0,0,0,0.1)]">
           {[
             {
               cat: 'Investment Analysis',
@@ -1045,8 +1046,8 @@ const Home = ({
       </section>
 
       {/* 9. INVESTORS SECTION */}
-      <section id="investors" className="bg-white py-24 px-[72px]">
-        <div className="grid grid-cols-2 gap-24">
+      <section id="investors" className="bg-white py-14 md:py-24 px-5 md:px-[72px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
           {/* Left */}
           <div>
             <p className="text-[11px] text-gold uppercase tracking-[0.18em] mb-4">For Investors</p>
@@ -1163,7 +1164,7 @@ const Home = ({
           <p className="text-mid text-[14.5px] max-w-2xl mt-4">
             Development, capital, and construction working as one system — not three separate vendors stitched together project by project. This is the platform behind every raise.
           </p>
-          <div className="grid grid-cols-3 gap-px bg-[rgba(0,0,0,0.1)] mt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-[rgba(0,0,0,0.1)] mt-8">
             {[
               {
                 title: 'Development',
@@ -1196,7 +1197,7 @@ const Home = ({
       </section>
 
       {/* 10. TEAM SECTION */}
-      <section id="team" className="bg-off py-24 px-[72px]">
+      <section id="team" className="bg-off py-14 md:py-24 px-5 md:px-[72px]">
         <p className="text-[11px] text-gold uppercase tracking-[0.18em] mb-4">Leadership</p>
         <h2 className="font-serif font-light text-[28px] text-ink leading-[1.35]">
           Meet the Team
@@ -1208,7 +1209,7 @@ const Home = ({
         </p>
 
         {/* Mike Butte lead bio */}
-        <div className="grid gap-11 items-start mb-14 pb-12 border-b border-[rgba(0,0,0,0.1)]" style={{ gridTemplateColumns: '260px 1fr' }}>
+        <div className="grid gap-8 md:gap-11 items-start mb-14 pb-12 border-b border-[rgba(0,0,0,0.1)]" style={{ gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,220px),1fr))' }}>
           <div className="overflow-hidden" style={{ aspectRatio: '3/4' }}>
             <img
               src="/asset/mike-butte.jpg"
@@ -1229,7 +1230,7 @@ const Home = ({
         </div>
 
         {/* Team grid */}
-        <div className="grid grid-cols-5 gap-px bg-[rgba(0,0,0,0.1)]">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-px bg-[rgba(0,0,0,0.1)]">
           {[
             { name: 'Mo Khan', title: 'Chief Operating Officer', img: '/asset/mo-khan.png', bio: "Leads financial strategy, capital structuring and LP/GP waterfall structures across Z-Co's development platform. Ensures every project is capitalized for execution certainty." },
             { name: 'Sarah Ali', title: 'President', img: '/asset/sarah-ali.jpg', bio: "Leads day-to-day operations and project delivery. Works directly with contractors, capital partners, and the development team across Z-Co's active portfolio." },
@@ -1266,13 +1267,13 @@ const Home = ({
       </section>
 
       {/* 11. TESTIMONIALS */}
-      <section id="testimonials" className="bg-off py-24 px-[72px]">
+      <section id="testimonials" className="bg-off py-14 md:py-24 px-5 md:px-[72px]">
         <p className="text-[11px] text-gold uppercase tracking-[0.18em] mb-4">Testimonials</p>
         <h2 className="font-serif font-light text-[28px] text-ink leading-[1.35]">
           What our partners<br />&amp; clients <em>say.</em>
         </h2>
         {/* Top row: 3 */}
-        <div className="grid grid-cols-3 gap-px bg-[rgba(0,0,0,0.1)] mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[rgba(0,0,0,0.1)] mt-12">
           {[
             { quote: "It has been a wonderful experience. Your firm has set the customer focus standard. You have demonstrated a high quality of professionalism and your associates exceed the needs of your customers daily.", name: "David Taylor", org: "Frost Bank" },
             { quote: "Mike Butte is a longtime trusted friend and someone I hold in high regard. In business, Mike is thoughtful, careful, and highly resourceful. I've always appreciated his practical insights and disciplined approach.", name: "Stewart Morris Jr.", org: "President · Stewart Security Capital Inc." },
@@ -1288,7 +1289,7 @@ const Home = ({
           ))}
         </div>
         {/* Bottom row: 2 */}
-        <div className="grid grid-cols-2 gap-px bg-[rgba(0,0,0,0.1)] mt-px">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[rgba(0,0,0,0.1)] mt-px">
           {[
             { quote: "As Mike Butte's real estate broker since 2008, I have always been impressed with Mike's honesty, integrity, and professionalism. I strongly recommend Mike as a loyal and trustworthy business associate.", name: "Danny Pleason", org: "Real Estate Broker · Martha Turner Properties" },
             { quote: "Working with Z-Co has been consistently professional and results-oriented. The team demonstrates a rare combination of market discipline and genuine care for long-term community outcomes.", name: "Capital Partner", org: "Texas-Based Family Office" },
@@ -1305,8 +1306,8 @@ const Home = ({
       </section>
 
       {/* 12. CONTACT SECTION — dark */}
-      <section id="contact" className="bg-ink py-24 px-[72px]">
-        <div className="grid grid-cols-2 gap-24">
+      <section id="contact" className="bg-ink py-14 md:py-24 px-5 md:px-[72px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
           {/* Left */}
           <div>
             <p className="text-[11px] text-gold2 uppercase tracking-[0.18em] mb-4">Get in Touch</p>
