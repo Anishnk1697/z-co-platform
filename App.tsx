@@ -1215,7 +1215,7 @@ const Home = ({
         </p>
 
         {/* Mike Butte lead bio */}
-        <div className="grid gap-8 md:gap-11 items-start mb-14 pb-12 border-b border-[rgba(0,0,0,0.1)]" style={{ gridTemplateColumns: '160px 1fr' }}>
+        <div className="grid gap-8 md:gap-11 items-start mb-14 pb-12 border-b border-[rgba(0,0,0,0.1)]" style={{ gridTemplateColumns: '220px 1fr' }}>
           <div className="overflow-hidden" style={{ aspectRatio: '3/4' }}>
             <img
               src="/asset/mike-butte.jpg"
