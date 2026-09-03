@@ -1214,10 +1214,26 @@ const Home = ({
           A seasoned group of operators, builders, and capital partners driving execution across every project.
         </p>
 
-        {/* Team grid — Mike included as first card */}
+        {/* Mike Butte lead bio */}
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start mb-14 pb-12 border-b border-[rgba(0,0,0,0.1)]">
+          <div className="w-full md:w-1/5 shrink-0 overflow-hidden aspect-[3/4]">
+            <img src="/asset/mike-butte.jpg" alt="Mike Butte" className="w-full h-full object-cover object-top" />
+          </div>
+          <div className="flex-1">
+            <h3 className="font-serif text-[28px] text-ink mb-1">Mike Butte</h3>
+            <p className="text-[11px] uppercase tracking-[0.15em] text-gold mb-5">Founder & CEO</p>
+            <p className="text-[14px] leading-[1.75] text-mid">
+              Mike Butte is the Founder and CEO of Z-Co Development Corp., a real estate development company USA investors and partners rely on for an end-to-end development platform spanning real estate and operating-business projects. With more than 30 years of leadership experience, Mike has executed projects across multiple asset classes by combining disciplined underwriting, capital strategy, and delivery execution to create recession-resistant, essential-service assets designed for scale. His background includes development and ownership experience tied to nationally recognized brands such as Holiday Inn, Best Western, Arby's, Denny's, and Caliber Collision, and he remains focused on building repeatable project prototypes that compress timelines and improve predictability across markets.
+            </p>
+            <p className="text-[14px] leading-[1.75] text-mid mt-3">
+              Mike is also passionate about expanding access, creating opportunities for small investors to participate in institutional-quality projects and helping budding real estate developers learn, grow, and succeed through clear systems, practical guidance, and aligned real estate joint venture partnerships.
+            </p>
+          </div>
+        </div>
+
+        {/* Team grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-px bg-[rgba(0,0,0,0.1)]">
           {[
-            { name: 'Mike Butte', title: 'Founder & CEO', img: '/asset/mike-butte.jpg', bio: "Founder and CEO of Z-Co Development Corp. 30+ years leading projects across residential, healthcare, hospitality, and commercial asset classes with zero abandonments." },
             { name: 'Mo Khan', title: 'Chief Operating Officer', img: '/asset/mo-khan.png', bio: "Leads financial strategy, capital structuring and LP/GP waterfall structures across Z-Co's development platform. Ensures every project is capitalized for execution certainty." },
             { name: 'Sarah Ali', title: 'President', img: '/asset/sarah-ali.jpg', bio: "Leads day-to-day operations and project delivery. Works directly with contractors, capital partners, and the development team across Z-Co's active portfolio." },
             { name: 'Omar Terkawi', title: 'Director of Development', img: '/asset/omar-terkawi.png', bio: "Oversees project planning, entitlements, design coordination and construction management. Maintains schedule, budget and design intent from groundbreak to handover." },
