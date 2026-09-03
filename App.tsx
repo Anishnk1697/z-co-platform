@@ -604,8 +604,9 @@ const Home = ({
           </div>
         ))}
         {/* Bottom strip gradient */}
-        <div className="absolute inset-0 z-[5] pointer-events-none" style={{
-          background: 'linear-gradient(to top, rgba(14,14,12,1) 0%, rgba(14,14,12,0.97) 18%, rgba(14,14,12,0.5) 32%, rgba(14,14,12,0) 46%)',
+        <div className="absolute bottom-0 left-0 right-0 z-[5] pointer-events-none" style={{
+          height: '38%',
+          background: 'linear-gradient(to top, rgba(14,14,12,1) 0%, rgba(14,14,12,0.95) 30%, rgba(14,14,12,0.6) 60%, rgba(14,14,12,0) 100%)',
         }} />
 
         {/* Bottom text strip */}
