@@ -535,10 +535,10 @@ const Home = ({
 
   // --- Hero slideshow ---
   const heroSlides = [
-    { img: '/asset/hero-1.jpg', caption: 'Dove Trails · San Antonio, TX' },
-    { img: '/asset/everson-building.jpg', caption: 'The Everson · San Antonio, TX' },
-    { img: '/asset/medplex.jpg', caption: 'MedPlex · Katy, TX' },
-    { img: '/asset/townecenter.jpg', caption: 'TowneCenter · Katy, TX' },
+    { img: '/asset/dovetrails-main.jpg', caption: 'Dove Trails · San Antonio, TX', pos: 'center 58%' },
+    { img: '/asset/everson-building.jpg', caption: 'The Everson · San Antonio, TX', pos: 'center 30%' },
+    { img: '/asset/medplex.jpg', caption: 'MedPlex · Katy, TX', pos: 'center 25%' },
+    { img: '/asset/townecenter.jpg', caption: 'TowneCenter · Katy, TX', pos: 'center 25%' },
   ];
   const [heroIdx, setHeroIdx] = useState(0);
   useEffect(() => {
@@ -600,59 +600,68 @@ const Home = ({
               transition: 'opacity 1.4s ease',
             }}
           >
-            <img src={slide.img} alt={slide.caption} className="w-full h-full object-cover object-top" />
+            <img src={slide.img} alt={slide.caption} className="w-full h-full object-cover" style={{ objectPosition: slide.pos }} />
           </div>
         ))}
-        {/* Dark overlay */}
-        <div className="absolute inset-0" style={{ background: 'rgba(14,14,12,0.45)' }} />
+        {/* Layer 1: base bottom strip */}
+        <div className="absolute inset-0 z-[5] pointer-events-none" style={{
+          background: 'linear-gradient(to top, rgba(14,14,12,1) 0%, rgba(14,14,12,0.97) 18%, rgba(14,14,12,0.5) 32%, rgba(14,14,12,0) 46%)',
+        }} />
+        {/* Layer 2: left-side diagonal */}
+        <div className="absolute inset-0 z-[6] pointer-events-none" style={{
+          background: 'linear-gradient(to right, rgba(14,14,12,0.55) 0%, rgba(14,14,12,0.35) 20%, rgba(14,14,12,0.1) 45%, rgba(14,14,12,0) 65%)',
+        }} />
 
-        {/* Bottom text block */}
-        <div className="absolute bottom-8 left-5 right-5 md:bottom-12 md:left-[72px] md:right-[72px] z-10 flex items-end justify-between gap-4">
-          <div className="max-w-2xl">
-            <p className="text-white/55 uppercase text-[10px] md:text-[11px] tracking-[0.16em] mb-3 hidden sm:block">
-              Real Estate Development Platform · Z-Co Development Corp · Est. 2003
-            </p>
-            <h1 className="font-serif font-light text-white leading-[1.15] mb-3" style={{ fontSize: 'clamp(26px,3.8vw,58px)' }}>
-              Faster builds. Faster exits.<br /><em>Faster returns.</em>
-            </h1>
-            <p className="text-white/65 text-sm mb-5 max-w-xl leading-relaxed hidden md:block">
-              Replication reduces variance, compresses timelines, and accelerates stabilization—supporting faster capital return where applicable.
-            </p>
-            <div className="flex gap-3 flex-wrap">
-              <Link
-                to="/portfolio"
-                className="border border-white/50 text-white px-4 py-2.5 md:px-5 md:py-3 text-[10px] md:text-[11px] uppercase tracking-[0.14em] hover:bg-white hover:text-ink transition-all"
-              >
-                View Our Work →
-              </Link>
-              <button
-                onClick={() => document.getElementById('investors')?.scrollIntoView({ behavior: 'smooth' })}
-                className="border border-white/50 text-white px-4 py-2.5 md:px-5 md:py-3 text-[10px] md:text-[11px] uppercase tracking-[0.14em] hover:bg-white hover:text-ink transition-all"
-              >
-                Our Approach →
-              </button>
-            </div>
-          </div>
-          {/* Caption + indicators — hide on small mobile */}
-          <div className="hidden sm:flex flex-col items-end gap-3 shrink-0">
-            <p className="text-white/55 text-[11px] uppercase tracking-[0.14em]">{heroSlides[heroIdx].caption}</p>
-            <div className="flex gap-2 items-center">
-              {heroSlides.map((_, i) => (
+        {/* Bottom text strip */}
+        <div className="absolute bottom-0 left-0 right-0 z-10 px-5 pb-8 pt-[80px] md:px-[72px] md:pb-11 md:pt-[90px]">
+          <div className="flex items-end justify-between gap-4">
+            <div className="max-w-2xl">
+              <div className="hidden md:block" style={{ width: '36px', height: '1px', background: '#8B6F3E', marginBottom: '18px' }} />
+              <p className="text-white/50 uppercase text-[10px] tracking-[0.2em] mb-2 hidden sm:block">
+                Real Estate Development · Z-Co Development Corp · Est. 2003
+              </p>
+              <h1 className="font-serif font-light text-white leading-[1.12] mb-3" style={{ fontSize: 'clamp(24px,2.9vw,44px)' }}>
+                Faster builds. Faster exits.<br /><em>Faster returns.</em>
+              </h1>
+              <p className="text-white/55 text-sm mb-5 max-w-lg leading-relaxed hidden md:block">
+                Replication reduces variance, compresses timelines, and accelerates stabilization—supporting faster capital return where applicable.
+              </p>
+              <div className="flex gap-3 flex-wrap">
+                <Link
+                  to="/portfolio"
+                  className="border border-white/40 text-white px-4 py-2.5 md:px-5 md:py-3 text-[10px] md:text-[11px] uppercase tracking-[0.14em] hover:bg-white hover:text-ink transition-all"
+                >
+                  View Our Work →
+                </Link>
                 <button
-                  key={i}
-                  onClick={() => setHeroIdx(i)}
-                  className="rounded-full transition-all"
-                  style={{
-                    width: i === heroIdx ? '20px' : '6px',
-                    height: '6px',
-                    background: i === heroIdx ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.35)',
-                  }}
-                />
-              ))}
+                  onClick={() => document.getElementById('investors')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="border border-white/40 text-white px-4 py-2.5 md:px-5 md:py-3 text-[10px] md:text-[11px] uppercase tracking-[0.14em] hover:bg-white hover:text-ink transition-all"
+                >
+                  Our Approach →
+                </button>
+              </div>
             </div>
-            <p className="text-white/55 text-[11px] uppercase tracking-[0.14em]">
-              {String(heroIdx + 1).padStart(2, '0')} / {String(heroSlides.length).padStart(2, '0')}
-            </p>
+            {/* Caption + indicators — hidden on mobile */}
+            <div className="hidden sm:flex flex-col items-end gap-3 shrink-0">
+              <p className="text-white/45 text-[11px] uppercase tracking-[0.14em]">{heroSlides[heroIdx].caption}</p>
+              <div className="flex gap-2 items-center">
+                {heroSlides.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setHeroIdx(i)}
+                    className="rounded-full transition-all"
+                    style={{
+                      width: i === heroIdx ? '20px' : '6px',
+                      height: '6px',
+                      background: i === heroIdx ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.35)',
+                    }}
+                  />
+                ))}
+              </div>
+              <p className="text-white/45 text-[11px] uppercase tracking-[0.14em]">
+                {String(heroIdx + 1).padStart(2, '0')} / {String(heroSlides.length).padStart(2, '0')}
+              </p>
+            </div>
           </div>
         </div>
       </header>
