@@ -60,7 +60,7 @@ const Portfolio = () => {
     {
       title: 'Shops @ Fry Road',
       location: 'Katy, Texas',
-      fallbackSeed: 'townecenter',
+      fallbackSeed: 'townecenter-2',
       description: 'A strategically located retail center designed to capture high-traffic demand. This development provides essential commercial space for neighborhood services and regional retail partners.',
       link: '#'
     }
