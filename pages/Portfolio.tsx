@@ -107,7 +107,6 @@ const Portfolio = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     style={project.imagePosition ? { objectPosition: project.imagePosition } : undefined}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink2/70 to-transparent" />
                 </div>
                 <div className="p-8 border-t border-[rgba(0,0,0,0.07)]">
                   <h3 className="font-serif font-light text-2xl text-ink mb-1">{project.title}</h3>
