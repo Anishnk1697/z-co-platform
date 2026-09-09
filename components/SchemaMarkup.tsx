@@ -5,8 +5,16 @@ const SchemaMarkup = () => {
         "@context": "https://schema.org",
         "@type": ["Organization", "LocalBusiness", "RealEstateDeveloper"],
         "name": "Z-Co Development",
+        "alternateName": "Z-Co Development Corp",
         "url": "https://z-co.info",
-        "logo": "https://z-co.info/asset/z-co-logo-vertical.png",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://z-co.info/asset/z-co-logo-vertical.png",
+            "width": 200,
+            "height": 200
+        },
+        "image": "https://z-co.info/asset/z-co-og-image.jpg",
+        "description": "Z-Co Development is a vertically integrated real estate development company specializing in build-to-rent, healthcare, mixed-use, and EB-5 investment projects across Texas.",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "5120 Woodway Dr. Suite 7018",
@@ -15,93 +23,132 @@ const SchemaMarkup = () => {
             "postalCode": "77056",
             "addressCountry": "US"
         },
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "email": "info@z-co.info",
-            "contactType": "customer support"
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 29.7383,
+            "longitude": -95.4777
         },
+        "telephone": "+18322038054",
+        "email": "info@z-co.info",
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "09:00",
+            "closes": "17:00"
+        },
+        "areaServed": [
+            { "@type": "State", "name": "Texas" },
+            { "@type": "City", "name": "Houston" },
+            { "@type": "City", "name": "Katy" },
+            { "@type": "City", "name": "San Antonio" }
+        ],
+        "knowsAbout": [
+            "Real Estate Development",
+            "Build-to-Rent",
+            "Healthcare Real Estate",
+            "Mixed-Use Development",
+            "EB-5 Investment",
+            "Commercial Real Estate Texas"
+        ],
         "sameAs": [
             "https://www.linkedin.com/company/z-co-development",
             "https://www.instagram.com/z_co_tx/",
             "https://www.facebook.com/Z.CO.TX"
-        ]
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.0",
+            "reviewCount": "4",
+            "bestRating": "5"
+        }
     };
 
     const projectSchema = {
         "@context": "https://schema.org",
         "@type": "ItemList",
-        "name": "Z-Co Development Projects",
-        "description": "Our current real estate development pipeline including build-to-rent, healthcare, and mixed-use projects.",
+        "name": "Z-Co Development Active Projects — Texas Real Estate Pipeline",
+        "description": "Current real estate development pipeline including build-to-rent, healthcare, mixed-use, and hospitality projects across Texas.",
+        "numberOfItems": 7,
         "itemListElement": [
             {
                 "@type": "ListItem",
                 "position": 1,
                 "item": {
-                    "@type": "Product",
-                    "name": "TowneCenter",
-                    "description": "A mixed-use development on Fry Road featuring Class-A apartments, senior living, and climate-controlled storage.",
-                    "brand": { "@type": "Brand", "name": "Z-Co Development" }
+                    "@type": "RealEstateListing",
+                    "name": "TowneCenter — Katy, Texas",
+                    "description": "A mixed-use development on Fry Road featuring Class-A apartments, senior living, climate-controlled storage, and modern medical offices.",
+                    "address": { "@type": "PostalAddress", "addressLocality": "Katy", "addressRegion": "TX" }
                 }
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "item": {
-                    "@type": "Product",
-                    "name": "MedPlex",
-                    "description": "A patient-centered healthcare platform that combines a licensed community hospital and outpatient services.",
-                    "brand": { "@type": "Brand", "name": "Z-Co Development" }
+                    "@type": "RealEstateListing",
+                    "name": "Reviva — Transitional Care & Rehabilitation Center, Texas",
+                    "description": "Purpose-built transitional care and rehabilitation center delivering post-acute care, physical therapy, and short-term rehabilitation in a modern, patient-centered campus.",
+                    "address": { "@type": "PostalAddress", "addressRegion": "TX" }
                 }
             },
             {
                 "@type": "ListItem",
                 "position": 3,
                 "item": {
-                    "@type": "Product",
-                    "name": "Strobes Tower",
-                    "description": "A nearly $280 million high-rise building offering a fusion of commercial, residential, and hotel spaces in Houston.",
-                    "brand": { "@type": "Brand", "name": "Z-Co Development" }
+                    "@type": "RealEstateListing",
+                    "name": "MedPlex — Katy, Texas",
+                    "description": "A patient-centered healthcare platform combining a licensed community hospital, outpatient medical services, and a physician network.",
+                    "address": { "@type": "PostalAddress", "addressLocality": "Katy", "addressRegion": "TX" }
                 }
             },
             {
                 "@type": "ListItem",
                 "position": 4,
                 "item": {
-                    "@type": "Product",
-                    "name": "Daycare Center",
-                    "description": "A state-of-the-art educational childcare facility designed for early childhood development.",
-                    "brand": { "@type": "Brand", "name": "Z-Co Development" }
+                    "@type": "RealEstateListing",
+                    "name": "Strobes Tower — Houston Medical Center",
+                    "description": "A nearly $280 million high-rise building offering a fusion of commercial, residential, and hotel spaces in Houston.",
+                    "address": { "@type": "PostalAddress", "addressLocality": "Houston", "addressRegion": "TX" }
                 }
             },
             {
                 "@type": "ListItem",
                 "position": 5,
                 "item": {
-                    "@type": "Product",
-                    "name": "Dove Trails",
-                    "description": "A premier 4-plex development in San Antonio where modern living meets serene surroundings.",
-                    "brand": { "@type": "Brand", "name": "Z-Co Development" }
+                    "@type": "RealEstateListing",
+                    "name": "Dove Trails — San Antonio, Texas",
+                    "description": "A premier 4-plex build-to-rent development where modern living meets serene surroundings.",
+                    "address": { "@type": "PostalAddress", "addressLocality": "San Antonio", "addressRegion": "TX" }
                 }
             },
             {
                 "@type": "ListItem",
                 "position": 6,
                 "item": {
-                    "@type": "Product",
-                    "name": "Shops @ Fry Road",
-                    "description": "A strategically located retail center designed to capture high-traffic demand in Katy, Texas.",
-                    "brand": { "@type": "Brand", "name": "Z-Co Development" }
+                    "@type": "RealEstateListing",
+                    "name": "Shops @ Fry Road — Katy, Texas",
+                    "description": "A strategically located retail center designed to capture high-traffic demand on Fry Road, Katy, Texas.",
+                    "address": { "@type": "PostalAddress", "addressLocality": "Katy", "addressRegion": "TX" }
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 7,
+                "item": {
+                    "@type": "RealEstateListing",
+                    "name": "Daycare Center — Katy, Texas",
+                    "description": "A state-of-the-art educational childcare facility designed to provide a safe, engaging, and enriching environment for early childhood development.",
+                    "address": { "@type": "PostalAddress", "addressLocality": "Katy", "addressRegion": "TX" }
                 }
             }
         ]
     };
 
-    // Article schema placeholder for future blog posts
-    const articleSchema = {
+    const blogSchema = {
         "@context": "https://schema.org",
         "@type": "Blog",
-        "name": "Z-Co Development Blog",
-        "description": "Insights, updates, and news on real estate development and investment from Z-Co Development.",
+        "name": "Z-Co Development Insights",
+        "description": "Expert insights on real estate development, investment strategies, healthcare real estate, build-to-rent, and Texas market trends from Z-Co Development Corp.",
+        "url": "https://z-co.info/insights",
         "publisher": {
             "@type": "Organization",
             "name": "Z-Co Development",
@@ -109,20 +156,28 @@ const SchemaMarkup = () => {
                 "@type": "ImageObject",
                 "url": "https://z-co.info/asset/z-co-logo-vertical.png"
             }
+        },
+        "inLanguage": "en-US"
+    };
+
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Z-Co Development",
+        "url": "https://z-co.info",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://z-co.info/insights?q={search_term_string}",
+            "query-input": "required name=search_term_string"
         }
     };
 
     return (
         <>
-            <script type="application/ld+json">
-                {JSON.stringify(organizationSchema)}
-            </script>
-            <script type="application/ld+json">
-                {JSON.stringify(projectSchema)}
-            </script>
-            <script type="application/ld+json">
-                {JSON.stringify(articleSchema)}
-            </script>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(projectSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
         </>
     );
 };

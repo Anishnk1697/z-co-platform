@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://z-co.info/sitemap.xml
+
+# Block admin/private paths
+Disallow: /admin
+Disallow: /api/

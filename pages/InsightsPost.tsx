@@ -48,6 +48,14 @@ const InsightsPost = () => {
   useSEO({
     title: post?.metaTitle || 'Insights | Z-Co Development',
     description: post?.metaDescription || 'Real estate development insights from Z-Co Development.',
+    canonical: `/insights/${slug}`,
+    ogType: 'article',
+    ogImage: `https://z-co.info/asset/z-co-og-image.jpg`,
+    article: {
+      publishedTime: post?.publishDate ? new Date(post.publishDate).toISOString() : undefined,
+      author: 'Z-Co Development',
+      tags: post?.category ? [post.category] : undefined,
+    },
   });
 
   if (!post) {
@@ -60,25 +68,25 @@ const InsightsPost = () => {
     '@type': 'Article',
     headline: post.title,
     description: post.metaDescription,
-    image: `https://zcodevelopment.com/og-insights-${post.slug}.jpg`,
+    image: `https://z-co.info/asset/z-co-og-image.jpg`,
     author: {
       '@type': 'Organization',
       name: 'Z-Co Development',
-      url: 'https://zcodevelopment.com',
+      url: 'https://z-co.info',
     },
     publisher: {
       '@type': 'Organization',
       name: 'Z-Co Development',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://zcodevelopment.com/favicon.png',
+        url: 'https://z-co.info/asset/z-co-logo-vertical.png',
       },
     },
     datePublished: post.publishDate,
     dateModified: post.publishDate,
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://zcodevelopment.com/insights/${post.slug}`,
+      '@id': `https://z-co.info/insights/${post.slug}`,
     },
     keywords: [post.category, 'real estate development', 'Z-Co Development', 'Texas real estate'],
     articleSection: post.category,
