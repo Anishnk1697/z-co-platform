@@ -15,7 +15,7 @@ const Portfolio = () => {
     {
       title: 'TowneCenter',
       location: 'Katy, Texas',
-      fallbackSeed: 'townecenter',
+      fallbackSeed: 'townecenter-3',
       description: 'A mixed-use development on Fry Road featuring Class-A apartments, senior living, climate-controlled storage, and modern medical offices.',
       link: 'https://drive.google.com/file/d/1MMH6BE9Age7gM1lRrIDedvDnkArYZ_22/view?usp=drive_link',
       imagePosition: 'center top'
