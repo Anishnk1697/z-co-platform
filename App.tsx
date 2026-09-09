@@ -206,6 +206,17 @@ const PORTFOLIO_PROJECTS = [
     ],
   },
   {
+    title: 'Reviva',
+    type: 'Healthcare · Transitional Care & Rehabilitation',
+    location: 'Texas',
+    badge: 'Active · Under Development',
+    badgeActive: true,
+    category: 'Healthcare' as PortfolioFilter,
+    img: 'reviva',
+    featured: false,
+    desc: 'Purpose-built transitional care and rehabilitation center delivering post-acute care, physical therapy, and short-term rehabilitation in a modern, patient-centered campus setting.',
+  },
+  {
     title: 'MedPlex',
     type: 'Healthcare · Medical Office',
     location: 'San Antonio Medical District, TX',

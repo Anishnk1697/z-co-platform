@@ -21,6 +21,14 @@ const Portfolio = () => {
       imagePosition: 'center top'
     },
     {
+      title: 'Reviva',
+      location: 'Texas',
+      fallbackSeed: 'reviva',
+      description: 'A purpose-built transitional care and rehabilitation center delivering post-acute care, physical therapy, and short-term rehabilitation services in a modern, patient-centered campus.',
+      link: '#',
+      imagePosition: 'center center'
+    },
+    {
       title: 'MedPlex',
       location: 'Katy, Texas',
       fallbackSeed: 'medplex',
