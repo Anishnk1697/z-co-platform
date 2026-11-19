@@ -254,6 +254,18 @@ const PORTFOLIO_PROJECTS = [
     websiteUrl: 'https://oneworldgrocers.com',
   },
   {
+    title: 'Top Ten Burgers & Wings',
+    type: 'Restaurant · Halal Burgers & Wings',
+    location: 'Katy, Texas',
+    badge: 'Opening 2027',
+    badgeActive: true,
+    category: 'Retail' as PortfolioFilter,
+    img: 'topten',
+    featured: false,
+    desc: 'Halal burger and wing concept with ten globally inspired burgers and ten wing flavors. First location on Fry Road — dine-in, pickup, and delivery.',
+    websiteUrl: 'https://www.toptenbnw.com',
+  },
+  {
     title: 'The Everson',
     type: 'Multifamily · Market Rate',
     location: 'Katy, TX',

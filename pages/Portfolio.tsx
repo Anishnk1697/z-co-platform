@@ -64,9 +64,17 @@ const Portfolio = () => {
       linkLabel: 'Download Brochure'
     },
     {
+      title: 'Top Ten Burgers & Wings',
+      location: 'Katy, Texas',
+      fallbackSeed: 'topten',
+      description: 'A halal burger and wing concept built on a ranked menu of ten global-inspired burgers and ten wing flavors. First location opening 2027 on Fry Road — dine-in, pickup, and delivery.',
+      link: 'https://www.toptenbnw.com',
+      linkLabel: 'Visit Website'
+    },
+    {
       title: 'Shops @ Fry Road',
       location: 'Katy, Texas',
-      fallbackSeed: 'shopsfryroad',
+      fallbackSeed: 'townecenter-2',
       description: 'A strategically located retail center designed to capture high-traffic demand. This development provides essential commercial space for neighborhood services and regional retail partners.',
       link: '#'
     }
