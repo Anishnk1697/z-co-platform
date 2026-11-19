@@ -208,24 +208,50 @@ const PORTFOLIO_PROJECTS = [
   {
     title: 'Reviva',
     type: 'Healthcare · Transitional Care & Rehabilitation',
-    location: 'Texas',
+    location: 'Katy, Texas',
     badge: 'Active · Under Development',
     badgeActive: true,
     category: 'Healthcare' as PortfolioFilter,
     img: 'reviva',
     featured: false,
-    desc: 'Purpose-built transitional care and rehabilitation center delivering post-acute care, physical therapy, and short-term rehabilitation in a modern, patient-centered campus setting.',
+    desc: 'Purpose-built transitional care and rehabilitation center — 24 private suites, skilled nursing, PT/OT/speech therapy, and discharge coordination on North Fry Road.',
+    websiteUrl: 'https://revivarehab.com',
   },
   {
     title: 'MedPlex',
-    type: 'Healthcare · Medical Office',
-    location: 'San Antonio Medical District, TX',
+    type: 'Healthcare · AI-Enabled Hospital Platform',
+    location: 'Katy, Texas',
     badge: 'Pre-Development',
     badgeActive: false,
     category: 'Healthcare' as PortfolioFilter,
     img: 'medplex',
     featured: false,
-    desc: 'Next-generation healthcare campus in pre-development. Designed for ambulatory care, specialist clinics, and medical office tenants.',
+    desc: 'AI-enabled hospital platform connecting a community hospital, outpatient HOPDs, and a physician network — 5 hospitals and 10 HOPDs planned for the Houston cluster.',
+    websiteUrl: 'https://medplexhospital.com',
+  },
+  {
+    title: 'JV Funder',
+    type: 'Investment Platform · Joint Ventures',
+    location: 'Houston, Texas',
+    badge: 'Active',
+    badgeActive: true,
+    category: 'Retail' as PortfolioFilter,
+    img: 'townecenter',
+    featured: false,
+    desc: 'Joint-venture investment platform connecting accredited investors with real estate and operating business opportunities, built on defined ownership and active oversight.',
+    websiteUrl: 'https://jvfunder.com',
+  },
+  {
+    title: 'OneWorld Grocers',
+    type: 'Retail · International Grocery & Halal Market',
+    location: 'Katy, Texas',
+    badge: 'Opening Soon',
+    badgeActive: true,
+    category: 'Retail' as PortfolioFilter,
+    img: 'townecenter-2',
+    featured: false,
+    desc: 'International grocery and halal market on Fry Road — custom butcher cuts, global pantry essentials, curbside pickup, and same-day neighborhood delivery.',
+    websiteUrl: 'https://oneworldgrocers.com',
   },
   {
     title: 'The Everson',
@@ -415,9 +441,21 @@ const PortfolioSection = () => {
                       <div className="text-center space-y-2">
                         <p className="text-[9px] font-normal text-gold uppercase tracking-[0.22em]">{project.type}</p>
                         <p className="text-white text-sm leading-relaxed font-light">{project.desc}</p>
-                        <span className="inline-flex items-center gap-1 text-white text-[10px] uppercase tracking-[0.18em] border-b border-white/40 pb-0.5">
-                          View Project <ArrowRight className="w-3 h-3" />
-                        </span>
+                        {(project as any).websiteUrl ? (
+                          <a
+                            href={(project as any).websiteUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={e => e.stopPropagation()}
+                            className="inline-flex items-center gap-1 text-gold text-[10px] uppercase tracking-[0.18em] border-b border-gold/40 pb-0.5"
+                          >
+                            Visit Website <ArrowRight className="w-3 h-3" />
+                          </a>
+                        ) : (
+                          <span className="inline-flex items-center gap-1 text-white text-[10px] uppercase tracking-[0.18em] border-b border-white/40 pb-0.5">
+                            View Project <ArrowRight className="w-3 h-3" />
+                          </span>
+                        )}
                       </div>
                     </div>
 

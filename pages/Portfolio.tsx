@@ -18,49 +18,55 @@ const Portfolio = () => {
       fallbackSeed: 'townecenter-3',
       description: 'A mixed-use development on Fry Road featuring Class-A apartments, senior living, climate-controlled storage, and modern medical offices.',
       link: 'https://drive.google.com/file/d/1MMH6BE9Age7gM1lRrIDedvDnkArYZ_22/view?usp=drive_link',
+      linkLabel: 'Download Brochure',
       imagePosition: 'center top'
     },
     {
       title: 'Reviva',
-      location: 'Texas',
+      location: 'Katy, Texas',
       fallbackSeed: 'reviva',
-      description: 'A purpose-built transitional care and rehabilitation center delivering post-acute care, physical therapy, and short-term rehabilitation services in a modern, patient-centered campus.',
-      link: '#',
+      description: 'A purpose-built transitional care and rehabilitation center delivering post-acute care, physical therapy, and short-term rehabilitation in a modern, patient-centered campus.',
+      link: 'https://revivarehab.com',
+      linkLabel: 'Visit Website',
       imagePosition: 'center center'
     },
     {
       title: 'MedPlex',
       location: 'Katy, Texas',
       fallbackSeed: 'medplex',
-      description: 'MedPlex is a patient-centered healthcare platform that combines a licensed community hospital, outpatient medical services, and a physician network in one integrated system.',
-      link: 'https://drive.google.com/file/d/1-A_PB-EHraeV0hcsIT-ZpKZjcobx0D2F/view?usp=drive_link',
+      description: 'An AI-enabled hospital platform combining a licensed community hospital, outpatient HOPDs, and a physician network in one intelligent, connected healthcare system.',
+      link: 'https://medplexhospital.com',
+      linkLabel: 'Visit Website',
       imagePosition: 'center 25%'
     },
     {
-      title: 'Strobes Tower',
-      location: 'Houston Medical Center',
-      fallbackSeed: 'strobes',
-      description: 'A nearly $280 million high-rise building offering a fusion of commercial, residential, and hotel spaces.',
-      link: '#'
+      title: 'JV Funder',
+      location: 'Houston, Texas',
+      fallbackSeed: 'townecenter',
+      description: 'A joint-venture investment platform connecting accredited investors with real estate and operating business opportunities — built on transparency, defined ownership, and active oversight.',
+      link: 'https://jvfunder.com',
+      linkLabel: 'Visit Website'
     },
     {
-      title: 'Daycare Center',
+      title: 'OneWorld Grocers',
       location: 'Katy, Texas',
-      fallbackSeed: 'daycare-center',
-      description: 'A state-of-the-art educational childcare facility designed to provide a safe, engaging, and enriching environment for early childhood development.',
-      link: '#'
+      fallbackSeed: 'townecenter-2',
+      description: 'An international grocery and halal market on Fry Road featuring custom-cut halal meats, global pantry essentials, curbside pickup, and same-day neighborhood delivery.',
+      link: 'https://oneworldgrocers.com',
+      linkLabel: 'Visit Website'
     },
     {
       title: 'Dove Trails',
       location: 'San Antonio, Texas',
       fallbackSeed: 'dovetrails',
-      description: 'A premier 4-plex development where modern living meets serene surroundings.',
-      link: 'https://drive.google.com/file/d/1RnyDdI7DBe-pqP6mr4Tp_3-hXf3wXQUv/view?usp=sharing'
+      description: 'A premier build-to-sell gated community of 152 homes engineered on Z-Co\'s light-gauge steel platform, targeting workforce ownership near major employment centers.',
+      link: 'https://drive.google.com/file/d/1RnyDdI7DBe-pqP6mr4Tp_3-hXf3wXQUv/view?usp=sharing',
+      linkLabel: 'Download Brochure'
     },
     {
       title: 'Shops @ Fry Road',
       location: 'Katy, Texas',
-      fallbackSeed: 'townecenter-2',
+      fallbackSeed: 'shopsfryroad',
       description: 'A strategically located retail center designed to capture high-traffic demand. This development provides essential commercial space for neighborhood services and regional retail partners.',
       link: '#'
     }
@@ -121,7 +127,7 @@ const Portfolio = () => {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-ink font-normal text-[11px] uppercase tracking-[0.16em] border-b border-ink pb-0.5 hover:text-gold hover:border-gold transition-all"
                     >
-                      Download Brochure
+                      {(project as any).linkLabel || 'Learn More'}
                       <ArrowRight className="w-3 h-3" />
                     </a>
                   )}
