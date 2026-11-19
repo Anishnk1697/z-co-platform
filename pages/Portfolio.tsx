@@ -48,9 +48,9 @@ const Portfolio = () => {
       linkLabel: 'Visit Website'
     },
     {
-      title: 'OneWorld Grocers',
+      title: 'One World International Grocery',
       location: 'Katy, Texas',
-      fallbackSeed: 'townecenter-2',
+      fallbackSeed: 'oneworldgrocers',
       description: 'An international grocery and halal market on Fry Road featuring custom-cut halal meats, global pantry essentials, curbside pickup, and same-day neighborhood delivery.',
       link: 'https://oneworldgrocers.com',
       linkLabel: 'Visit Website'
